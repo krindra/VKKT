@@ -1,0 +1,30 @@
+name: "Publish (nmcp)"
+
+
+on:
+  push:
+    branches: ["master"]
+jobs:
+  publish:
+    runs-on: macos-latest
+    env:
+      sonatypeUsername: ${{ secrets.SONATYPEUSERNAME }}
+      sonatypePassword: ${{ secrets.SONATYPEPASSWORD }}
+      GPG_KEY: ${{ secrets.GPGPRIVATEKEY }}
+    steps:
+      - name: Import GPG key
+        run: |
+            echo -n "$GPG_KEY" | base64 --decode | gpg --import
+        env: 
+          GPG_KEY: ${{ secrets.GPGPRIVATEKEY }}
+      - name: List keys
+        run: gpg -K
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: '21'
+      - name: Publish
+        run: ./gradlew publishAllPublicationsToCentralPortal
+
