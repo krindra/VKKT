@@ -10,7 +10,7 @@ import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
 
 class Gifts(
-    private val method: suspend (String, Map<Any, Any?>) -> String,
+    private val method: suspend (String, Map<String, Any?>?) -> String,
     private val json: Json = JsonSingleton.json
     ) {
     /**
