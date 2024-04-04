@@ -25,7 +25,7 @@ class Notifications(
      * @param endTime Latest timestamp (in Unix time) of a notification to return. By default, the current time.
      */
     suspend fun get(count: Int? = 30, startFrom: String? = null, filters: List<String>? = null, startTime: Int? = null, endTime: Int? = null): NotificationsGetResponse {
-        val response = method("get", mapOf("count" to count, "start_from" to startFrom, "filters" to filters, "start_time" to startTime, "end_time" to endTime))
+        val response = method("notifications.get", mapOf("count" to count, "start_from" to startFrom, "filters" to filters, "start_time" to startTime, "end_time" to endTime))
         return json.decodeFromString<NotificationsGetResponse>(response)
     }
 
@@ -35,7 +35,7 @@ class Notifications(
      * 
      */
     suspend fun markAsViewed(): BaseBoolResponse {
-        val response = method("markAsViewed", mapOf())
+        val response = method("notifications.markAsViewed", mapOf())
         return json.decodeFromString<BaseBoolResponse>(response)
     }
 
@@ -49,7 +49,7 @@ class Notifications(
      * @param sendingMode Type of sending (delivering) notifications: 'immediately' - push and bell notifications will be delivered as soon as possible, 'delayed' - push and bell notifications will be delivered in the most comfortable time for the user, 'delayed_push' - only push notifications will be delivered in the most comfortable time, while the bell notifications will be delivered as soon as possible.
      */
     suspend fun sendMessage(userIds: List<Int>, message: String, fragment: String? = null, groupId: Long? = null, randomId: Long? = null, sendingMode: String? = "immediately"): NotificationsSendMessageResponse {
-        val response = method("sendMessage", mapOf("user_ids" to userIds, "message" to message, "fragment" to fragment, "group_id" to groupId, "random_id" to randomId, "sending_mode" to sendingMode))
+        val response = method("notifications.sendMessage", mapOf("user_ids" to userIds, "message" to message, "fragment" to fragment, "group_id" to groupId, "random_id" to randomId, "sending_mode" to sendingMode))
         return json.decodeFromString<NotificationsSendMessageResponse>(response)
     }
 

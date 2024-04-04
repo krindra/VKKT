@@ -21,7 +21,7 @@ class Pages(
      * @param url Address of the page where you need to refesh the cached version.
      */
     suspend fun clearCache(url: String): BaseOkResponse {
-        val response = method("clearCache", mapOf("url" to url))
+        val response = method("pages.clearCache", mapOf("url" to url))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -38,7 +38,7 @@ class Pages(
      * @param needHtml '1' - to return the page as HTML,.
      */
     suspend fun get(ownerId: Long? = null, pageId: Long? = null, global_: Boolean? = false, sitePreview: Boolean? = false, title: String? = null, needSource: Boolean? = false, needHtml: Boolean? = false): PagesGetResponse {
-        val response = method("get", mapOf("owner_id" to ownerId, "page_id" to pageId, "global_" to global_, "site_preview" to sitePreview, "title" to title, "need_source" to needSource, "need_html" to needHtml))
+        val response = method("pages.get", mapOf("owner_id" to ownerId, "page_id" to pageId, "global_" to global_, "site_preview" to sitePreview, "title" to title, "need_source" to needSource, "need_html" to needHtml))
         return json.decodeFromString<PagesGetResponse>(response)
     }
 
@@ -51,7 +51,7 @@ class Pages(
      * @param userId 
      */
     suspend fun getHistory(pageId: Long, groupId: Long? = null, userId: Long? = null): PagesGetHistoryResponse {
-        val response = method("getHistory", mapOf("page_id" to pageId, "group_id" to groupId, "user_id" to userId))
+        val response = method("pages.getHistory", mapOf("page_id" to pageId, "group_id" to groupId, "user_id" to userId))
         return json.decodeFromString<PagesGetHistoryResponse>(response)
     }
 
@@ -62,7 +62,7 @@ class Pages(
      * @param groupId ID of the community that owns the wiki page.
      */
     suspend fun getTitles(groupId: Long? = null): PagesGetTitlesResponse {
-        val response = method("getTitles", mapOf("group_id" to groupId))
+        val response = method("pages.getTitles", mapOf("group_id" to groupId))
         return json.decodeFromString<PagesGetTitlesResponse>(response)
     }
 
@@ -76,7 +76,7 @@ class Pages(
      * @param needHtml '1' - to return the page as HTML.
      */
     suspend fun getVersion(versionId: Long, groupId: Long? = null, userId: Long? = null, needHtml: Boolean? = false): PagesGetVersionResponse {
-        val response = method("getVersion", mapOf("version_id" to versionId, "group_id" to groupId, "user_id" to userId, "need_html" to needHtml))
+        val response = method("pages.getVersion", mapOf("version_id" to versionId, "group_id" to groupId, "user_id" to userId, "need_html" to needHtml))
         return json.decodeFromString<PagesGetVersionResponse>(response)
     }
 
@@ -88,7 +88,7 @@ class Pages(
      * @param groupId ID of the group in the context of which this markup is interpreted.
      */
     suspend fun parseWiki(text: String, groupId: Long? = null): PagesParseWikiResponse {
-        val response = method("parseWiki", mapOf("text" to text, "group_id" to groupId))
+        val response = method("pages.parseWiki", mapOf("text" to text, "group_id" to groupId))
         return json.decodeFromString<PagesParseWikiResponse>(response)
     }
 
@@ -103,7 +103,7 @@ class Pages(
      * @param title Wiki page title.
      */
     suspend fun save(text: String? = null, pageId: Long? = null, groupId: Long? = null, userId: Long? = null, title: String? = null): PagesSaveResponse {
-        val response = method("save", mapOf("text" to text, "page_id" to pageId, "group_id" to groupId, "user_id" to userId, "title" to title))
+        val response = method("pages.save", mapOf("text" to text, "page_id" to pageId, "group_id" to groupId, "user_id" to userId, "title" to title))
         return json.decodeFromString<PagesSaveResponse>(response)
     }
 
@@ -118,7 +118,7 @@ class Pages(
      * @param edit Who can edit the wiki page: '1' - only community members, '2' - all users can edit the page, '0' - only community managers.
      */
     suspend fun saveAccess(pageId: Long, groupId: Long? = null, userId: Long? = null, view: Int? = null, edit: Int? = null): PagesSaveAccessResponse {
-        val response = method("saveAccess", mapOf("page_id" to pageId, "group_id" to groupId, "user_id" to userId, "view" to view, "edit" to edit))
+        val response = method("pages.saveAccess", mapOf("page_id" to pageId, "group_id" to groupId, "user_id" to userId, "view" to view, "edit" to edit))
         return json.decodeFromString<PagesSaveAccessResponse>(response)
     }
 

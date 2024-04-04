@@ -8,8 +8,8 @@ package ru.krindra.vknorthtypes.methods
 import ru.krindra.vknorthtypes.types.docs.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
-import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.types.base.BaseGetUploadServerResponse
+import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 
 class Docs(
     private val method: suspend (String, Map<String, Any?>?) -> String,
@@ -24,7 +24,7 @@ class Docs(
      * @param accessKey Access key. This parameter is required if 'access_key' was returned with the document's data.
      */
     suspend fun add(ownerId: Long, docId: Long, accessKey: String? = null): DocsAddResponse {
-        val response = method("add", mapOf("owner_id" to ownerId, "doc_id" to docId, "access_key" to accessKey))
+        val response = method("docs.add", mapOf("owner_id" to ownerId, "doc_id" to docId, "access_key" to accessKey))
         return json.decodeFromString<DocsAddResponse>(response)
     }
 
@@ -36,7 +36,7 @@ class Docs(
      * @param docId Document ID.
      */
     suspend fun delete(ownerId: Long, docId: Long): BaseOkResponse {
-        val response = method("delete", mapOf("owner_id" to ownerId, "doc_id" to docId))
+        val response = method("docs.delete", mapOf("owner_id" to ownerId, "doc_id" to docId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -50,7 +50,7 @@ class Docs(
      * @param tags Document tags.
      */
     suspend fun edit(docId: Long, title: String, ownerId: Long? = null, tags: List<String>? = null): BaseOkResponse {
-        val response = method("edit", mapOf("owner_id" to ownerId, "doc_id" to docId, "title" to title, "tags" to tags))
+        val response = method("docs.edit", mapOf("owner_id" to ownerId, "doc_id" to docId, "title" to title, "tags" to tags))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -65,7 +65,7 @@ class Docs(
      * @param returnTags 
      */
     suspend fun get(count: Int? = null, offset: Int? = null, type: Int? = 0, ownerId: Long? = null, returnTags: Boolean? = false): DocsGetResponse {
-        val response = method("get", mapOf("count" to count, "offset" to offset, "type" to type, "owner_id" to ownerId, "return_tags" to returnTags))
+        val response = method("docs.get", mapOf("count" to count, "offset" to offset, "type" to type, "owner_id" to ownerId, "return_tags" to returnTags))
         return json.decodeFromString<DocsGetResponse>(response)
     }
 
@@ -77,7 +77,7 @@ class Docs(
      * @param returnTags 
      */
     suspend fun getById(docs: List<String>, returnTags: Boolean? = false): DocsGetByIdResponse {
-        val response = method("getById", mapOf("docs" to docs, "return_tags" to returnTags))
+        val response = method("docs.getById", mapOf("docs" to docs, "return_tags" to returnTags))
         return json.decodeFromString<DocsGetByIdResponse>(response)
     }
 
@@ -89,7 +89,7 @@ class Docs(
      * @param peerId Destination ID. "For user: 'User ID', e.g. '12345'. For chat: '2000000000' + 'Chat ID', e.g. '2000000001'. For community: '- Community ID', e.g. '-12345'. ".
      */
     suspend fun getMessagesUploadServer(type: String? = "doc", peerId: Long? = null): DocsGetUploadServerResponse {
-        val response = method("getMessagesUploadServer", mapOf("type" to type, "peer_id" to peerId))
+        val response = method("docs.getMessagesUploadServer", mapOf("type" to type, "peer_id" to peerId))
         return json.decodeFromString<DocsGetUploadServerResponse>(response)
     }
 
@@ -100,7 +100,7 @@ class Docs(
      * @param ownerId ID of the user or community that owns the documents. Use a negative value to designate a community ID.
      */
     suspend fun getTypes(ownerId: Long? = null): DocsGetTypesResponse {
-        val response = method("getTypes", mapOf("owner_id" to ownerId))
+        val response = method("docs.getTypes", mapOf("owner_id" to ownerId))
         return json.decodeFromString<DocsGetTypesResponse>(response)
     }
 
@@ -111,7 +111,7 @@ class Docs(
      * @param groupId Community ID (if the document will be uploaded to the community).
      */
     suspend fun getUploadServer(groupId: Long? = null): DocsGetUploadServerResponse {
-        val response = method("getUploadServer", mapOf("group_id" to groupId))
+        val response = method("docs.getUploadServer", mapOf("group_id" to groupId))
         return json.decodeFromString<DocsGetUploadServerResponse>(response)
     }
 
@@ -122,7 +122,7 @@ class Docs(
      * @param groupId Community ID (if the document will be uploaded to the community).
      */
     suspend fun getWallUploadServer(groupId: Long? = null): BaseGetUploadServerResponse {
-        val response = method("getWallUploadServer", mapOf("group_id" to groupId))
+        val response = method("docs.getWallUploadServer", mapOf("group_id" to groupId))
         return json.decodeFromString<BaseGetUploadServerResponse>(response)
     }
 
@@ -136,7 +136,7 @@ class Docs(
      * @param returnTags 
      */
     suspend fun save(file: String, title: String? = null, tags: String? = null, returnTags: Boolean? = false): DocsSaveResponse {
-        val response = method("save", mapOf("file" to file, "title" to title, "tags" to tags, "return_tags" to returnTags))
+        val response = method("docs.save", mapOf("file" to file, "title" to title, "tags" to tags, "return_tags" to returnTags))
         return json.decodeFromString<DocsSaveResponse>(response)
     }
 
@@ -151,7 +151,7 @@ class Docs(
      * @param returnTags 
      */
     suspend fun search(q: String? = null, searchOwn: Boolean? = false, count: Int? = 20, offset: Int? = null, returnTags: Boolean? = false): DocsSearchResponse {
-        val response = method("search", mapOf("q" to q, "search_own" to searchOwn, "count" to count, "offset" to offset, "return_tags" to returnTags))
+        val response = method("docs.search", mapOf("q" to q, "search_own" to searchOwn, "count" to count, "offset" to offset, "return_tags" to returnTags))
         return json.decodeFromString<DocsSearchResponse>(response)
     }
 

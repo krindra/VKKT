@@ -8,10 +8,10 @@ package ru.krindra.vknorthtypes.methods
 import ru.krindra.vknorthtypes.types.newsfeed.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
-import ru.krindra.vknorthtypes.types.base.BaseOkResponse
-import ru.krindra.vknorthtypes.types.users.UsersFields
 import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
+import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.types.base.BaseUserGroupFields
+import ru.krindra.vknorthtypes.types.users.UsersFields
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
 
 class Newsfeed(
@@ -26,7 +26,7 @@ class Newsfeed(
      * @param groupIds 
      */
     suspend fun addBan(userIds: List<Int>? = null, groupIds: List<Int>? = null): BaseBoolResponse {
-        val response = method("addBan", mapOf("user_ids" to userIds, "group_ids" to groupIds))
+        val response = method("newsfeed.addBan", mapOf("user_ids" to userIds, "group_ids" to groupIds))
         return json.decodeFromString<BaseBoolResponse>(response)
     }
 
@@ -38,7 +38,7 @@ class Newsfeed(
      * @param groupIds 
      */
     suspend fun deleteBan(userIds: List<Int>? = null, groupIds: List<Int>? = null): BaseOkResponse {
-        val response = method("deleteBan", mapOf("user_ids" to userIds, "group_ids" to groupIds))
+        val response = method("newsfeed.deleteBan", mapOf("user_ids" to userIds, "group_ids" to groupIds))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -47,7 +47,7 @@ class Newsfeed(
      * @param listId 
      */
     suspend fun deleteList(listId: Long): BaseOkResponse {
-        val response = method("deleteList", mapOf("list_id" to listId))
+        val response = method("newsfeed.deleteList", mapOf("list_id" to listId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -67,7 +67,7 @@ class Newsfeed(
      * @param section 
      */
     suspend fun get(filters: List<NewsfeedNewsfeedItemType>? = null, returnBanned: Boolean? = false, startTime: Int? = null, endTime: Int? = null, maxPhotos: Int? = null, sourceIds: String? = null, startFrom: String? = null, count: Int? = null, fields: List<BaseUserGroupFields>? = null, section: String? = null): NewsfeedGenericResponse {
-        val response = method("get", mapOf("filters" to filters, "return_banned" to returnBanned, "start_time" to startTime, "end_time" to endTime, "max_photos" to maxPhotos, "source_ids" to sourceIds, "start_from" to startFrom, "count" to count, "fields" to fields, "section" to section))
+        val response = method("newsfeed.get", mapOf("filters" to filters, "return_banned" to returnBanned, "start_time" to startTime, "end_time" to endTime, "max_photos" to maxPhotos, "source_ids" to sourceIds, "start_from" to startFrom, "count" to count, "fields" to fields, "section" to section))
         return json.decodeFromString<NewsfeedGenericResponse>(response)
     }
 
@@ -80,7 +80,7 @@ class Newsfeed(
      * @param nameCase Case for declension of user name and surname: 'nom' - nominative (default), 'gen' - genitive , 'dat' - dative, 'acc' - accusative , 'ins' - instrumental , 'abl' - prepositional.
      */
     suspend fun getBanned(extended: Boolean? = false, fields: List<UsersFields>? = null, nameCase: String? = null): GetbannedResponse {
-        val response = method("getBanned", mapOf("extended" to extended, "fields" to fields, "name_case" to nameCase))
+        val response = method("newsfeed.getBanned", mapOf("extended" to extended, "fields" to fields, "name_case" to nameCase))
         return GetbannedResponse(response, json)
     }
     class GetbannedResponse(
@@ -112,7 +112,7 @@ class Newsfeed(
      * @param fields Additional fields of [vk.com/dev/fields|profiles] and [vk.com/dev/fields_groups|communities] to return.
      */
     suspend fun getComments(count: Int? = 30, filters: List<NewsfeedCommentsFilters>? = null, reposts: String? = null, startTime: Int? = null, endTime: Int? = null, lastCommentsCount: Int? = 0, startFrom: String? = null, fields: List<BaseUserGroupFields>? = null): NewsfeedGetCommentsResponse {
-        val response = method("getComments", mapOf("count" to count, "filters" to filters, "reposts" to reposts, "start_time" to startTime, "end_time" to endTime, "last_comments_count" to lastCommentsCount, "start_from" to startFrom, "fields" to fields))
+        val response = method("newsfeed.getComments", mapOf("count" to count, "filters" to filters, "reposts" to reposts, "start_time" to startTime, "end_time" to endTime, "last_comments_count" to lastCommentsCount, "start_from" to startFrom, "fields" to fields))
         return json.decodeFromString<NewsfeedGetCommentsResponse>(response)
     }
 
@@ -124,7 +124,7 @@ class Newsfeed(
      * @param extended Return additional list info.
      */
     suspend fun getLists(listIds: List<Int>? = null, extended: Boolean? = false): GetlistsResponse {
-        val response = method("getLists", mapOf("list_ids" to listIds, "extended" to extended))
+        val response = method("newsfeed.getLists", mapOf("list_ids" to listIds, "extended" to extended))
         return GetlistsResponse(response, json)
     }
     class GetlistsResponse(
@@ -153,7 +153,7 @@ class Newsfeed(
      * @param count Number of posts to return.
      */
     suspend fun getMentions(ownerId: Long? = null, startTime: Int? = null, endTime: Int? = null, offset: Int? = null, count: Int? = 20): NewsfeedGetMentionsResponse {
-        val response = method("getMentions", mapOf("owner_id" to ownerId, "start_time" to startTime, "end_time" to endTime, "offset" to offset, "count" to count))
+        val response = method("newsfeed.getMentions", mapOf("owner_id" to ownerId, "start_time" to startTime, "end_time" to endTime, "offset" to offset, "count" to count))
         return json.decodeFromString<NewsfeedGetMentionsResponse>(response)
     }
 
@@ -169,7 +169,7 @@ class Newsfeed(
      * @param fields Additional fields of [vk.com/dev/fields|profiles] and [vk.com/dev/fields_groups|communities] to return.
      */
     suspend fun getRecommended(startTime: Int? = null, endTime: Int? = null, maxPhotos: Int? = null, startFrom: String? = null, count: Int? = null, fields: List<BaseUserGroupFields>? = null): NewsfeedGenericResponse {
-        val response = method("getRecommended", mapOf("start_time" to startTime, "end_time" to endTime, "max_photos" to maxPhotos, "start_from" to startFrom, "count" to count, "fields" to fields))
+        val response = method("newsfeed.getRecommended", mapOf("start_time" to startTime, "end_time" to endTime, "max_photos" to maxPhotos, "start_from" to startFrom, "count" to count, "fields" to fields))
         return json.decodeFromString<NewsfeedGenericResponse>(response)
     }
 
@@ -183,7 +183,7 @@ class Newsfeed(
      * @param fields list of extra fields to be returned. See available fields for [vk.com/dev/fields|users] and [vk.com/dev/fields_groups|communities].
      */
     suspend fun getSuggestedSources(offset: Int? = null, count: Int? = 20, shuffle: Boolean? = false, fields: List<BaseUserGroupFields>? = null): NewsfeedGetSuggestedSourcesResponse {
-        val response = method("getSuggestedSources", mapOf("offset" to offset, "count" to count, "shuffle" to shuffle, "fields" to fields))
+        val response = method("newsfeed.getSuggestedSources", mapOf("offset" to offset, "count" to count, "shuffle" to shuffle, "fields" to fields))
         return json.decodeFromString<NewsfeedGetSuggestedSourcesResponse>(response)
     }
 
@@ -196,7 +196,7 @@ class Newsfeed(
      * @param itemId Item identifier.
      */
     suspend fun ignoreItem(type: String, ownerId: Long? = 0, itemId: Long? = 0): NewsfeedIgnoreItemResponse {
-        val response = method("ignoreItem", mapOf("type" to type, "owner_id" to ownerId, "item_id" to itemId))
+        val response = method("newsfeed.ignoreItem", mapOf("type" to type, "owner_id" to ownerId, "item_id" to itemId))
         return json.decodeFromString<NewsfeedIgnoreItemResponse>(response)
     }
 
@@ -210,7 +210,7 @@ class Newsfeed(
      * @param noReposts reposts display on and off ('1' is for off).
      */
     suspend fun saveList(title: String, listId: Long? = null, sourceIds: List<Int>? = null, noReposts: Boolean? = false): NewsfeedSaveListResponse {
-        val response = method("saveList", mapOf("list_id" to listId, "title" to title, "source_ids" to sourceIds, "no_reposts" to noReposts))
+        val response = method("newsfeed.saveList", mapOf("list_id" to listId, "title" to title, "source_ids" to sourceIds, "no_reposts" to noReposts))
         return json.decodeFromString<NewsfeedSaveListResponse>(response)
     }
 
@@ -229,7 +229,7 @@ class Newsfeed(
      * @param fields Additional fields of [vk.com/dev/fields|profiles] and [vk.com/dev/fields_groups|communities] to return.
      */
     suspend fun search(q: String? = null, extended: Boolean? = false, count: Int? = 30, latitude: Double? = null, longitude: Double? = null, startTime: Int? = null, endTime: Int? = null, startFrom: String? = null, fields: List<BaseUserGroupFields>? = null): SearchResponse {
-        val response = method("search", mapOf("q" to q, "extended" to extended, "count" to count, "latitude" to latitude, "longitude" to longitude, "start_time" to startTime, "end_time" to endTime, "start_from" to startFrom, "fields" to fields))
+        val response = method("newsfeed.search", mapOf("q" to q, "extended" to extended, "count" to count, "latitude" to latitude, "longitude" to longitude, "start_time" to startTime, "end_time" to endTime, "start_from" to startFrom, "fields" to fields))
         return SearchResponse(response, json)
     }
     class SearchResponse(
@@ -267,7 +267,7 @@ class Newsfeed(
      * @param trackCode Track code of unignored item.
      */
     suspend fun unignoreItem(type: String, ownerId: Long, itemId: Long, trackCode: String? = null): BaseOkResponse {
-        val response = method("unignoreItem", mapOf("type" to type, "owner_id" to ownerId, "item_id" to itemId, "track_code" to trackCode))
+        val response = method("newsfeed.unignoreItem", mapOf("type" to type, "owner_id" to ownerId, "item_id" to itemId, "track_code" to trackCode))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -280,7 +280,7 @@ class Newsfeed(
      * @param itemId Object ID.
      */
     suspend fun unsubscribe(type: String, itemId: Long, ownerId: Long? = null): BaseOkResponse {
-        val response = method("unsubscribe", mapOf("type" to type, "owner_id" to ownerId, "item_id" to itemId))
+        val response = method("newsfeed.unsubscribe", mapOf("type" to type, "owner_id" to ownerId, "item_id" to itemId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 

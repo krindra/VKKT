@@ -18,7 +18,7 @@ class Adsweb(
      * @param officeId 
      */
     suspend fun getAdCategories(officeId: Long): AdswebGetAdCategoriesResponse {
-        val response = method("getAdCategories", mapOf("office_id" to officeId))
+        val response = method("adsweb.getAdCategories", mapOf("office_id" to officeId))
         return json.decodeFromString<AdswebGetAdCategoriesResponse>(response)
     }
 
@@ -26,7 +26,7 @@ class Adsweb(
      *
      */
     suspend fun getAdUnitCode(): AdswebGetAdUnitCodeResponse {
-        val response = method("getAdUnitCode", mapOf())
+        val response = method("adsweb.getAdUnitCode", mapOf())
         return json.decodeFromString<AdswebGetAdUnitCodeResponse>(response)
     }
 
@@ -40,7 +40,7 @@ class Adsweb(
      * @param offset 
      */
     suspend fun getAdUnits(officeId: Long, sitesIds: String? = null, adUnitsIds: String? = null, fields: String? = null, limit: Int? = null, offset: Int? = 0): AdswebGetAdUnitsResponse {
-        val response = method("getAdUnits", mapOf("office_id" to officeId, "sites_ids" to sitesIds, "ad_units_ids" to adUnitsIds, "fields" to fields, "limit" to limit, "offset" to offset))
+        val response = method("adsweb.getAdUnits", mapOf("office_id" to officeId, "sites_ids" to sitesIds, "ad_units_ids" to adUnitsIds, "fields" to fields, "limit" to limit, "offset" to offset))
         return json.decodeFromString<AdswebGetAdUnitsResponse>(response)
     }
 
@@ -52,7 +52,7 @@ class Adsweb(
      * @param offset 
      */
     suspend fun getFraudHistory(officeId: Long, sitesIds: String? = null, limit: Int? = null, offset: Int? = 0): AdswebGetFraudHistoryResponse {
-        val response = method("getFraudHistory", mapOf("office_id" to officeId, "sites_ids" to sitesIds, "limit" to limit, "offset" to offset))
+        val response = method("adsweb.getFraudHistory", mapOf("office_id" to officeId, "sites_ids" to sitesIds, "limit" to limit, "offset" to offset))
         return json.decodeFromString<AdswebGetFraudHistoryResponse>(response)
     }
 
@@ -65,7 +65,7 @@ class Adsweb(
      * @param offset 
      */
     suspend fun getSites(officeId: Long, sitesIds: String? = null, fields: String? = null, limit: Int? = null, offset: Int? = 0): AdswebGetSitesResponse {
-        val response = method("getSites", mapOf("office_id" to officeId, "sites_ids" to sitesIds, "fields" to fields, "limit" to limit, "offset" to offset))
+        val response = method("adsweb.getSites", mapOf("office_id" to officeId, "sites_ids" to sitesIds, "fields" to fields, "limit" to limit, "offset" to offset))
         return json.decodeFromString<AdswebGetSitesResponse>(response)
     }
 
@@ -82,7 +82,7 @@ class Adsweb(
      * @param pageId 
      */
     suspend fun getStatistics(officeId: Long, idsType: String, ids: String, period: String, dateFrom: String, dateTo: String, fields: String? = null, limit: Int? = null, pageId: String? = null): AdswebGetStatisticsResponse {
-        val response = method("getStatistics", mapOf("office_id" to officeId, "ids_type" to idsType, "ids" to ids, "period" to period, "date_from" to dateFrom, "date_to" to dateTo, "fields" to fields, "limit" to limit, "page_id" to pageId))
+        val response = method("adsweb.getStatistics", mapOf("office_id" to officeId, "ids_type" to idsType, "ids" to ids, "period" to period, "date_from" to dateFrom, "date_to" to dateTo, "fields" to fields, "limit" to limit, "page_id" to pageId))
         return json.decodeFromString<AdswebGetStatisticsResponse>(response)
     }
 

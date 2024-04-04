@@ -24,7 +24,7 @@ class Prettycards(
      * @param button 
      */
     suspend fun create(ownerId: Long, photo: String, title: String, link: String, price: String? = null, priceOld: String? = null, button: String? = null): PrettyCardsCreateResponse {
-        val response = method("create", mapOf("owner_id" to ownerId, "photo" to photo, "title" to title, "link" to link, "price" to price, "price_old" to priceOld, "button" to button))
+        val response = method("prettyCards.create", mapOf("owner_id" to ownerId, "photo" to photo, "title" to title, "link" to link, "price" to price, "price_old" to priceOld, "button" to button))
         return json.decodeFromString<PrettyCardsCreateResponse>(response)
     }
 
@@ -34,7 +34,7 @@ class Prettycards(
      * @param cardId 
      */
     suspend fun delete(ownerId: Long, cardId: Long): PrettyCardsDeleteResponse {
-        val response = method("delete", mapOf("owner_id" to ownerId, "card_id" to cardId))
+        val response = method("prettyCards.delete", mapOf("owner_id" to ownerId, "card_id" to cardId))
         return json.decodeFromString<PrettyCardsDeleteResponse>(response)
     }
 
@@ -50,7 +50,7 @@ class Prettycards(
      * @param button 
      */
     suspend fun edit(ownerId: Long, cardId: Long, photo: String? = null, title: String? = null, link: String? = null, price: String? = null, priceOld: String? = null, button: String? = null): PrettyCardsEditResponse {
-        val response = method("edit", mapOf("owner_id" to ownerId, "card_id" to cardId, "photo" to photo, "title" to title, "link" to link, "price" to price, "price_old" to priceOld, "button" to button))
+        val response = method("prettyCards.edit", mapOf("owner_id" to ownerId, "card_id" to cardId, "photo" to photo, "title" to title, "link" to link, "price" to price, "price_old" to priceOld, "button" to button))
         return json.decodeFromString<PrettyCardsEditResponse>(response)
     }
 
@@ -61,7 +61,7 @@ class Prettycards(
      * @param count 
      */
     suspend fun get(ownerId: Long, offset: Int? = 0, count: Int? = 10): PrettyCardsGetResponse {
-        val response = method("get", mapOf("owner_id" to ownerId, "offset" to offset, "count" to count))
+        val response = method("prettyCards.get", mapOf("owner_id" to ownerId, "offset" to offset, "count" to count))
         return json.decodeFromString<PrettyCardsGetResponse>(response)
     }
 
@@ -71,7 +71,7 @@ class Prettycards(
      * @param cardIds 
      */
     suspend fun getById(ownerId: Long, cardIds: List<Int>): PrettyCardsGetByIdResponse {
-        val response = method("getById", mapOf("owner_id" to ownerId, "card_ids" to cardIds))
+        val response = method("prettyCards.getById", mapOf("owner_id" to ownerId, "card_ids" to cardIds))
         return json.decodeFromString<PrettyCardsGetByIdResponse>(response)
     }
 
@@ -79,7 +79,7 @@ class Prettycards(
      *
      */
     suspend fun getUploadURL(): PrettyCardsGetUploadURLResponse {
-        val response = method("getUploadURL", mapOf())
+        val response = method("prettyCards.getUploadURL", mapOf())
         return json.decodeFromString<PrettyCardsGetUploadURLResponse>(response)
     }
 

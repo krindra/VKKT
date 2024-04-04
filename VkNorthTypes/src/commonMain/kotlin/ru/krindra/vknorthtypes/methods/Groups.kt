@@ -8,11 +8,11 @@ package ru.krindra.vknorthtypes.methods
 import ru.krindra.vknorthtypes.types.groups.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
-import ru.krindra.vknorthtypes.types.address.AddressFields
-import ru.krindra.vknorthtypes.types.base.BaseOkResponse
-import ru.krindra.vknorthtypes.types.users.UsersFields
 import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
+import ru.krindra.vknorthtypes.types.base.BaseOkResponse
+import ru.krindra.vknorthtypes.types.address.AddressFields
 import ru.krindra.vknorthtypes.types.base.BaseUserGroupFields
+import ru.krindra.vknorthtypes.types.users.UsersFields
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
 
 class Groups(
@@ -35,7 +35,7 @@ class Groups(
      * @param isMainAddress 
      */
     suspend fun addAddress(groupId: Long, title: String, address: String, cityId: Long, latitude: Double, longitude: Double, additionalAddress: String? = null, metroId: Long? = null, phone: String? = null, workInfoStatus: String? = "no_information", timetable: String? = null, isMainAddress: Boolean? = false): GroupsAddAddressResponse {
-        val response = method("addAddress", mapOf("group_id" to groupId, "title" to title, "address" to address, "additional_address" to additionalAddress, "city_id" to cityId, "metro_id" to metroId, "latitude" to latitude, "longitude" to longitude, "phone" to phone, "work_info_status" to workInfoStatus, "timetable" to timetable, "is_main_address" to isMainAddress))
+        val response = method("groups.addAddress", mapOf("group_id" to groupId, "title" to title, "address" to address, "additional_address" to additionalAddress, "city_id" to cityId, "metro_id" to metroId, "latitude" to latitude, "longitude" to longitude, "phone" to phone, "work_info_status" to workInfoStatus, "timetable" to timetable, "is_main_address" to isMainAddress))
         return json.decodeFromString<GroupsAddAddressResponse>(response)
     }
 
@@ -47,7 +47,7 @@ class Groups(
      * @param secretKey 
      */
     suspend fun addCallbackServer(groupId: Long, url: String, title: String, secretKey: String? = null): GroupsAddCallbackServerResponse {
-        val response = method("addCallbackServer", mapOf("group_id" to groupId, "url" to url, "title" to title, "secret_key" to secretKey))
+        val response = method("groups.addCallbackServer", mapOf("group_id" to groupId, "url" to url, "title" to title, "secret_key" to secretKey))
         return json.decodeFromString<GroupsAddCallbackServerResponse>(response)
     }
 
@@ -60,7 +60,7 @@ class Groups(
      * @param text Description text for the link.
      */
     suspend fun addLink(groupId: Long, link: String, text: String? = null): GroupsAddLinkResponse {
-        val response = method("addLink", mapOf("group_id" to groupId, "link" to link, "text" to text))
+        val response = method("groups.addLink", mapOf("group_id" to groupId, "link" to link, "text" to text))
         return json.decodeFromString<GroupsAddLinkResponse>(response)
     }
 
@@ -72,7 +72,7 @@ class Groups(
      * @param userId User ID.
      */
     suspend fun approveRequest(groupId: Long, userId: Long): BaseOkResponse {
-        val response = method("approveRequest", mapOf("group_id" to groupId, "user_id" to userId))
+        val response = method("groups.approveRequest", mapOf("group_id" to groupId, "user_id" to userId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -86,7 +86,7 @@ class Groups(
      * @param commentVisible 
      */
     suspend fun ban(groupId: Long, ownerId: Long? = null, endDate: Int? = null, reason: Int? = null, comment: String? = null, commentVisible: Boolean? = false): BaseOkResponse {
-        val response = method("ban", mapOf("group_id" to groupId, "owner_id" to ownerId, "end_date" to endDate, "reason" to reason, "comment" to comment, "comment_visible" to commentVisible))
+        val response = method("groups.ban", mapOf("group_id" to groupId, "owner_id" to ownerId, "end_date" to endDate, "reason" to reason, "comment" to comment, "comment_visible" to commentVisible))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -102,7 +102,7 @@ class Groups(
      * @param subtype Public page subtype. Possible values: *'1' - place or small business,, *'2' - company, organization or website,, *'3' - famous person or group of people,, *'4' - product or work of art.
      */
     suspend fun create(title: String, description: String? = null, type: String? = "group", publicCategory: Int? = null, publicSubcategory: Int? = null, subtype: Int? = null): GroupsCreateResponse {
-        val response = method("create", mapOf("title" to title, "description" to description, "type" to type, "public_category" to publicCategory, "public_subcategory" to publicSubcategory, "subtype" to subtype))
+        val response = method("groups.create", mapOf("title" to title, "description" to description, "type" to type, "public_category" to publicCategory, "public_subcategory" to publicSubcategory, "subtype" to subtype))
         return json.decodeFromString<GroupsCreateResponse>(response)
     }
 
@@ -112,7 +112,7 @@ class Groups(
      * @param addressId 
      */
     suspend fun deleteAddress(groupId: Long, addressId: Long): BaseOkResponse {
-        val response = method("deleteAddress", mapOf("group_id" to groupId, "address_id" to addressId))
+        val response = method("groups.deleteAddress", mapOf("group_id" to groupId, "address_id" to addressId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -122,7 +122,7 @@ class Groups(
      * @param serverId 
      */
     suspend fun deleteCallbackServer(groupId: Long, serverId: Long): BaseOkResponse {
-        val response = method("deleteCallbackServer", mapOf("group_id" to groupId, "server_id" to serverId))
+        val response = method("groups.deleteCallbackServer", mapOf("group_id" to groupId, "server_id" to serverId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -134,7 +134,7 @@ class Groups(
      * @param linkId Link ID.
      */
     suspend fun deleteLink(groupId: Long, linkId: Long): BaseOkResponse {
-        val response = method("deleteLink", mapOf("group_id" to groupId, "link_id" to linkId))
+        val response = method("groups.deleteLink", mapOf("group_id" to groupId, "link_id" to linkId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -143,7 +143,7 @@ class Groups(
      * @param groupId 
      */
     suspend fun disableOnline(groupId: Long): BaseOkResponse {
-        val response = method("disableOnline", mapOf("group_id" to groupId))
+        val response = method("groups.disableOnline", mapOf("group_id" to groupId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -199,7 +199,7 @@ class Groups(
      * @param city City of the community.
      */
     suspend fun edit(groupId: Long, title: String? = null, description: String? = null, screenName: String? = null, access: Int? = null, website: String? = null, subject: Int? = null, email: String? = null, phone: String? = null, rss: String? = null, eventStartDate: Int? = null, eventFinishDate: Int? = null, eventGroupId: Long? = null, publicCategory: Int? = null, publicSubcategory: Int? = null, publicDate: String? = null, wall: Int? = null, topics: Int? = null, photos: Int? = null, video: Int? = null, audio: Int? = null, links: Boolean? = false, events: Boolean? = false, places: Boolean? = false, contacts: Boolean? = false, docs: Int? = null, wiki: Int? = null, messages: Boolean? = false, articles: Boolean? = false, addresses: Boolean? = false, ageLimits: Int? = 1, market: Boolean? = false, marketButtons: String? = null, marketComments: Boolean? = false, marketCountry: List<Int>? = null, marketCity: List<Int>? = null, marketCurrency: Int? = null, marketContact: Int? = null, marketWiki: Int? = null, obsceneFilter: Boolean? = false, obsceneStopwords: Boolean? = false, obsceneWords: List<String>? = null, mainSection: Int? = null, secondarySection: Int? = null, country: Int? = null, city: Int? = null): BaseOkResponse {
-        val response = method("edit", mapOf("group_id" to groupId, "title" to title, "description" to description, "screen_name" to screenName, "access" to access, "website" to website, "subject" to subject, "email" to email, "phone" to phone, "rss" to rss, "event_start_date" to eventStartDate, "event_finish_date" to eventFinishDate, "event_group_id" to eventGroupId, "public_category" to publicCategory, "public_subcategory" to publicSubcategory, "public_date" to publicDate, "wall" to wall, "topics" to topics, "photos" to photos, "video" to video, "audio" to audio, "links" to links, "events" to events, "places" to places, "contacts" to contacts, "docs" to docs, "wiki" to wiki, "messages" to messages, "articles" to articles, "addresses" to addresses, "age_limits" to ageLimits, "market" to market, "market_buttons" to marketButtons, "market_comments" to marketComments, "market_country" to marketCountry, "market_city" to marketCity, "market_currency" to marketCurrency, "market_contact" to marketContact, "market_wiki" to marketWiki, "obscene_filter" to obsceneFilter, "obscene_stopwords" to obsceneStopwords, "obscene_words" to obsceneWords, "main_section" to mainSection, "secondary_section" to secondarySection, "country" to country, "city" to city))
+        val response = method("groups.edit", mapOf("group_id" to groupId, "title" to title, "description" to description, "screen_name" to screenName, "access" to access, "website" to website, "subject" to subject, "email" to email, "phone" to phone, "rss" to rss, "event_start_date" to eventStartDate, "event_finish_date" to eventFinishDate, "event_group_id" to eventGroupId, "public_category" to publicCategory, "public_subcategory" to publicSubcategory, "public_date" to publicDate, "wall" to wall, "topics" to topics, "photos" to photos, "video" to video, "audio" to audio, "links" to links, "events" to events, "places" to places, "contacts" to contacts, "docs" to docs, "wiki" to wiki, "messages" to messages, "articles" to articles, "addresses" to addresses, "age_limits" to ageLimits, "market" to market, "market_buttons" to marketButtons, "market_comments" to marketComments, "market_country" to marketCountry, "market_city" to marketCity, "market_currency" to marketCurrency, "market_contact" to marketContact, "market_wiki" to marketWiki, "obscene_filter" to obsceneFilter, "obscene_stopwords" to obsceneStopwords, "obscene_words" to obsceneWords, "main_section" to mainSection, "secondary_section" to secondarySection, "country" to country, "city" to city))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -220,7 +220,7 @@ class Groups(
      * @param isMainAddress 
      */
     suspend fun editAddress(groupId: Long, addressId: Long, title: String? = null, address: String? = null, additionalAddress: String? = null, cityId: Long? = null, metroId: Long? = null, latitude: Double? = null, longitude: Double? = null, phone: String? = null, workInfoStatus: String? = null, timetable: String? = null, isMainAddress: Boolean? = false): GroupsEditAddressResponse {
-        val response = method("editAddress", mapOf("group_id" to groupId, "address_id" to addressId, "title" to title, "address" to address, "additional_address" to additionalAddress, "city_id" to cityId, "metro_id" to metroId, "latitude" to latitude, "longitude" to longitude, "phone" to phone, "work_info_status" to workInfoStatus, "timetable" to timetable, "is_main_address" to isMainAddress))
+        val response = method("groups.editAddress", mapOf("group_id" to groupId, "address_id" to addressId, "title" to title, "address" to address, "additional_address" to additionalAddress, "city_id" to cityId, "metro_id" to metroId, "latitude" to latitude, "longitude" to longitude, "phone" to phone, "work_info_status" to workInfoStatus, "timetable" to timetable, "is_main_address" to isMainAddress))
         return json.decodeFromString<GroupsEditAddressResponse>(response)
     }
 
@@ -233,7 +233,7 @@ class Groups(
      * @param secretKey 
      */
     suspend fun editCallbackServer(groupId: Long, serverId: Long, url: String, title: String, secretKey: String? = null): BaseOkResponse {
-        val response = method("editCallbackServer", mapOf("group_id" to groupId, "server_id" to serverId, "url" to url, "title" to title, "secret_key" to secretKey))
+        val response = method("groups.editCallbackServer", mapOf("group_id" to groupId, "server_id" to serverId, "url" to url, "title" to title, "secret_key" to secretKey))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -246,7 +246,7 @@ class Groups(
      * @param text New description text for the link.
      */
     suspend fun editLink(groupId: Long, linkId: Long, text: String? = null): BaseOkResponse {
-        val response = method("editLink", mapOf("group_id" to groupId, "link_id" to linkId, "text" to text))
+        val response = method("groups.editLink", mapOf("group_id" to groupId, "link_id" to linkId, "text" to text))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -264,7 +264,7 @@ class Groups(
      * @param contactEmail Contact e-mail.
      */
     suspend fun editManager(groupId: Long, userId: Long, role: String? = null, isCallOperator: Boolean? = false, isContact: Boolean? = false, contactPosition: String? = null, contactPhone: String? = null, contactEmail: String? = null): BaseOkResponse {
-        val response = method("editManager", mapOf("group_id" to groupId, "user_id" to userId, "role" to role, "is_call_operator" to isCallOperator, "is_contact" to isContact, "contact_position" to contactPosition, "contact_phone" to contactPhone, "contact_email" to contactEmail))
+        val response = method("groups.editManager", mapOf("group_id" to groupId, "user_id" to userId, "role" to role, "is_call_operator" to isCallOperator, "is_contact" to isContact, "contact_position" to contactPosition, "contact_phone" to contactPhone, "contact_email" to contactEmail))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -273,7 +273,7 @@ class Groups(
      * @param groupId 
      */
     suspend fun enableOnline(groupId: Long): BaseOkResponse {
-        val response = method("enableOnline", mapOf("group_id" to groupId))
+        val response = method("groups.enableOnline", mapOf("group_id" to groupId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -289,7 +289,7 @@ class Groups(
      * @param count Number of communities to return.
      */
     suspend fun get(userId: Long? = null, extended: Boolean? = false, filter: List<GroupsFilter>? = null, fields: List<GroupsFields>? = null, offset: Int? = null, count: Int? = null): GetResponse {
-        val response = method("get", mapOf("user_id" to userId, "extended" to extended, "filter" to filter, "fields" to fields, "offset" to offset, "count" to count))
+        val response = method("groups.get", mapOf("user_id" to userId, "extended" to extended, "filter" to filter, "fields" to fields, "offset" to offset, "count" to count))
         return GetResponse(response, json)
     }
     class GetResponse(
@@ -320,7 +320,7 @@ class Groups(
      * @param fields Address fields.
      */
     suspend fun getAddresses(groupId: Long, addressIds: List<Int>? = null, latitude: Double? = null, longitude: Double? = null, offset: Int? = null, count: Int? = 10, fields: List<AddressFields>? = null): GroupsGetAddressesResponse {
-        val response = method("getAddresses", mapOf("group_id" to groupId, "address_ids" to addressIds, "latitude" to latitude, "longitude" to longitude, "offset" to offset, "count" to count, "fields" to fields))
+        val response = method("groups.getAddresses", mapOf("group_id" to groupId, "address_ids" to addressIds, "latitude" to latitude, "longitude" to longitude, "offset" to offset, "count" to count, "fields" to fields))
         return json.decodeFromString<GroupsGetAddressesResponse>(response)
     }
 
@@ -335,7 +335,7 @@ class Groups(
      * @param ownerId 
      */
     suspend fun getBanned(groupId: Long, offset: Int? = null, count: Int? = 20, fields: List<BaseUserGroupFields>? = null, ownerId: Long? = null): GroupsGetBannedResponse {
-        val response = method("getBanned", mapOf("group_id" to groupId, "offset" to offset, "count" to count, "fields" to fields, "owner_id" to ownerId))
+        val response = method("groups.getBanned", mapOf("group_id" to groupId, "offset" to offset, "count" to count, "fields" to fields, "owner_id" to ownerId))
         return json.decodeFromString<GroupsGetBannedResponse>(response)
     }
 
@@ -348,7 +348,7 @@ class Groups(
      * @param fields Group fields to return.
      */
     suspend fun getById(groupIds: List<String>? = null, groupId: List<Any>? = null, fields: List<GroupsFields>? = null): GroupsGetByIdObjectResponse {
-        val response = method("getById", mapOf("group_ids" to groupIds, "group_id" to groupId, "fields" to fields))
+        val response = method("groups.getById", mapOf("group_ids" to groupIds, "group_id" to groupId, "fields" to fields))
         return json.decodeFromString<GroupsGetByIdObjectResponse>(response)
     }
 
@@ -359,7 +359,7 @@ class Groups(
      * @param groupId Community ID.
      */
     suspend fun getCallbackConfirmationCode(groupId: Long): GroupsGetCallbackConfirmationCodeResponse {
-        val response = method("getCallbackConfirmationCode", mapOf("group_id" to groupId))
+        val response = method("groups.getCallbackConfirmationCode", mapOf("group_id" to groupId))
         return json.decodeFromString<GroupsGetCallbackConfirmationCodeResponse>(response)
     }
 
@@ -369,7 +369,7 @@ class Groups(
      * @param serverIds 
      */
     suspend fun getCallbackServers(groupId: Long, serverIds: List<Int>? = null): GroupsGetCallbackServersResponse {
-        val response = method("getCallbackServers", mapOf("group_id" to groupId, "server_ids" to serverIds))
+        val response = method("groups.getCallbackServers", mapOf("group_id" to groupId, "server_ids" to serverIds))
         return json.decodeFromString<GroupsGetCallbackServersResponse>(response)
     }
 
@@ -381,7 +381,7 @@ class Groups(
      * @param serverId Server ID.
      */
     suspend fun getCallbackSettings(groupId: Long, serverId: Long? = null): GroupsGetCallbackSettingsResponse {
-        val response = method("getCallbackSettings", mapOf("group_id" to groupId, "server_id" to serverId))
+        val response = method("groups.getCallbackSettings", mapOf("group_id" to groupId, "server_id" to serverId))
         return json.decodeFromString<GroupsGetCallbackSettingsResponse>(response)
     }
 
@@ -393,7 +393,7 @@ class Groups(
      * @param subcategories 1 - to return subcategories info. By default: 0.
      */
     suspend fun getCatalogInfo(extended: Boolean? = false, subcategories: Boolean? = false): GetcataloginfoResponse {
-        val response = method("getCatalogInfo", mapOf("extended" to extended, "subcategories" to subcategories))
+        val response = method("groups.getCatalogInfo", mapOf("extended" to extended, "subcategories" to subcategories))
         return GetcataloginfoResponse(response, json)
     }
     class GetcataloginfoResponse(
@@ -422,7 +422,7 @@ class Groups(
      * @param nameCase Case for declension of user name and surname. Possible values: *'nom' - nominative (default),, *'gen' - genitive,, *'dat' - dative,, *'acc' - accusative, , *'ins' - instrumental,, *'abl' - prepositional.
      */
     suspend fun getInvitedUsers(groupId: Long, offset: Int? = null, count: Int? = 20, fields: List<UsersFields>? = null, nameCase: String? = null): GroupsGetInvitedUsersResponse {
-        val response = method("getInvitedUsers", mapOf("group_id" to groupId, "offset" to offset, "count" to count, "fields" to fields, "name_case" to nameCase))
+        val response = method("groups.getInvitedUsers", mapOf("group_id" to groupId, "offset" to offset, "count" to count, "fields" to fields, "name_case" to nameCase))
         return json.decodeFromString<GroupsGetInvitedUsersResponse>(response)
     }
 
@@ -435,7 +435,7 @@ class Groups(
      * @param extended '1' - to return additional [vk.com/dev/fields_groups|fields] for communities..
      */
     suspend fun getInvites(offset: Int? = null, count: Int? = 20, extended: Boolean? = false): GetinvitesResponse {
-        val response = method("getInvites", mapOf("offset" to offset, "count" to count, "extended" to extended))
+        val response = method("groups.getInvites", mapOf("offset" to offset, "count" to count, "extended" to extended))
         return GetinvitesResponse(response, json)
     }
     class GetinvitesResponse(
@@ -460,7 +460,7 @@ class Groups(
      * @param groupId Community ID.
      */
     suspend fun getLongPollServer(groupId: Long): GroupsGetLongPollServerResponse {
-        val response = method("getLongPollServer", mapOf("group_id" to groupId))
+        val response = method("groups.getLongPollServer", mapOf("group_id" to groupId))
         return json.decodeFromString<GroupsGetLongPollServerResponse>(response)
     }
 
@@ -471,7 +471,7 @@ class Groups(
      * @param groupId Community ID.
      */
     suspend fun getLongPollSettings(groupId: Long): GroupsGetLongPollSettingsResponse {
-        val response = method("getLongPollSettings", mapOf("group_id" to groupId))
+        val response = method("groups.getLongPollSettings", mapOf("group_id" to groupId))
         return json.decodeFromString<GroupsGetLongPollSettingsResponse>(response)
     }
 
@@ -487,7 +487,7 @@ class Groups(
      * @param filter *'friends' - only friends in this community will be returned,, *'unsure' - only those who pressed 'I may attend' will be returned (if it's an event).
      */
     suspend fun getMembers(groupId: List<Any>? = null, sort: String? = "id_asc", offset: Int? = null, count: Int? = 1000, fields: List<UsersFields>? = null, filter: String? = null): GetmembersResponse {
-        val response = method("getMembers", mapOf("group_id" to groupId, "sort" to sort, "offset" to offset, "count" to count, "fields" to fields, "filter" to filter))
+        val response = method("groups.getMembers", mapOf("group_id" to groupId, "sort" to sort, "offset" to offset, "count" to count, "fields" to fields, "filter" to filter))
         return GetmembersResponse(response, json)
     }
     class GetmembersResponse(
@@ -515,7 +515,7 @@ class Groups(
      * @param groupId 
      */
     suspend fun getOnlineStatus(groupId: Long): GroupsGetOnlineStatusResponse {
-        val response = method("getOnlineStatus", mapOf("group_id" to groupId))
+        val response = method("groups.getOnlineStatus", mapOf("group_id" to groupId))
         return json.decodeFromString<GroupsGetOnlineStatusResponse>(response)
     }
 
@@ -529,7 +529,7 @@ class Groups(
      * @param fields Profile fields to return.
      */
     suspend fun getRequests(groupId: Long, offset: Int? = null, count: Int? = 20, fields: List<UsersFields>? = null): GetrequestsResponse {
-        val response = method("getRequests", mapOf("group_id" to groupId, "offset" to offset, "count" to count, "fields" to fields))
+        val response = method("groups.getRequests", mapOf("group_id" to groupId, "offset" to offset, "count" to count, "fields" to fields))
         return GetrequestsResponse(response, json)
     }
     class GetrequestsResponse(
@@ -554,7 +554,7 @@ class Groups(
      * @param groupId Community ID.
      */
     suspend fun getSettings(groupId: List<Any>): GroupsGetSettingsResponse {
-        val response = method("getSettings", mapOf("group_id" to groupId))
+        val response = method("groups.getSettings", mapOf("group_id" to groupId))
         return json.decodeFromString<GroupsGetSettingsResponse>(response)
     }
 
@@ -565,7 +565,7 @@ class Groups(
      * @param groupId 
      */
     suspend fun getTagList(groupId: Long): GroupsGetTagListResponse {
-        val response = method("getTagList", mapOf("group_id" to groupId))
+        val response = method("groups.getTagList", mapOf("group_id" to groupId))
         return json.decodeFromString<GroupsGetTagListResponse>(response)
     }
 
@@ -573,7 +573,7 @@ class Groups(
      *
      */
     suspend fun getTokenPermissions(): GroupsGetTokenPermissionsResponse {
-        val response = method("getTokenPermissions", mapOf())
+        val response = method("groups.getTokenPermissions", mapOf())
         return json.decodeFromString<GroupsGetTokenPermissionsResponse>(response)
     }
 
@@ -586,7 +586,7 @@ class Groups(
      * @param userIdsList User IDs.
      */
     suspend fun invite(groupId: Long, userId: Long? = null, userIdsList: List<Int>? = null): InviteResponse {
-        val response = method("invite", mapOf("group_id" to groupId, "user_id" to userId, "user_ids_list" to userIdsList))
+        val response = method("groups.invite", mapOf("group_id" to groupId, "user_id" to userId, "user_ids_list" to userIdsList))
         return InviteResponse(response, json)
     }
     class InviteResponse(
@@ -614,7 +614,7 @@ class Groups(
      * @param extended '1' - to return an extended response with additional fields. By default: '0'.
      */
     suspend fun isMember(groupId: List<Any>, userId: Long? = null, userIds: List<Int>? = null, extended: Boolean? = false): IsmemberResponse {
-        val response = method("isMember", mapOf("group_id" to groupId, "user_id" to userId, "user_ids" to userIds, "extended" to extended))
+        val response = method("groups.isMember", mapOf("group_id" to groupId, "user_id" to userId, "user_ids" to userIds, "extended" to extended))
         return IsmemberResponse(response, json)
     }
     class IsmemberResponse(
@@ -650,7 +650,7 @@ class Groups(
      * @param notSure Optional parameter which is taken into account when 'gid' belongs to the event: '1' - Perhaps I will attend, '0' - I will be there for sure (default), ,.
      */
     suspend fun join(groupId: Long? = null, notSure: String? = null): BaseOkResponse {
-        val response = method("join", mapOf("group_id" to groupId, "not_sure" to notSure))
+        val response = method("groups.join", mapOf("group_id" to groupId, "not_sure" to notSure))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -661,7 +661,7 @@ class Groups(
      * @param groupId ID or screen name of the community.
      */
     suspend fun leave(groupId: Long): BaseOkResponse {
-        val response = method("leave", mapOf("group_id" to groupId))
+        val response = method("groups.leave", mapOf("group_id" to groupId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -673,7 +673,7 @@ class Groups(
      * @param userId User ID.
      */
     suspend fun removeUser(groupId: Long, userId: Long): BaseOkResponse {
-        val response = method("removeUser", mapOf("group_id" to groupId, "user_id" to userId))
+        val response = method("groups.removeUser", mapOf("group_id" to groupId, "user_id" to userId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -686,7 +686,7 @@ class Groups(
      * @param after ID of the link after which to place the link with 'link_id'.
      */
     suspend fun reorderLink(groupId: Long, linkId: Long, after: Int? = null): BaseOkResponse {
-        val response = method("reorderLink", mapOf("group_id" to groupId, "link_id" to linkId, "after" to after))
+        val response = method("groups.reorderLink", mapOf("group_id" to groupId, "link_id" to linkId, "after" to after))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -705,7 +705,7 @@ class Groups(
      * @param count Number of communities to return. "Note that you can not receive more than first thousand of results, regardless of 'count' and 'offset' values.".
      */
     suspend fun search(q: String, type: String? = null, countryId: Long? = null, cityId: Long? = null, future: Boolean? = false, market: Boolean? = false, sort: Int? = null, offset: Int? = null, count: Int? = 20): GroupsSearchResponse {
-        val response = method("search", mapOf("q" to q, "type" to type, "country_id" to countryId, "city_id" to cityId, "future" to future, "market" to market, "sort" to sort, "offset" to offset, "count" to count))
+        val response = method("groups.search", mapOf("q" to q, "type" to type, "country_id" to countryId, "city_id" to cityId, "future" to future, "market" to market, "sort" to sort, "offset" to offset, "count" to count))
         return json.decodeFromString<GroupsSearchResponse>(response)
     }
 
@@ -772,7 +772,7 @@ class Groups(
      * @param donutMoneyWithdrawError 
      */
     suspend fun setCallbackSettings(groupId: Long, serverId: Long? = null, apiVersion: String? = null, messageNew: Boolean? = false, messageReply: Boolean? = false, messageAllow: Boolean? = false, messageEdit: Boolean? = false, messageDeny: Boolean? = false, messageTypingState: Boolean? = false, messageRead: Boolean? = false, photoNew: Boolean? = false, audioNew: Boolean? = false, videoNew: Boolean? = false, wallReplyNew: Boolean? = false, wallReplyEdit: Boolean? = false, wallReplyDelete: Boolean? = false, wallReplyRestore: Boolean? = false, wallPostNew: Boolean? = false, wallRepost: Boolean? = false, boardPostNew: Boolean? = false, boardPostEdit: Boolean? = false, boardPostRestore: Boolean? = false, boardPostDelete: Boolean? = false, photoCommentNew: Boolean? = false, photoCommentEdit: Boolean? = false, photoCommentDelete: Boolean? = false, photoCommentRestore: Boolean? = false, videoCommentNew: Boolean? = false, videoCommentEdit: Boolean? = false, videoCommentDelete: Boolean? = false, videoCommentRestore: Boolean? = false, marketCommentNew: Boolean? = false, marketCommentEdit: Boolean? = false, marketCommentDelete: Boolean? = false, marketCommentRestore: Boolean? = false, marketOrderNew: Boolean? = false, marketOrderEdit: Boolean? = false, pollVoteNew: Boolean? = false, groupJoin: Boolean? = false, groupLeave: Boolean? = false, groupChangeSettings: Boolean? = false, groupChangePhoto: Boolean? = false, groupOfficersEdit: Boolean? = false, userBlock: Boolean? = false, userUnblock: Boolean? = false, leadFormsNew: Boolean? = false, likeAdd: Boolean? = false, likeRemove: Boolean? = false, messageEvent: Boolean? = false, messageReactionEvent: Boolean? = false, donutSubscriptionCreate: Boolean? = false, donutSubscriptionProlonged: Boolean? = false, donutSubscriptionCancelled: Boolean? = false, donutSubscriptionPriceChanged: Boolean? = false, donutSubscriptionExpired: Boolean? = false, donutMoneyWithdraw: Boolean? = false, donutMoneyWithdrawError: Boolean? = false): BaseOkResponse {
-        val response = method("setCallbackSettings", mapOf("group_id" to groupId, "server_id" to serverId, "api_version" to apiVersion, "message_new" to messageNew, "message_reply" to messageReply, "message_allow" to messageAllow, "message_edit" to messageEdit, "message_deny" to messageDeny, "message_typing_state" to messageTypingState, "message_read" to messageRead, "photo_new" to photoNew, "audio_new" to audioNew, "video_new" to videoNew, "wall_reply_new" to wallReplyNew, "wall_reply_edit" to wallReplyEdit, "wall_reply_delete" to wallReplyDelete, "wall_reply_restore" to wallReplyRestore, "wall_post_new" to wallPostNew, "wall_repost" to wallRepost, "board_post_new" to boardPostNew, "board_post_edit" to boardPostEdit, "board_post_restore" to boardPostRestore, "board_post_delete" to boardPostDelete, "photo_comment_new" to photoCommentNew, "photo_comment_edit" to photoCommentEdit, "photo_comment_delete" to photoCommentDelete, "photo_comment_restore" to photoCommentRestore, "video_comment_new" to videoCommentNew, "video_comment_edit" to videoCommentEdit, "video_comment_delete" to videoCommentDelete, "video_comment_restore" to videoCommentRestore, "market_comment_new" to marketCommentNew, "market_comment_edit" to marketCommentEdit, "market_comment_delete" to marketCommentDelete, "market_comment_restore" to marketCommentRestore, "market_order_new" to marketOrderNew, "market_order_edit" to marketOrderEdit, "poll_vote_new" to pollVoteNew, "group_join" to groupJoin, "group_leave" to groupLeave, "group_change_settings" to groupChangeSettings, "group_change_photo" to groupChangePhoto, "group_officers_edit" to groupOfficersEdit, "user_block" to userBlock, "user_unblock" to userUnblock, "lead_forms_new" to leadFormsNew, "like_add" to likeAdd, "like_remove" to likeRemove, "message_event" to messageEvent, "message_reaction_event" to messageReactionEvent, "donut_subscription_create" to donutSubscriptionCreate, "donut_subscription_prolonged" to donutSubscriptionProlonged, "donut_subscription_cancelled" to donutSubscriptionCancelled, "donut_subscription_price_changed" to donutSubscriptionPriceChanged, "donut_subscription_expired" to donutSubscriptionExpired, "donut_money_withdraw" to donutMoneyWithdraw, "donut_money_withdraw_error" to donutMoneyWithdrawError))
+        val response = method("groups.setCallbackSettings", mapOf("group_id" to groupId, "server_id" to serverId, "api_version" to apiVersion, "message_new" to messageNew, "message_reply" to messageReply, "message_allow" to messageAllow, "message_edit" to messageEdit, "message_deny" to messageDeny, "message_typing_state" to messageTypingState, "message_read" to messageRead, "photo_new" to photoNew, "audio_new" to audioNew, "video_new" to videoNew, "wall_reply_new" to wallReplyNew, "wall_reply_edit" to wallReplyEdit, "wall_reply_delete" to wallReplyDelete, "wall_reply_restore" to wallReplyRestore, "wall_post_new" to wallPostNew, "wall_repost" to wallRepost, "board_post_new" to boardPostNew, "board_post_edit" to boardPostEdit, "board_post_restore" to boardPostRestore, "board_post_delete" to boardPostDelete, "photo_comment_new" to photoCommentNew, "photo_comment_edit" to photoCommentEdit, "photo_comment_delete" to photoCommentDelete, "photo_comment_restore" to photoCommentRestore, "video_comment_new" to videoCommentNew, "video_comment_edit" to videoCommentEdit, "video_comment_delete" to videoCommentDelete, "video_comment_restore" to videoCommentRestore, "market_comment_new" to marketCommentNew, "market_comment_edit" to marketCommentEdit, "market_comment_delete" to marketCommentDelete, "market_comment_restore" to marketCommentRestore, "market_order_new" to marketOrderNew, "market_order_edit" to marketOrderEdit, "poll_vote_new" to pollVoteNew, "group_join" to groupJoin, "group_leave" to groupLeave, "group_change_settings" to groupChangeSettings, "group_change_photo" to groupChangePhoto, "group_officers_edit" to groupOfficersEdit, "user_block" to userBlock, "user_unblock" to userUnblock, "lead_forms_new" to leadFormsNew, "like_add" to likeAdd, "like_remove" to likeRemove, "message_event" to messageEvent, "message_reaction_event" to messageReactionEvent, "donut_subscription_create" to donutSubscriptionCreate, "donut_subscription_prolonged" to donutSubscriptionProlonged, "donut_subscription_cancelled" to donutSubscriptionCancelled, "donut_subscription_price_changed" to donutSubscriptionPriceChanged, "donut_subscription_expired" to donutSubscriptionExpired, "donut_money_withdraw" to donutMoneyWithdraw, "donut_money_withdraw_error" to donutMoneyWithdrawError))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -836,7 +836,7 @@ class Groups(
      * @param donutMoneyWithdrawError 
      */
     suspend fun setLongPollSettings(groupId: Long, enabled: Boolean? = false, apiVersion: String? = null, messageNew: Boolean? = false, messageReply: Boolean? = false, messageAllow: Boolean? = false, messageDeny: Boolean? = false, messageEdit: Boolean? = false, messageTypingState: Boolean? = false, messageRead: Boolean? = false, photoNew: Boolean? = false, audioNew: Boolean? = false, videoNew: Boolean? = false, wallReplyNew: Boolean? = false, wallReplyEdit: Boolean? = false, wallReplyDelete: Boolean? = false, wallReplyRestore: Boolean? = false, wallPostNew: Boolean? = false, wallRepost: Boolean? = false, boardPostNew: Boolean? = false, boardPostEdit: Boolean? = false, boardPostRestore: Boolean? = false, boardPostDelete: Boolean? = false, photoCommentNew: Boolean? = false, photoCommentEdit: Boolean? = false, photoCommentDelete: Boolean? = false, photoCommentRestore: Boolean? = false, videoCommentNew: Boolean? = false, videoCommentEdit: Boolean? = false, videoCommentDelete: Boolean? = false, videoCommentRestore: Boolean? = false, marketCommentNew: Boolean? = false, marketCommentEdit: Boolean? = false, marketCommentDelete: Boolean? = false, marketCommentRestore: Boolean? = false, pollVoteNew: Boolean? = false, groupJoin: Boolean? = false, groupLeave: Boolean? = false, groupChangeSettings: Boolean? = false, groupChangePhoto: Boolean? = false, groupOfficersEdit: Boolean? = false, userBlock: Boolean? = false, userUnblock: Boolean? = false, likeAdd: Boolean? = false, likeRemove: Boolean? = false, messageEvent: Boolean? = false, messageReactionEvent: Boolean? = false, donutSubscriptionCreate: Boolean? = false, donutSubscriptionProlonged: Boolean? = false, donutSubscriptionCancelled: Boolean? = false, donutSubscriptionPriceChanged: Boolean? = false, donutSubscriptionExpired: Boolean? = false, donutMoneyWithdraw: Boolean? = false, donutMoneyWithdrawError: Boolean? = false): BaseOkResponse {
-        val response = method("setLongPollSettings", mapOf("group_id" to groupId, "enabled" to enabled, "api_version" to apiVersion, "message_new" to messageNew, "message_reply" to messageReply, "message_allow" to messageAllow, "message_deny" to messageDeny, "message_edit" to messageEdit, "message_typing_state" to messageTypingState, "message_read" to messageRead, "photo_new" to photoNew, "audio_new" to audioNew, "video_new" to videoNew, "wall_reply_new" to wallReplyNew, "wall_reply_edit" to wallReplyEdit, "wall_reply_delete" to wallReplyDelete, "wall_reply_restore" to wallReplyRestore, "wall_post_new" to wallPostNew, "wall_repost" to wallRepost, "board_post_new" to boardPostNew, "board_post_edit" to boardPostEdit, "board_post_restore" to boardPostRestore, "board_post_delete" to boardPostDelete, "photo_comment_new" to photoCommentNew, "photo_comment_edit" to photoCommentEdit, "photo_comment_delete" to photoCommentDelete, "photo_comment_restore" to photoCommentRestore, "video_comment_new" to videoCommentNew, "video_comment_edit" to videoCommentEdit, "video_comment_delete" to videoCommentDelete, "video_comment_restore" to videoCommentRestore, "market_comment_new" to marketCommentNew, "market_comment_edit" to marketCommentEdit, "market_comment_delete" to marketCommentDelete, "market_comment_restore" to marketCommentRestore, "poll_vote_new" to pollVoteNew, "group_join" to groupJoin, "group_leave" to groupLeave, "group_change_settings" to groupChangeSettings, "group_change_photo" to groupChangePhoto, "group_officers_edit" to groupOfficersEdit, "user_block" to userBlock, "user_unblock" to userUnblock, "like_add" to likeAdd, "like_remove" to likeRemove, "message_event" to messageEvent, "message_reaction_event" to messageReactionEvent, "donut_subscription_create" to donutSubscriptionCreate, "donut_subscription_prolonged" to donutSubscriptionProlonged, "donut_subscription_cancelled" to donutSubscriptionCancelled, "donut_subscription_price_changed" to donutSubscriptionPriceChanged, "donut_subscription_expired" to donutSubscriptionExpired, "donut_money_withdraw" to donutMoneyWithdraw, "donut_money_withdraw_error" to donutMoneyWithdrawError))
+        val response = method("groups.setLongPollSettings", mapOf("group_id" to groupId, "enabled" to enabled, "api_version" to apiVersion, "message_new" to messageNew, "message_reply" to messageReply, "message_allow" to messageAllow, "message_deny" to messageDeny, "message_edit" to messageEdit, "message_typing_state" to messageTypingState, "message_read" to messageRead, "photo_new" to photoNew, "audio_new" to audioNew, "video_new" to videoNew, "wall_reply_new" to wallReplyNew, "wall_reply_edit" to wallReplyEdit, "wall_reply_delete" to wallReplyDelete, "wall_reply_restore" to wallReplyRestore, "wall_post_new" to wallPostNew, "wall_repost" to wallRepost, "board_post_new" to boardPostNew, "board_post_edit" to boardPostEdit, "board_post_restore" to boardPostRestore, "board_post_delete" to boardPostDelete, "photo_comment_new" to photoCommentNew, "photo_comment_edit" to photoCommentEdit, "photo_comment_delete" to photoCommentDelete, "photo_comment_restore" to photoCommentRestore, "video_comment_new" to videoCommentNew, "video_comment_edit" to videoCommentEdit, "video_comment_delete" to videoCommentDelete, "video_comment_restore" to videoCommentRestore, "market_comment_new" to marketCommentNew, "market_comment_edit" to marketCommentEdit, "market_comment_delete" to marketCommentDelete, "market_comment_restore" to marketCommentRestore, "poll_vote_new" to pollVoteNew, "group_join" to groupJoin, "group_leave" to groupLeave, "group_change_settings" to groupChangeSettings, "group_change_photo" to groupChangePhoto, "group_officers_edit" to groupOfficersEdit, "user_block" to userBlock, "user_unblock" to userUnblock, "like_add" to likeAdd, "like_remove" to likeRemove, "message_event" to messageEvent, "message_reaction_event" to messageReactionEvent, "donut_subscription_create" to donutSubscriptionCreate, "donut_subscription_prolonged" to donutSubscriptionProlonged, "donut_subscription_cancelled" to donutSubscriptionCancelled, "donut_subscription_price_changed" to donutSubscriptionPriceChanged, "donut_subscription_expired" to donutSubscriptionExpired, "donut_money_withdraw" to donutMoneyWithdraw, "donut_money_withdraw_error" to donutMoneyWithdrawError))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -849,7 +849,7 @@ class Groups(
      * @param botsAddToChat If this setting is enabled then users can add your community to a chat.
      */
     suspend fun setSettings(groupId: Long, messages: Boolean? = false, botsCapabilities: Boolean? = false, botsStartButton: Boolean? = false, botsAddToChat: Boolean? = false): BaseOkResponse {
-        val response = method("setSettings", mapOf("group_id" to groupId, "messages" to messages, "bots_capabilities" to botsCapabilities, "bots_start_button" to botsStartButton, "bots_add_to_chat" to botsAddToChat))
+        val response = method("groups.setSettings", mapOf("group_id" to groupId, "messages" to messages, "bots_capabilities" to botsCapabilities, "bots_start_button" to botsStartButton, "bots_add_to_chat" to botsAddToChat))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -862,7 +862,7 @@ class Groups(
      * @param note Note body.
      */
     suspend fun setUserNote(groupId: Long, userId: Long, note: String? = null): BaseBoolResponse {
-        val response = method("setUserNote", mapOf("group_id" to groupId, "user_id" to userId, "note" to note))
+        val response = method("groups.setUserNote", mapOf("group_id" to groupId, "user_id" to userId, "note" to note))
         return json.decodeFromString<BaseBoolResponse>(response)
     }
 
@@ -875,7 +875,7 @@ class Groups(
      * @param tagColor 
      */
     suspend fun tagAdd(groupId: Long, tagName: String, tagColor: String? = null): BaseBoolResponse {
-        val response = method("tagAdd", mapOf("group_id" to groupId, "tag_name" to tagName, "tag_color" to tagColor))
+        val response = method("groups.tagAdd", mapOf("group_id" to groupId, "tag_name" to tagName, "tag_color" to tagColor))
         return json.decodeFromString<BaseBoolResponse>(response)
     }
 
@@ -889,7 +889,7 @@ class Groups(
      * @param act Describe the action.
      */
     suspend fun tagBind(groupId: Long, tagId: Long, userId: Long, act: String): BaseBoolResponse {
-        val response = method("tagBind", mapOf("group_id" to groupId, "tag_id" to tagId, "user_id" to userId, "act" to act))
+        val response = method("groups.tagBind", mapOf("group_id" to groupId, "tag_id" to tagId, "user_id" to userId, "act" to act))
         return json.decodeFromString<BaseBoolResponse>(response)
     }
 
@@ -901,7 +901,7 @@ class Groups(
      * @param tagId 
      */
     suspend fun tagDelete(groupId: Long, tagId: Long): BaseBoolResponse {
-        val response = method("tagDelete", mapOf("group_id" to groupId, "tag_id" to tagId))
+        val response = method("groups.tagDelete", mapOf("group_id" to groupId, "tag_id" to tagId))
         return json.decodeFromString<BaseBoolResponse>(response)
     }
 
@@ -914,7 +914,7 @@ class Groups(
      * @param tagName 
      */
     suspend fun tagUpdate(groupId: Long, tagId: Long, tagName: String): BaseBoolResponse {
-        val response = method("tagUpdate", mapOf("group_id" to groupId, "tag_id" to tagId, "tag_name" to tagName))
+        val response = method("groups.tagUpdate", mapOf("group_id" to groupId, "tag_id" to tagId, "tag_name" to tagName))
         return json.decodeFromString<BaseBoolResponse>(response)
     }
 
@@ -925,7 +925,7 @@ class Groups(
      * @param ref 
      */
     suspend fun toggleMarket(groupId: Long, state: String, ref: String? = null): BaseOkResponse {
-        val response = method("toggleMarket", mapOf("group_id" to groupId, "state" to state, "ref" to ref))
+        val response = method("groups.toggleMarket", mapOf("group_id" to groupId, "state" to state, "ref" to ref))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -935,7 +935,7 @@ class Groups(
      * @param ownerId 
      */
     suspend fun unban(groupId: Long, ownerId: Long? = null): BaseOkResponse {
-        val response = method("unban", mapOf("group_id" to groupId, "owner_id" to ownerId))
+        val response = method("groups.unban", mapOf("group_id" to groupId, "owner_id" to ownerId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 

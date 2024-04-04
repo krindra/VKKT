@@ -24,7 +24,7 @@ class Notes(
      * @param privacyComment 
      */
     suspend fun add(title: String, text: String, privacyView: List<String>? = listOf("all"), privacyComment: List<String>? = listOf("all")): NotesAddResponse {
-        val response = method("add", mapOf("title" to title, "text" to text, "privacy_view" to privacyView, "privacy_comment" to privacyComment))
+        val response = method("notes.add", mapOf("title" to title, "text" to text, "privacy_view" to privacyView, "privacy_comment" to privacyComment))
         return json.decodeFromString<NotesAddResponse>(response)
     }
 
@@ -39,7 +39,7 @@ class Notes(
      * @param guid 
      */
     suspend fun createComment(noteId: Long, message: String, ownerId: Long? = null, replyTo: Int? = null, guid: String? = null): NotesCreateCommentResponse {
-        val response = method("createComment", mapOf("note_id" to noteId, "owner_id" to ownerId, "reply_to" to replyTo, "message" to message, "guid" to guid))
+        val response = method("notes.createComment", mapOf("note_id" to noteId, "owner_id" to ownerId, "reply_to" to replyTo, "message" to message, "guid" to guid))
         return json.decodeFromString<NotesCreateCommentResponse>(response)
     }
 
@@ -50,7 +50,7 @@ class Notes(
      * @param noteId Note ID.
      */
     suspend fun delete(noteId: Long): BaseOkResponse {
-        val response = method("delete", mapOf("note_id" to noteId))
+        val response = method("notes.delete", mapOf("note_id" to noteId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -62,7 +62,7 @@ class Notes(
      * @param ownerId Note owner ID.
      */
     suspend fun deleteComment(commentId: Long, ownerId: Long? = null): BaseOkResponse {
-        val response = method("deleteComment", mapOf("comment_id" to commentId, "owner_id" to ownerId))
+        val response = method("notes.deleteComment", mapOf("comment_id" to commentId, "owner_id" to ownerId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -77,7 +77,7 @@ class Notes(
      * @param privacyComment 
      */
     suspend fun edit(noteId: Long, title: String, text: String, privacyView: List<String>? = listOf("all"), privacyComment: List<String>? = listOf("all")): BaseOkResponse {
-        val response = method("edit", mapOf("note_id" to noteId, "title" to title, "text" to text, "privacy_view" to privacyView, "privacy_comment" to privacyComment))
+        val response = method("notes.edit", mapOf("note_id" to noteId, "title" to title, "text" to text, "privacy_view" to privacyView, "privacy_comment" to privacyComment))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -90,7 +90,7 @@ class Notes(
      * @param message New comment text.
      */
     suspend fun editComment(commentId: Long, message: String, ownerId: Long? = null): BaseOkResponse {
-        val response = method("editComment", mapOf("comment_id" to commentId, "owner_id" to ownerId, "message" to message))
+        val response = method("notes.editComment", mapOf("comment_id" to commentId, "owner_id" to ownerId, "message" to message))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -105,7 +105,7 @@ class Notes(
      * @param sort 
      */
     suspend fun get(noteIds: List<Int>? = null, userId: Long? = null, offset: Int? = 0, count: Int? = 20, sort: Int? = 0): NotesGetResponse {
-        val response = method("get", mapOf("note_ids" to noteIds, "user_id" to userId, "offset" to offset, "count" to count, "sort" to sort))
+        val response = method("notes.get", mapOf("note_ids" to noteIds, "user_id" to userId, "offset" to offset, "count" to count, "sort" to sort))
         return json.decodeFromString<NotesGetResponse>(response)
     }
 
@@ -118,7 +118,7 @@ class Notes(
      * @param needWiki 
      */
     suspend fun getById(noteId: Long, ownerId: Long? = null, needWiki: Boolean? = false): NotesGetByIdResponse {
-        val response = method("getById", mapOf("note_id" to noteId, "owner_id" to ownerId, "need_wiki" to needWiki))
+        val response = method("notes.getById", mapOf("note_id" to noteId, "owner_id" to ownerId, "need_wiki" to needWiki))
         return json.decodeFromString<NotesGetByIdResponse>(response)
     }
 
@@ -133,7 +133,7 @@ class Notes(
      * @param count Number of comments to return.
      */
     suspend fun getComments(noteId: Long, ownerId: Long? = null, sort: Int? = 0, offset: Int? = 0, count: Int? = 20): NotesGetCommentsResponse {
-        val response = method("getComments", mapOf("note_id" to noteId, "owner_id" to ownerId, "sort" to sort, "offset" to offset, "count" to count))
+        val response = method("notes.getComments", mapOf("note_id" to noteId, "owner_id" to ownerId, "sort" to sort, "offset" to offset, "count" to count))
         return json.decodeFromString<NotesGetCommentsResponse>(response)
     }
 
@@ -145,7 +145,7 @@ class Notes(
      * @param ownerId Note owner ID.
      */
     suspend fun restoreComment(commentId: Long, ownerId: Long? = null): BaseOkResponse {
-        val response = method("restoreComment", mapOf("comment_id" to commentId, "owner_id" to ownerId))
+        val response = method("notes.restoreComment", mapOf("comment_id" to commentId, "owner_id" to ownerId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 

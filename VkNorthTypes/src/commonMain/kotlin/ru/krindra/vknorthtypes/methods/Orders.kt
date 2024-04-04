@@ -21,7 +21,7 @@ class Orders(
      * @param pendingCancel 
      */
     suspend fun cancelSubscription(userId: Long, subscriptionId: Long, pendingCancel: Boolean? = false): BaseBoolResponse {
-        val response = method("cancelSubscription", mapOf("user_id" to userId, "subscription_id" to subscriptionId, "pending_cancel" to pendingCancel))
+        val response = method("orders.cancelSubscription", mapOf("user_id" to userId, "subscription_id" to subscriptionId, "pending_cancel" to pendingCancel))
         return json.decodeFromString<BaseBoolResponse>(response)
     }
 
@@ -35,7 +35,7 @@ class Orders(
      * @param testMode if this parameter is set to 1, this method returns a list of test mode orders. By default - 0.
      */
     suspend fun changeState(orderId: Long, action: String, appOrderId: Long? = null, testMode: Boolean? = false): OrdersChangeStateResponse {
-        val response = method("changeState", mapOf("order_id" to orderId, "action" to action, "app_order_id" to appOrderId, "test_mode" to testMode))
+        val response = method("orders.changeState", mapOf("order_id" to orderId, "action" to action, "app_order_id" to appOrderId, "test_mode" to testMode))
         return json.decodeFromString<OrdersChangeStateResponse>(response)
     }
 
@@ -48,7 +48,7 @@ class Orders(
      * @param testMode if this parameter is set to 1, this method returns a list of test mode orders. By default - 0.
      */
     suspend fun get(offset: Int? = 0, count: Int? = 100, testMode: Boolean? = false): OrdersGetResponse {
-        val response = method("get", mapOf("offset" to offset, "count" to count, "test_mode" to testMode))
+        val response = method("orders.get", mapOf("offset" to offset, "count" to count, "test_mode" to testMode))
         return json.decodeFromString<OrdersGetResponse>(response)
     }
 
@@ -58,7 +58,7 @@ class Orders(
      * @param votes 
      */
     suspend fun getAmount(userId: Long, votes: List<String>): OrdersGetAmountResponse {
-        val response = method("getAmount", mapOf("user_id" to userId, "votes" to votes))
+        val response = method("orders.getAmount", mapOf("user_id" to userId, "votes" to votes))
         return json.decodeFromString<OrdersGetAmountResponse>(response)
     }
 
@@ -71,7 +71,7 @@ class Orders(
      * @param testMode if this parameter is set to 1, this method returns a list of test mode orders. By default - 0.
      */
     suspend fun getById(orderId: Long? = null, orderIds: List<Int>? = null, testMode: Boolean? = false): OrdersGetByIdResponse {
-        val response = method("getById", mapOf("order_id" to orderId, "order_ids" to orderIds, "test_mode" to testMode))
+        val response = method("orders.getById", mapOf("order_id" to orderId, "order_ids" to orderIds, "test_mode" to testMode))
         return json.decodeFromString<OrdersGetByIdResponse>(response)
     }
 
@@ -81,7 +81,7 @@ class Orders(
      * @param subscriptionId 
      */
     suspend fun getUserSubscriptionById(userId: Long, subscriptionId: Long): OrdersGetUserSubscriptionByIdResponse {
-        val response = method("getUserSubscriptionById", mapOf("user_id" to userId, "subscription_id" to subscriptionId))
+        val response = method("orders.getUserSubscriptionById", mapOf("user_id" to userId, "subscription_id" to subscriptionId))
         return json.decodeFromString<OrdersGetUserSubscriptionByIdResponse>(response)
     }
 
@@ -90,7 +90,7 @@ class Orders(
      * @param userId 
      */
     suspend fun getUserSubscriptions(userId: Long): OrdersGetUserSubscriptionsResponse {
-        val response = method("getUserSubscriptions", mapOf("user_id" to userId))
+        val response = method("orders.getUserSubscriptions", mapOf("user_id" to userId))
         return json.decodeFromString<OrdersGetUserSubscriptionsResponse>(response)
     }
 
@@ -101,7 +101,7 @@ class Orders(
      * @param price 
      */
     suspend fun updateSubscription(userId: Long, subscriptionId: Long, price: Int): BaseBoolResponse {
-        val response = method("updateSubscription", mapOf("user_id" to userId, "subscription_id" to subscriptionId, "price" to price))
+        val response = method("orders.updateSubscription", mapOf("user_id" to userId, "subscription_id" to subscriptionId, "price" to price))
         return json.decodeFromString<BaseBoolResponse>(response)
     }
 

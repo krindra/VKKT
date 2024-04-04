@@ -21,7 +21,7 @@ class Auth(
      * @param lastName User last name.
      */
     suspend fun restore(phone: String, lastName: String): AuthRestoreResponse {
-        val response = method("restore", mapOf("phone" to phone, "last_name" to lastName))
+        val response = method("auth.restore", mapOf("phone" to phone, "last_name" to lastName))
         return json.decodeFromString<AuthRestoreResponse>(response)
     }
 

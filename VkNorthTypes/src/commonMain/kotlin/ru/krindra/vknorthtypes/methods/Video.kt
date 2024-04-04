@@ -8,8 +8,8 @@ package ru.krindra.vknorthtypes.methods
 import ru.krindra.vknorthtypes.types.video.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
-import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
+import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
 
 class Video(
@@ -25,7 +25,7 @@ class Video(
      * @param ownerId ID of the user or community that owns the video. Use a negative value to designate a community ID.
      */
     suspend fun add(videoId: Long, ownerId: Long, targetId: Long? = null): BaseOkResponse {
-        val response = method("add", mapOf("target_id" to targetId, "video_id" to videoId, "owner_id" to ownerId))
+        val response = method("video.add", mapOf("target_id" to targetId, "video_id" to videoId, "owner_id" to ownerId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -38,7 +38,7 @@ class Video(
      * @param privacy new access permissions for the album. Possible values: , *'0' - all users,, *'1' - friends only,, *'2' - friends and friends of friends,, *'3' - "only me".
      */
     suspend fun addAlbum(groupId: Long? = null, title: String? = null, privacy: List<String>? = null): VideoAddAlbumResponse {
-        val response = method("addAlbum", mapOf("group_id" to groupId, "title" to title, "privacy" to privacy))
+        val response = method("video.addAlbum", mapOf("group_id" to groupId, "title" to title, "privacy" to privacy))
         return json.decodeFromString<VideoAddAlbumResponse>(response)
     }
 
@@ -51,7 +51,7 @@ class Video(
      * @param videoId 
      */
     suspend fun addToAlbum(ownerId: Long, videoId: Long, targetId: Long? = null, albumId: Long? = null, albumIds: List<Int>? = null): AddtoalbumResponse {
-        val response = method("addToAlbum", mapOf("target_id" to targetId, "album_id" to albumId, "album_ids" to albumIds, "owner_id" to ownerId, "video_id" to videoId))
+        val response = method("video.addToAlbum", mapOf("target_id" to targetId, "album_id" to albumId, "album_ids" to albumIds, "owner_id" to ownerId, "video_id" to videoId))
         return AddtoalbumResponse(response, json)
     }
     class AddtoalbumResponse(
@@ -84,7 +84,7 @@ class Video(
      * @param trackCode 
      */
     suspend fun createComment(videoId: Long, ownerId: Long? = null, message: String? = null, attachments: List<String>? = null, fromGroup: Boolean? = false, replyToComment: Int? = null, stickerId: Long? = null, guid: String? = null, trackCode: String? = null): VideoCreateCommentResponse {
-        val response = method("createComment", mapOf("owner_id" to ownerId, "video_id" to videoId, "message" to message, "attachments" to attachments, "from_group" to fromGroup, "reply_to_comment" to replyToComment, "sticker_id" to stickerId, "guid" to guid, "track_code" to trackCode))
+        val response = method("video.createComment", mapOf("owner_id" to ownerId, "video_id" to videoId, "message" to message, "attachments" to attachments, "from_group" to fromGroup, "reply_to_comment" to replyToComment, "sticker_id" to stickerId, "guid" to guid, "track_code" to trackCode))
         return json.decodeFromString<VideoCreateCommentResponse>(response)
     }
 
@@ -97,7 +97,7 @@ class Video(
      * @param targetId 
      */
     suspend fun delete(videoId: Long, ownerId: Long? = null, targetId: Long? = null): BaseOkResponse {
-        val response = method("delete", mapOf("video_id" to videoId, "owner_id" to ownerId, "target_id" to targetId))
+        val response = method("video.delete", mapOf("video_id" to videoId, "owner_id" to ownerId, "target_id" to targetId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -109,7 +109,7 @@ class Video(
      * @param albumId Album ID.
      */
     suspend fun deleteAlbum(albumId: Long, groupId: Long? = null): BaseOkResponse {
-        val response = method("deleteAlbum", mapOf("group_id" to groupId, "album_id" to albumId))
+        val response = method("video.deleteAlbum", mapOf("group_id" to groupId, "album_id" to albumId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -121,7 +121,7 @@ class Video(
      * @param commentId ID of the comment to be deleted.
      */
     suspend fun deleteComment(commentId: Long, ownerId: Long? = null): BaseOkResponse {
-        val response = method("deleteComment", mapOf("owner_id" to ownerId, "comment_id" to commentId))
+        val response = method("video.deleteComment", mapOf("owner_id" to ownerId, "comment_id" to commentId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -139,7 +139,7 @@ class Video(
      * @param repeat '1' - to repeat the playback of the video, '0' - to play the video once,.
      */
     suspend fun edit(videoId: Long, ownerId: Long? = null, name: String? = null, desc: String? = null, privacyView: List<String>? = null, privacyComment: List<String>? = null, noComments: Boolean? = false, repeat: Boolean? = false): VideoEditResponse {
-        val response = method("edit", mapOf("owner_id" to ownerId, "video_id" to videoId, "name" to name, "desc" to desc, "privacy_view" to privacyView, "privacy_comment" to privacyComment, "no_comments" to noComments, "repeat" to repeat))
+        val response = method("video.edit", mapOf("owner_id" to ownerId, "video_id" to videoId, "name" to name, "desc" to desc, "privacy_view" to privacyView, "privacy_comment" to privacyComment, "no_comments" to noComments, "repeat" to repeat))
         return json.decodeFromString<VideoEditResponse>(response)
     }
 
@@ -153,7 +153,7 @@ class Video(
      * @param privacy new access permissions for the album. Possible values: , *'0' - all users,, *'1' - friends only,, *'2' - friends and friends of friends,, *'3' - "only me".
      */
     suspend fun editAlbum(albumId: Long, groupId: Long? = null, title: String? = null, privacy: List<String>? = null): BaseOkResponse {
-        val response = method("editAlbum", mapOf("group_id" to groupId, "album_id" to albumId, "title" to title, "privacy" to privacy))
+        val response = method("video.editAlbum", mapOf("group_id" to groupId, "album_id" to albumId, "title" to title, "privacy" to privacy))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -167,7 +167,7 @@ class Video(
      * @param attachments List of objects attached to the comment, in the following format: "<owner_id>_<media_id>,<owner_id>_<media_id>", '' - Type of media attachment: 'photo' - photo, 'video' - video, 'audio' - audio, 'doc' - document, '<owner_id>' - ID of the media attachment owner. '<media_id>' - Media attachment ID. Example: "photo100172_166443618,photo66748_265827614".
      */
     suspend fun editComment(commentId: Long, ownerId: Long? = null, message: String? = null, attachments: List<String>? = null): BaseOkResponse {
-        val response = method("editComment", mapOf("owner_id" to ownerId, "comment_id" to commentId, "message" to message, "attachments" to attachments))
+        val response = method("video.editComment", mapOf("owner_id" to ownerId, "comment_id" to commentId, "message" to message, "attachments" to attachments))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -185,7 +185,7 @@ class Video(
      * @param sortAlbum Sort order: '0' - newest video first, '1' - oldest video first.
      */
     suspend fun get(ownerId: Long? = null, videos: List<String>? = null, albumId: Long? = null, count: Int? = 100, offset: Int? = null, extended: Boolean? = false, fields: List<String>? = null, sortAlbum: Int? = 0): VideoGetResponse {
-        val response = method("get", mapOf("owner_id" to ownerId, "videos" to videos, "album_id" to albumId, "count" to count, "offset" to offset, "extended" to extended, "fields" to fields, "sort_album" to sortAlbum))
+        val response = method("video.get", mapOf("owner_id" to ownerId, "videos" to videos, "album_id" to albumId, "count" to count, "offset" to offset, "extended" to extended, "fields" to fields, "sort_album" to sortAlbum))
         return json.decodeFromString<VideoGetResponse>(response)
     }
 
@@ -197,7 +197,7 @@ class Video(
      * @param albumId Album ID.
      */
     suspend fun getAlbumById(albumId: Long, ownerId: Long? = null): VideoGetAlbumByIdResponse {
-        val response = method("getAlbumById", mapOf("owner_id" to ownerId, "album_id" to albumId))
+        val response = method("video.getAlbumById", mapOf("owner_id" to ownerId, "album_id" to albumId))
         return json.decodeFromString<VideoGetAlbumByIdResponse>(response)
     }
 
@@ -212,7 +212,7 @@ class Video(
      * @param needSystem 
      */
     suspend fun getAlbums(ownerId: Long? = null, offset: Int? = null, count: Int? = 50, extended: Boolean? = false, needSystem: Boolean? = false): GetalbumsResponse {
-        val response = method("getAlbums", mapOf("owner_id" to ownerId, "offset" to offset, "count" to count, "extended" to extended, "need_system" to needSystem))
+        val response = method("video.getAlbums", mapOf("owner_id" to ownerId, "offset" to offset, "count" to count, "extended" to extended, "need_system" to needSystem))
         return GetalbumsResponse(response, json)
     }
     class GetalbumsResponse(
@@ -238,7 +238,7 @@ class Video(
      * @param extended 
      */
     suspend fun getAlbumsByVideo(ownerId: Long, videoId: Long, targetId: Long? = null, extended: Boolean? = false): GetalbumsbyvideoResponse {
-        val response = method("getAlbumsByVideo", mapOf("target_id" to targetId, "owner_id" to ownerId, "video_id" to videoId, "extended" to extended))
+        val response = method("video.getAlbumsByVideo", mapOf("target_id" to targetId, "owner_id" to ownerId, "video_id" to videoId, "extended" to extended))
         return GetalbumsbyvideoResponse(response, json)
     }
     class GetalbumsbyvideoResponse(
@@ -271,7 +271,7 @@ class Video(
      * @param fields 
      */
     suspend fun getComments(videoId: Long, ownerId: Long? = null, needLikes: Boolean? = false, startCommentId: Long? = null, offset: Int? = null, count: Int? = 20, sort: String? = "asc", extended: Boolean? = false, fields: List<String>? = null): GetcommentsResponse {
-        val response = method("getComments", mapOf("owner_id" to ownerId, "video_id" to videoId, "need_likes" to needLikes, "start_comment_id" to startCommentId, "offset" to offset, "count" to count, "sort" to sort, "extended" to extended, "fields" to fields))
+        val response = method("video.getComments", mapOf("owner_id" to ownerId, "video_id" to videoId, "need_likes" to needLikes, "start_comment_id" to startCommentId, "offset" to offset, "count" to count, "sort" to sort, "extended" to extended, "fields" to fields))
         return GetcommentsResponse(response, json)
     }
     class GetcommentsResponse(
@@ -295,7 +295,7 @@ class Video(
      * @param videoId 
      */
     suspend fun getLongPollServer(videoId: Long, ownerId: Long? = null): VideoGetLongPollServerResponse {
-        val response = method("getLongPollServer", mapOf("owner_id" to ownerId, "video_id" to videoId))
+        val response = method("video.getLongPollServer", mapOf("owner_id" to ownerId, "video_id" to videoId))
         return json.decodeFromString<VideoGetLongPollServerResponse>(response)
     }
 
@@ -303,7 +303,7 @@ class Video(
      *
      */
     suspend fun liveGetCategories(): VideoLiveGetCategoriesResponse {
-        val response = method("liveGetCategories", mapOf())
+        val response = method("video.liveGetCategories", mapOf())
         return json.decodeFromString<VideoLiveGetCategoriesResponse>(response)
     }
 
@@ -316,7 +316,7 @@ class Video(
      * @param videoId 
      */
     suspend fun removeFromAlbum(ownerId: Long, videoId: Long, targetId: Long? = null, albumId: Long? = null, albumIds: List<Int>? = null): RemovefromalbumResponse {
-        val response = method("removeFromAlbum", mapOf("target_id" to targetId, "album_id" to albumId, "album_ids" to albumIds, "owner_id" to ownerId, "video_id" to videoId))
+        val response = method("video.removeFromAlbum", mapOf("target_id" to targetId, "album_id" to albumId, "album_ids" to albumIds, "owner_id" to ownerId, "video_id" to videoId))
         return RemovefromalbumResponse(response, json)
     }
     class RemovefromalbumResponse(
@@ -344,7 +344,7 @@ class Video(
      * @param after ID of the album after which the album in question shall be placed.
      */
     suspend fun reorderAlbums(albumId: Long, ownerId: Long? = null, before: Int? = null, after: Int? = null): BaseOkResponse {
-        val response = method("reorderAlbums", mapOf("owner_id" to ownerId, "album_id" to albumId, "before" to before, "after" to after))
+        val response = method("video.reorderAlbums", mapOf("owner_id" to ownerId, "album_id" to albumId, "before" to before, "after" to after))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -362,7 +362,7 @@ class Video(
      * @param afterVideoId ID of the video after which the photo in question shall be placed.
      */
     suspend fun reorderVideos(ownerId: Long, videoId: Long, targetId: Long? = null, albumId: Long? = -2, beforeOwnerId: Long? = null, beforeVideoId: Long? = null, afterOwnerId: Long? = null, afterVideoId: Long? = null): BaseOkResponse {
-        val response = method("reorderVideos", mapOf("target_id" to targetId, "album_id" to albumId, "owner_id" to ownerId, "video_id" to videoId, "before_owner_id" to beforeOwnerId, "before_video_id" to beforeVideoId, "after_owner_id" to afterOwnerId, "after_video_id" to afterVideoId))
+        val response = method("video.reorderVideos", mapOf("target_id" to targetId, "album_id" to albumId, "owner_id" to ownerId, "video_id" to videoId, "before_owner_id" to beforeOwnerId, "before_video_id" to beforeVideoId, "after_owner_id" to afterOwnerId, "after_video_id" to afterVideoId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -377,7 +377,7 @@ class Video(
      * @param searchQuery (If the video was found in search results.) Search query string.
      */
     suspend fun report(ownerId: Long, videoId: Long, reason: Int? = null, comment: String? = null, searchQuery: String? = null): BaseOkResponse {
-        val response = method("report", mapOf("owner_id" to ownerId, "video_id" to videoId, "reason" to reason, "comment" to comment, "search_query" to searchQuery))
+        val response = method("video.report", mapOf("owner_id" to ownerId, "video_id" to videoId, "reason" to reason, "comment" to comment, "search_query" to searchQuery))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -390,7 +390,7 @@ class Video(
      * @param reason Reason for the complaint: , 0 - spam , 1 - child pornography , 2 - extremism , 3 - violence , 4 - drug propaganda , 5 - adult material , 6 - insult, abuse.
      */
     suspend fun reportComment(ownerId: Long, commentId: Long, reason: Int? = null): BaseOkResponse {
-        val response = method("reportComment", mapOf("owner_id" to ownerId, "comment_id" to commentId, "reason" to reason))
+        val response = method("video.reportComment", mapOf("owner_id" to ownerId, "comment_id" to commentId, "reason" to reason))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -402,7 +402,7 @@ class Video(
      * @param ownerId ID of the user or community that owns the video.
      */
     suspend fun restore(videoId: Long, ownerId: Long? = null): BaseOkResponse {
-        val response = method("restore", mapOf("video_id" to videoId, "owner_id" to ownerId))
+        val response = method("video.restore", mapOf("video_id" to videoId, "owner_id" to ownerId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -414,7 +414,7 @@ class Video(
      * @param commentId ID of the deleted comment.
      */
     suspend fun restoreComment(commentId: Long, ownerId: Long? = null): BaseBoolResponse {
-        val response = method("restoreComment", mapOf("owner_id" to ownerId, "comment_id" to commentId))
+        val response = method("video.restoreComment", mapOf("owner_id" to ownerId, "comment_id" to commentId))
         return json.decodeFromString<BaseBoolResponse>(response)
     }
 
@@ -436,7 +436,7 @@ class Video(
      * @param compression 
      */
     suspend fun save(name: String? = null, description: String? = null, isPrivate: Boolean? = false, wallpost: Boolean? = false, link: String? = null, groupId: Long? = null, albumId: Long? = null, privacyView: List<String>? = null, privacyComment: List<String>? = null, noComments: Boolean? = false, repeat: Boolean? = false, compression: Boolean? = false): VideoSaveResponse {
-        val response = method("save", mapOf("name" to name, "description" to description, "is_private" to isPrivate, "wallpost" to wallpost, "link" to link, "group_id" to groupId, "album_id" to albumId, "privacy_view" to privacyView, "privacy_comment" to privacyComment, "no_comments" to noComments, "repeat" to repeat, "compression" to compression))
+        val response = method("video.save", mapOf("name" to name, "description" to description, "is_private" to isPrivate, "wallpost" to wallpost, "link" to link, "group_id" to groupId, "album_id" to albumId, "privacy_view" to privacyView, "privacy_comment" to privacyComment, "no_comments" to noComments, "repeat" to repeat, "compression" to compression))
         return json.decodeFromString<VideoSaveResponse>(response)
     }
 
@@ -460,7 +460,7 @@ class Video(
      * @param fields 
      */
     suspend fun search(q: String? = null, sort: Int? = null, hd: Int? = null, adult: Boolean? = false, live: Boolean? = false, filters: List<String>? = null, searchOwn: Boolean? = false, offset: Int? = null, longer: Int? = null, shorter: Int? = null, count: Int? = 20, extended: Boolean? = false, ownerId: Long? = null, fields: List<String>? = null): SearchResponse {
-        val response = method("search", mapOf("q" to q, "sort" to sort, "hd" to hd, "adult" to adult, "live" to live, "filters" to filters, "search_own" to searchOwn, "offset" to offset, "longer" to longer, "shorter" to shorter, "count" to count, "extended" to extended, "owner_id" to ownerId, "fields" to fields))
+        val response = method("video.search", mapOf("q" to q, "sort" to sort, "hd" to hd, "adult" to adult, "live" to live, "filters" to filters, "search_own" to searchOwn, "offset" to offset, "longer" to longer, "shorter" to shorter, "count" to count, "extended" to extended, "owner_id" to ownerId, "fields" to fields))
         return SearchResponse(response, json)
     }
     class SearchResponse(
@@ -492,7 +492,7 @@ class Video(
      * @param publish 
      */
     suspend fun startStreaming(videoId: Long? = null, name: String? = null, description: String? = null, wallpost: Boolean? = false, groupId: Long? = null, privacyView: List<String>? = null, privacyComment: List<String>? = null, noComments: Boolean? = false, categoryId: Long? = null, publish: Boolean? = false): VideoStartStreamingResponse {
-        val response = method("startStreaming", mapOf("video_id" to videoId, "name" to name, "description" to description, "wallpost" to wallpost, "group_id" to groupId, "privacy_view" to privacyView, "privacy_comment" to privacyComment, "no_comments" to noComments, "category_id" to categoryId, "publish" to publish))
+        val response = method("video.startStreaming", mapOf("video_id" to videoId, "name" to name, "description" to description, "wallpost" to wallpost, "group_id" to groupId, "privacy_view" to privacyView, "privacy_comment" to privacyComment, "no_comments" to noComments, "category_id" to categoryId, "publish" to publish))
         return json.decodeFromString<VideoStartStreamingResponse>(response)
     }
 
@@ -502,7 +502,7 @@ class Video(
      * @param videoId 
      */
     suspend fun stopStreaming(groupId: Long? = null, videoId: Long? = null): VideoStopStreamingResponse {
-        val response = method("stopStreaming", mapOf("group_id" to groupId, "video_id" to videoId))
+        val response = method("video.stopStreaming", mapOf("group_id" to groupId, "video_id" to videoId))
         return json.decodeFromString<VideoStopStreamingResponse>(response)
     }
 
@@ -514,7 +514,7 @@ class Video(
      * @param commentId 
      */
     suspend fun unpinComment(ownerId: Long, commentId: Long): BaseOkResponse {
-        val response = method("unpinComment", mapOf("owner_id" to ownerId, "comment_id" to commentId))
+        val response = method("video.unpinComment", mapOf("owner_id" to ownerId, "comment_id" to commentId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 

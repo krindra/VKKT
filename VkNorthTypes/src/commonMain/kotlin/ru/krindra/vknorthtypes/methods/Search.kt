@@ -25,7 +25,7 @@ class Search(
      * @param searchGlobal 
      */
     suspend fun getHints(q: String? = null, offset: Int? = null, limit: Int? = 9, filters: List<String>? = null, fields: List<String>? = null, searchGlobal: Boolean? = true): SearchGetHintsResponse {
-        val response = method("getHints", mapOf("q" to q, "offset" to offset, "limit" to limit, "filters" to filters, "fields" to fields, "search_global" to searchGlobal))
+        val response = method("search.getHints", mapOf("q" to q, "offset" to offset, "limit" to limit, "filters" to filters, "fields" to fields, "search_global" to searchGlobal))
         return json.decodeFromString<SearchGetHintsResponse>(response)
     }
 

@@ -8,8 +8,8 @@ package ru.krindra.vknorthtypes.methods
 import ru.krindra.vknorthtypes.types.stories.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
-import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.types.base.BaseUserGroupFields
+import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
 
 class Stories(
@@ -23,7 +23,7 @@ class Stories(
      * @param ownersIds List of sources IDs.
      */
     suspend fun banOwner(ownersIds: List<Int>): BaseOkResponse {
-        val response = method("banOwner", mapOf("owners_ids" to ownersIds))
+        val response = method("stories.banOwner", mapOf("owners_ids" to ownersIds))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -36,7 +36,7 @@ class Stories(
      * @param stories 
      */
     suspend fun delete(ownerId: Long? = null, storyId: Long? = null, stories: List<String>? = null): BaseOkResponse {
-        val response = method("delete", mapOf("owner_id" to ownerId, "story_id" to storyId, "stories" to stories))
+        val response = method("stories.delete", mapOf("owner_id" to ownerId, "story_id" to storyId, "stories" to stories))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -49,7 +49,7 @@ class Stories(
      * @param fields 
      */
     suspend fun get(ownerId: Long? = null, extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null): StoriesGetV5113Response {
-        val response = method("get", mapOf("owner_id" to ownerId, "extended" to extended, "fields" to fields))
+        val response = method("stories.get", mapOf("owner_id" to ownerId, "extended" to extended, "fields" to fields))
         return json.decodeFromString<StoriesGetV5113Response>(response)
     }
 
@@ -61,7 +61,7 @@ class Stories(
      * @param fields Additional fields to return.
      */
     suspend fun getBanned(extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null): GetbannedResponse {
-        val response = method("getBanned", mapOf("extended" to extended, "fields" to fields))
+        val response = method("stories.getBanned", mapOf("extended" to extended, "fields" to fields))
         return GetbannedResponse(response, json)
     }
     class GetbannedResponse(
@@ -88,7 +88,7 @@ class Stories(
      * @param fields Additional fields to return.
      */
     suspend fun getById(stories: List<String>, extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null): StoriesGetByIdExtendedResponse {
-        val response = method("getById", mapOf("stories" to stories, "extended" to extended, "fields" to fields))
+        val response = method("stories.getById", mapOf("stories" to stories, "extended" to extended, "fields" to fields))
         return json.decodeFromString<StoriesGetByIdExtendedResponse>(response)
     }
 
@@ -98,7 +98,7 @@ class Stories(
      * @param storyId 
      */
     suspend fun getDetailedStats(ownerId: Long, storyId: Long): StoriesGetStatsV5200Response {
-        val response = method("getDetailedStats", mapOf("owner_id" to ownerId, "story_id" to storyId))
+        val response = method("stories.getDetailedStats", mapOf("owner_id" to ownerId, "story_id" to storyId))
         return json.decodeFromString<StoriesGetStatsV5200Response>(response)
     }
 
@@ -115,7 +115,7 @@ class Stories(
      * @param clickableStickers 
      */
     suspend fun getPhotoUploadServer(addToNews: Boolean? = false, userIds: List<Int>? = null, replyToStory: String? = null, linkText: String? = null, linkUrl: String? = null, groupId: Long? = null, clickableStickers: String? = null): StoriesGetPhotoUploadServerResponse {
-        val response = method("getPhotoUploadServer", mapOf("add_to_news" to addToNews, "user_ids" to userIds, "reply_to_story" to replyToStory, "link_text" to linkText, "link_url" to linkUrl, "group_id" to groupId, "clickable_stickers" to clickableStickers))
+        val response = method("stories.getPhotoUploadServer", mapOf("add_to_news" to addToNews, "user_ids" to userIds, "reply_to_story" to replyToStory, "link_text" to linkText, "link_url" to linkUrl, "group_id" to groupId, "clickable_stickers" to clickableStickers))
         return json.decodeFromString<StoriesGetPhotoUploadServerResponse>(response)
     }
 
@@ -130,7 +130,7 @@ class Stories(
      * @param fields Additional fields to return.
      */
     suspend fun getReplies(ownerId: Long, storyId: Long, accessKey: String? = null, extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null): StoriesGetV5113Response {
-        val response = method("getReplies", mapOf("owner_id" to ownerId, "story_id" to storyId, "access_key" to accessKey, "extended" to extended, "fields" to fields))
+        val response = method("stories.getReplies", mapOf("owner_id" to ownerId, "story_id" to storyId, "access_key" to accessKey, "extended" to extended, "fields" to fields))
         return json.decodeFromString<StoriesGetV5113Response>(response)
     }
 
@@ -142,7 +142,7 @@ class Stories(
      * @param storyId Story ID.
      */
     suspend fun getStats(ownerId: Long, storyId: Long): StoriesGetStatsResponse {
-        val response = method("getStats", mapOf("owner_id" to ownerId, "story_id" to storyId))
+        val response = method("stories.getStats", mapOf("owner_id" to ownerId, "story_id" to storyId))
         return json.decodeFromString<StoriesGetStatsResponse>(response)
     }
 
@@ -159,7 +159,7 @@ class Stories(
      * @param clickableStickers 
      */
     suspend fun getVideoUploadServer(addToNews: Boolean? = false, userIds: List<Int>? = null, replyToStory: String? = null, linkText: String? = null, linkUrl: String? = null, groupId: Long? = null, clickableStickers: String? = null): StoriesGetVideoUploadServerResponse {
-        val response = method("getVideoUploadServer", mapOf("add_to_news" to addToNews, "user_ids" to userIds, "reply_to_story" to replyToStory, "link_text" to linkText, "link_url" to linkUrl, "group_id" to groupId, "clickable_stickers" to clickableStickers))
+        val response = method("stories.getVideoUploadServer", mapOf("add_to_news" to addToNews, "user_ids" to userIds, "reply_to_story" to replyToStory, "link_text" to linkText, "link_url" to linkUrl, "group_id" to groupId, "clickable_stickers" to clickableStickers))
         return json.decodeFromString<StoriesGetVideoUploadServerResponse>(response)
     }
 
@@ -175,7 +175,7 @@ class Stories(
      * @param fields 
      */
     suspend fun getViewers(storyId: Long, ownerId: Long? = null, count: Int? = 100, offset: Int? = 0, extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null): StoriesGetViewersExtendedV5115Response {
-        val response = method("getViewers", mapOf("owner_id" to ownerId, "story_id" to storyId, "count" to count, "offset" to offset, "extended" to extended, "fields" to fields))
+        val response = method("stories.getViewers", mapOf("owner_id" to ownerId, "story_id" to storyId, "count" to count, "offset" to offset, "extended" to extended, "fields" to fields))
         return json.decodeFromString<StoriesGetViewersExtendedV5115Response>(response)
     }
 
@@ -187,7 +187,7 @@ class Stories(
      * @param groupId 
      */
     suspend fun hideAllReplies(ownerId: Long, groupId: Long? = null): BaseOkResponse {
-        val response = method("hideAllReplies", mapOf("owner_id" to ownerId, "group_id" to groupId))
+        val response = method("stories.hideAllReplies", mapOf("owner_id" to ownerId, "group_id" to groupId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -199,7 +199,7 @@ class Stories(
      * @param storyId Story ID.
      */
     suspend fun hideReply(ownerId: Long, storyId: Long): BaseOkResponse {
-        val response = method("hideReply", mapOf("owner_id" to ownerId, "story_id" to storyId))
+        val response = method("stories.hideReply", mapOf("owner_id" to ownerId, "story_id" to storyId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -211,7 +211,7 @@ class Stories(
      * @param fields 
      */
     suspend fun save(uploadResults: List<String>? = null, uploadResultsJson: String? = null, extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null): StoriesSaveResponse {
-        val response = method("save", mapOf("upload_results" to uploadResults, "upload_results_json" to uploadResultsJson, "extended" to extended, "fields" to fields))
+        val response = method("stories.save", mapOf("upload_results" to uploadResults, "upload_results_json" to uploadResultsJson, "extended" to extended, "fields" to fields))
         return json.decodeFromString<StoriesSaveResponse>(response)
     }
 
@@ -228,7 +228,7 @@ class Stories(
      * @param fields 
      */
     suspend fun search(q: String? = null, placeId: Long? = null, latitude: Double? = null, longitude: Double? = null, radius: Int? = null, mentionedId: Long? = null, count: Int? = 20, extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null): StoriesGetV5113Response {
-        val response = method("search", mapOf("q" to q, "place_id" to placeId, "latitude" to latitude, "longitude" to longitude, "radius" to radius, "mentioned_id" to mentionedId, "count" to count, "extended" to extended, "fields" to fields))
+        val response = method("stories.search", mapOf("q" to q, "place_id" to placeId, "latitude" to latitude, "longitude" to longitude, "radius" to radius, "mentioned_id" to mentionedId, "count" to count, "extended" to extended, "fields" to fields))
         return json.decodeFromString<StoriesGetV5113Response>(response)
     }
 
@@ -241,7 +241,7 @@ class Stories(
      * @param unseenMarker 
      */
     suspend fun sendInteraction(accessKey: String, message: String? = null, isBroadcast: Boolean? = false, isAnonymous: Boolean? = false, unseenMarker: Boolean? = false): BaseOkResponse {
-        val response = method("sendInteraction", mapOf("access_key" to accessKey, "message" to message, "is_broadcast" to isBroadcast, "is_anonymous" to isAnonymous, "unseen_marker" to unseenMarker))
+        val response = method("stories.sendInteraction", mapOf("access_key" to accessKey, "message" to message, "is_broadcast" to isBroadcast, "is_anonymous" to isAnonymous, "unseen_marker" to unseenMarker))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -252,7 +252,7 @@ class Stories(
      * @param ownersIds List of hidden sources to show stories from.
      */
     suspend fun unbanOwner(ownersIds: List<Int>): BaseOkResponse {
-        val response = method("unbanOwner", mapOf("owners_ids" to ownersIds))
+        val response = method("stories.unbanOwner", mapOf("owners_ids" to ownersIds))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 

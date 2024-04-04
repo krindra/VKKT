@@ -22,7 +22,7 @@ class Gifts(
      * @param offset Offset needed to return a specific subset of results.
      */
     suspend fun get(userId: Long? = null, count: Int? = null, offset: Int? = null): GiftsGetResponse {
-        val response = method("get", mapOf("user_id" to userId, "count" to count, "offset" to offset))
+        val response = method("gifts.get", mapOf("user_id" to userId, "count" to count, "offset" to offset))
         return json.decodeFromString<GiftsGetResponse>(response)
     }
 

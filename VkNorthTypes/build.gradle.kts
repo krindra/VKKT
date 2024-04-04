@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "ru.krindra"
-version = "0.7.3-dev"
+version = "0.7.4-dev"
 
 kotlin {
     androidTarget {

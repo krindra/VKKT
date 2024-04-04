@@ -22,7 +22,7 @@ class Utils(
      * @param url Link to check (e.g., 'http://google.com').
      */
     suspend fun checkLink(url: String): UtilsCheckLinkResponse {
-        val response = method("checkLink", mapOf("url" to url))
+        val response = method("utils.checkLink", mapOf("url" to url))
         return json.decodeFromString<UtilsCheckLinkResponse>(response)
     }
 
@@ -33,7 +33,7 @@ class Utils(
      * @param key Link key (characters after vk.cc/).
      */
     suspend fun deleteFromLastShortened(key: String): BaseOkResponse {
-        val response = method("deleteFromLastShortened", mapOf("key" to key))
+        val response = method("utils.deleteFromLastShortened", mapOf("key" to key))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -45,7 +45,7 @@ class Utils(
      * @param offset Offset needed to return a specific subset of links.
      */
     suspend fun getLastShortenedLinks(count: Int? = 10, offset: Int? = 0): UtilsGetLastShortenedLinksResponse {
-        val response = method("getLastShortenedLinks", mapOf("count" to count, "offset" to offset))
+        val response = method("utils.getLastShortenedLinks", mapOf("count" to count, "offset" to offset))
         return json.decodeFromString<UtilsGetLastShortenedLinksResponse>(response)
     }
 
@@ -61,7 +61,7 @@ class Utils(
      * @param extended 1 - to return extended stats data (sex, age, geo). 0 - to return views number only.
      */
     suspend fun getLinkStats(key: String, source: String? = "vk_cc", accessKey: String? = null, interval: String? = "day", intervalsCount: Int? = 1, extended: Boolean? = false): GetlinkstatsResponse {
-        val response = method("getLinkStats", mapOf("key" to key, "source" to source, "access_key" to accessKey, "interval" to interval, "intervals_count" to intervalsCount, "extended" to extended))
+        val response = method("utils.getLinkStats", mapOf("key" to key, "source" to source, "access_key" to accessKey, "interval" to interval, "intervals_count" to intervalsCount, "extended" to extended))
         return GetlinkstatsResponse(response, json)
     }
     class GetlinkstatsResponse(
@@ -85,7 +85,7 @@ class Utils(
      * 
      */
     suspend fun getServerTime(): UtilsGetServerTimeResponse {
-        val response = method("getServerTime", mapOf())
+        val response = method("utils.getServerTime", mapOf())
         return json.decodeFromString<UtilsGetServerTimeResponse>(response)
     }
 
@@ -97,7 +97,7 @@ class Utils(
      * @param private 1 - private stats, 0 - public stats.
      */
     suspend fun getShortLink(url: String, private: Boolean? = false): UtilsGetShortLinkResponse {
-        val response = method("getShortLink", mapOf("url" to url, "private" to private))
+        val response = method("utils.getShortLink", mapOf("url" to url, "private" to private))
         return json.decodeFromString<UtilsGetShortLinkResponse>(response)
     }
 
@@ -108,7 +108,7 @@ class Utils(
      * @param screenName Screen name of the user, community (e.g., 'apiclub,' 'andrew', or 'rules_of_war'), or application.
      */
     suspend fun resolveScreenName(screenName: String): UtilsResolveScreenNameResponse {
-        val response = method("resolveScreenName", mapOf("screen_name" to screenName))
+        val response = method("utils.resolveScreenName", mapOf("screen_name" to screenName))
         return json.decodeFromString<UtilsResolveScreenNameResponse>(response)
     }
 

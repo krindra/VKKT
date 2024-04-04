@@ -8,10 +8,10 @@ package ru.krindra.vknorthtypes.methods
 import ru.krindra.vknorthtypes.types.photos.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
-import ru.krindra.vknorthtypes.types.base.BaseOkResponse
-import ru.krindra.vknorthtypes.types.users.UsersFields
 import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
+import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.types.base.BaseGetUploadServerResponse
+import ru.krindra.vknorthtypes.types.users.UsersFields
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
 
 class Photos(
@@ -27,7 +27,7 @@ class Photos(
      * @param tagId Tag ID.
      */
     suspend fun confirmTag(photoId: String, tagId: Long, ownerId: Long? = null): BaseOkResponse {
-        val response = method("confirmTag", mapOf("owner_id" to ownerId, "photo_id" to photoId, "tag_id" to tagId))
+        val response = method("photos.confirmTag", mapOf("owner_id" to ownerId, "photo_id" to photoId, "tag_id" to tagId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -40,7 +40,7 @@ class Photos(
      * @param accessKey for private photos.
      */
     suspend fun copy(ownerId: Long, photoId: Long, accessKey: String? = null): PhotosCopyResponse {
-        val response = method("copy", mapOf("owner_id" to ownerId, "photo_id" to photoId, "access_key" to accessKey))
+        val response = method("photos.copy", mapOf("owner_id" to ownerId, "photo_id" to photoId, "access_key" to accessKey))
         return json.decodeFromString<PhotosCopyResponse>(response)
     }
 
@@ -57,7 +57,7 @@ class Photos(
      * @param commentsDisabled 
      */
     suspend fun createAlbum(title: String, groupId: Long? = null, description: String? = null, privacyView: List<String>? = listOf("all"), privacyComment: List<String>? = listOf("all"), uploadByAdminsOnly: Boolean? = false, commentsDisabled: Boolean? = false): PhotosCreateAlbumResponse {
-        val response = method("createAlbum", mapOf("title" to title, "group_id" to groupId, "description" to description, "privacy_view" to privacyView, "privacy_comment" to privacyComment, "upload_by_admins_only" to uploadByAdminsOnly, "comments_disabled" to commentsDisabled))
+        val response = method("photos.createAlbum", mapOf("title" to title, "group_id" to groupId, "description" to description, "privacy_view" to privacyView, "privacy_comment" to privacyComment, "upload_by_admins_only" to uploadByAdminsOnly, "comments_disabled" to commentsDisabled))
         return json.decodeFromString<PhotosCreateAlbumResponse>(response)
     }
 
@@ -76,7 +76,7 @@ class Photos(
      * @param guid 
      */
     suspend fun createComment(photoId: Long, ownerId: Long? = null, message: String? = null, attachments: List<String>? = null, fromGroup: Boolean? = false, replyToComment: Int? = null, stickerId: Long? = null, accessKey: String? = null, guid: String? = null): PhotosCreateCommentResponse {
-        val response = method("createComment", mapOf("owner_id" to ownerId, "photo_id" to photoId, "message" to message, "attachments" to attachments, "from_group" to fromGroup, "reply_to_comment" to replyToComment, "sticker_id" to stickerId, "access_key" to accessKey, "guid" to guid))
+        val response = method("photos.createComment", mapOf("owner_id" to ownerId, "photo_id" to photoId, "message" to message, "attachments" to attachments, "from_group" to fromGroup, "reply_to_comment" to replyToComment, "sticker_id" to stickerId, "access_key" to accessKey, "guid" to guid))
         return json.decodeFromString<PhotosCreateCommentResponse>(response)
     }
 
@@ -89,7 +89,7 @@ class Photos(
      * @param photos 
      */
     suspend fun delete(ownerId: Long? = null, photoId: Long? = null, photos: List<String>? = null): BaseOkResponse {
-        val response = method("delete", mapOf("owner_id" to ownerId, "photo_id" to photoId, "photos" to photos))
+        val response = method("photos.delete", mapOf("owner_id" to ownerId, "photo_id" to photoId, "photos" to photos))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -101,7 +101,7 @@ class Photos(
      * @param groupId ID of the community that owns the album.
      */
     suspend fun deleteAlbum(albumId: Long, groupId: Long? = null): BaseOkResponse {
-        val response = method("deleteAlbum", mapOf("album_id" to albumId, "group_id" to groupId))
+        val response = method("photos.deleteAlbum", mapOf("album_id" to albumId, "group_id" to groupId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -113,7 +113,7 @@ class Photos(
      * @param commentId Comment ID.
      */
     suspend fun deleteComment(commentId: Long, ownerId: Long? = null): BaseBoolResponse {
-        val response = method("deleteComment", mapOf("owner_id" to ownerId, "comment_id" to commentId))
+        val response = method("photos.deleteComment", mapOf("owner_id" to ownerId, "comment_id" to commentId))
         return json.decodeFromString<BaseBoolResponse>(response)
     }
 
@@ -131,7 +131,7 @@ class Photos(
      * @param deletePlace 
      */
     suspend fun edit(photoId: Long, ownerId: Long? = null, caption: String? = null, latitude: Double? = null, longitude: Double? = null, placeStr: String? = null, foursquareId: String? = null, deletePlace: Boolean? = false): BaseOkResponse {
-        val response = method("edit", mapOf("owner_id" to ownerId, "photo_id" to photoId, "caption" to caption, "latitude" to latitude, "longitude" to longitude, "place_str" to placeStr, "foursquare_id" to foursquareId, "delete_place" to deletePlace))
+        val response = method("photos.edit", mapOf("owner_id" to ownerId, "photo_id" to photoId, "caption" to caption, "latitude" to latitude, "longitude" to longitude, "place_str" to placeStr, "foursquare_id" to foursquareId, "delete_place" to deletePlace))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -149,7 +149,7 @@ class Photos(
      * @param commentsDisabled 
      */
     suspend fun editAlbum(albumId: Long, title: String? = null, description: String? = null, ownerId: Long? = null, privacyView: List<String>? = null, privacyComment: List<String>? = null, uploadByAdminsOnly: Boolean? = false, commentsDisabled: Boolean? = false): BaseOkResponse {
-        val response = method("editAlbum", mapOf("album_id" to albumId, "title" to title, "description" to description, "owner_id" to ownerId, "privacy_view" to privacyView, "privacy_comment" to privacyComment, "upload_by_admins_only" to uploadByAdminsOnly, "comments_disabled" to commentsDisabled))
+        val response = method("photos.editAlbum", mapOf("album_id" to albumId, "title" to title, "description" to description, "owner_id" to ownerId, "privacy_view" to privacyView, "privacy_comment" to privacyComment, "upload_by_admins_only" to uploadByAdminsOnly, "comments_disabled" to commentsDisabled))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -163,7 +163,7 @@ class Photos(
      * @param attachments (Required if 'message' is not set.) List of objects attached to the post, in the following format: "<owner_id>_<media_id>,<owner_id>_<media_id>", '' - Type of media attachment: 'photo' - photo, 'video' - video, 'audio' - audio, 'doc' - document, '<owner_id>' - Media attachment owner ID. '<media_id>' - Media attachment ID. Example: "photo100172_166443618,photo66748_265827614".
      */
     suspend fun editComment(commentId: Long, ownerId: Long? = null, message: String? = null, attachments: List<String>? = null): BaseOkResponse {
-        val response = method("editComment", mapOf("owner_id" to ownerId, "comment_id" to commentId, "message" to message, "attachments" to attachments))
+        val response = method("photos.editComment", mapOf("owner_id" to ownerId, "comment_id" to commentId, "message" to message, "attachments" to attachments))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -183,7 +183,7 @@ class Photos(
      * @param count 
      */
     suspend fun get(ownerId: Long? = null, albumId: String? = null, photoIds: List<String>? = null, rev: Boolean? = false, extended: Boolean? = false, feedType: String? = null, feed: Int? = null, photoSizes: Boolean? = false, offset: Int? = null, count: Int? = 50): PhotosGetResponse {
-        val response = method("get", mapOf("owner_id" to ownerId, "album_id" to albumId, "photo_ids" to photoIds, "rev" to rev, "extended" to extended, "feed_type" to feedType, "feed" to feed, "photo_sizes" to photoSizes, "offset" to offset, "count" to count))
+        val response = method("photos.get", mapOf("owner_id" to ownerId, "album_id" to albumId, "photo_ids" to photoIds, "rev" to rev, "extended" to extended, "feed_type" to feedType, "feed" to feed, "photo_sizes" to photoSizes, "offset" to offset, "count" to count))
         return json.decodeFromString<PhotosGetResponse>(response)
     }
 
@@ -200,7 +200,7 @@ class Photos(
      * @param photoSizes '1' - to return photo sizes in a.
      */
     suspend fun getAlbums(ownerId: Long? = null, albumIds: List<Int>? = null, offset: Int? = null, count: Int? = null, needSystem: Boolean? = false, needCovers: Boolean? = false, photoSizes: Boolean? = false): PhotosGetAlbumsResponse {
-        val response = method("getAlbums", mapOf("owner_id" to ownerId, "album_ids" to albumIds, "offset" to offset, "count" to count, "need_system" to needSystem, "need_covers" to needCovers, "photo_sizes" to photoSizes))
+        val response = method("photos.getAlbums", mapOf("owner_id" to ownerId, "album_ids" to albumIds, "offset" to offset, "count" to count, "need_system" to needSystem, "need_covers" to needCovers, "photo_sizes" to photoSizes))
         return json.decodeFromString<PhotosGetAlbumsResponse>(response)
     }
 
@@ -213,7 +213,7 @@ class Photos(
      * @param needSystem 
      */
     suspend fun getAlbumsCount(userId: Long? = null, groupId: Long? = null, needSystem: Boolean? = false): PhotosGetAlbumsCountResponse {
-        val response = method("getAlbumsCount", mapOf("user_id" to userId, "group_id" to groupId, "need_system" to needSystem))
+        val response = method("photos.getAlbumsCount", mapOf("user_id" to userId, "group_id" to groupId, "need_system" to needSystem))
         return json.decodeFromString<PhotosGetAlbumsCountResponse>(response)
     }
 
@@ -231,7 +231,7 @@ class Photos(
      * @param skipHidden '1' - not to return photos being hidden from the block above the wall. Works only with owner_id>0, no_service_albums is ignored.
      */
     suspend fun getAll(ownerId: Long? = null, extended: Boolean? = false, offset: Int? = null, count: Int? = 20, photoSizes: Boolean? = false, noServiceAlbums: Boolean? = false, needHidden: Boolean? = false, skipHidden: Boolean? = false): PhotosGetAllResponse {
-        val response = method("getAll", mapOf("owner_id" to ownerId, "extended" to extended, "offset" to offset, "count" to count, "photo_sizes" to photoSizes, "no_service_albums" to noServiceAlbums, "need_hidden" to needHidden, "skip_hidden" to skipHidden))
+        val response = method("photos.getAll", mapOf("owner_id" to ownerId, "extended" to extended, "offset" to offset, "count" to count, "photo_sizes" to photoSizes, "no_service_albums" to noServiceAlbums, "need_hidden" to needHidden, "skip_hidden" to skipHidden))
         return json.decodeFromString<PhotosGetAllResponse>(response)
     }
 
@@ -246,7 +246,7 @@ class Photos(
      * @param count Number of comments to return. By default, '20'. Maximum value, '100'.
      */
     suspend fun getAllComments(ownerId: Long? = null, albumId: Long? = null, needLikes: Boolean? = false, offset: Int? = null, count: Int? = null): PhotosGetAllCommentsResponse {
-        val response = method("getAllComments", mapOf("owner_id" to ownerId, "album_id" to albumId, "need_likes" to needLikes, "offset" to offset, "count" to count))
+        val response = method("photos.getAllComments", mapOf("owner_id" to ownerId, "album_id" to albumId, "need_likes" to needLikes, "offset" to offset, "count" to count))
         return json.decodeFromString<PhotosGetAllCommentsResponse>(response)
     }
 
@@ -259,7 +259,7 @@ class Photos(
      * @param photoSizes '1' - to return photo sizes in a.
      */
     suspend fun getById(photos: List<String>, extended: Boolean? = false, photoSizes: Boolean? = false): PhotosGetByIdResponse {
-        val response = method("getById", mapOf("photos" to photos, "extended" to extended, "photo_sizes" to photoSizes))
+        val response = method("photos.getById", mapOf("photos" to photos, "extended" to extended, "photo_sizes" to photoSizes))
         return json.decodeFromString<PhotosGetByIdResponse>(response)
     }
 
@@ -273,7 +273,7 @@ class Photos(
      * @param cropWidth Width (in pixels) of the photo after cropping.
      */
     suspend fun getChatUploadServer(chatId: Long, cropX: Int? = null, cropY: Int? = null, cropWidth: Int? = null): BaseGetUploadServerResponse {
-        val response = method("getChatUploadServer", mapOf("chat_id" to chatId, "crop_x" to cropX, "crop_y" to cropY, "crop_width" to cropWidth))
+        val response = method("photos.getChatUploadServer", mapOf("chat_id" to chatId, "crop_x" to cropX, "crop_y" to cropY, "crop_width" to cropWidth))
         return json.decodeFromString<BaseGetUploadServerResponse>(response)
     }
 
@@ -293,7 +293,7 @@ class Photos(
      * @param fields 
      */
     suspend fun getComments(photoId: Long, ownerId: Long? = null, needLikes: Boolean? = false, startCommentId: Long? = null, offset: Int? = null, count: Int? = 20, sort: String? = null, accessKey: String? = null, extended: Boolean? = false, fields: List<UsersFields>? = null): GetcommentsResponse {
-        val response = method("getComments", mapOf("owner_id" to ownerId, "photo_id" to photoId, "need_likes" to needLikes, "start_comment_id" to startCommentId, "offset" to offset, "count" to count, "sort" to sort, "access_key" to accessKey, "extended" to extended, "fields" to fields))
+        val response = method("photos.getComments", mapOf("owner_id" to ownerId, "photo_id" to photoId, "need_likes" to needLikes, "start_comment_id" to startCommentId, "offset" to offset, "count" to count, "sort" to sort, "access_key" to accessKey, "extended" to extended, "fields" to fields))
         return GetcommentsResponse(response, json)
     }
     class GetcommentsResponse(
@@ -318,7 +318,7 @@ class Photos(
      * @param groupId Community ID.
      */
     suspend fun getMarketAlbumUploadServer(groupId: Long): BaseGetUploadServerResponse {
-        val response = method("getMarketAlbumUploadServer", mapOf("group_id" to groupId))
+        val response = method("photos.getMarketAlbumUploadServer", mapOf("group_id" to groupId))
         return json.decodeFromString<BaseGetUploadServerResponse>(response)
     }
 
@@ -333,7 +333,7 @@ class Photos(
      * @param cropWidth Width of the cropped photo in px.
      */
     suspend fun getMarketUploadServer(groupId: Long, mainPhoto: Boolean? = false, cropX: Int? = null, cropY: Int? = null, cropWidth: Int? = null): PhotosGetMarketUploadServerResponse {
-        val response = method("getMarketUploadServer", mapOf("group_id" to groupId, "main_photo" to mainPhoto, "crop_x" to cropX, "crop_y" to cropY, "crop_width" to cropWidth))
+        val response = method("photos.getMarketUploadServer", mapOf("group_id" to groupId, "main_photo" to mainPhoto, "crop_x" to cropX, "crop_y" to cropY, "crop_width" to cropWidth))
         return json.decodeFromString<PhotosGetMarketUploadServerResponse>(response)
     }
 
@@ -344,7 +344,7 @@ class Photos(
      * @param peerId Destination ID. "For user: 'User ID', e.g. '12345'. For chat: '2000000000' + 'Chat ID', e.g. '2000000001'. For community: '- Community ID', e.g. '-12345'. ".
      */
     suspend fun getMessagesUploadServer(peerId: Long? = null): PhotosGetMessagesUploadServerResponse {
-        val response = method("getMessagesUploadServer", mapOf("peer_id" to peerId))
+        val response = method("photos.getMessagesUploadServer", mapOf("peer_id" to peerId))
         return json.decodeFromString<PhotosGetMessagesUploadServerResponse>(response)
     }
 
@@ -356,7 +356,7 @@ class Photos(
      * @param count Number of photos to return.
      */
     suspend fun getNewTags(offset: Int? = null, count: Int? = 20): PhotosGetNewTagsResponse {
-        val response = method("getNewTags", mapOf("offset" to offset, "count" to count))
+        val response = method("photos.getNewTags", mapOf("offset" to offset, "count" to count))
         return json.decodeFromString<PhotosGetNewTagsResponse>(response)
     }
 
@@ -372,7 +372,7 @@ class Photos(
      * @param isVideoCover 
      */
     suspend fun getOwnerCoverPhotoUploadServer(groupId: Long? = null, cropX: Int? = 0, cropY: Int? = 0, cropX2: Int? = 795, cropY2: Int? = 200, isVideoCover: Boolean? = false): BaseGetUploadServerResponse {
-        val response = method("getOwnerCoverPhotoUploadServer", mapOf("group_id" to groupId, "crop_x" to cropX, "crop_y" to cropY, "crop_x2" to cropX2, "crop_y2" to cropY2, "is_video_cover" to isVideoCover))
+        val response = method("photos.getOwnerCoverPhotoUploadServer", mapOf("group_id" to groupId, "crop_x" to cropX, "crop_y" to cropY, "crop_x2" to cropX2, "crop_y2" to cropY2, "is_video_cover" to isVideoCover))
         return json.decodeFromString<BaseGetUploadServerResponse>(response)
     }
 
@@ -383,7 +383,7 @@ class Photos(
      * @param ownerId identifier of a community or current user. "Note that community id must be negative. 'owner_id=1' - user, 'owner_id=-1' - community, ".
      */
     suspend fun getOwnerPhotoUploadServer(ownerId: Long? = null): BaseGetUploadServerResponse {
-        val response = method("getOwnerPhotoUploadServer", mapOf("owner_id" to ownerId))
+        val response = method("photos.getOwnerPhotoUploadServer", mapOf("owner_id" to ownerId))
         return json.decodeFromString<BaseGetUploadServerResponse>(response)
     }
 
@@ -396,7 +396,7 @@ class Photos(
      * @param accessKey 
      */
     suspend fun getTags(photoId: Long, ownerId: Long? = null, accessKey: String? = null): PhotosGetTagsResponse {
-        val response = method("getTags", mapOf("owner_id" to ownerId, "photo_id" to photoId, "access_key" to accessKey))
+        val response = method("photos.getTags", mapOf("owner_id" to ownerId, "photo_id" to photoId, "access_key" to accessKey))
         return json.decodeFromString<PhotosGetTagsResponse>(response)
     }
 
@@ -408,7 +408,7 @@ class Photos(
      * @param groupId ID of community that owns the album (if the photo will be uploaded to a community album).
      */
     suspend fun getUploadServer(albumId: Long? = null, groupId: Long? = null): PhotosGetUploadServerResponse {
-        val response = method("getUploadServer", mapOf("album_id" to albumId, "group_id" to groupId))
+        val response = method("photos.getUploadServer", mapOf("album_id" to albumId, "group_id" to groupId))
         return json.decodeFromString<PhotosGetUploadServerResponse>(response)
     }
 
@@ -423,7 +423,7 @@ class Photos(
      * @param sort Sort order: '1' - by date the tag was added in ascending order, '0' - by date the tag was added in descending order.
      */
     suspend fun getUserPhotos(userId: Long? = null, offset: Int? = null, count: Int? = 20, extended: Boolean? = false, sort: String? = null): PhotosGetUserPhotosResponse {
-        val response = method("getUserPhotos", mapOf("user_id" to userId, "offset" to offset, "count" to count, "extended" to extended, "sort" to sort))
+        val response = method("photos.getUserPhotos", mapOf("user_id" to userId, "offset" to offset, "count" to count, "extended" to extended, "sort" to sort))
         return json.decodeFromString<PhotosGetUserPhotosResponse>(response)
     }
 
@@ -434,7 +434,7 @@ class Photos(
      * @param groupId ID of community to whose wall the photo will be uploaded.
      */
     suspend fun getWallUploadServer(groupId: Long? = null): PhotosGetWallUploadServerResponse {
-        val response = method("getWallUploadServer", mapOf("group_id" to groupId))
+        val response = method("photos.getWallUploadServer", mapOf("group_id" to groupId))
         return json.decodeFromString<PhotosGetWallUploadServerResponse>(response)
     }
 
@@ -447,7 +447,7 @@ class Photos(
      * @param albumId Album ID.
      */
     suspend fun makeCover(photoId: Long, ownerId: Long? = null, albumId: Long? = null): BaseOkResponse {
-        val response = method("makeCover", mapOf("owner_id" to ownerId, "photo_id" to photoId, "album_id" to albumId))
+        val response = method("photos.makeCover", mapOf("owner_id" to ownerId, "photo_id" to photoId, "album_id" to albumId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -460,7 +460,7 @@ class Photos(
      * @param photoIds 
      */
     suspend fun move(targetAlbumId: Long, photoIds: List<Int>, ownerId: Long? = null): BaseOkResponse {
-        val response = method("move", mapOf("owner_id" to ownerId, "target_album_id" to targetAlbumId, "photo_ids" to photoIds))
+        val response = method("photos.move", mapOf("owner_id" to ownerId, "target_album_id" to targetAlbumId, "photo_ids" to photoIds))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -477,7 +477,7 @@ class Photos(
      * @param y2 Lower right-corner coordinate of the tagged area (as a percentage of the photo's height).
      */
     suspend fun putTag(photoId: Long, userId: Long, ownerId: Long? = null, x: Double? = null, y: Double? = null, x2: Double? = null, y2: Double? = null): PhotosPutTagResponse {
-        val response = method("putTag", mapOf("owner_id" to ownerId, "photo_id" to photoId, "user_id" to userId, "x" to x, "y" to y, "x2" to x2, "y2" to y2))
+        val response = method("photos.putTag", mapOf("owner_id" to ownerId, "photo_id" to photoId, "user_id" to userId, "x" to x, "y" to y, "x2" to x2, "y2" to y2))
         return json.decodeFromString<PhotosPutTagResponse>(response)
     }
 
@@ -490,7 +490,7 @@ class Photos(
      * @param tagId Tag ID.
      */
     suspend fun removeTag(photoId: Long, tagId: Long, ownerId: Long? = null): BaseOkResponse {
-        val response = method("removeTag", mapOf("owner_id" to ownerId, "photo_id" to photoId, "tag_id" to tagId))
+        val response = method("photos.removeTag", mapOf("owner_id" to ownerId, "photo_id" to photoId, "tag_id" to tagId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -504,7 +504,7 @@ class Photos(
      * @param after ID of the album after which the album in question shall be placed.
      */
     suspend fun reorderAlbums(albumId: Long, ownerId: Long? = null, before: Int? = null, after: Int? = null): BaseOkResponse {
-        val response = method("reorderAlbums", mapOf("owner_id" to ownerId, "album_id" to albumId, "before" to before, "after" to after))
+        val response = method("photos.reorderAlbums", mapOf("owner_id" to ownerId, "album_id" to albumId, "before" to before, "after" to after))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -518,7 +518,7 @@ class Photos(
      * @param after ID of the photo after which the photo in question shall be placed.
      */
     suspend fun reorderPhotos(photoId: Long, ownerId: Long? = null, before: Int? = null, after: Int? = null): BaseOkResponse {
-        val response = method("reorderPhotos", mapOf("owner_id" to ownerId, "photo_id" to photoId, "before" to before, "after" to after))
+        val response = method("photos.reorderPhotos", mapOf("owner_id" to ownerId, "photo_id" to photoId, "before" to before, "after" to after))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -531,7 +531,7 @@ class Photos(
      * @param reason Reason for the complaint: '0' - spam, '1' - child pornography, '2' - extremism, '3' - violence, '4' - drug propaganda, '5' - adult material, '6' - insult, abuse, '8' - suicide calls.
      */
     suspend fun report(ownerId: Long, photoId: Long, reason: Int? = null): BaseOkResponse {
-        val response = method("report", mapOf("owner_id" to ownerId, "photo_id" to photoId, "reason" to reason))
+        val response = method("photos.report", mapOf("owner_id" to ownerId, "photo_id" to photoId, "reason" to reason))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -544,7 +544,7 @@ class Photos(
      * @param reason Reason for the complaint: '0' - spam, '1' - child pornography, '2' - extremism, '3' - violence, '4' - drug propaganda, '5' - adult material, '6' - insult, abuse.
      */
     suspend fun reportComment(ownerId: Long, commentId: Long, reason: Int? = null): BaseOkResponse {
-        val response = method("reportComment", mapOf("owner_id" to ownerId, "comment_id" to commentId, "reason" to reason))
+        val response = method("photos.reportComment", mapOf("owner_id" to ownerId, "comment_id" to commentId, "reason" to reason))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -556,7 +556,7 @@ class Photos(
      * @param photoId Photo ID.
      */
     suspend fun restore(photoId: Long, ownerId: Long? = null): BaseOkResponse {
-        val response = method("restore", mapOf("owner_id" to ownerId, "photo_id" to photoId))
+        val response = method("photos.restore", mapOf("owner_id" to ownerId, "photo_id" to photoId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -568,7 +568,7 @@ class Photos(
      * @param commentId ID of the deleted comment.
      */
     suspend fun restoreComment(commentId: Long, ownerId: Long? = null): BaseBoolResponse {
-        val response = method("restoreComment", mapOf("owner_id" to ownerId, "comment_id" to commentId))
+        val response = method("photos.restoreComment", mapOf("owner_id" to ownerId, "comment_id" to commentId))
         return json.decodeFromString<BaseBoolResponse>(response)
     }
 
@@ -586,7 +586,7 @@ class Photos(
      * @param caption Text describing the photo. 2048 digits max.
      */
     suspend fun save(albumId: Long? = null, groupId: Long? = null, server: Int? = null, photosList: String? = null, hash: String? = null, latitude: Double? = null, longitude: Double? = null, caption: String? = null): PhotosSaveResponse {
-        val response = method("save", mapOf("album_id" to albumId, "group_id" to groupId, "server" to server, "photos_list" to photosList, "hash" to hash, "latitude" to latitude, "longitude" to longitude, "caption" to caption))
+        val response = method("photos.save", mapOf("album_id" to albumId, "group_id" to groupId, "server" to server, "photos_list" to photosList, "hash" to hash, "latitude" to latitude, "longitude" to longitude, "caption" to caption))
         return json.decodeFromString<PhotosSaveResponse>(response)
     }
 
@@ -600,7 +600,7 @@ class Photos(
      * @param hash Parameter returned when photos are [vk.com/dev/upload_files|uploaded to server].
      */
     suspend fun saveMarketAlbumPhoto(groupId: Long, photo: String, server: Int, hash: String): PhotosSaveMarketAlbumPhotoResponse {
-        val response = method("saveMarketAlbumPhoto", mapOf("group_id" to groupId, "photo" to photo, "server" to server, "hash" to hash))
+        val response = method("photos.saveMarketAlbumPhoto", mapOf("group_id" to groupId, "photo" to photo, "server" to server, "hash" to hash))
         return json.decodeFromString<PhotosSaveMarketAlbumPhotoResponse>(response)
     }
 
@@ -616,7 +616,7 @@ class Photos(
      * @param cropHash Parameter returned when photos are [vk.com/dev/upload_files|uploaded to server].
      */
     suspend fun saveMarketPhoto(photo: String, server: Int, hash: String, groupId: Long? = null, cropData: String? = null, cropHash: String? = null): PhotosSaveMarketPhotoResponse {
-        val response = method("saveMarketPhoto", mapOf("group_id" to groupId, "photo" to photo, "server" to server, "hash" to hash, "crop_data" to cropData, "crop_hash" to cropHash))
+        val response = method("photos.saveMarketPhoto", mapOf("group_id" to groupId, "photo" to photo, "server" to server, "hash" to hash, "crop_data" to cropData, "crop_hash" to cropHash))
         return json.decodeFromString<PhotosSaveMarketPhotoResponse>(response)
     }
 
@@ -629,7 +629,7 @@ class Photos(
      * @param hash 
      */
     suspend fun saveMessagesPhoto(photo: String, server: Int? = null, hash: String? = null): PhotosSaveMessagesPhotoResponse {
-        val response = method("saveMessagesPhoto", mapOf("photo" to photo, "server" to server, "hash" to hash))
+        val response = method("photos.saveMessagesPhoto", mapOf("photo" to photo, "server" to server, "hash" to hash))
         return json.decodeFromString<PhotosSaveMessagesPhotoResponse>(response)
     }
 
@@ -647,7 +647,7 @@ class Photos(
      * @param isVideoCover 
      */
     suspend fun saveOwnerCoverPhoto(cropX: Int? = 0, cropHeight: Int? = 0, cropY: Int? = 0, cropWidth: Int? = 0, responseJson: String? = null, hash: String? = null, photo: String? = null, isVideoCover: Boolean? = false): PhotosSaveOwnerCoverPhotoResponse {
-        val response = method("saveOwnerCoverPhoto", mapOf("crop_x" to cropX, "crop_height" to cropHeight, "crop_y" to cropY, "crop_width" to cropWidth, "response_json" to responseJson, "hash" to hash, "photo" to photo, "is_video_cover" to isVideoCover))
+        val response = method("photos.saveOwnerCoverPhoto", mapOf("crop_x" to cropX, "crop_height" to cropHeight, "crop_y" to cropY, "crop_width" to cropWidth, "response_json" to responseJson, "hash" to hash, "photo" to photo, "is_video_cover" to isVideoCover))
         return json.decodeFromString<PhotosSaveOwnerCoverPhotoResponse>(response)
     }
 
@@ -660,7 +660,7 @@ class Photos(
      * @param photo parameter returned after [vk.com/dev/upload_files|photo upload].
      */
     suspend fun saveOwnerPhoto(server: String? = null, hash: String? = null, photo: String? = null): PhotosSaveOwnerPhotoResponse {
-        val response = method("saveOwnerPhoto", mapOf("server" to server, "hash" to hash, "photo" to photo))
+        val response = method("photos.saveOwnerPhoto", mapOf("server" to server, "hash" to hash, "photo" to photo))
         return json.decodeFromString<PhotosSaveOwnerPhotoResponse>(response)
     }
 
@@ -678,7 +678,7 @@ class Photos(
      * @param caption Text describing the photo. 2048 digits max.
      */
     suspend fun saveWallPhoto(photo: String, userId: Long? = null, groupId: Long? = null, server: Int? = null, hash: String? = null, latitude: Double? = null, longitude: Double? = null, caption: String? = null): PhotosSaveWallPhotoResponse {
-        val response = method("saveWallPhoto", mapOf("user_id" to userId, "group_id" to groupId, "photo" to photo, "server" to server, "hash" to hash, "latitude" to latitude, "longitude" to longitude, "caption" to caption))
+        val response = method("photos.saveWallPhoto", mapOf("user_id" to userId, "group_id" to groupId, "photo" to photo, "server" to server, "hash" to hash, "latitude" to latitude, "longitude" to longitude, "caption" to caption))
         return json.decodeFromString<PhotosSaveWallPhotoResponse>(response)
     }
 
@@ -697,7 +697,7 @@ class Photos(
      * @param radius Radius of search in meters (works very approximately). Available values: '10', '100', '800', '6000', '50000'.
      */
     suspend fun search(q: String? = null, lat: Double? = null, long: Double? = null, startTime: Int? = null, endTime: Int? = null, sort: Int? = null, offset: Int? = null, count: Int? = 100, radius: Int? = 5000): PhotosSearchResponse {
-        val response = method("search", mapOf("q" to q, "lat" to lat, "long" to long, "start_time" to startTime, "end_time" to endTime, "sort" to sort, "offset" to offset, "count" to count, "radius" to radius))
+        val response = method("photos.search", mapOf("q" to q, "lat" to lat, "long" to long, "start_time" to startTime, "end_time" to endTime, "sort" to sort, "offset" to offset, "count" to count, "radius" to radius))
         return json.decodeFromString<PhotosSearchResponse>(response)
     }
 

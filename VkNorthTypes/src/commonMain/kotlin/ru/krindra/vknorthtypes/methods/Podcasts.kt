@@ -20,7 +20,7 @@ class Podcasts(
      * @param count 
      */
     suspend fun searchPodcast(searchString: String, offset: Int? = 0, count: Int? = 20): PodcastsSearchPodcastResponse {
-        val response = method("searchPodcast", mapOf("search_string" to searchString, "offset" to offset, "count" to count))
+        val response = method("podcasts.searchPodcast", mapOf("search_string" to searchString, "offset" to offset, "count" to count))
         return json.decodeFromString<PodcastsSearchPodcastResponse>(response)
     }
 
