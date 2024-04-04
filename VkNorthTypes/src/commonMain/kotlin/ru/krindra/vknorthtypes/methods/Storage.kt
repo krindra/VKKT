@@ -11,7 +11,7 @@ import ru.krindra.vknorthtypes.JsonSingleton
 import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 
 class Storage(
-    private val method: suspend (String, Map<Any, Any?>) -> String,
+    private val method: suspend (String, Map<String, Any?>?) -> String,
     private val json: Json = JsonSingleton.json
     ) {
     /**
@@ -23,7 +23,7 @@ class Storage(
      * @param userId 
      */
     suspend fun get(key: String? = null, keys: List<String>? = null, userId: Long? = null): StorageGetResponse {
-        val response = method("get", mapOf("key" to key, "keys" to keys, "user_id" to userId))
+        val response = method("storage.get", mapOf("key" to key, "keys" to keys, "user_id" to userId))
         return json.decodeFromString<StorageGetResponse>(response)
     }
 
@@ -36,7 +36,7 @@ class Storage(
      * @param count amount of variable names the info needs to be collected from.
      */
     suspend fun getKeys(userId: Long? = null, offset: Int? = 0, count: Int? = 100): StorageGetKeysResponse {
-        val response = method("getKeys", mapOf("user_id" to userId, "offset" to offset, "count" to count))
+        val response = method("storage.getKeys", mapOf("user_id" to userId, "offset" to offset, "count" to count))
         return json.decodeFromString<StorageGetKeysResponse>(response)
     }
 
@@ -49,7 +49,7 @@ class Storage(
      * @param userId 
      */
     suspend fun set(key: String, value: String? = null, userId: Long? = null): BaseOkResponse {
-        val response = method("set", mapOf("key" to key, "value" to value, "user_id" to userId))
+        val response = method("storage.set", mapOf("key" to key, "value" to value, "user_id" to userId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 

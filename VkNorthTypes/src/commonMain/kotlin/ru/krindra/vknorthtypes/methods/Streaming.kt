@@ -11,7 +11,7 @@ import ru.krindra.vknorthtypes.JsonSingleton
 import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 
 class Streaming(
-    private val method: suspend (String, Map<Any, Any?>) -> String,
+    private val method: suspend (String, Map<String, Any?>?) -> String,
     private val json: Json = JsonSingleton.json
     ) {
     /**
@@ -20,7 +20,7 @@ class Streaming(
      * 
      */
     suspend fun getServerUrl(): StreamingGetServerUrlResponse {
-        val response = method("getServerUrl", mapOf())
+        val response = method("streaming.getServerUrl", mapOf())
         return json.decodeFromString<StreamingGetServerUrlResponse>(response)
     }
 
@@ -28,7 +28,7 @@ class Streaming(
      *
      */
     suspend fun getSettings(): StreamingGetSettingsResponse {
-        val response = method("getSettings", mapOf())
+        val response = method("streaming.getSettings", mapOf())
         return json.decodeFromString<StreamingGetSettingsResponse>(response)
     }
 
@@ -40,7 +40,7 @@ class Streaming(
      * @param endTime 
      */
     suspend fun getStats(type: String? = null, interval: String? = "5m", startTime: Int? = null, endTime: Int? = null): StreamingGetStatsResponse {
-        val response = method("getStats", mapOf("type" to type, "interval" to interval, "start_time" to startTime, "end_time" to endTime))
+        val response = method("streaming.getStats", mapOf("type" to type, "interval" to interval, "start_time" to startTime, "end_time" to endTime))
         return json.decodeFromString<StreamingGetStatsResponse>(response)
     }
 
@@ -49,7 +49,7 @@ class Streaming(
      * @param word 
      */
     suspend fun getStem(word: String): StreamingGetStemResponse {
-        val response = method("getStem", mapOf("word" to word))
+        val response = method("streaming.getStem", mapOf("word" to word))
         return json.decodeFromString<StreamingGetStemResponse>(response)
     }
 
@@ -58,7 +58,7 @@ class Streaming(
      * @param monthlyTier 
      */
     suspend fun setSettings(monthlyTier: String? = null): BaseOkResponse {
-        val response = method("setSettings", mapOf("monthly_tier" to monthlyTier))
+        val response = method("streaming.setSettings", mapOf("monthly_tier" to monthlyTier))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 

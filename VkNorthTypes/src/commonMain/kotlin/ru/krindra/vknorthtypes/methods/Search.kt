@@ -10,7 +10,7 @@ import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
 
 class Search(
-    private val method: suspend (String, Map<Any, Any?>) -> String,
+    private val method: suspend (String, Map<String, Any?>?) -> String,
     private val json: Json = JsonSingleton.json
     ) {
     /**
@@ -25,7 +25,7 @@ class Search(
      * @param searchGlobal 
      */
     suspend fun getHints(q: String? = null, offset: Int? = null, limit: Int? = 9, filters: List<String>? = null, fields: List<String>? = null, searchGlobal: Boolean? = true): SearchGetHintsResponse {
-        val response = method("getHints", mapOf("q" to q, "offset" to offset, "limit" to limit, "filters" to filters, "fields" to fields, "search_global" to searchGlobal))
+        val response = method("search.getHints", mapOf("q" to q, "offset" to offset, "limit" to limit, "filters" to filters, "fields" to fields, "search_global" to searchGlobal))
         return json.decodeFromString<SearchGetHintsResponse>(response)
     }
 

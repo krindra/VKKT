@@ -11,7 +11,7 @@ import ru.krindra.vknorthtypes.JsonSingleton
 import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 
 class Status(
-    private val method: suspend (String, Map<Any, Any?>) -> String,
+    private val method: suspend (String, Map<String, Any?>?) -> String,
     private val json: Json = JsonSingleton.json
     ) {
     /**
@@ -22,7 +22,7 @@ class Status(
      * @param groupId 
      */
     suspend fun get(userId: Long? = null, groupId: Long? = null): StatusGetResponse {
-        val response = method("get", mapOf("user_id" to userId, "group_id" to groupId))
+        val response = method("status.get", mapOf("user_id" to userId, "group_id" to groupId))
         return json.decodeFromString<StatusGetResponse>(response)
     }
 
@@ -34,7 +34,7 @@ class Status(
      * @param groupId Identifier of a community to set a status in. If left blank the status is set to current user.
      */
     suspend fun set(text: String? = null, groupId: Long? = null): BaseOkResponse {
-        val response = method("set", mapOf("text" to text, "group_id" to groupId))
+        val response = method("status.set", mapOf("text" to text, "group_id" to groupId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 

@@ -9,13 +9,13 @@ import ru.krindra.vknorthtypes.types.messages.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
 import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
-import ru.krindra.vknorthtypes.types.users.UsersFields
-import ru.krindra.vknorthtypes.types.base.BaseUserGroupFields
 import ru.krindra.vknorthtypes.types.base.BaseOkResponse
+import ru.krindra.vknorthtypes.types.base.BaseUserGroupFields
+import ru.krindra.vknorthtypes.types.users.UsersFields
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
 
 class Messages(
-    private val method: suspend (String, Map<Any, Any?>) -> String,
+    private val method: suspend (String, Map<String, Any?>?) -> String,
     private val json: Json = JsonSingleton.json
     ) {
     /**
@@ -27,7 +27,7 @@ class Messages(
      * @param visibleMessagesCount 
      */
     suspend fun addChatUser(chatId: Long, userId: Long? = null, visibleMessagesCount: Int? = null): BaseOkResponse {
-        val response = method("addChatUser", mapOf("chat_id" to chatId, "user_id" to userId, "visible_messages_count" to visibleMessagesCount))
+        val response = method("messages.addChatUser", mapOf("chat_id" to chatId, "user_id" to userId, "visible_messages_count" to visibleMessagesCount))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -39,7 +39,7 @@ class Messages(
      * @param visibleMessagesCount 
      */
     suspend fun addChatUsers(chatId: Long? = null, visibleMessagesCount: Int? = null): MessagesAddChatUsersResponse {
-        val response = method("addChatUsers", mapOf("chat_id" to chatId, "visible_messages_count" to visibleMessagesCount))
+        val response = method("messages.addChatUsers", mapOf("chat_id" to chatId, "visible_messages_count" to visibleMessagesCount))
         return json.decodeFromString<MessagesAddChatUsersResponse>(response)
     }
 
@@ -51,7 +51,7 @@ class Messages(
      * @param key 
      */
     suspend fun allowMessagesFromGroup(groupId: Long, key: String? = null): BaseOkResponse {
-        val response = method("allowMessagesFromGroup", mapOf("group_id" to groupId, "key" to key))
+        val response = method("messages.allowMessagesFromGroup", mapOf("group_id" to groupId, "key" to key))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -64,7 +64,7 @@ class Messages(
      * @param groupId 
      */
     suspend fun createChat(userIds: List<Int>? = null, title: String? = null, groupId: Long? = null): MessagesCreateChatWithPeerIdsResponse {
-        val response = method("createChat", mapOf("user_ids" to userIds, "title" to title, "group_id" to groupId))
+        val response = method("messages.createChat", mapOf("user_ids" to userIds, "title" to title, "group_id" to groupId))
         return json.decodeFromString<MessagesCreateChatWithPeerIdsResponse>(response)
     }
 
@@ -80,7 +80,7 @@ class Messages(
      * @param cmids Conversation message IDs.
      */
     suspend fun delete(messageIds: List<Int>? = null, spam: Boolean? = false, groupId: Long? = null, deleteForAll: Boolean? = false, peerId: Long? = null, cmids: List<Int>? = null): MessagesDeleteFullResponse {
-        val response = method("delete", mapOf("message_ids" to messageIds, "spam" to spam, "group_id" to groupId, "delete_for_all" to deleteForAll, "peer_id" to peerId, "cmids" to cmids))
+        val response = method("messages.delete", mapOf("message_ids" to messageIds, "spam" to spam, "group_id" to groupId, "delete_for_all" to deleteForAll, "peer_id" to peerId, "cmids" to cmids))
         return json.decodeFromString<MessagesDeleteFullResponse>(response)
     }
 
@@ -92,7 +92,7 @@ class Messages(
      * @param groupId 
      */
     suspend fun deleteChatPhoto(chatId: Long, groupId: Long? = null): MessagesDeleteChatPhotoResponse {
-        val response = method("deleteChatPhoto", mapOf("chat_id" to chatId, "group_id" to groupId))
+        val response = method("messages.deleteChatPhoto", mapOf("chat_id" to chatId, "group_id" to groupId))
         return json.decodeFromString<MessagesDeleteChatPhotoResponse>(response)
     }
 
@@ -105,7 +105,7 @@ class Messages(
      * @param groupId Group ID (for group messages with user access token).
      */
     suspend fun deleteConversation(userId: Long? = null, peerId: Long? = null, groupId: Long? = null): MessagesDeleteConversationResponse {
-        val response = method("deleteConversation", mapOf("user_id" to userId, "peer_id" to peerId, "group_id" to groupId))
+        val response = method("messages.deleteConversation", mapOf("user_id" to userId, "peer_id" to peerId, "group_id" to groupId))
         return json.decodeFromString<MessagesDeleteConversationResponse>(response)
     }
 
@@ -117,7 +117,7 @@ class Messages(
      * @param cmid 
      */
     suspend fun deleteReaction(peerId: Long, cmid: Long): BaseBoolResponse {
-        val response = method("deleteReaction", mapOf("peer_id" to peerId, "cmid" to cmid))
+        val response = method("messages.deleteReaction", mapOf("peer_id" to peerId, "cmid" to cmid))
         return json.decodeFromString<BaseBoolResponse>(response)
     }
 
@@ -128,7 +128,7 @@ class Messages(
      * @param groupId Group ID.
      */
     suspend fun denyMessagesFromGroup(groupId: Long): BaseOkResponse {
-        val response = method("denyMessagesFromGroup", mapOf("group_id" to groupId))
+        val response = method("messages.denyMessagesFromGroup", mapOf("group_id" to groupId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -152,7 +152,7 @@ class Messages(
      * @param keyboard 
      */
     suspend fun edit(peerId: Long, message: String? = null, lat: Double? = null, long: Double? = null, attachment: String? = null, keepForwardMessages: Boolean? = false, keepSnippets: Boolean? = false, groupId: Long? = null, dontParseLinks: Boolean? = false, disableMentions: Boolean? = false, messageId: Long? = null, cmid: Long? = null, template: String? = null, keyboard: String? = null): BaseBoolResponse {
-        val response = method("edit", mapOf("peer_id" to peerId, "message" to message, "lat" to lat, "long" to long, "attachment" to attachment, "keep_forward_messages" to keepForwardMessages, "keep_snippets" to keepSnippets, "group_id" to groupId, "dont_parse_links" to dontParseLinks, "disable_mentions" to disableMentions, "message_id" to messageId, "cmid" to cmid, "template" to template, "keyboard" to keyboard))
+        val response = method("messages.edit", mapOf("peer_id" to peerId, "message" to message, "lat" to lat, "long" to long, "attachment" to attachment, "keep_forward_messages" to keepForwardMessages, "keep_snippets" to keepSnippets, "group_id" to groupId, "dont_parse_links" to dontParseLinks, "disable_mentions" to disableMentions, "message_id" to messageId, "cmid" to cmid, "template" to template, "keyboard" to keyboard))
         return json.decodeFromString<BaseBoolResponse>(response)
     }
 
@@ -164,7 +164,7 @@ class Messages(
      * @param title New title of the chat.
      */
     suspend fun editChat(chatId: Long, title: String? = null): BaseOkResponse {
-        val response = method("editChat", mapOf("chat_id" to chatId, "title" to title))
+        val response = method("messages.editChat", mapOf("chat_id" to chatId, "title" to title))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -179,7 +179,7 @@ class Messages(
      * @param groupId Group ID (for group messages with group access token).
      */
     suspend fun getByConversationMessageId(peerId: Long, conversationMessageIds: List<Int>, extended: Boolean? = false, fields: List<UsersFields>? = null, groupId: Long? = null): GetbyconversationmessageidResponse {
-        val response = method("getByConversationMessageId", mapOf("peer_id" to peerId, "conversation_message_ids" to conversationMessageIds, "extended" to extended, "fields" to fields, "group_id" to groupId))
+        val response = method("messages.getByConversationMessageId", mapOf("peer_id" to peerId, "conversation_message_ids" to conversationMessageIds, "extended" to extended, "fields" to fields, "group_id" to groupId))
         return GetbyconversationmessageidResponse(response, json)
     }
     class GetbyconversationmessageidResponse(
@@ -210,7 +210,7 @@ class Messages(
      * @param peerId 
      */
     suspend fun getById(messageIds: List<Int>? = null, previewLength: Int? = 0, extended: Boolean? = false, fields: List<UsersFields>? = null, groupId: Long? = null, cmids: List<Int>? = null, peerId: Long? = null): GetbyidResponse {
-        val response = method("getById", mapOf("message_ids" to messageIds, "preview_length" to previewLength, "extended" to extended, "fields" to fields, "group_id" to groupId, "cmids" to cmids, "peer_id" to peerId))
+        val response = method("messages.getById", mapOf("message_ids" to messageIds, "preview_length" to previewLength, "extended" to extended, "fields" to fields, "group_id" to groupId, "cmids" to cmids, "peer_id" to peerId))
         return GetbyidResponse(response, json)
     }
     class GetbyidResponse(
@@ -238,7 +238,7 @@ class Messages(
      * @param nameCase Case for declension of user name and surname: 'nom' - nominative (default), 'gen' - genitive , 'dat' - dative, 'acc' - accusative , 'ins' - instrumental , 'abl' - prepositional.
      */
     suspend fun getChat(chatId: Long? = null, chatIds: List<Int>? = null, fields: List<UsersFields>? = null, nameCase: String? = null): GetchatResponse {
-        val response = method("getChat", mapOf("chat_id" to chatId, "chat_ids" to chatIds, "fields" to fields, "name_case" to nameCase))
+        val response = method("messages.getChat", mapOf("chat_id" to chatId, "chat_ids" to chatIds, "fields" to fields, "name_case" to nameCase))
         return GetchatResponse(response, json)
     }
     class GetchatResponse(
@@ -273,7 +273,7 @@ class Messages(
      * @param fields Profile fields to return.
      */
     suspend fun getChatPreview(peerId: Long? = null, link: String? = null, fields: List<UsersFields>? = null): MessagesGetChatPreviewResponse {
-        val response = method("getChatPreview", mapOf("peer_id" to peerId, "link" to link, "fields" to fields))
+        val response = method("messages.getChatPreview", mapOf("peer_id" to peerId, "link" to link, "fields" to fields))
         return json.decodeFromString<MessagesGetChatPreviewResponse>(response)
     }
 
@@ -289,7 +289,7 @@ class Messages(
      * @param groupId Group ID (for group messages with group access token).
      */
     suspend fun getConversationMembers(peerId: Long, offset: Int? = 0, count: Int? = 20, extended: Boolean? = false, fields: List<UsersFields>? = null, groupId: Long? = null): MessagesGetConversationMembersResponse {
-        val response = method("getConversationMembers", mapOf("peer_id" to peerId, "offset" to offset, "count" to count, "extended" to extended, "fields" to fields, "group_id" to groupId))
+        val response = method("messages.getConversationMembers", mapOf("peer_id" to peerId, "offset" to offset, "count" to count, "extended" to extended, "fields" to fields, "group_id" to groupId))
         return json.decodeFromString<MessagesGetConversationMembersResponse>(response)
     }
 
@@ -306,7 +306,7 @@ class Messages(
      * @param groupId Group ID (for group messages with group access token).
      */
     suspend fun getConversations(offset: Int? = 0, count: Int? = 20, filter: String? = "all", extended: Boolean? = false, startMessageId: Long? = null, fields: List<BaseUserGroupFields>? = null, groupId: Long? = null): MessagesGetConversationsResponse {
-        val response = method("getConversations", mapOf("offset" to offset, "count" to count, "filter" to filter, "extended" to extended, "start_message_id" to startMessageId, "fields" to fields, "group_id" to groupId))
+        val response = method("messages.getConversations", mapOf("offset" to offset, "count" to count, "filter" to filter, "extended" to extended, "start_message_id" to startMessageId, "fields" to fields, "group_id" to groupId))
         return json.decodeFromString<MessagesGetConversationsResponse>(response)
     }
 
@@ -320,7 +320,7 @@ class Messages(
      * @param groupId Group ID (for group messages with group access token).
      */
     suspend fun getConversationsById(peerIds: List<Int>, extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null, groupId: Long? = null): GetconversationsbyidResponse {
-        val response = method("getConversationsById", mapOf("peer_ids" to peerIds, "extended" to extended, "fields" to fields, "group_id" to groupId))
+        val response = method("messages.getConversationsById", mapOf("peer_ids" to peerIds, "extended" to extended, "fields" to fields, "group_id" to groupId))
         return GetconversationsbyidResponse(response, json)
     }
     class GetconversationsbyidResponse(
@@ -353,7 +353,7 @@ class Messages(
      * @param groupId Group ID (for group messages with group access token).
      */
     suspend fun getHistory(offset: Int? = null, count: Int? = 20, userId: Long? = null, peerId: Long? = null, startMessageId: Long? = null, rev: Int? = null, extended: Boolean? = false, fields: List<UsersFields>? = null, groupId: Long? = null): GethistoryResponse {
-        val response = method("getHistory", mapOf("offset" to offset, "count" to count, "user_id" to userId, "peer_id" to peerId, "start_message_id" to startMessageId, "rev" to rev, "extended" to extended, "fields" to fields, "group_id" to groupId))
+        val response = method("messages.getHistory", mapOf("offset" to offset, "count" to count, "user_id" to userId, "peer_id" to peerId, "start_message_id" to startMessageId, "rev" to rev, "extended" to extended, "fields" to fields, "group_id" to groupId))
         return GethistoryResponse(response, json)
     }
     class GethistoryResponse(
@@ -391,7 +391,7 @@ class Messages(
      * @param photoSizes '1' - to return photo sizes in a.
      */
     suspend fun getHistoryAttachments(attachmentTypes: List<String>? = null, groupId: Long? = null, peerId: Long? = null, cmid: Long? = null, attachmentPosition: Int? = null, offset: Int? = null, count: Int? = 30, extended: Boolean? = false, fields: List<UsersFields>? = null, maxForwardsLevel: Int? = 45, mediaType: String? = "photo", startFrom: String? = null, preserveOrder: Boolean? = false, photoSizes: Boolean? = false): MessagesGetHistoryAttachmentsResponse {
-        val response = method("getHistoryAttachments", mapOf("attachment_types" to attachmentTypes, "group_id" to groupId, "peer_id" to peerId, "cmid" to cmid, "attachment_position" to attachmentPosition, "offset" to offset, "count" to count, "extended" to extended, "fields" to fields, "max_forwards_level" to maxForwardsLevel, "media_type" to mediaType, "start_from" to startFrom, "preserve_order" to preserveOrder, "photo_sizes" to photoSizes))
+        val response = method("messages.getHistoryAttachments", mapOf("attachment_types" to attachmentTypes, "group_id" to groupId, "peer_id" to peerId, "cmid" to cmid, "attachment_position" to attachmentPosition, "offset" to offset, "count" to count, "extended" to extended, "fields" to fields, "max_forwards_level" to maxForwardsLevel, "media_type" to mediaType, "start_from" to startFrom, "preserve_order" to preserveOrder, "photo_sizes" to photoSizes))
         return json.decodeFromString<MessagesGetHistoryAttachmentsResponse>(response)
     }
 
@@ -408,7 +408,7 @@ class Messages(
      * @param groupId Group ID (for group messages with group access token).
      */
     suspend fun getImportantMessages(count: Int? = 20, offset: Int? = null, startMessageId: Long? = null, previewLength: Int? = null, fields: List<BaseUserGroupFields>? = null, extended: Boolean? = false, groupId: Long? = null): GetimportantmessagesResponse {
-        val response = method("getImportantMessages", mapOf("count" to count, "offset" to offset, "start_message_id" to startMessageId, "preview_length" to previewLength, "fields" to fields, "extended" to extended, "group_id" to groupId))
+        val response = method("messages.getImportantMessages", mapOf("count" to count, "offset" to offset, "start_message_id" to startMessageId, "preview_length" to previewLength, "fields" to fields, "extended" to extended, "group_id" to groupId))
         return GetimportantmessagesResponse(response, json)
     }
     class GetimportantmessagesResponse(
@@ -437,7 +437,7 @@ class Messages(
      * @param fields 
      */
     suspend fun getIntentUsers(intent: String, subscribeId: Long? = null, offset: Int? = 0, count: Int? = 20, extended: Boolean? = false, nameCase: List<String>? = null, fields: List<String>? = null): MessagesGetIntentUsersResponse {
-        val response = method("getIntentUsers", mapOf("intent" to intent, "subscribe_id" to subscribeId, "offset" to offset, "count" to count, "extended" to extended, "name_case" to nameCase, "fields" to fields))
+        val response = method("messages.getIntentUsers", mapOf("intent" to intent, "subscribe_id" to subscribeId, "offset" to offset, "count" to count, "extended" to extended, "name_case" to nameCase, "fields" to fields))
         return json.decodeFromString<MessagesGetIntentUsersResponse>(response)
     }
 
@@ -448,7 +448,7 @@ class Messages(
      * @param groupId Group ID.
      */
     suspend fun getInviteLink(peerId: Long, reset: Boolean? = false, groupId: Long? = null): MessagesGetInviteLinkResponse {
-        val response = method("getInviteLink", mapOf("peer_id" to peerId, "reset" to reset, "group_id" to groupId))
+        val response = method("messages.getInviteLink", mapOf("peer_id" to peerId, "reset" to reset, "group_id" to groupId))
         return json.decodeFromString<MessagesGetInviteLinkResponse>(response)
     }
 
@@ -459,7 +459,7 @@ class Messages(
      * @param userId User ID.
      */
     suspend fun getLastActivity(userId: Long): MessagesGetLastActivityResponse {
-        val response = method("getLastActivity", mapOf("user_id" to userId))
+        val response = method("messages.getLastActivity", mapOf("user_id" to userId))
         return json.decodeFromString<MessagesGetLastActivityResponse>(response)
     }
 
@@ -482,7 +482,7 @@ class Messages(
      * @param extended 
      */
     suspend fun getLongPollHistory(ts: Int? = null, pts: Int? = null, previewLength: Int? = null, onlines: Boolean? = false, fields: List<UsersFields>? = null, eventsLimit: Int? = 1000, msgsLimit: Int? = 200, maxMsgId: Long? = null, groupId: Long? = null, lpVersion: Int? = null, lastN: Int? = 0, credentials: Boolean? = false, extended: Boolean? = false): MessagesGetLongPollHistoryResponse {
-        val response = method("getLongPollHistory", mapOf("ts" to ts, "pts" to pts, "preview_length" to previewLength, "onlines" to onlines, "fields" to fields, "events_limit" to eventsLimit, "msgs_limit" to msgsLimit, "max_msg_id" to maxMsgId, "group_id" to groupId, "lp_version" to lpVersion, "last_n" to lastN, "credentials" to credentials, "extended" to extended))
+        val response = method("messages.getLongPollHistory", mapOf("ts" to ts, "pts" to pts, "preview_length" to previewLength, "onlines" to onlines, "fields" to fields, "events_limit" to eventsLimit, "msgs_limit" to msgsLimit, "max_msg_id" to maxMsgId, "group_id" to groupId, "lp_version" to lpVersion, "last_n" to lastN, "credentials" to credentials, "extended" to extended))
         return json.decodeFromString<MessagesGetLongPollHistoryResponse>(response)
     }
 
@@ -495,7 +495,7 @@ class Messages(
      * @param lpVersion Long poll version.
      */
     suspend fun getLongPollServer(needPts: Boolean? = false, groupId: Long? = null, lpVersion: Int? = 0): MessagesGetLongPollServerResponse {
-        val response = method("getLongPollServer", mapOf("need_pts" to needPts, "group_id" to groupId, "lp_version" to lpVersion))
+        val response = method("messages.getLongPollServer", mapOf("need_pts" to needPts, "group_id" to groupId, "lp_version" to lpVersion))
         return json.decodeFromString<MessagesGetLongPollServerResponse>(response)
     }
 
@@ -507,7 +507,7 @@ class Messages(
      * @param cmids 
      */
     suspend fun getMessagesReactions(peerId: Long, cmids: List<Int>): MessagesGetMessagesReactionsResponse {
-        val response = method("getMessagesReactions", mapOf("peer_id" to peerId, "cmids" to cmids))
+        val response = method("messages.getMessagesReactions", mapOf("peer_id" to peerId, "cmids" to cmids))
         return json.decodeFromString<MessagesGetMessagesReactionsResponse>(response)
     }
 
@@ -520,7 +520,7 @@ class Messages(
      * @param reactionId 
      */
     suspend fun getReactedPeers(peerId: Long, cmid: Long, reactionId: Long? = null): MessagesGetReactedPeersResponse {
-        val response = method("getReactedPeers", mapOf("peer_id" to peerId, "cmid" to cmid, "reaction_id" to reactionId))
+        val response = method("messages.getReactedPeers", mapOf("peer_id" to peerId, "cmid" to cmid, "reaction_id" to reactionId))
         return json.decodeFromString<MessagesGetReactedPeersResponse>(response)
     }
 
@@ -531,7 +531,7 @@ class Messages(
      * @param clientVersion 
      */
     suspend fun getReactionsAssets(clientVersion: Int? = null): MessagesGetReactionsAssetsResponse {
-        val response = method("getReactionsAssets", mapOf("client_version" to clientVersion))
+        val response = method("messages.getReactionsAssets", mapOf("client_version" to clientVersion))
         return json.decodeFromString<MessagesGetReactionsAssetsResponse>(response)
     }
 
@@ -543,7 +543,7 @@ class Messages(
      * @param userId User ID.
      */
     suspend fun isMessagesFromGroupAllowed(groupId: Long, userId: Long): MessagesIsMessagesFromGroupAllowedResponse {
-        val response = method("isMessagesFromGroupAllowed", mapOf("group_id" to groupId, "user_id" to userId))
+        val response = method("messages.isMessagesFromGroupAllowed", mapOf("group_id" to groupId, "user_id" to userId))
         return json.decodeFromString<MessagesIsMessagesFromGroupAllowedResponse>(response)
     }
 
@@ -552,7 +552,7 @@ class Messages(
      * @param link Invitation link.
      */
     suspend fun joinChatByInviteLink(link: String): MessagesJoinChatByInviteLinkResponse {
-        val response = method("joinChatByInviteLink", mapOf("link" to link))
+        val response = method("messages.joinChatByInviteLink", mapOf("link" to link))
         return json.decodeFromString<MessagesJoinChatByInviteLinkResponse>(response)
     }
 
@@ -565,7 +565,7 @@ class Messages(
      * @param groupId Group ID (for group messages with group access token).
      */
     suspend fun markAsAnsweredConversation(peerId: Long, answered: Boolean? = true, groupId: Long? = null): BaseOkResponse {
-        val response = method("markAsAnsweredConversation", mapOf("peer_id" to peerId, "answered" to answered, "group_id" to groupId))
+        val response = method("messages.markAsAnsweredConversation", mapOf("peer_id" to peerId, "answered" to answered, "group_id" to groupId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -577,7 +577,7 @@ class Messages(
      * @param important '1' - to add a star (mark as important), '0' - to remove the star.
      */
     suspend fun markAsImportant(messageIds: List<Int>? = null, important: Int? = null): MessagesMarkAsImportantDeprecatedResponse {
-        val response = method("markAsImportant", mapOf("message_ids" to messageIds, "important" to important))
+        val response = method("messages.markAsImportant", mapOf("message_ids" to messageIds, "important" to important))
         return json.decodeFromString<MessagesMarkAsImportantDeprecatedResponse>(response)
     }
 
@@ -590,7 +590,7 @@ class Messages(
      * @param groupId Group ID (for group messages with group access token).
      */
     suspend fun markAsImportantConversation(peerId: Long, important: Boolean? = true, groupId: Long? = null): BaseOkResponse {
-        val response = method("markAsImportantConversation", mapOf("peer_id" to peerId, "important" to important, "group_id" to groupId))
+        val response = method("messages.markAsImportantConversation", mapOf("peer_id" to peerId, "important" to important, "group_id" to groupId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -606,7 +606,7 @@ class Messages(
      * @param upToCmid 
      */
     suspend fun markAsRead(messageIds: List<Int>? = listOf(), peerId: Long? = null, startMessageId: Long? = null, groupId: Long? = null, markConversationAsRead: Boolean? = false, upToCmid: Long? = null): BaseOkResponse {
-        val response = method("markAsRead", mapOf("message_ids" to messageIds, "peer_id" to peerId, "start_message_id" to startMessageId, "group_id" to groupId, "mark_conversation_as_read" to markConversationAsRead, "up_to_cmid" to upToCmid))
+        val response = method("messages.markAsRead", mapOf("message_ids" to messageIds, "peer_id" to peerId, "start_message_id" to startMessageId, "group_id" to groupId, "mark_conversation_as_read" to markConversationAsRead, "up_to_cmid" to upToCmid))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -618,7 +618,7 @@ class Messages(
      * @param cmids 
      */
     suspend fun markReactionsAsRead(peerId: Long, cmids: List<Int>? = null): BaseBoolResponse {
-        val response = method("markReactionsAsRead", mapOf("peer_id" to peerId, "cmids" to cmids))
+        val response = method("messages.markReactionsAsRead", mapOf("peer_id" to peerId, "cmids" to cmids))
         return json.decodeFromString<BaseBoolResponse>(response)
     }
 
@@ -631,7 +631,7 @@ class Messages(
      * @param cmid Conversation message ID.
      */
     suspend fun pin(peerId: Long, messageId: Long? = null, cmid: Long? = null): MessagesPinResponse {
-        val response = method("pin", mapOf("peer_id" to peerId, "message_id" to messageId, "cmid" to cmid))
+        val response = method("messages.pin", mapOf("peer_id" to peerId, "message_id" to messageId, "cmid" to cmid))
         return json.decodeFromString<MessagesPinResponse>(response)
     }
 
@@ -644,7 +644,7 @@ class Messages(
      * @param memberId 
      */
     suspend fun removeChatUser(chatId: Long, userId: Long? = null, memberId: Long? = null): BaseOkResponse {
-        val response = method("removeChatUser", mapOf("chat_id" to chatId, "user_id" to userId, "member_id" to memberId))
+        val response = method("messages.removeChatUser", mapOf("chat_id" to chatId, "user_id" to userId, "member_id" to memberId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -658,7 +658,7 @@ class Messages(
      * @param peerId Destination ID.
      */
     suspend fun restore(messageId: Long? = null, groupId: Long? = null, cmid: Long? = null, peerId: Long? = null): BaseOkResponse {
-        val response = method("restore", mapOf("message_id" to messageId, "group_id" to groupId, "cmid" to cmid, "peer_id" to peerId))
+        val response = method("messages.restore", mapOf("message_id" to messageId, "group_id" to groupId, "cmid" to cmid, "peer_id" to peerId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -677,7 +677,7 @@ class Messages(
      * @param groupId Group ID (for group messages with group access token).
      */
     suspend fun search(q: String? = null, peerId: Long? = null, date: Int? = null, previewLength: Int? = 0, offset: Int? = 0, count: Int? = 20, extended: Boolean? = false, fields: List<String>? = null, groupId: Long? = null): SearchResponse {
-        val response = method("search", mapOf("q" to q, "peer_id" to peerId, "date" to date, "preview_length" to previewLength, "offset" to offset, "count" to count, "extended" to extended, "fields" to fields, "group_id" to groupId))
+        val response = method("messages.search", mapOf("q" to q, "peer_id" to peerId, "date" to date, "preview_length" to previewLength, "offset" to offset, "count" to count, "extended" to extended, "fields" to fields, "group_id" to groupId))
         return SearchResponse(response, json)
     }
     class SearchResponse(
@@ -706,7 +706,7 @@ class Messages(
      * @param groupId Group ID (for group messages with user access token).
      */
     suspend fun searchConversations(q: String? = null, count: Int? = 20, extended: Boolean? = false, fields: List<UsersFields>? = null, groupId: Long? = null): SearchconversationsResponse {
-        val response = method("searchConversations", mapOf("q" to q, "count" to count, "extended" to extended, "fields" to fields, "group_id" to groupId))
+        val response = method("messages.searchConversations", mapOf("q" to q, "count" to count, "extended" to extended, "fields" to fields, "group_id" to groupId))
         return SearchconversationsResponse(response, json)
     }
     class SearchconversationsResponse(
@@ -753,7 +753,7 @@ class Messages(
      * @param subscribeId 
      */
     suspend fun send(userId: Long? = null, randomId: Long? = null, peerId: Long? = null, peerIds: List<Int>? = null, domain: String? = null, chatId: Long? = null, message: String? = null, lat: Double? = null, long: Double? = null, attachment: String? = null, replyTo: Int? = null, forwardMessages: List<Int>? = null, forward: String? = null, stickerId: Long? = null, groupId: Long? = null, keyboard: String? = null, template: String? = null, payload: String? = null, contentSource: String? = null, dontParseLinks: Boolean? = false, disableMentions: Boolean? = false, intent: String? = "default", subscribeId: Long? = null): SendResponse {
-        val response = method("send", mapOf("user_id" to userId, "random_id" to randomId, "peer_id" to peerId, "peer_ids" to peerIds, "domain" to domain, "chat_id" to chatId, "message" to message, "lat" to lat, "long" to long, "attachment" to attachment, "reply_to" to replyTo, "forward_messages" to forwardMessages, "forward" to forward, "sticker_id" to stickerId, "group_id" to groupId, "keyboard" to keyboard, "template" to template, "payload" to payload, "content_source" to contentSource, "dont_parse_links" to dontParseLinks, "disable_mentions" to disableMentions, "intent" to intent, "subscribe_id" to subscribeId))
+        val response = method("messages.send", mapOf("user_id" to userId, "random_id" to randomId, "peer_id" to peerId, "peer_ids" to peerIds, "domain" to domain, "chat_id" to chatId, "message" to message, "lat" to lat, "long" to long, "attachment" to attachment, "reply_to" to replyTo, "forward_messages" to forwardMessages, "forward" to forward, "sticker_id" to stickerId, "group_id" to groupId, "keyboard" to keyboard, "template" to template, "payload" to payload, "content_source" to contentSource, "dont_parse_links" to dontParseLinks, "disable_mentions" to disableMentions, "intent" to intent, "subscribe_id" to subscribeId))
         return SendResponse(response, json)
     }
     class SendResponse(
@@ -779,7 +779,7 @@ class Messages(
      * @param eventData 
      */
     suspend fun sendMessageEventAnswer(eventId: String, userId: Long, peerId: Long, eventData: String? = null): BaseOkResponse {
-        val response = method("sendMessageEventAnswer", mapOf("event_id" to eventId, "user_id" to userId, "peer_id" to peerId, "event_data" to eventData))
+        val response = method("messages.sendMessageEventAnswer", mapOf("event_id" to eventId, "user_id" to userId, "peer_id" to peerId, "event_data" to eventData))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -792,7 +792,7 @@ class Messages(
      * @param reactionId 
      */
     suspend fun sendReaction(peerId: Long, cmid: Long, reactionId: Long): BaseBoolResponse {
-        val response = method("sendReaction", mapOf("peer_id" to peerId, "cmid" to cmid, "reaction_id" to reactionId))
+        val response = method("messages.sendReaction", mapOf("peer_id" to peerId, "cmid" to cmid, "reaction_id" to reactionId))
         return json.decodeFromString<BaseBoolResponse>(response)
     }
 
@@ -806,7 +806,7 @@ class Messages(
      * @param groupId Group ID (for group messages with group access token).
      */
     suspend fun setActivity(userId: Long? = null, type: String? = null, peerId: Long? = null, groupId: Long? = null): BaseOkResponse {
-        val response = method("setActivity", mapOf("user_id" to userId, "type" to type, "peer_id" to peerId, "group_id" to groupId))
+        val response = method("messages.setActivity", mapOf("user_id" to userId, "type" to type, "peer_id" to peerId, "group_id" to groupId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -817,7 +817,7 @@ class Messages(
      * @param file Upload URL from the 'response' field returned by the [vk.com/dev/photos.getChatUploadServer|photos.getChatUploadServer] method upon successfully uploading an image.
      */
     suspend fun setChatPhoto(file: String): MessagesSetChatPhotoResponse {
-        val response = method("setChatPhoto", mapOf("file" to file))
+        val response = method("messages.setChatPhoto", mapOf("file" to file))
         return json.decodeFromString<MessagesSetChatPhotoResponse>(response)
     }
 
@@ -827,7 +827,7 @@ class Messages(
      * @param groupId 
      */
     suspend fun unpin(peerId: Long, groupId: Long? = null): BaseOkResponse {
-        val response = method("unpin", mapOf("peer_id" to peerId, "group_id" to groupId))
+        val response = method("messages.unpin", mapOf("peer_id" to peerId, "group_id" to groupId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 

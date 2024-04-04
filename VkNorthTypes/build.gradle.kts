@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "ru.krindra"
-version = "0.7.1"
+version = "0.8.0"
 
 kotlin {
     androidTarget {
@@ -67,10 +67,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(libs.kotlinx.serialization.json)
-        }
-        commonTest.dependencies {
-            implementation(kotlin("test"))
+            api(libs.kotlinx.serialization.json)
         }
     }
 

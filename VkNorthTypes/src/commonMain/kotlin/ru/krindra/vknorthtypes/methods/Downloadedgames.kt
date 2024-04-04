@@ -10,7 +10,7 @@ import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
 
 class Downloadedgames(
-    private val method: suspend (String, Map<Any, Any?>) -> String,
+    private val method: suspend (String, Map<String, Any?>?) -> String,
     private val json: Json = JsonSingleton.json
     ) {
     /**
@@ -18,7 +18,7 @@ class Downloadedgames(
      * @param userId 
      */
     suspend fun getPaidStatus(userId: Long? = null): DownloadedGamesPaidStatusResponse {
-        val response = method("getPaidStatus", mapOf("user_id" to userId))
+        val response = method("downloadedGames.getPaidStatus", mapOf("user_id" to userId))
         return json.decodeFromString<DownloadedGamesPaidStatusResponse>(response)
     }
 

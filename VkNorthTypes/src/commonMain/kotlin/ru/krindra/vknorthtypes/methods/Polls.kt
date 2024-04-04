@@ -8,14 +8,14 @@ package ru.krindra.vknorthtypes.methods
 import ru.krindra.vknorthtypes.types.polls.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
-import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
-import ru.krindra.vknorthtypes.types.base.BaseGetUploadServerResponse
 import ru.krindra.vknorthtypes.types.users.UsersFields
+import ru.krindra.vknorthtypes.types.base.BaseGetUploadServerResponse
+import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
 import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
 
 class Polls(
-    private val method: suspend (String, Map<Any, Any?>) -> String,
+    private val method: suspend (String, Map<String, Any?>?) -> String,
     private val json: Json = JsonSingleton.json
     ) {
     /**
@@ -28,7 +28,7 @@ class Polls(
      * @param isBoard 
      */
     suspend fun addVote(pollId: Long, answerIds: List<Int>, ownerId: Long? = null, isBoard: Boolean? = false): BaseBoolResponse {
-        val response = method("addVote", mapOf("owner_id" to ownerId, "poll_id" to pollId, "answer_ids" to answerIds, "is_board" to isBoard))
+        val response = method("polls.addVote", mapOf("owner_id" to ownerId, "poll_id" to pollId, "answer_ids" to answerIds, "is_board" to isBoard))
         return json.decodeFromString<BaseBoolResponse>(response)
     }
 
@@ -48,7 +48,7 @@ class Polls(
      * @param disableUnvote 
      */
     suspend fun create(question: String? = null, isAnonymous: Boolean? = false, isMultiple: Boolean? = false, endDate: Int? = null, ownerId: Long? = null, appId: Long? = null, addAnswers: String? = null, photoId: Long? = null, backgroundId: String? = null, disableUnvote: Boolean? = false): PollsCreateResponse {
-        val response = method("create", mapOf("question" to question, "is_anonymous" to isAnonymous, "is_multiple" to isMultiple, "end_date" to endDate, "owner_id" to ownerId, "app_id" to appId, "add_answers" to addAnswers, "photo_id" to photoId, "background_id" to backgroundId, "disable_unvote" to disableUnvote))
+        val response = method("polls.create", mapOf("question" to question, "is_anonymous" to isAnonymous, "is_multiple" to isMultiple, "end_date" to endDate, "owner_id" to ownerId, "app_id" to appId, "add_answers" to addAnswers, "photo_id" to photoId, "background_id" to backgroundId, "disable_unvote" to disableUnvote))
         return json.decodeFromString<PollsCreateResponse>(response)
     }
 
@@ -61,7 +61,7 @@ class Polls(
      * @param isBoard 
      */
     suspend fun deleteVote(pollId: Long, ownerId: Long? = null, isBoard: Boolean? = false): BaseBoolResponse {
-        val response = method("deleteVote", mapOf("owner_id" to ownerId, "poll_id" to pollId, "is_board" to isBoard))
+        val response = method("polls.deleteVote", mapOf("owner_id" to ownerId, "poll_id" to pollId, "is_board" to isBoard))
         return json.decodeFromString<BaseBoolResponse>(response)
     }
 
@@ -80,7 +80,7 @@ class Polls(
      * @param backgroundId 
      */
     suspend fun edit(pollId: Long, ownerId: Long? = null, question: String? = null, addAnswers: String? = null, editAnswers: String? = null, deleteAnswers: String? = null, endDate: Int? = null, photoId: Long? = null, backgroundId: String? = null): BaseOkResponse {
-        val response = method("edit", mapOf("owner_id" to ownerId, "poll_id" to pollId, "question" to question, "add_answers" to addAnswers, "edit_answers" to editAnswers, "delete_answers" to deleteAnswers, "end_date" to endDate, "photo_id" to photoId, "background_id" to backgroundId))
+        val response = method("polls.edit", mapOf("owner_id" to ownerId, "poll_id" to pollId, "question" to question, "add_answers" to addAnswers, "edit_answers" to editAnswers, "delete_answers" to deleteAnswers, "end_date" to endDate, "photo_id" to photoId, "background_id" to backgroundId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -88,7 +88,7 @@ class Polls(
      *
      */
     suspend fun getBackgrounds(): PollsGetBackgroundsResponse {
-        val response = method("getBackgrounds", mapOf())
+        val response = method("polls.getBackgrounds", mapOf())
         return json.decodeFromString<PollsGetBackgroundsResponse>(response)
     }
 
@@ -105,7 +105,7 @@ class Polls(
      * @param nameCase 
      */
     suspend fun getById(pollId: Long, ownerId: Long? = null, isBoard: Boolean? = false, extended: Boolean? = false, friendsCount: Int? = 3, fields: List<String>? = null, nameCase: String? = "nom"): PollsGetByIdResponse {
-        val response = method("getById", mapOf("owner_id" to ownerId, "is_board" to isBoard, "poll_id" to pollId, "extended" to extended, "friends_count" to friendsCount, "fields" to fields, "name_case" to nameCase))
+        val response = method("polls.getById", mapOf("owner_id" to ownerId, "is_board" to isBoard, "poll_id" to pollId, "extended" to extended, "friends_count" to friendsCount, "fields" to fields, "name_case" to nameCase))
         return json.decodeFromString<PollsGetByIdResponse>(response)
     }
 
@@ -114,7 +114,7 @@ class Polls(
      * @param ownerId 
      */
     suspend fun getPhotoUploadServer(ownerId: Long? = null): BaseGetUploadServerResponse {
-        val response = method("getPhotoUploadServer", mapOf("owner_id" to ownerId))
+        val response = method("polls.getPhotoUploadServer", mapOf("owner_id" to ownerId))
         return json.decodeFromString<BaseGetUploadServerResponse>(response)
     }
 
@@ -133,7 +133,7 @@ class Polls(
      * @param nameCase Case for declension of user name and surname: , 'nom' - nominative (default) , 'gen' - genitive , 'dat' - dative , 'acc' - accusative , 'ins' - instrumental , 'abl' - prepositional.
      */
     suspend fun getVoters(pollId: Long, answerIds: List<Int>, ownerId: Long? = null, isBoard: Boolean? = false, friendsOnly: Boolean? = false, offset: Int? = null, count: Int? = null, fields: List<UsersFields>? = null, nameCase: String? = null): GetvotersResponse {
-        val response = method("getVoters", mapOf("owner_id" to ownerId, "poll_id" to pollId, "answer_ids" to answerIds, "is_board" to isBoard, "friends_only" to friendsOnly, "offset" to offset, "count" to count, "fields" to fields, "name_case" to nameCase))
+        val response = method("polls.getVoters", mapOf("owner_id" to ownerId, "poll_id" to pollId, "answer_ids" to answerIds, "is_board" to isBoard, "friends_only" to friendsOnly, "offset" to offset, "count" to count, "fields" to fields, "name_case" to nameCase))
         return GetvotersResponse(response, json)
     }
     class GetvotersResponse(
@@ -157,7 +157,7 @@ class Polls(
      * @param hash 
      */
     suspend fun savePhoto(photo: String, hash: String): PollsSavePhotoResponse {
-        val response = method("savePhoto", mapOf("photo" to photo, "hash" to hash))
+        val response = method("polls.savePhoto", mapOf("photo" to photo, "hash" to hash))
         return json.decodeFromString<PollsSavePhotoResponse>(response)
     }
 

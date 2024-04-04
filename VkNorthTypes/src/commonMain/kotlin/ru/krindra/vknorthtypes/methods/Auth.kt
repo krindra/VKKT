@@ -10,7 +10,7 @@ import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
 
 class Auth(
-    private val method: suspend (String, Map<Any, Any?>) -> String,
+    private val method: suspend (String, Map<String, Any?>?) -> String,
     private val json: Json = JsonSingleton.json
     ) {
     /**
@@ -21,7 +21,7 @@ class Auth(
      * @param lastName User last name.
      */
     suspend fun restore(phone: String, lastName: String): AuthRestoreResponse {
-        val response = method("restore", mapOf("phone" to phone, "last_name" to lastName))
+        val response = method("auth.restore", mapOf("phone" to phone, "last_name" to lastName))
         return json.decodeFromString<AuthRestoreResponse>(response)
     }
 

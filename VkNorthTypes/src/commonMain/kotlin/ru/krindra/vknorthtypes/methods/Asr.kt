@@ -11,7 +11,7 @@ import ru.krindra.vknorthtypes.JsonSingleton
 import ru.krindra.vknorthtypes.types.base.BaseGetUploadServerResponse
 
 class Asr(
-    private val method: suspend (String, Map<Any, Any?>) -> String,
+    private val method: suspend (String, Map<String, Any?>?) -> String,
     private val json: Json = JsonSingleton.json
     ) {
     /**
@@ -21,7 +21,7 @@ class Asr(
      * @param taskId ID of ASR task in UUID format.
      */
     suspend fun checkStatus(taskId: String): AsrCheckStatusResponse {
-        val response = method("checkStatus", mapOf("task_id" to taskId))
+        val response = method("asr.checkStatus", mapOf("task_id" to taskId))
         return json.decodeFromString<AsrCheckStatusResponse>(response)
     }
 
@@ -31,7 +31,7 @@ class Asr(
      * 
      */
     suspend fun getUploadUrl(): BaseGetUploadServerResponse {
-        val response = method("getUploadUrl", mapOf())
+        val response = method("asr.getUploadUrl", mapOf())
         return json.decodeFromString<BaseGetUploadServerResponse>(response)
     }
 
@@ -43,7 +43,7 @@ class Asr(
      * @param model Which model to use for recognition. `neutral` -- general purpose (interviews, TV shows, etc.), `spontaneous` -- for NSFW audios (slang, profanity, etc.).
      */
     suspend fun process(audio: String, model: String): AsrProcessResponse {
-        val response = method("process", mapOf("audio" to audio, "model" to model))
+        val response = method("asr.process", mapOf("audio" to audio, "model" to model))
         return json.decodeFromString<AsrProcessResponse>(response)
     }
 

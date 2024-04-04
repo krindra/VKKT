@@ -9,12 +9,12 @@ import ru.krindra.vknorthtypes.types.market.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
 import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
-import ru.krindra.vknorthtypes.types.users.UsersFields
 import ru.krindra.vknorthtypes.types.base.BaseOkResponse
+import ru.krindra.vknorthtypes.types.users.UsersFields
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
 
 class Market(
-    private val method: suspend (String, Map<Any, Any?>) -> String,
+    private val method: suspend (String, Map<String, Any?>?) -> String,
     private val json: Json = JsonSingleton.json
     ) {
     /**
@@ -39,7 +39,7 @@ class Market(
      * @param sku 
      */
     suspend fun add(ownerId: Long, name: String, description: String, categoryId: Long, price: Double? = null, oldPrice: Double? = null, deleted: Boolean? = false, mainPhotoId: Long? = null, photoIds: List<Int>? = null, videoIds: List<Int>? = null, url: String? = null, dimensionWidth: Int? = null, dimensionHeight: Int? = null, dimensionLength: Int? = null, weight: Int? = null, sku: String? = null): MarketAddResponse {
-        val response = method("add", mapOf("owner_id" to ownerId, "name" to name, "description" to description, "category_id" to categoryId, "price" to price, "old_price" to oldPrice, "deleted" to deleted, "main_photo_id" to mainPhotoId, "photo_ids" to photoIds, "video_ids" to videoIds, "url" to url, "dimension_width" to dimensionWidth, "dimension_height" to dimensionHeight, "dimension_length" to dimensionLength, "weight" to weight, "sku" to sku))
+        val response = method("market.add", mapOf("owner_id" to ownerId, "name" to name, "description" to description, "category_id" to categoryId, "price" to price, "old_price" to oldPrice, "deleted" to deleted, "main_photo_id" to mainPhotoId, "photo_ids" to photoIds, "video_ids" to videoIds, "url" to url, "dimension_width" to dimensionWidth, "dimension_height" to dimensionHeight, "dimension_length" to dimensionLength, "weight" to weight, "sku" to sku))
         return json.decodeFromString<MarketAddResponse>(response)
     }
 
@@ -54,7 +54,7 @@ class Market(
      * @param isHidden Set as hidden.
      */
     suspend fun addAlbum(ownerId: Long, title: String, photoId: Long? = null, mainAlbum: Boolean? = false, isHidden: Boolean? = false): MarketAddAlbumResponse {
-        val response = method("addAlbum", mapOf("owner_id" to ownerId, "title" to title, "photo_id" to photoId, "main_album" to mainAlbum, "is_hidden" to isHidden))
+        val response = method("market.addAlbum", mapOf("owner_id" to ownerId, "title" to title, "photo_id" to photoId, "main_album" to mainAlbum, "is_hidden" to isHidden))
         return json.decodeFromString<MarketAddAlbumResponse>(response)
     }
 
@@ -67,7 +67,7 @@ class Market(
      * @param albumIds Collections IDs to add item to.
      */
     suspend fun addToAlbum(ownerId: Long, itemIds: List<Int>, albumIds: List<Int>): BaseOkResponse {
-        val response = method("addToAlbum", mapOf("owner_id" to ownerId, "item_ids" to itemIds, "album_ids" to albumIds))
+        val response = method("market.addToAlbum", mapOf("owner_id" to ownerId, "item_ids" to itemIds, "album_ids" to albumIds))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -85,7 +85,7 @@ class Market(
      * @param guid Random value to avoid resending one comment.
      */
     suspend fun createComment(ownerId: Long, itemId: Long, message: String? = null, attachments: List<String>? = null, fromGroup: Boolean? = false, replyToComment: Int? = null, stickerId: Long? = null, guid: String? = null): MarketCreateCommentResponse {
-        val response = method("createComment", mapOf("owner_id" to ownerId, "item_id" to itemId, "message" to message, "attachments" to attachments, "from_group" to fromGroup, "reply_to_comment" to replyToComment, "sticker_id" to stickerId, "guid" to guid))
+        val response = method("market.createComment", mapOf("owner_id" to ownerId, "item_id" to itemId, "message" to message, "attachments" to attachments, "from_group" to fromGroup, "reply_to_comment" to replyToComment, "sticker_id" to stickerId, "guid" to guid))
         return json.decodeFromString<MarketCreateCommentResponse>(response)
     }
 
@@ -97,7 +97,7 @@ class Market(
      * @param itemId Item ID.
      */
     suspend fun delete(ownerId: Long, itemId: Long): BaseOkResponse {
-        val response = method("delete", mapOf("owner_id" to ownerId, "item_id" to itemId))
+        val response = method("market.delete", mapOf("owner_id" to ownerId, "item_id" to itemId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -109,7 +109,7 @@ class Market(
      * @param albumId Collection ID.
      */
     suspend fun deleteAlbum(ownerId: Long, albumId: Long): BaseOkResponse {
-        val response = method("deleteAlbum", mapOf("owner_id" to ownerId, "album_id" to albumId))
+        val response = method("market.deleteAlbum", mapOf("owner_id" to ownerId, "album_id" to albumId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -121,7 +121,7 @@ class Market(
      * @param commentId comment id.
      */
     suspend fun deleteComment(ownerId: Long, commentId: Long): BaseBoolResponse {
-        val response = method("deleteComment", mapOf("owner_id" to ownerId, "comment_id" to commentId))
+        val response = method("market.deleteComment", mapOf("owner_id" to ownerId, "comment_id" to commentId))
         return json.decodeFromString<BaseBoolResponse>(response)
     }
 
@@ -148,7 +148,7 @@ class Market(
      * @param sku 
      */
     suspend fun edit(ownerId: Long, itemId: Long, name: String? = null, description: String? = null, categoryId: Long? = null, price: Double? = null, oldPrice: Double? = null, deleted: Boolean? = false, mainPhotoId: Long? = null, photoIds: List<Int>? = null, videoIds: List<Int>? = null, url: String? = null, dimensionWidth: Int? = null, dimensionHeight: Int? = null, dimensionLength: Int? = null, weight: Int? = null, sku: String? = null): BaseOkResponse {
-        val response = method("edit", mapOf("owner_id" to ownerId, "item_id" to itemId, "name" to name, "description" to description, "category_id" to categoryId, "price" to price, "old_price" to oldPrice, "deleted" to deleted, "main_photo_id" to mainPhotoId, "photo_ids" to photoIds, "video_ids" to videoIds, "url" to url, "dimension_width" to dimensionWidth, "dimension_height" to dimensionHeight, "dimension_length" to dimensionLength, "weight" to weight, "sku" to sku))
+        val response = method("market.edit", mapOf("owner_id" to ownerId, "item_id" to itemId, "name" to name, "description" to description, "category_id" to categoryId, "price" to price, "old_price" to oldPrice, "deleted" to deleted, "main_photo_id" to mainPhotoId, "photo_ids" to photoIds, "video_ids" to videoIds, "url" to url, "dimension_width" to dimensionWidth, "dimension_height" to dimensionHeight, "dimension_length" to dimensionLength, "weight" to weight, "sku" to sku))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -164,7 +164,7 @@ class Market(
      * @param isHidden Set as hidden.
      */
     suspend fun editAlbum(ownerId: Long, albumId: Long, title: String, photoId: Long? = null, mainAlbum: Boolean? = false, isHidden: Boolean? = false): BaseOkResponse {
-        val response = method("editAlbum", mapOf("owner_id" to ownerId, "album_id" to albumId, "title" to title, "photo_id" to photoId, "main_album" to mainAlbum, "is_hidden" to isHidden))
+        val response = method("market.editAlbum", mapOf("owner_id" to ownerId, "album_id" to albumId, "title" to title, "photo_id" to photoId, "main_album" to mainAlbum, "is_hidden" to isHidden))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -178,7 +178,7 @@ class Market(
      * @param attachments Comma-separated list of objects attached to a comment. The field is submitted the following way: , "'<owner_id>_<media_id>,<owner_id>_<media_id>'", , '' - media attachment type: "'photo' - photo, 'video' - video, 'audio' - audio, 'doc' - document", , '<owner_id>' - media owner id, '<media_id>' - media attachment id, , For example: "photo100172_166443618,photo66748_265827614",.
      */
     suspend fun editComment(ownerId: Long, commentId: Long, message: String? = null, attachments: List<String>? = null): BaseOkResponse {
-        val response = method("editComment", mapOf("owner_id" to ownerId, "comment_id" to commentId, "message" to message, "attachments" to attachments))
+        val response = method("market.editComment", mapOf("owner_id" to ownerId, "comment_id" to commentId, "message" to message, "attachments" to attachments))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -201,7 +201,7 @@ class Market(
      * @param receiptLink 
      */
     suspend fun editOrder(userId: Long, orderId: Long, merchantComment: String? = null, status: Int? = null, trackNumber: String? = null, paymentStatus: String? = null, deliveryPrice: Int? = null, width: Int? = null, length: Int? = null, height: Int? = null, weight: Int? = null, commentForUser: String? = null, receiptLink: String? = null): BaseOkResponse {
-        val response = method("editOrder", mapOf("user_id" to userId, "order_id" to orderId, "merchant_comment" to merchantComment, "status" to status, "track_number" to trackNumber, "payment_status" to paymentStatus, "delivery_price" to deliveryPrice, "width" to width, "length" to length, "height" to height, "weight" to weight, "comment_for_user" to commentForUser, "receipt_link" to receiptLink))
+        val response = method("market.editOrder", mapOf("user_id" to userId, "order_id" to orderId, "merchant_comment" to merchantComment, "status" to status, "track_number" to trackNumber, "payment_status" to paymentStatus, "delivery_price" to deliveryPrice, "width" to width, "length" to length, "height" to height, "weight" to weight, "comment_for_user" to commentForUser, "receipt_link" to receiptLink))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -214,7 +214,7 @@ class Market(
      * @param count Number of results to return.
      */
     suspend fun filterCategories(categoryId: Long? = null, query: String? = null, count: Int? = 20): MarketGetCategoriesNewResponse {
-        val response = method("filterCategories", mapOf("category_id" to categoryId, "query" to query, "count" to count))
+        val response = method("market.filterCategories", mapOf("category_id" to categoryId, "query" to query, "count" to count))
         return json.decodeFromString<MarketGetCategoriesNewResponse>(response)
     }
 
@@ -233,7 +233,7 @@ class Market(
      * @param withDisabled Add disabled items to response.
      */
     suspend fun get(ownerId: Long, albumId: Long? = 0, count: Int? = 100, offset: Int? = null, extended: Boolean? = false, dateFrom: String? = null, dateTo: String? = null, needVariants: Boolean? = false, withDisabled: Boolean? = false): GetResponse {
-        val response = method("get", mapOf("owner_id" to ownerId, "album_id" to albumId, "count" to count, "offset" to offset, "extended" to extended, "date_from" to dateFrom, "date_to" to dateTo, "need_variants" to needVariants, "with_disabled" to withDisabled))
+        val response = method("market.get", mapOf("owner_id" to ownerId, "album_id" to albumId, "count" to count, "offset" to offset, "extended" to extended, "date_from" to dateFrom, "date_to" to dateTo, "need_variants" to needVariants, "with_disabled" to withDisabled))
         return GetResponse(response, json)
     }
     class GetResponse(
@@ -259,7 +259,7 @@ class Market(
      * @param albumIds collections identifiers to obtain data from.
      */
     suspend fun getAlbumById(ownerId: Long, albumIds: List<Int>): MarketGetAlbumByIdResponse {
-        val response = method("getAlbumById", mapOf("owner_id" to ownerId, "album_ids" to albumIds))
+        val response = method("market.getAlbumById", mapOf("owner_id" to ownerId, "album_ids" to albumIds))
         return json.decodeFromString<MarketGetAlbumByIdResponse>(response)
     }
 
@@ -272,7 +272,7 @@ class Market(
      * @param count Number of items to return.
      */
     suspend fun getAlbums(ownerId: Long, offset: Int? = null, count: Int? = 50): MarketGetAlbumsResponse {
-        val response = method("getAlbums", mapOf("owner_id" to ownerId, "offset" to offset, "count" to count))
+        val response = method("market.getAlbums", mapOf("owner_id" to ownerId, "offset" to offset, "count" to count))
         return json.decodeFromString<MarketGetAlbumsResponse>(response)
     }
 
@@ -284,7 +284,7 @@ class Market(
      * @param extended '1' - to return additional fields: 'likes, can_comment, car_repost, photos'. By default: '0'.
      */
     suspend fun getById(itemIds: List<String>, extended: Boolean? = false): GetbyidResponse {
-        val response = method("getById", mapOf("item_ids" to itemIds, "extended" to extended))
+        val response = method("market.getById", mapOf("item_ids" to itemIds, "extended" to extended))
         return GetbyidResponse(response, json)
     }
     class GetbyidResponse(
@@ -310,7 +310,7 @@ class Market(
      * @param albumId 
      */
     suspend fun getCategories(groupId: Long? = null, albumId: Long? = null): MarketGetCategoriesNewResponse {
-        val response = method("getCategories", mapOf("group_id" to groupId, "album_id" to albumId))
+        val response = method("market.getCategories", mapOf("group_id" to groupId, "album_id" to albumId))
         return json.decodeFromString<MarketGetCategoriesNewResponse>(response)
     }
 
@@ -329,7 +329,7 @@ class Market(
      * @param fields List of additional profile fields to return. See the [vk.com/dev/fields|details].
      */
     suspend fun getComments(ownerId: Long, itemId: Long, needLikes: Boolean? = false, startCommentId: Long? = null, offset: Int? = 0, count: Int? = 20, sort: String? = "asc", extended: Boolean? = false, fields: List<UsersFields>? = null): MarketGetCommentsResponse {
-        val response = method("getComments", mapOf("owner_id" to ownerId, "item_id" to itemId, "need_likes" to needLikes, "start_comment_id" to startCommentId, "offset" to offset, "count" to count, "sort" to sort, "extended" to extended, "fields" to fields))
+        val response = method("market.getComments", mapOf("owner_id" to ownerId, "item_id" to itemId, "need_likes" to needLikes, "start_comment_id" to startCommentId, "offset" to offset, "count" to count, "sort" to sort, "extended" to extended, "fields" to fields))
         return json.decodeFromString<MarketGetCommentsResponse>(response)
     }
 
@@ -342,7 +342,7 @@ class Market(
      * @param count 
      */
     suspend fun getGroupOrders(groupId: List<Any>? = null, offset: Int? = 0, count: Int? = 10): MarketGetGroupOrdersResponse {
-        val response = method("getGroupOrders", mapOf("group_id" to groupId, "offset" to offset, "count" to count))
+        val response = method("market.getGroupOrders", mapOf("group_id" to groupId, "offset" to offset, "count" to count))
         return json.decodeFromString<MarketGetGroupOrdersResponse>(response)
     }
 
@@ -355,7 +355,7 @@ class Market(
      * @param extended 
      */
     suspend fun getOrderById(orderId: Long, userId: Long? = null, extended: Boolean? = false): MarketGetOrderByIdResponse {
-        val response = method("getOrderById", mapOf("user_id" to userId, "order_id" to orderId, "extended" to extended))
+        val response = method("market.getOrderById", mapOf("user_id" to userId, "order_id" to orderId, "extended" to extended))
         return json.decodeFromString<MarketGetOrderByIdResponse>(response)
     }
 
@@ -369,7 +369,7 @@ class Market(
      * @param count 
      */
     suspend fun getOrderItems(orderId: Long, userId: Long? = null, offset: Int? = null, count: Int? = 50): MarketGetOrderItemsResponse {
-        val response = method("getOrderItems", mapOf("user_id" to userId, "order_id" to orderId, "offset" to offset, "count" to count))
+        val response = method("market.getOrderItems", mapOf("user_id" to userId, "order_id" to orderId, "offset" to offset, "count" to count))
         return json.decodeFromString<MarketGetOrderItemsResponse>(response)
     }
 
@@ -382,7 +382,7 @@ class Market(
      * @param dateTo Orders status updated date to (format: yyyy-mm-dd).
      */
     suspend fun getOrders(offset: Int? = 0, count: Int? = 10, extended: Boolean? = false, dateFrom: String? = null, dateTo: String? = null): GetordersResponse {
-        val response = method("getOrders", mapOf("offset" to offset, "count" to count, "extended" to extended, "date_from" to dateFrom, "date_to" to dateTo))
+        val response = method("market.getOrders", mapOf("offset" to offset, "count" to count, "extended" to extended, "date_from" to dateFrom, "date_to" to dateTo))
         return GetordersResponse(response, json)
     }
     class GetordersResponse(
@@ -409,7 +409,7 @@ class Market(
      * @param albumIds Collections IDs to remove item from.
      */
     suspend fun removeFromAlbum(ownerId: Long, itemId: Long, albumIds: List<Int>): BaseOkResponse {
-        val response = method("removeFromAlbum", mapOf("owner_id" to ownerId, "item_id" to itemId, "album_ids" to albumIds))
+        val response = method("market.removeFromAlbum", mapOf("owner_id" to ownerId, "item_id" to itemId, "album_ids" to albumIds))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -423,7 +423,7 @@ class Market(
      * @param after ID of a collection to place current collection after it.
      */
     suspend fun reorderAlbums(ownerId: Long, albumId: Long, before: Int? = null, after: Int? = null): BaseOkResponse {
-        val response = method("reorderAlbums", mapOf("owner_id" to ownerId, "album_id" to albumId, "before" to before, "after" to after))
+        val response = method("market.reorderAlbums", mapOf("owner_id" to ownerId, "album_id" to albumId, "before" to before, "after" to after))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -438,7 +438,7 @@ class Market(
      * @param after ID of an item to place current item after it.
      */
     suspend fun reorderItems(ownerId: Long, itemId: Long, albumId: Long? = null, before: Int? = null, after: Int? = null): BaseOkResponse {
-        val response = method("reorderItems", mapOf("owner_id" to ownerId, "album_id" to albumId, "item_id" to itemId, "before" to before, "after" to after))
+        val response = method("market.reorderItems", mapOf("owner_id" to ownerId, "album_id" to albumId, "item_id" to itemId, "before" to before, "after" to after))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -451,7 +451,7 @@ class Market(
      * @param reason Complaint reason. Possible values: *'0' - spam,, *'1' - child porn,, *'2' - extremism,, *'3' - violence,, *'4' - drugs propaganda,, *'5' - adult materials,, *'6' - insult.
      */
     suspend fun report(ownerId: Long, itemId: Long, reason: Int? = 0): BaseOkResponse {
-        val response = method("report", mapOf("owner_id" to ownerId, "item_id" to itemId, "reason" to reason))
+        val response = method("market.report", mapOf("owner_id" to ownerId, "item_id" to itemId, "reason" to reason))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -464,7 +464,7 @@ class Market(
      * @param reason Complaint reason. Possible values: *'0' - spam,, *'1' - child porn,, *'2' - extremism,, *'3' - violence,, *'4' - drugs propaganda,, *'5' - adult materials,, *'6' - insult.
      */
     suspend fun reportComment(ownerId: Long, commentId: Long, reason: Int): BaseOkResponse {
-        val response = method("reportComment", mapOf("owner_id" to ownerId, "comment_id" to commentId, "reason" to reason))
+        val response = method("market.reportComment", mapOf("owner_id" to ownerId, "comment_id" to commentId, "reason" to reason))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -476,7 +476,7 @@ class Market(
      * @param itemId Deleted item ID.
      */
     suspend fun restore(ownerId: Long, itemId: Long): BaseOkResponse {
-        val response = method("restore", mapOf("owner_id" to ownerId, "item_id" to itemId))
+        val response = method("market.restore", mapOf("owner_id" to ownerId, "item_id" to itemId))
         return json.decodeFromString<BaseOkResponse>(response)
     }
 
@@ -488,7 +488,7 @@ class Market(
      * @param commentId deleted comment id.
      */
     suspend fun restoreComment(ownerId: Long, commentId: Long): BaseBoolResponse {
-        val response = method("restoreComment", mapOf("owner_id" to ownerId, "comment_id" to commentId))
+        val response = method("market.restoreComment", mapOf("owner_id" to ownerId, "comment_id" to commentId))
         return json.decodeFromString<BaseBoolResponse>(response)
     }
 
@@ -510,7 +510,7 @@ class Market(
      * @param needVariants Add variants to response if exist.
      */
     suspend fun search(ownerId: Long, albumId: Long? = null, q: String? = null, priceFrom: Int? = null, priceTo: Int? = null, sort: Int? = 0, rev: Int? = 1, offset: Int? = null, count: Int? = 20, extended: Boolean? = true, status: List<Int>? = null, needVariants: Boolean? = false): SearchResponse {
-        val response = method("search", mapOf("owner_id" to ownerId, "album_id" to albumId, "q" to q, "price_from" to priceFrom, "price_to" to priceTo, "sort" to sort, "rev" to rev, "offset" to offset, "count" to count, "extended" to extended, "status" to status, "need_variants" to needVariants))
+        val response = method("market.search", mapOf("owner_id" to ownerId, "album_id" to albumId, "q" to q, "price_from" to priceFrom, "price_to" to priceTo, "sort" to sort, "rev" to rev, "offset" to offset, "count" to count, "extended" to extended, "status" to status, "need_variants" to needVariants))
         return SearchResponse(response, json)
     }
     class SearchResponse(
@@ -542,7 +542,7 @@ class Market(
      * @param city 
      */
     suspend fun searchItems(q: String, offset: Int? = 0, count: Int? = 30, categoryId: Long? = null, priceFrom: Int? = null, priceTo: Int? = null, sortBy: Int? = 3, sortDirection: Int? = 1, country: Int? = null, city: Int? = null): MarketSearchResponse {
-        val response = method("searchItems", mapOf("q" to q, "offset" to offset, "count" to count, "category_id" to categoryId, "price_from" to priceFrom, "price_to" to priceTo, "sort_by" to sortBy, "sort_direction" to sortDirection, "country" to country, "city" to city))
+        val response = method("market.searchItems", mapOf("q" to q, "offset" to offset, "count" to count, "category_id" to categoryId, "price_from" to priceFrom, "price_to" to priceTo, "sort_by" to sortBy, "sort_direction" to sortDirection, "country" to country, "city" to city))
         return json.decodeFromString<MarketSearchResponse>(response)
     }
 
@@ -561,7 +561,7 @@ class Market(
      * @param onlyMyGroups 
      */
     suspend fun searchItemsBasic(q: String, offset: Int? = 0, count: Int? = 30, categoryId: Long? = null, priceFrom: Int? = null, priceTo: Int? = null, sortBy: Int? = 3, sortDirection: Int? = 0, country: Int? = null, city: Int? = null, onlyMyGroups: Boolean? = false): MarketSearchBasicResponse {
-        val response = method("searchItemsBasic", mapOf("q" to q, "offset" to offset, "count" to count, "category_id" to categoryId, "price_from" to priceFrom, "price_to" to priceTo, "sort_by" to sortBy, "sort_direction" to sortDirection, "country" to country, "city" to city, "only_my_groups" to onlyMyGroups))
+        val response = method("market.searchItemsBasic", mapOf("q" to q, "offset" to offset, "count" to count, "category_id" to categoryId, "price_from" to priceFrom, "price_to" to priceTo, "sort_by" to sortBy, "sort_direction" to sortDirection, "country" to country, "city" to city, "only_my_groups" to onlyMyGroups))
         return json.decodeFromString<MarketSearchBasicResponse>(response)
     }
 
