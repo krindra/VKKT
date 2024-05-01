@@ -4,12 +4,12 @@ import kotlinx.serialization.Serializable
 import ru.krindra.vknorthtypes.JsonSingleton
 
 @Serializable
-data class Error(
-    val failed: String,
+class BotLPError(
+    val failed: Int,
     val ts: Int? = null
-) {
+): Exception("failed code: $failed") {
     companion object {
-        fun fromString(string: String): Error =
+        fun fromString(string: String): BotLPError =
             JsonSingleton.json.decodeFromString(string)
     }
 }
