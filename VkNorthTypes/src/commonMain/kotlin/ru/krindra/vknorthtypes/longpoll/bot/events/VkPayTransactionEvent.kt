@@ -11,7 +11,7 @@ data class VkPayTransactionEvent(
     @SerialName("event_id") override val eventId: String,
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
-    @SerialName("object") val `object`: VkPayTransactionObject,
+    @SerialName("object") val `object`: ru.krindra.vknorthtypes.longpoll.bot.events.objects.VkPayTransactionObject,
 ): BaseEvent() {
     companion object { val type = "vk_pay_transaction"}
 }

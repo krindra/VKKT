@@ -2,7 +2,7 @@ package ru.krindra.vknorthtypes.longpoll.bot.events
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.longpoll.bot.objects.MessageNewObject
+import ru.krindra.vknorthtypes.longpoll.bot.events.objects.MessageNewObject
 
 @Serializable
 data class MessageNewEvent(

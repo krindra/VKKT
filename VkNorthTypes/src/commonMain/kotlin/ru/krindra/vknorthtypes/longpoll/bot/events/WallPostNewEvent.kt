@@ -11,7 +11,7 @@ data class WallPostNewEvent(
     @SerialName("event_id") override val eventId: String,
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
-    @SerialName("object") val `object`: WallObject,
+    @SerialName("object") val `object`: ru.krindra.vknorthtypes.longpoll.bot.events.objects.WallObject,
 ): BaseEvent() {
     companion object { val type = "wall_post_new"}
 }

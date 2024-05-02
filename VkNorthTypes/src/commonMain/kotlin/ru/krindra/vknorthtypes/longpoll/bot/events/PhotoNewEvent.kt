@@ -11,7 +11,7 @@ data class PhotoNewEvent(
     @SerialName("event_id") override val eventId: String,
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
-    @SerialName("object") val `object`: PhotoNewObject,
+    @SerialName("object") val `object`: ru.krindra.vknorthtypes.longpoll.bot.events.objects.PhotoNewObject,
 ): BaseEvent() {
     companion object { val type = "photo_new"}
 }

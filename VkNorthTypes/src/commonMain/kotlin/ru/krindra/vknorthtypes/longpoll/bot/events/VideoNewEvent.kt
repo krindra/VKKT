@@ -11,7 +11,7 @@ data class VideoNewEvent(
     @SerialName("event_id") override val eventId: String,
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
-    @SerialName("object") val `object`: VideoNewObject,
+    @SerialName("object") val `object`: ru.krindra.vknorthtypes.longpoll.bot.events.objects.VideoNewObject,
 ): BaseEvent() {
     companion object { val type = "video_new"}
 }

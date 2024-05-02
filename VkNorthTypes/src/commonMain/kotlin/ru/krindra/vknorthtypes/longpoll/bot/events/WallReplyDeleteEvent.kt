@@ -11,7 +11,7 @@ data class WallReplyDeleteEvent(
     @SerialName("event_id") override val eventId: String,
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
-    @SerialName("object") val `object`: WallReplyDeleteObject,
+    @SerialName("object") val `object`: ru.krindra.vknorthtypes.longpoll.bot.events.objects.WallReplyDeleteObject,
 ): BaseEvent() {
     companion object { val type = "wall_reply_delete"}
 }

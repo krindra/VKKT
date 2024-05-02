@@ -11,7 +11,7 @@ data class VideoCommentDeleteEvent(
     @SerialName("event_id") override val eventId: String,
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
-    @SerialName("object") val `object`: VideoCommentDeleteObject,
+    @SerialName("object") val `object`: ru.krindra.vknorthtypes.longpoll.bot.events.objects.VideoCommentDeleteObject,
 ): BaseEvent() {
     companion object { val type = "video_comment_delete"}
 }
