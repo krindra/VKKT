@@ -12,6 +12,6 @@ data class GroupChangePhotoEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: GroupChangePhotoObject,
-): ru.krindra.vknorthtypes.longpoll.bot.events.BaseEvent() {
+): BaseEvent() {
     companion object { val type = "group_change_photo"}
 }

@@ -12,6 +12,6 @@ data class MarketCommentEditEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: MarketCommentObject,
-): ru.krindra.vknorthtypes.longpoll.bot.events.BaseEvent() {
+): BaseEvent() {
     companion object { val type = "market_comment_edit"}
 }

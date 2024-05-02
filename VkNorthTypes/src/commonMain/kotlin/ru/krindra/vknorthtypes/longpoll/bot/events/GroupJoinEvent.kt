@@ -12,6 +12,6 @@ data class GroupJoinEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: GroupJoinObject,
-): ru.krindra.vknorthtypes.longpoll.bot.events.BaseEvent() {
+): BaseEvent() {
     companion object { val type = "group_join"}
 }

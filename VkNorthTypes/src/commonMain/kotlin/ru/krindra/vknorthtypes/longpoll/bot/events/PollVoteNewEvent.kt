@@ -12,6 +12,6 @@ data class PollVoteNewEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: PollVoteNewObject,
-): ru.krindra.vknorthtypes.longpoll.bot.events.BaseEvent() {
+): BaseEvent() {
     companion object { val type = "poll_vote_new"}
 }

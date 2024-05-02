@@ -12,6 +12,6 @@ data class DonutMoneyWithdrawEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: DonutMoneyWithdrawObject,
-): ru.krindra.vknorthtypes.longpoll.bot.events.BaseEvent() {
+): BaseEvent() {
     companion object { val type = "donut_money_withdraw"}
 }
