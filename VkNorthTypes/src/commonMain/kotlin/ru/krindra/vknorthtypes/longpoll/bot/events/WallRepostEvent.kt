@@ -12,6 +12,6 @@ data class WallRepostEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: WallObject,
-): BaseEvent() {
+): BotLPEvent() {
     companion object { val type = "wall_repost"}
 }

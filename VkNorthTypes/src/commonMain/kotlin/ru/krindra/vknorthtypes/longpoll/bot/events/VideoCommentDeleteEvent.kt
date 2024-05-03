@@ -12,6 +12,6 @@ data class VideoCommentDeleteEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: VideoCommentDeleteObject,
-): BaseEvent() {
+): BotLPEvent() {
     companion object { val type = "video_comment_delete"}
 }

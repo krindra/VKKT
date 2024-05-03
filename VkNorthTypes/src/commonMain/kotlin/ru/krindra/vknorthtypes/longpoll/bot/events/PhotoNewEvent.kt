@@ -12,6 +12,6 @@ data class PhotoNewEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: PhotoNewObject,
-): BaseEvent() {
+): BotLPEvent() {
     companion object { val type = "photo_new"}
 }

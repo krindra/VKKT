@@ -2,8 +2,8 @@ package ru.krindra.vknorthtypes.longpoll.bot.events
 
 import kotlinx.serialization.Serializable
 
-@Serializable(ru.krindra.vknorthtypes.longpoll.bot.events.EventsSerializer::class)
-abstract class BaseEvent {
+@Serializable(EventsSerializer::class)
+abstract class BotLPEvent {
     abstract val type: String
     abstract val eventId: String
     abstract val v: String

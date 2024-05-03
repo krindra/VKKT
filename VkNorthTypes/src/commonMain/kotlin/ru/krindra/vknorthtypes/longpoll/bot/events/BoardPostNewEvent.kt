@@ -12,6 +12,6 @@ data class BoardPostNewEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: BoardPostObject,
-): BaseEvent() {
+): BotLPEvent() {
     companion object { val type = "board_post_new"}
 }

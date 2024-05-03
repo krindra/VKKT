@@ -12,6 +12,6 @@ data class VideoCommentEditEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: VideoCommentObject,
-): BaseEvent() {
+): BotLPEvent() {
     companion object { val type = "video_comment_edit"}
 }

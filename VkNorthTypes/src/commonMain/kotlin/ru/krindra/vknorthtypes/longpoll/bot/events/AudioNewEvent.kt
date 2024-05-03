@@ -12,6 +12,6 @@ data class AudioNewEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: AudioNewObject,
-): BaseEvent() {
+): BotLPEvent() {
     companion object { val type = "audio_new"}
 }

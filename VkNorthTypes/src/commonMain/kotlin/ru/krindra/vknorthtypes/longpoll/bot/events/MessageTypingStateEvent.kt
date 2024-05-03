@@ -12,6 +12,6 @@ data class MessageTypingStateEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: MessageTypingStateObject,
-): BaseEvent() {
+): BotLPEvent() {
     companion object { val type = "message_typing_state"}
 }

@@ -12,6 +12,6 @@ data class UserBlockEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: UserBlockObject,
-): BaseEvent() {
+): BotLPEvent() {
     companion object { val type = "user_block"}
 }

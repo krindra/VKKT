@@ -12,6 +12,6 @@ data class VkPayTransactionEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: VkPayTransactionObject,
-): BaseEvent() {
+): BotLPEvent() {
     companion object { val type = "vk_pay_transaction"}
 }

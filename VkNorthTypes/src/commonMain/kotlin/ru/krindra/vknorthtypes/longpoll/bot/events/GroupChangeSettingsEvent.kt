@@ -12,6 +12,6 @@ data class GroupChangeSettingsEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: GroupChangeSettingsObject,
-): BaseEvent() {
+): BotLPEvent() {
     companion object { val type = "group_change_settings"}
 }

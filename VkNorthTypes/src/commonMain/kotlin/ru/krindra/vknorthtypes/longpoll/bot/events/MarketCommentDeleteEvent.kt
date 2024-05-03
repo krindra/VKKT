@@ -12,6 +12,6 @@ data class MarketCommentDeleteEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: MarketCommentDeleteObject,
-): BaseEvent() {
+): BotLPEvent() {
     companion object { val type = "market_comment_delete"}
 }

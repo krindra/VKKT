@@ -12,6 +12,6 @@ data class PollVoteNewEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: PollVoteNewObject,
-): BaseEvent() {
+): BotLPEvent() {
     companion object { val type = "poll_vote_new"}
 }

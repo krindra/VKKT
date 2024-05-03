@@ -12,6 +12,6 @@ data class GroupLeaveEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: GroupLeaveObject,
-): BaseEvent() {
+): BotLPEvent() {
     companion object { val type = "group_leave"}
 }

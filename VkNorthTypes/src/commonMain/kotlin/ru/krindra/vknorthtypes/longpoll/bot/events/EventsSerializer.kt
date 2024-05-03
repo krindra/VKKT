@@ -7,7 +7,7 @@ import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 
-object EventsSerializer: JsonContentPolymorphicSerializer<ru.krindra.vknorthtypes.longpoll.bot.events.BaseEvent>(ru.krindra.vknorthtypes.longpoll.bot.events.BaseEvent::class) {
+object EventsSerializer: JsonContentPolymorphicSerializer<ru.krindra.vknorthtypes.longpoll.bot.events.BotLPEvent>(ru.krindra.vknorthtypes.longpoll.bot.events.BotLPEvent::class) {
     private data class SerializerAndType<T>(
         val serializer: KSerializer<T>,
         val type: String
@@ -223,7 +223,7 @@ object EventsSerializer: JsonContentPolymorphicSerializer<ru.krindra.vknorthtype
         )
     )
 
-    override fun selectDeserializer(element: JsonElement): DeserializationStrategy<ru.krindra.vknorthtypes.longpoll.bot.events.BaseEvent> {
+    override fun selectDeserializer(element: JsonElement): DeserializationStrategy<ru.krindra.vknorthtypes.longpoll.bot.events.BotLPEvent> {
         val type = element.jsonObject["type"]!!.jsonPrimitive.content
 
         for (e in ru.krindra.vknorthtypes.longpoll.bot.events.EventsSerializer.eventsList) {

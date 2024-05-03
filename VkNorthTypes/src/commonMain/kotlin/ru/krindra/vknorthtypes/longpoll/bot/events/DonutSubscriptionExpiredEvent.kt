@@ -12,6 +12,6 @@ data class DonutSubscriptionExpiredEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: DonutSubscriptionExpiredObject,
-): BaseEvent() {
+): BotLPEvent() {
     companion object { val type = "donut_subscription_expired"}
 }

@@ -12,6 +12,6 @@ data class DonutMoneyWithdrawErrorEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: DonutMoneyWithdrawErrorObject,
-): BaseEvent() {
+): BotLPEvent() {
     companion object { val type = "donut_money_withdraw_error"}
 }

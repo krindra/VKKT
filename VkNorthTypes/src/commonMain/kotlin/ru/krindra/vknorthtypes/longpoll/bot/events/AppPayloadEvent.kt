@@ -12,6 +12,6 @@ data class AppPayloadEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: AppPayloadObject,
-): BaseEvent() {
+): BotLPEvent() {
     companion object { val type = "app_payload"}
 }

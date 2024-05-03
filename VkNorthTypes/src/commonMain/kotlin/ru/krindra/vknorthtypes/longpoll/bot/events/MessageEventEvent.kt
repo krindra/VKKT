@@ -12,6 +12,6 @@ data class MessageEventEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: MessageEventObject,
-): BaseEvent() {
+): BotLPEvent() {
     companion object { val type = "message_event"}
 }

@@ -12,6 +12,6 @@ data class MarketOrderNewEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: MarketOrderObject,
-): BaseEvent() {
+): BotLPEvent() {
     companion object { val type = "market_order_new"}
 }

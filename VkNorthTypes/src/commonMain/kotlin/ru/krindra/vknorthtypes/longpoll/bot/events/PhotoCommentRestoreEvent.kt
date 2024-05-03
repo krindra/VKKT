@@ -12,6 +12,6 @@ data class PhotoCommentRestoreEvent(
     @SerialName("v") override val v: String,
     @SerialName("group_id") override val groupId: Int,
     @SerialName("object") val `object`: PhotoObject,
-): BaseEvent() {
+): BotLPEvent() {
     companion object { val type = "photo_comment_restore"}
 }
