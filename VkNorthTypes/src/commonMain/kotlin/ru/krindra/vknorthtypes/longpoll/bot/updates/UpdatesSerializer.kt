@@ -7,7 +7,7 @@ import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 
-object UpdatesSerializer : JsonContentPolymorphicSerializer<BotLPUpdate>(BotLPUpdate::class) {
+internal object UpdatesSerializer : JsonContentPolymorphicSerializer<BotLPUpdate>(BotLPUpdate::class) {
     private data class SerializerAndType<T>(
         val serializer: KSerializer<T>,
         val type: String
