@@ -7,6 +7,18 @@ import kotlinx.serialization.descriptors.SerialDescriptor
 import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
 
+/**
+ * Enum As Int Serializer
+ *
+ * Is used because without this is not working
+ * ```
+ * @Serializable
+ * enum class X(val value: Int) {
+ *     A(0),
+ *     B(1)
+ * } // Exception!
+ * ```
+ */
 open class EnumAsIntSerializer<T:Enum<*>>(
     serialName: String,
     val serialize: (v: T) -> Int,
