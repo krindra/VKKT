@@ -7,6 +7,7 @@ import kotlinx.serialization.builtins.ListSerializer
 import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
+import ru.krindra.vknorthtypes.types.base.BaseBoolInt
 
 class Secure(
     private val method: suspend (String, Map<String, Any?>?) -> String,

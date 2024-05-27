@@ -5,6 +5,7 @@ import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
 import ru.krindra.vknorthtypes.types.users.UsersFields
 import kotlinx.serialization.builtins.ListSerializer
+import kotlinx.serialization.builtins.serializer
 import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
 

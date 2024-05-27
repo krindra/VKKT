@@ -11,6 +11,7 @@ import ru.krindra.vknorthtypes.types.address.AddressFields
 import ru.krindra.vknorthtypes.types.base.BaseUserGroupFields
 import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
+import ru.krindra.vknorthtypes.types.base.BaseBoolInt
 
 class Groups(
     private val method: suspend (String, Map<String, Any?>?) -> String,
