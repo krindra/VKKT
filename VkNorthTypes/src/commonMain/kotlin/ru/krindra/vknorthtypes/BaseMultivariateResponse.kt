@@ -10,7 +10,7 @@ open class BaseMultivariateResponse(private val json: Json) {
      * @param kSerializer Serializer [T]
      * @param rawResponse Raw JSON string
      */
-    protected fun <T> getResponse(kSerializer: KSerializer<T>, rawResponse: String): T? {
+    protected fun <T> getResponseOrNull(kSerializer: KSerializer<T>, rawResponse: String): T? {
         return try {
             json.decodeFromString(kSerializer, rawResponse)
         } catch (e: Exception) {
