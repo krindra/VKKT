@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class SupportUnblockScreenStepperFields (
-    @SerialName("questions") val questions: List<SupportUnblockScreenStepperQuestions>? = null,
-    @SerialName("target") val target: String? = null,
     @SerialName("type") val type: String,
+    @SerialName("target") val target: String? = null,
+    @SerialName("questions") val questions: List<SupportUnblockScreenStepperQuestions>? = null,
 )

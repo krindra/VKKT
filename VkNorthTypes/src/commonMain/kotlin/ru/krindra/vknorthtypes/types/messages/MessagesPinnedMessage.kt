@@ -20,15 +20,15 @@ import ru.krindra.vknorthtypes.types.base.BaseGeo
  */
 @Serializable
 data class MessagesPinnedMessage (
-    @SerialName("conversation_message_id") val conversationMessageId: Long? = null,
-    @SerialName("peer_id") val peerId: Long,
     @SerialName("id") val id: Long,
-    @SerialName("geo") val geo: BaseGeo? = null,
-    @SerialName("fwd_messages") val fwdMessages: List<MessagesForeignMessage>? = null,
-    @SerialName("reply_message") val replyMessage: MessagesForeignMessage? = null,
     @SerialName("date") val date: Int,
-    @SerialName("from_id") val fromId: Long,
     @SerialName("text") val text: String,
-    @SerialName("attachments") val attachments: List<MessagesMessageAttachment>? = null,
+    @SerialName("from_id") val fromId: Long,
+    @SerialName("peer_id") val peerId: Long,
+    @SerialName("geo") val geo: BaseGeo? = null,
     @SerialName("keyboard") val keyboard: MessagesKeyboard? = null,
+    @SerialName("reply_message") val replyMessage: MessagesForeignMessage? = null,
+    @SerialName("conversation_message_id") val conversationMessageId: Long? = null,
+    @SerialName("fwd_messages") val fwdMessages: List<MessagesForeignMessage>? = null,
+    @SerialName("attachments") val attachments: List<MessagesMessageAttachment>? = null,
 )

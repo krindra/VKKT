@@ -13,9 +13,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BaseLikesInfo (
-    @SerialName("can_like") val canLike: BaseBoolInt,
-    @SerialName("repost_disabled") val repostDisabled: Boolean? = null,
     @SerialName("count") val count: Int,
+    @SerialName("can_like") val canLike: BaseBoolInt,
     @SerialName("user_likes") val userLikes: BaseBoolInt,
     @SerialName("can_publish") val canPublish: BaseBoolInt? = null,
+    @SerialName("repost_disabled") val repostDisabled: Boolean? = null,
 )

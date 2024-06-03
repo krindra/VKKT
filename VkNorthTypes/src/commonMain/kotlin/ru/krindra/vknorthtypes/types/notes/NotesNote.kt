@@ -21,16 +21,16 @@ import ru.krindra.vknorthtypes.types.base.BaseBoolInt
  */
 @Serializable
 data class NotesNote (
-    @SerialName("read_comments") val readComments: Int? = null,
-    @SerialName("title") val title: String,
-    @SerialName("view_url") val viewUrl: String,
-    @SerialName("comments") val comments: Int,
     @SerialName("id") val id: Long,
-    @SerialName("text_wiki") val textWiki: String? = null,
-    @SerialName("privacy_comment") val privacyComment: List<String>? = null,
-    @SerialName("privacy_view") val privacyView: List<String>? = null,
-    @SerialName("owner_id") val ownerId: Long,
     @SerialName("date") val date: Int,
-    @SerialName("can_comment") val canComment: BaseBoolInt? = null,
+    @SerialName("title") val title: String,
+    @SerialName("comments") val comments: Int,
+    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("view_url") val viewUrl: String,
     @SerialName("text") val text: String? = null,
+    @SerialName("text_wiki") val textWiki: String? = null,
+    @SerialName("read_comments") val readComments: Int? = null,
+    @SerialName("can_comment") val canComment: BaseBoolInt? = null,
+    @SerialName("privacy_view") val privacyView: List<String>? = null,
+    @SerialName("privacy_comment") val privacyComment: List<String>? = null,
 )

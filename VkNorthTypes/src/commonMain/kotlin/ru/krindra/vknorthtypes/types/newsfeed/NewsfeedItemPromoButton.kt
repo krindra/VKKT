@@ -17,13 +17,13 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class NewsfeedItemPromoButton (
-    @SerialName("action") val action: NewsfeedItemPromoButtonAction? = null,
-    @SerialName("feedback") val feedback: NewsfeedItemWallpostFeedback? = null,
-    @SerialName("text") val text: String? = null,
     @SerialName("source_id") val sourceId: Long,
+    @SerialName("text") val text: String? = null,
+    @SerialName("title") val title: String? = null,
     @SerialName("date") val date: Int/* WARN! Int? = null */,
     @SerialName("short_text_rate") val shortTextRate: Double? = null,
-    @SerialName("type") val type: NewsfeedNewsfeedItemType/* WARN! WallPostType? = null */,
-    @SerialName("title") val title: String? = null,
+    @SerialName("action") val action: NewsfeedItemPromoButtonAction? = null,
+    @SerialName("feedback") val feedback: NewsfeedItemWallpostFeedback? = null,
     @SerialName("images") val images: List<NewsfeedItemPromoButtonImage>? = null,
+    @SerialName("type") val type: NewsfeedNewsfeedItemType/* WARN! WallPostType? = null */,
 )

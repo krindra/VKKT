@@ -13,7 +13,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesKeyboardButtonActionText (
-    @SerialName("payload") val payload: String? = null,
     @SerialName("type") val type: String,
     @SerialName("label") val label: String,
+    @SerialName("payload") val payload: String? = null,
 )

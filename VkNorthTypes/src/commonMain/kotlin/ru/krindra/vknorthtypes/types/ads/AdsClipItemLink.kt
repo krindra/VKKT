@@ -13,7 +13,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsClipItemLink (
-    @SerialName("url") val url: String? = null,
     @SerialName("key") val key: String? = null,
+    @SerialName("url") val url: String? = null,
     @SerialName("text") val text: String? = null,
 )

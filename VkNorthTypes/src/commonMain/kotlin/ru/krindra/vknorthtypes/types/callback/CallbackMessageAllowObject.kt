@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class CallbackMessageAllowObject (
-    @SerialName("user_id") val userId: Long,
     @SerialName("key") val key: String,
+    @SerialName("user_id") val userId: Long,
 )

@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesConversationWithMessage (
-    @SerialName("last_message") val lastMessage: MessagesMessage? = null,
     @SerialName("conversation") val conversation: MessagesConversation,
+    @SerialName("last_message") val lastMessage: MessagesMessage? = null,
 )

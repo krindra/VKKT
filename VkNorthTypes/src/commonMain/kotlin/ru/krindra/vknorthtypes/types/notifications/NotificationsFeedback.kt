@@ -18,11 +18,11 @@ import ru.krindra.vknorthtypes.types.base.BaseGeo
  */
 @Serializable
 data class NotificationsFeedback (
-    @SerialName("from_id") val fromId: Long? = null,
-    @SerialName("to_id") val toId: Long? = null,
-    @SerialName("geo") val geo: BaseGeo? = null,
     @SerialName("id") val id: Long? = null,
-    @SerialName("attachments") val attachments: List<WallWallpostAttachment>? = null,
-    @SerialName("likes") val likes: BaseLikesInfo? = null,
+    @SerialName("geo") val geo: BaseGeo? = null,
+    @SerialName("to_id") val toId: Long? = null,
     @SerialName("text") val text: String? = null,
+    @SerialName("from_id") val fromId: Long? = null,
+    @SerialName("likes") val likes: BaseLikesInfo? = null,
+    @SerialName("attachments") val attachments: List<WallWallpostAttachment>? = null,
 )

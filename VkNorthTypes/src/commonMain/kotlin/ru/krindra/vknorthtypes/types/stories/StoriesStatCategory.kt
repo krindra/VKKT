@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class StoriesStatCategory (
-    @SerialName("lines") val lines: List<StoriesStatLine>,
     @SerialName("header") val header: String,
+    @SerialName("lines") val lines: List<StoriesStatLine>,
 )

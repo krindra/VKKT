@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class CallbackBoardPostDelete (
-    @SerialName("topic_owner_id") val topicOwnerId: Long,
-    @SerialName("topic_id") val topicId: Long,
     @SerialName("id") val id: Long,
+    @SerialName("topic_id") val topicId: Long,
+    @SerialName("topic_owner_id") val topicOwnerId: Long,
 )

@@ -17,11 +17,11 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsPostEasyPromote (
+    @SerialName("type") val type: Int? = null,
+    @SerialName("ad_id") val adId: Long? = null,
+    @SerialName("text") val text: String? = null,
     @SerialName("label_text") val labelText: String? = null,
     @SerialName("top_union_id") val topUnionId: Long? = null,
-    @SerialName("is_ad_not_easy") val isAdNotEasy: Boolean? = null,
     @SerialName("button_text") val buttonText: String? = null,
-    @SerialName("ad_id") val adId: Long? = null,
-    @SerialName("type") val type: Int? = null,
-    @SerialName("text") val text: String? = null,
+    @SerialName("is_ad_not_easy") val isAdNotEasy: Boolean? = null,
 )

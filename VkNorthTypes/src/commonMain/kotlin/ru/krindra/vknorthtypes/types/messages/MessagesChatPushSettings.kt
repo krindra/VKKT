@@ -11,6 +11,6 @@ import ru.krindra.vknorthtypes.types.base.BaseBoolInt
  */
 @Serializable
 data class MessagesChatPushSettings (
-    @SerialName("disabled_until") val disabledUntil: Int? = null,
     @SerialName("sound") val sound: BaseBoolInt? = null,
+    @SerialName("disabled_until") val disabledUntil: Int? = null,
 )

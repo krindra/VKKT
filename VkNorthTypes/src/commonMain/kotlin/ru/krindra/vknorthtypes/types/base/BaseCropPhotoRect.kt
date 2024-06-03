@@ -13,7 +13,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class BaseCropPhotoRect (
     @SerialName("x") val x: Double,
+    @SerialName("y") val y: Double,
     @SerialName("x2") val x2: Double,
     @SerialName("y2") val y2: Double,
-    @SerialName("y") val y: Double,
 )

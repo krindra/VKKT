@@ -14,8 +14,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class MessagesForward (
     @SerialName("peer_id") val peerId: Long? = null,
-    @SerialName("message_ids") val messageIds: List<Int>? = null,
-    @SerialName("conversation_message_ids") val conversationMessageIds: List<Int>? = null,
     @SerialName("owner_id") val ownerId: Long? = null,
     @SerialName("is_reply") val isReply: Boolean? = null,
+    @SerialName("message_ids") val messageIds: List<Int>? = null,
+    @SerialName("conversation_message_ids") val conversationMessageIds: List<Int>? = null,
 )

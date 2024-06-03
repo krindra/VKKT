@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BaseLinkButtonAction (
+    @SerialName("url") val url: String? = null,
     @SerialName("type") val type: BaseLinkButtonActionType,
     @SerialName("consume_reason") val consumeReason: String? = null,
-    @SerialName("url") val url: String? = null,
 )

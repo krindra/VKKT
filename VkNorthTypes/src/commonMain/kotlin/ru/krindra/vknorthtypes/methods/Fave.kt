@@ -4,8 +4,8 @@ import ru.krindra.vknorthtypes.types.fave.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
 import ru.krindra.vknorthtypes.types.base.BaseOkResponse
-import ru.krindra.vknorthtypes.types.base.BaseUserGroupFields
 import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
+import ru.krindra.vknorthtypes.types.base.BaseUserGroupFields
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
 
 class Fave(

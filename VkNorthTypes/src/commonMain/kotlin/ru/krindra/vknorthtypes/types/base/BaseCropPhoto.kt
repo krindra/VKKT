@@ -12,7 +12,7 @@ import ru.krindra.vknorthtypes.types.photos.PhotosPhoto
  */
 @Serializable
 data class BaseCropPhoto (
-    @SerialName("crop") val crop: BaseCropPhotoCrop,
     @SerialName("photo") val photo: PhotosPhoto,
+    @SerialName("crop") val crop: BaseCropPhotoCrop,
     @SerialName("rect") val rect: BaseCropPhotoRect,
 )

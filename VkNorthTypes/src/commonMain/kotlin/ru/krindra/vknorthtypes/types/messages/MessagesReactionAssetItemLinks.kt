@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesReactionAssetItemLinks (
-    @SerialName("small_animation") val smallAnimation: String,
     @SerialName("static") val static: String,
     @SerialName("big_animation") val bigAnimation: String,
+    @SerialName("small_animation") val smallAnimation: String,
 )

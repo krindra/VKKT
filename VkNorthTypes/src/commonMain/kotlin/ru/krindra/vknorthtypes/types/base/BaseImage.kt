@@ -13,9 +13,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BaseImage (
-    @SerialName("height") val height: Int,
     @SerialName("url") val url: String,
     @SerialName("width") val width: Int,
-    @SerialName("theme") val theme: String? = null,
+    @SerialName("height") val height: Int,
     @SerialName("id") val id: String? = null,
+    @SerialName("theme") val theme: String? = null,
 )

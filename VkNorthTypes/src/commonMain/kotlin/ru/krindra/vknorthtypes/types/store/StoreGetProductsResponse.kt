@@ -9,7 +9,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class StoreGetProductsResponse (
-    @SerialName("items") val items: List<StoreProduct>,
     @SerialName("count") val count: Int,
+    @SerialName("items") val items: List<StoreProduct>,
 )
 

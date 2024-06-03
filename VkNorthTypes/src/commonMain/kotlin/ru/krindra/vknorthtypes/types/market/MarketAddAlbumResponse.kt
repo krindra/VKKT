@@ -9,7 +9,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MarketAddAlbumResponse (
-    @SerialName("market_album_id") val marketAlbumId: Long? = null,
     @SerialName("albums_count") val albumsCount: Int? = null,
+    @SerialName("market_album_id") val marketAlbumId: Long? = null,
 )
 

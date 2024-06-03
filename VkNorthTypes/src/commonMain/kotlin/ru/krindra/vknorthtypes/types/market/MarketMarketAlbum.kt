@@ -19,14 +19,14 @@ import ru.krindra.vknorthtypes.types.photos.PhotosPhoto
  */
 @Serializable
 data class MarketMarketAlbum (
-    @SerialName("title") val title: String,
     @SerialName("id") val id: Long,
+    @SerialName("count") val count: Int,
+    @SerialName("title") val title: String,
+    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("type") val type: Int? = null,
+    @SerialName("updated_time") val updatedTime: Int,
     @SerialName("is_main") val isMain: Boolean? = null,
+    @SerialName("photo") val photo: PhotosPhoto? = null,
     @SerialName("is_hidden") val isHidden: Boolean? = null,
     @SerialName("is_blur_enabled") val isBlurEnabled: Boolean? = null,
-    @SerialName("owner_id") val ownerId: Long,
-    @SerialName("count") val count: Int,
-    @SerialName("photo") val photo: PhotosPhoto? = null,
-    @SerialName("updated_time") val updatedTime: Int,
-    @SerialName("type") val type: Int? = null,
 )

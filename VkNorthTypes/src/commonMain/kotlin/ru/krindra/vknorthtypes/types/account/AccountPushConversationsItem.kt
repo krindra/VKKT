@@ -14,9 +14,9 @@ import ru.krindra.vknorthtypes.types.base.BaseBoolInt
  */
 @Serializable
 data class AccountPushConversationsItem (
-    @SerialName("disabled_mentions") val disabledMentions: BaseBoolInt? = null,
     @SerialName("peer_id") val peerId: Long,
     @SerialName("sound") val sound: BaseBoolInt,
-    @SerialName("disabled_mass_mentions") val disabledMassMentions: BaseBoolInt? = null,
     @SerialName("disabled_until") val disabledUntil: Int,
+    @SerialName("disabled_mentions") val disabledMentions: BaseBoolInt? = null,
+    @SerialName("disabled_mass_mentions") val disabledMassMentions: BaseBoolInt? = null,
 )

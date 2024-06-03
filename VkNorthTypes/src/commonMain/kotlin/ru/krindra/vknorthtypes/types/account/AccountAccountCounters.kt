@@ -20,16 +20,16 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AccountAccountCounters (
-    @SerialName("friends") val friends: Int? = null,
-    @SerialName("messages") val messages: Int? = null,
-    @SerialName("events") val events: Int? = null,
-    @SerialName("notes") val notes: Int? = null,
-    @SerialName("notifications") val notifications: Int? = null,
-    @SerialName("memories") val memories: Int? = null,
     @SerialName("faves") val faves: Int? = null,
-    @SerialName("photos") val photos: Int? = null,
     @SerialName("gifts") val gifts: Int? = null,
+    @SerialName("notes") val notes: Int? = null,
+    @SerialName("events") val events: Int? = null,
     @SerialName("groups") val groups: Int? = null,
-    @SerialName("friends_recommendations") val friendsRecommendations: Int? = null,
+    @SerialName("photos") val photos: Int? = null,
+    @SerialName("friends") val friends: Int? = null,
+    @SerialName("memories") val memories: Int? = null,
+    @SerialName("messages") val messages: Int? = null,
     @SerialName("app_requests") val appRequests: Int? = null,
+    @SerialName("notifications") val notifications: Int? = null,
+    @SerialName("friends_recommendations") val friendsRecommendations: Int? = null,
 )

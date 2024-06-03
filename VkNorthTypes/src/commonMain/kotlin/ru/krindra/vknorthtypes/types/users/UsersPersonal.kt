@@ -19,14 +19,14 @@ import ru.krindra.vknorthtypes.types.database.DatabaseLanguageFull
  */
 @Serializable
 data class UsersPersonal (
-    @SerialName("religion") val religion: String? = null,
-    @SerialName("langs_full") val langsFull: List<DatabaseLanguageFull>? = null,
-    @SerialName("political") val political: Int? = null,
     @SerialName("alcohol") val alcohol: Int? = null,
+    @SerialName("smoking") val smoking: Int? = null,
     @SerialName("life_main") val lifeMain: Int? = null,
-    @SerialName("inspired_by") val inspiredBy: String? = null,
+    @SerialName("political") val political: Int? = null,
     @SerialName("langs") val langs: List<String>? = null,
+    @SerialName("religion") val religion: String? = null,
     @SerialName("people_main") val peopleMain: Int? = null,
     @SerialName("religion_id") val religionId: Long? = null,
-    @SerialName("smoking") val smoking: Int? = null,
+    @SerialName("inspired_by") val inspiredBy: String? = null,
+    @SerialName("langs_full") val langsFull: List<DatabaseLanguageFull>? = null,
 )

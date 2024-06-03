@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AccountUserSettingsInterest (
-    @SerialName("value") val value: String,
     @SerialName("title") val title: String,
+    @SerialName("value") val value: String,
 )

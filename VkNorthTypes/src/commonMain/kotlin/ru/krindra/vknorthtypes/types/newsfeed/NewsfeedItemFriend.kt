@@ -14,10 +14,10 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class NewsfeedItemFriend (
-    @SerialName("feedback") val feedback: NewsfeedItemWallpostFeedback? = null,
-    @SerialName("friends") val friends: NewsfeedItemFriendFriends? = null,
     @SerialName("source_id") val sourceId: Long,
     @SerialName("date") val date: Int/* WARN! Int? = null */,
     @SerialName("short_text_rate") val shortTextRate: Double? = null,
+    @SerialName("friends") val friends: NewsfeedItemFriendFriends? = null,
+    @SerialName("feedback") val feedback: NewsfeedItemWallpostFeedback? = null,
     @SerialName("type") val type: NewsfeedNewsfeedItemType/* WARN! WallPostType? = null */,
 )

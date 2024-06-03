@@ -18,12 +18,12 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class StatsViews (
-    @SerialName("mobile_views") val mobileViews: Int? = null,
     @SerialName("views") val views: Int? = null,
     @SerialName("visitors") val visitors: Int? = null,
-    @SerialName("countries") val countries: List<StatsCountry>? = null,
     @SerialName("age") val age: List<StatsSexAge>? = null,
-    @SerialName("sex_age") val sexAge: List<StatsSexAge>? = null,
-    @SerialName("cities") val cities: List<StatsCity>? = null,
     @SerialName("sex") val sex: List<StatsSexAge>? = null,
+    @SerialName("mobile_views") val mobileViews: Int? = null,
+    @SerialName("cities") val cities: List<StatsCity>? = null,
+    @SerialName("sex_age") val sexAge: List<StatsSexAge>? = null,
+    @SerialName("countries") val countries: List<StatsCountry>? = null,
 )

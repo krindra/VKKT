@@ -14,8 +14,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class GroupsGroupAttach (
     @SerialName("id") val id: Long,
-    @SerialName("is_favorite") val isFavorite: Boolean,
-    @SerialName("status") val status: String,
-    @SerialName("text") val text: String,
     @SerialName("size") val size: Int,
+    @SerialName("text") val text: String,
+    @SerialName("status") val status: String,
+    @SerialName("is_favorite") val isFavorite: Boolean,
 )

@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsDemographicStatsPeriodItemBase (
-    @SerialName("impressions_rate") val impressionsRate: Double? = null,
     @SerialName("clicks_rate") val clicksRate: Double? = null,
+    @SerialName("impressions_rate") val impressionsRate: Double? = null,
 )

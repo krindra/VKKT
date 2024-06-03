@@ -10,8 +10,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesAddChatUsersResponse (
+    @SerialName("invitees") val invitees: List<Int>,
     @SerialName("failed_peer_ids") val failedPeerIds: List<Int>,
     @SerialName("failed_phone_numbers") val failedPhoneNumbers: List<String>,
-    @SerialName("invitees") val invitees: List<Int>,
 )
 

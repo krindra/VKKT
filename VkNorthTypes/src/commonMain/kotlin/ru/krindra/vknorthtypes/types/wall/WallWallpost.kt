@@ -2,8 +2,8 @@ package ru.krindra.vknorthtypes.types.wall
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.types.base.BaseLikesInfo
 import ru.krindra.vknorthtypes.types.base.BaseRepostsInfo
+import ru.krindra.vknorthtypes.types.base.BaseLikesInfo
 
 /**
  *
@@ -33,27 +33,27 @@ import ru.krindra.vknorthtypes.types.base.BaseRepostsInfo
  */
 @Serializable
 data class WallWallpost (
-    @SerialName("is_archived") val isArchived: Boolean? = null,
     @SerialName("id") val id: Long? = null,
-    @SerialName("copyright") val copyright: WallPostCopyright? = null,
-    @SerialName("attachments") val attachments: List<WallWallpostAttachment>? = null,
-    @SerialName("geo") val geo: WallGeo? = null,
-    @SerialName("parents_stack") val parentsStack: List<Int>? = null,
-    @SerialName("is_favorite") val isFavorite: Boolean? = null,
-    @SerialName("signer_id") val signerId: Long? = null,
-    @SerialName("post_type") val postType: WallPostType? = null,
-    @SerialName("views") val views: WallViews? = null,
-    @SerialName("deleted_details") val deletedDetails: String? = null,
-    @SerialName("access_key") val accessKey: String? = null,
-    @SerialName("post_id") val postId: Long? = null,
-    @SerialName("post_source") val postSource: WallPostSource? = null,
-    @SerialName("reposts") val reposts: BaseRepostsInfo? = null,
-    @SerialName("likes") val likes: BaseLikesInfo? = null,
-    @SerialName("edited") val edited: Int? = null,
-    @SerialName("text") val text: String? = null,
     @SerialName("date") val date: Int? = null,
+    @SerialName("geo") val geo: WallGeo? = null,
+    @SerialName("text") val text: String? = null,
+    @SerialName("edited") val edited: Int? = null,
     @SerialName("from_id") val fromId: Long? = null,
-    @SerialName("is_deleted") val isDeleted: Boolean? = null,
+    @SerialName("post_id") val postId: Long? = null,
     @SerialName("owner_id") val ownerId: Long? = null,
+    @SerialName("views") val views: WallViews? = null,
+    @SerialName("signer_id") val signerId: Long? = null,
+    @SerialName("likes") val likes: BaseLikesInfo? = null,
+    @SerialName("access_key") val accessKey: String? = null,
+    @SerialName("is_deleted") val isDeleted: Boolean? = null,
+    @SerialName("is_archived") val isArchived: Boolean? = null,
+    @SerialName("is_favorite") val isFavorite: Boolean? = null,
+    @SerialName("post_type") val postType: WallPostType? = null,
+    @SerialName("reposts") val reposts: BaseRepostsInfo? = null,
     @SerialName("deleted_reason") val deletedReason: String? = null,
+    @SerialName("parents_stack") val parentsStack: List<Int>? = null,
+    @SerialName("copyright") val copyright: WallPostCopyright? = null,
+    @SerialName("deleted_details") val deletedDetails: String? = null,
+    @SerialName("post_source") val postSource: WallPostSource? = null,
+    @SerialName("attachments") val attachments: List<WallWallpostAttachment>? = null,
 )

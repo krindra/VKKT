@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class UsersGetFollowersFieldsResponse (
     @SerialName("count") val count: Int,
-    @SerialName("friends_count") val friendsCount: Int? = null,
     @SerialName("items") val items: List<UsersUserFull>,
+    @SerialName("friends_count") val friendsCount: Int? = null,
 )
 

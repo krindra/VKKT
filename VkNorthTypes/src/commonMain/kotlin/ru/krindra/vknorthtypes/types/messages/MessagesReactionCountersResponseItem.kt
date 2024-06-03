@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesReactionCountersResponseItem (
-    @SerialName("counters") val counters: List<MessagesReactionCounterResponseItem>,
     @SerialName("cmid") val cmid: Long,
+    @SerialName("counters") val counters: List<MessagesReactionCounterResponseItem>,
 )

@@ -3,10 +3,10 @@ package ru.krindra.vknorthtypes.methods
 import ru.krindra.vknorthtypes.types.video.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
-import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
 import kotlinx.serialization.builtins.serializer
 import kotlinx.serialization.builtins.ListSerializer
 import ru.krindra.vknorthtypes.types.base.BaseOkResponse
+import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
 
 class Video(
@@ -47,11 +47,11 @@ class Video(
      * @param ownerId 
      * @param videoId 
      */
-    suspend fun addToAlbum(ownerId: Long, videoId: Long, targetId: Long? = null, albumId: Long? = null, albumIds: List<Int>? = null): AddtoalbumResponse {
+    suspend fun addToAlbum(ownerId: Long, videoId: Long, targetId: Long? = null, albumId: Long? = null, albumIds: List<Int>? = null): AddToAlbumResponse {
         val response = method("video.addToAlbum", mapOf("target_id" to targetId, "album_id" to albumId, "album_ids" to albumIds, "owner_id" to ownerId, "video_id" to videoId))
-        return AddtoalbumResponse(response, json)
+        return AddToAlbumResponse(response, json)
     }
-    class AddtoalbumResponse(
+    class AddToAlbumResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun BaseOkResponse(): BaseOkResponse? {
@@ -204,11 +204,11 @@ class Video(
      * @param extended '1' - to return additional information about album privacy settings for the current user.
      * @param needSystem 
      */
-    suspend fun getAlbums(ownerId: Long? = null, offset: Int? = null, count: Int? = 50, extended: Boolean? = false, needSystem: Boolean? = false): GetalbumsResponse {
+    suspend fun getAlbums(ownerId: Long? = null, offset: Int? = null, count: Int? = 50, extended: Boolean? = false, needSystem: Boolean? = false): GetAlbumsResponse {
         val response = method("video.getAlbums", mapOf("owner_id" to ownerId, "offset" to offset, "count" to count, "extended" to extended, "need_system" to needSystem))
-        return GetalbumsResponse(response, json)
+        return GetAlbumsResponse(response, json)
     }
-    class GetalbumsResponse(
+    class GetAlbumsResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun VideoGetAlbumsExtendedResponse(): VideoGetAlbumsExtendedResponse? {
@@ -226,11 +226,11 @@ class Video(
      * @param videoId 
      * @param extended 
      */
-    suspend fun getAlbumsByVideo(ownerId: Long, videoId: Long, targetId: Long? = null, extended: Boolean? = false): GetalbumsbyvideoResponse {
+    suspend fun getAlbumsByVideo(ownerId: Long, videoId: Long, targetId: Long? = null, extended: Boolean? = false): GetAlbumsByVideoResponse {
         val response = method("video.getAlbumsByVideo", mapOf("target_id" to targetId, "owner_id" to ownerId, "video_id" to videoId, "extended" to extended))
-        return GetalbumsbyvideoResponse(response, json)
+        return GetAlbumsByVideoResponse(response, json)
     }
-    class GetalbumsbyvideoResponse(
+    class GetAlbumsByVideoResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun VideoGetAlbumsByVideoExtendedResponse(): VideoGetAlbumsByVideoExtendedResponse? {
@@ -255,11 +255,11 @@ class Video(
      * @param extended 
      * @param fields 
      */
-    suspend fun getComments(videoId: Long, ownerId: Long? = null, needLikes: Boolean? = false, startCommentId: Long? = null, offset: Int? = null, count: Int? = 20, sort: String? = "asc", extended: Boolean? = false, fields: List<String>? = null): GetcommentsResponse {
+    suspend fun getComments(videoId: Long, ownerId: Long? = null, needLikes: Boolean? = false, startCommentId: Long? = null, offset: Int? = null, count: Int? = 20, sort: String? = "asc", extended: Boolean? = false, fields: List<String>? = null): GetCommentsResponse {
         val response = method("video.getComments", mapOf("owner_id" to ownerId, "video_id" to videoId, "need_likes" to needLikes, "start_comment_id" to startCommentId, "offset" to offset, "count" to count, "sort" to sort, "extended" to extended, "fields" to fields))
-        return GetcommentsResponse(response, json)
+        return GetCommentsResponse(response, json)
     }
-    class GetcommentsResponse(
+    class GetCommentsResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun VideoGetCommentsExtendedResponse(): VideoGetCommentsExtendedResponse? {
@@ -296,11 +296,11 @@ class Video(
      * @param ownerId 
      * @param videoId 
      */
-    suspend fun removeFromAlbum(ownerId: Long, videoId: Long, targetId: Long? = null, albumId: Long? = null, albumIds: List<Int>? = null): RemovefromalbumResponse {
+    suspend fun removeFromAlbum(ownerId: Long, videoId: Long, targetId: Long? = null, albumId: Long? = null, albumIds: List<Int>? = null): RemoveFromAlbumResponse {
         val response = method("video.removeFromAlbum", mapOf("target_id" to targetId, "album_id" to albumId, "album_ids" to albumIds, "owner_id" to ownerId, "video_id" to videoId))
-        return RemovefromalbumResponse(response, json)
+        return RemoveFromAlbumResponse(response, json)
     }
-    class RemovefromalbumResponse(
+    class RemoveFromAlbumResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun BaseOkResponse(): BaseOkResponse? {

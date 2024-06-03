@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BaseStickerAnimation (
-    @SerialName("type") val type: String? = null,
     @SerialName("url") val url: String? = null,
+    @SerialName("type") val type: String? = null,
 )

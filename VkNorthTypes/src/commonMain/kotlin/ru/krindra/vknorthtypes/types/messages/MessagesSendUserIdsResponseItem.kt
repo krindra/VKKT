@@ -13,8 +13,8 @@ import ru.krindra.vknorthtypes.types.base.BaseMessageError
  */
 @Serializable
 data class MessagesSendUserIdsResponseItem (
-    @SerialName("message_id") val messageId: Long,
     @SerialName("peer_id") val peerId: Long,
+    @SerialName("message_id") val messageId: Long,
     @SerialName("error") val error: BaseMessageError? = null,
     @SerialName("conversation_message_id") val conversationMessageId: Long? = null,
 )

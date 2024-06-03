@@ -15,10 +15,10 @@ import ru.krindra.vknorthtypes.types.base.BasePropertyExists
  */
 @Serializable
 data class VideoVideoImage (
-    @SerialName("height") val height: Int,
     @SerialName("url") val url: String,
     @SerialName("width") val width: Int,
+    @SerialName("height") val height: Int,
+    @SerialName("id") val id: String? = null,
     @SerialName("theme") val theme: String? = null,
     @SerialName("with_padding") val withPadding: BasePropertyExists? = null,
-    @SerialName("id") val id: String? = null,
 )

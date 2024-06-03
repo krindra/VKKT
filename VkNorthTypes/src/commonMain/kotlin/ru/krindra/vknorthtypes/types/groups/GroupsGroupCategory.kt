@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class GroupsGroupCategory (
-    @SerialName("subcategories") val subcategories: List<GroupsGroupSubcategory>? = null,
-    @SerialName("name") val name: String,
     @SerialName("id") val id: Long,
+    @SerialName("name") val name: String,
+    @SerialName("subcategories") val subcategories: List<GroupsGroupSubcategory>? = null,
 )

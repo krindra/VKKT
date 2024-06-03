@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class WallPostedPhoto (
-    @SerialName("photo_130") val photo130: String? = null,
-    @SerialName("photo_604") val photo604: String? = null,
     @SerialName("id") val id: Long? = null,
     @SerialName("owner_id") val ownerId: Long? = null,
+    @SerialName("photo_130") val photo130: String? = null,
+    @SerialName("photo_604") val photo604: String? = null,
 )

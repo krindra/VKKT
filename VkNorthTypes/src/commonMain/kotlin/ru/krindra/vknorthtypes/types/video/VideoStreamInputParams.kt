@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class VideoStreamInputParams (
-    @SerialName("webrtc_url") val webrtcUrl: String? = null,
-    @SerialName("okmp_url") val okmpUrl: String? = null,
     @SerialName("key") val key: String? = null,
     @SerialName("url") val url: String? = null,
+    @SerialName("okmp_url") val okmpUrl: String? = null,
+    @SerialName("webrtc_url") val webrtcUrl: String? = null,
 )

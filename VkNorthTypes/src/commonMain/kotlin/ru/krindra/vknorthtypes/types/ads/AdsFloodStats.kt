@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsFloodStats (
-    @SerialName("refresh") val refresh: Int,
     @SerialName("left") val left: Int,
+    @SerialName("refresh") val refresh: Int,
     @SerialName("stats_by_user") val statsByUser: List<AdsFloodStatsByUserItem>? = null,
 )

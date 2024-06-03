@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class FriendsFriendExtendedStatus (
-    @SerialName("is_request_unread") val isRequestUnread: Boolean? = null,
-    @SerialName("friend_status") val friendStatus: FriendsFriendStatusStatus,
     @SerialName("user_id") val userId: Long,
     @SerialName("sign") val sign: String? = null,
+    @SerialName("is_request_unread") val isRequestUnread: Boolean? = null,
+    @SerialName("friend_status") val friendStatus: FriendsFriendStatusStatus,
 )

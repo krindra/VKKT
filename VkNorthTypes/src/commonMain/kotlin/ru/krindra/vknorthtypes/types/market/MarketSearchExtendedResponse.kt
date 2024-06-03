@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class MarketSearchExtendedResponse (
     @SerialName("count") val count: Int,
-    @SerialName("view_type") val viewType: MarketServicesViewType,
     @SerialName("items") val items: List<MarketMarketItemFull>,
+    @SerialName("view_type") val viewType: MarketServicesViewType,
     @SerialName("variants") val variants: List<MarketMarketItemFull>? = null,
 )
 

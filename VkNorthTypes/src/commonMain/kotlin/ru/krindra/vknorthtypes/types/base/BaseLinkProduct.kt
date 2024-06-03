@@ -18,13 +18,13 @@ import ru.krindra.vknorthtypes.types.market.MarketPrice
  */
 @Serializable
 data class BaseLinkProduct (
-    @SerialName("distance") val distance: Int? = null,
-    @SerialName("category") val category: BaseLinkProductCategory? = null,
-    @SerialName("type") val type: String? = null,
-    @SerialName("status") val status: BaseLinkProductStatus? = null,
-    @SerialName("city") val city: String? = null,
-    @SerialName("orders_count") val ordersCount: Int? = null,
     @SerialName("price") val price: MarketPrice,
+    @SerialName("city") val city: String? = null,
+    @SerialName("type") val type: String? = null,
+    @SerialName("distance") val distance: Int? = null,
     @SerialName("merchant") val merchant: String? = null,
     @SerialName("geo") val geo: BaseGeoCoordinates? = null,
+    @SerialName("orders_count") val ordersCount: Int? = null,
+    @SerialName("status") val status: BaseLinkProductStatus? = null,
+    @SerialName("category") val category: BaseLinkProductCategory? = null,
 )

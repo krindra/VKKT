@@ -9,7 +9,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class StreamingGetServerUrlResponse (
-    @SerialName("endpoint") val endpoint: String? = null,
     @SerialName("key") val key: String? = null,
+    @SerialName("endpoint") val endpoint: String? = null,
 )
 

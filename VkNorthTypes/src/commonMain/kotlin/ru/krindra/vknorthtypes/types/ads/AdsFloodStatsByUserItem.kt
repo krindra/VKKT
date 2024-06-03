@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsFloodStatsByUserItem (
-    @SerialName("requests_count") val requestsCount: Int,
     @SerialName("user_id") val userId: Long,
+    @SerialName("requests_count") val requestsCount: Int,
 )

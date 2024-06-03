@@ -11,6 +11,6 @@ import ru.krindra.vknorthtypes.types.photos.PhotosPhoto
  */
 @Serializable
 data class CallbackGroupChangePhoto (
-    @SerialName("photo") val photo: PhotosPhoto,
     @SerialName("user_id") val userId: Long,
+    @SerialName("photo") val photo: PhotosPhoto,
 )

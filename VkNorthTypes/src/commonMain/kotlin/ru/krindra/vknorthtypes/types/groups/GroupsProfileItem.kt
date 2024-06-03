@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class GroupsProfileItem (
+    @SerialName("id") val id: Long,
     @SerialName("photo_50") val photo50: String,
     @SerialName("photo_100") val photo100: String,
     @SerialName("first_name") val firstName: String,
-    @SerialName("id") val id: Long,
 )

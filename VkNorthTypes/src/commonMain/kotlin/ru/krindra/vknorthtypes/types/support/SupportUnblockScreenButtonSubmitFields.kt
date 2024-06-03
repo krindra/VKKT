@@ -13,9 +13,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class SupportUnblockScreenButtonSubmitFields (
-    @SerialName("target_screen") val targetScreen: String? = null,
-    @SerialName("id") val id: Double? = null,
     @SerialName("type") val type: String,
-    @SerialName("disabled") val disabled: Boolean? = null,
+    @SerialName("id") val id: Double? = null,
     @SerialName("text") val text: String? = null,
+    @SerialName("disabled") val disabled: Boolean? = null,
+    @SerialName("target_screen") val targetScreen: String? = null,
 )

@@ -9,7 +9,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsSaveLookalikeRequestResultResponse (
-    @SerialName("retargeting_group_id") val retargetingGroupId: Long,
     @SerialName("audience_count") val audienceCount: Int,
+    @SerialName("retargeting_group_id") val retargetingGroupId: Long,
 )
 

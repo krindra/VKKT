@@ -16,12 +16,12 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesConversationMember (
-    @SerialName("is_admin") val isAdmin: Boolean? = null,
-    @SerialName("join_date") val joinDate: Int? = null,
-    @SerialName("request_date") val requestDate: Int? = null,
-    @SerialName("invited_by") val invitedBy: Int? = null,
     @SerialName("member_id") val memberId: Long,
+    @SerialName("join_date") val joinDate: Int? = null,
     @SerialName("can_kick") val canKick: Boolean? = null,
-    @SerialName("is_message_request") val isMessageRequest: Boolean? = null,
+    @SerialName("invited_by") val invitedBy: Int? = null,
+    @SerialName("is_admin") val isAdmin: Boolean? = null,
     @SerialName("is_owner") val isOwner: Boolean? = null,
+    @SerialName("request_date") val requestDate: Int? = null,
+    @SerialName("is_message_request") val isMessageRequest: Boolean? = null,
 )

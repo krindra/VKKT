@@ -9,7 +9,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class StoriesGetVideoUploadServerResponse (
-    @SerialName("upload_url") val uploadUrl: String,
     @SerialName("user_ids") val userIds: List<Int>,
+    @SerialName("upload_url") val uploadUrl: String,
 )
 

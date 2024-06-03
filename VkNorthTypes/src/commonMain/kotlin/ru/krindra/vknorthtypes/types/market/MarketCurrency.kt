@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MarketCurrency (
+    @SerialName("id") val id: Long,
     @SerialName("name") val name: String,
     @SerialName("title") val title: String,
-    @SerialName("id") val id: Long,
 )

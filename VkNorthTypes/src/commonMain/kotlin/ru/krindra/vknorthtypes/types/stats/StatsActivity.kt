@@ -16,10 +16,10 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class StatsActivity (
-    @SerialName("subscribed") val subscribed: Int? = null,
     @SerialName("likes") val likes: Int? = null,
-    @SerialName("hidden") val hidden: Int? = null,
-    @SerialName("unsubscribed") val unsubscribed: Int? = null,
     @SerialName("copies") val copies: Int? = null,
+    @SerialName("hidden") val hidden: Int? = null,
     @SerialName("comments") val comments: Int? = null,
+    @SerialName("subscribed") val subscribed: Int? = null,
+    @SerialName("unsubscribed") val unsubscribed: Int? = null,
 )

@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class GroupsLongPollSettings (
-    @SerialName("api_version") val apiVersion: String? = null,
-    @SerialName("events") val events: GroupsLongPollEvents,
     @SerialName("is_enabled") val isEnabled: Boolean,
+    @SerialName("events") val events: GroupsLongPollEvents,
+    @SerialName("api_version") val apiVersion: String? = null,
 )

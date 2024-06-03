@@ -12,7 +12,7 @@ import ru.krindra.vknorthtypes.types.users.UsersUserMin
  */
 @Serializable
 data class AppsCatalogList (
-    @SerialName("items") val items: List<AppsApp>,
     @SerialName("count") val count: Int,
+    @SerialName("items") val items: List<AppsApp>,
     @SerialName("profiles") val profiles: List<UsersUserMin>? = null,
 )

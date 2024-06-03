@@ -16,11 +16,11 @@ import ru.krindra.vknorthtypes.types.base.BaseBoolInt
  */
 @Serializable
 data class AccountInfo (
-    @SerialName("no_wall_replies") val noWallReplies: BaseBoolInt? = null,
-    @SerialName("_2fa_required") val _2faRequired: BaseBoolInt? = null,
-    @SerialName("country") val country: String? = null,
-    @SerialName("own_posts_default") val ownPostsDefault: BaseBoolInt? = null,
-    @SerialName("intro") val intro: BaseBoolInt? = null,
     @SerialName("lang") val lang: Int? = null,
+    @SerialName("country") val country: String? = null,
+    @SerialName("intro") val intro: BaseBoolInt? = null,
+    @SerialName("_2fa_required") val _2faRequired: BaseBoolInt? = null,
     @SerialName("https_required") val httpsRequired: BaseBoolInt? = null,
+    @SerialName("no_wall_replies") val noWallReplies: BaseBoolInt? = null,
+    @SerialName("own_posts_default") val ownPostsDefault: BaseBoolInt? = null,
 )

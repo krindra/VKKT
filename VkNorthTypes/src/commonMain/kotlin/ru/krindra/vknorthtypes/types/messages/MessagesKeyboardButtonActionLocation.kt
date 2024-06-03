@@ -12,6 +12,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesKeyboardButtonActionLocation (
-    @SerialName("payload") val payload: String? = null,
     @SerialName("type") val type: String,
+    @SerialName("payload") val payload: String? = null,
 )

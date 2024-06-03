@@ -14,9 +14,9 @@ import ru.krindra.vknorthtypes.types.base.BaseLink
  */
 @Serializable
 data class WallPostSource (
-    @SerialName("link") val link: BaseLink? = null,
-    @SerialName("data") val data: String? = null,
-    @SerialName("type") val type: WallPostSourceType? = null,
-    @SerialName("platform") val platform: String? = null,
     @SerialName("url") val url: String? = null,
+    @SerialName("data") val data: String? = null,
+    @SerialName("link") val link: BaseLink? = null,
+    @SerialName("platform") val platform: String? = null,
+    @SerialName("type") val type: WallPostSourceType? = null,
 )

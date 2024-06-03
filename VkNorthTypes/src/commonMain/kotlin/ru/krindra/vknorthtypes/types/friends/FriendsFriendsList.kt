@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class FriendsFriendsList (
-    @SerialName("name") val name: String,
     @SerialName("id") val id: Long,
+    @SerialName("name") val name: String,
 )

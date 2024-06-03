@@ -13,8 +13,8 @@ import ru.krindra.vknorthtypes.types.users.UsersUser
  */
 @Serializable
 data class GroupsOwnerXtrBanInfo (
-    @SerialName("type") val type: GroupsOwnerXtrBanInfoType? = null,
-    @SerialName("ban_info") val banInfo: GroupsBanInfo? = null,
-    @SerialName("profile") val profile: UsersUser? = null,
     @SerialName("group") val group: GroupsGroup? = null,
+    @SerialName("profile") val profile: UsersUser? = null,
+    @SerialName("ban_info") val banInfo: GroupsBanInfo? = null,
+    @SerialName("type") val type: GroupsOwnerXtrBanInfoType? = null,
 )

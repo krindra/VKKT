@@ -3,12 +3,12 @@ package ru.krindra.vknorthtypes.methods
 import ru.krindra.vknorthtypes.types.messages.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
-import ru.krindra.vknorthtypes.types.users.UsersFields
-import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
 import kotlinx.serialization.builtins.serializer
 import kotlinx.serialization.builtins.ListSerializer
-import ru.krindra.vknorthtypes.types.base.BaseUserGroupFields
+import ru.krindra.vknorthtypes.types.users.UsersFields
 import ru.krindra.vknorthtypes.types.base.BaseOkResponse
+import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
+import ru.krindra.vknorthtypes.types.base.BaseUserGroupFields
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
 
 class Messages(
@@ -175,11 +175,11 @@ class Messages(
      * @param fields Profile fields to return.
      * @param groupId Group ID (for group messages with group access token).
      */
-    suspend fun getByConversationMessageId(peerId: Long, conversationMessageIds: List<Int>, extended: Boolean? = false, fields: List<UsersFields>? = null, groupId: Long? = null): GetbyconversationmessageidResponse {
+    suspend fun getByConversationMessageId(peerId: Long, conversationMessageIds: List<Int>, extended: Boolean? = false, fields: List<UsersFields>? = null, groupId: Long? = null): GetByConversationMessageIdResponse {
         val response = method("messages.getByConversationMessageId", mapOf("peer_id" to peerId, "conversation_message_ids" to conversationMessageIds, "extended" to extended, "fields" to fields, "group_id" to groupId))
-        return GetbyconversationmessageidResponse(response, json)
+        return GetByConversationMessageIdResponse(response, json)
     }
-    class GetbyconversationmessageidResponse(
+    class GetByConversationMessageIdResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun MessagesGetByConversationMessageIdExtendedResponse(): MessagesGetByConversationMessageIdExtendedResponse? {
@@ -202,11 +202,11 @@ class Messages(
      * @param cmids 
      * @param peerId 
      */
-    suspend fun getById(messageIds: List<Int>? = null, previewLength: Int? = 0, extended: Boolean? = false, fields: List<UsersFields>? = null, groupId: Long? = null, cmids: List<Int>? = null, peerId: Long? = null): GetbyidResponse {
+    suspend fun getById(messageIds: List<Int>? = null, previewLength: Int? = 0, extended: Boolean? = false, fields: List<UsersFields>? = null, groupId: Long? = null, cmids: List<Int>? = null, peerId: Long? = null): GetByIdResponse {
         val response = method("messages.getById", mapOf("message_ids" to messageIds, "preview_length" to previewLength, "extended" to extended, "fields" to fields, "group_id" to groupId, "cmids" to cmids, "peer_id" to peerId))
-        return GetbyidResponse(response, json)
+        return GetByIdResponse(response, json)
     }
-    class GetbyidResponse(
+    class GetByIdResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun MessagesGetByIdExtendedResponse(): MessagesGetByIdExtendedResponse? {
@@ -226,11 +226,11 @@ class Messages(
      * @param fields Profile fields to return.
      * @param nameCase Case for declension of user name and surname: 'nom' - nominative (default), 'gen' - genitive , 'dat' - dative, 'acc' - accusative , 'ins' - instrumental , 'abl' - prepositional.
      */
-    suspend fun getChat(chatId: Long? = null, chatIds: List<Int>? = null, fields: List<UsersFields>? = null, nameCase: String? = null): GetchatResponse {
+    suspend fun getChat(chatId: Long? = null, chatIds: List<Int>? = null, fields: List<UsersFields>? = null, nameCase: String? = null): GetChatResponse {
         val response = method("messages.getChat", mapOf("chat_id" to chatId, "chat_ids" to chatIds, "fields" to fields, "name_case" to nameCase))
-        return GetchatResponse(response, json)
+        return GetChatResponse(response, json)
     }
-    class GetchatResponse(
+    class GetChatResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun MessagesGetChatChatIdsFieldsResponse(): MessagesGetChatChatIdsFieldsResponse? {
@@ -300,11 +300,11 @@ class Messages(
      * @param fields Profile and communities fields to return.
      * @param groupId Group ID (for group messages with group access token).
      */
-    suspend fun getConversationsById(peerIds: List<Int>, extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null, groupId: Long? = null): GetconversationsbyidResponse {
+    suspend fun getConversationsById(peerIds: List<Int>, extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null, groupId: Long? = null): GetConversationsByIdResponse {
         val response = method("messages.getConversationsById", mapOf("peer_ids" to peerIds, "extended" to extended, "fields" to fields, "group_id" to groupId))
-        return GetconversationsbyidResponse(response, json)
+        return GetConversationsByIdResponse(response, json)
     }
-    class GetconversationsbyidResponse(
+    class GetConversationsByIdResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun MessagesGetConversationsByIdExtendedResponse(): MessagesGetConversationsByIdExtendedResponse? {
@@ -329,11 +329,11 @@ class Messages(
      * @param fields Profile fields to return.
      * @param groupId Group ID (for group messages with group access token).
      */
-    suspend fun getHistory(offset: Int? = null, count: Int? = 20, userId: Long? = null, peerId: Long? = null, startMessageId: Long? = null, rev: Int? = null, extended: Boolean? = false, fields: List<UsersFields>? = null, groupId: Long? = null): GethistoryResponse {
+    suspend fun getHistory(offset: Int? = null, count: Int? = 20, userId: Long? = null, peerId: Long? = null, startMessageId: Long? = null, rev: Int? = null, extended: Boolean? = false, fields: List<UsersFields>? = null, groupId: Long? = null): GetHistoryResponse {
         val response = method("messages.getHistory", mapOf("offset" to offset, "count" to count, "user_id" to userId, "peer_id" to peerId, "start_message_id" to startMessageId, "rev" to rev, "extended" to extended, "fields" to fields, "group_id" to groupId))
-        return GethistoryResponse(response, json)
+        return GetHistoryResponse(response, json)
     }
-    class GethistoryResponse(
+    class GetHistoryResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun MessagesGetHistoryExtendedResponse(): MessagesGetHistoryExtendedResponse? {
@@ -380,11 +380,11 @@ class Messages(
      * @param extended Return extended properties.
      * @param groupId Group ID (for group messages with group access token).
      */
-    suspend fun getImportantMessages(count: Int? = 20, offset: Int? = null, startMessageId: Long? = null, previewLength: Int? = null, fields: List<BaseUserGroupFields>? = null, extended: Boolean? = false, groupId: Long? = null): GetimportantmessagesResponse {
+    suspend fun getImportantMessages(count: Int? = 20, offset: Int? = null, startMessageId: Long? = null, previewLength: Int? = null, fields: List<BaseUserGroupFields>? = null, extended: Boolean? = false, groupId: Long? = null): GetImportantMessagesResponse {
         val response = method("messages.getImportantMessages", mapOf("count" to count, "offset" to offset, "start_message_id" to startMessageId, "preview_length" to previewLength, "fields" to fields, "extended" to extended, "group_id" to groupId))
-        return GetimportantmessagesResponse(response, json)
+        return GetImportantMessagesResponse(response, json)
     }
-    class GetimportantmessagesResponse(
+    class GetImportantMessagesResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun MessagesGetImportantMessagesExtendedResponse(): MessagesGetImportantMessagesExtendedResponse? {
@@ -670,11 +670,11 @@ class Messages(
      * @param fields Profile fields to return.
      * @param groupId Group ID (for group messages with user access token).
      */
-    suspend fun searchConversations(q: String? = null, count: Int? = 20, extended: Boolean? = false, fields: List<UsersFields>? = null, groupId: Long? = null): SearchconversationsResponse {
+    suspend fun searchConversations(q: String? = null, count: Int? = 20, extended: Boolean? = false, fields: List<UsersFields>? = null, groupId: Long? = null): SearchConversationsResponse {
         val response = method("messages.searchConversations", mapOf("q" to q, "count" to count, "extended" to extended, "fields" to fields, "group_id" to groupId))
-        return SearchconversationsResponse(response, json)
+        return SearchConversationsResponse(response, json)
     }
-    class SearchconversationsResponse(
+    class SearchConversationsResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun MessagesSearchConversationsExtendedResponse(): MessagesSearchConversationsExtendedResponse? {

@@ -16,12 +16,12 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesAudioMessage (
-    @SerialName("link_mp3") val linkMp3: String,
-    @SerialName("transcript_error") val transcriptError: Int? = null,
     @SerialName("id") val id: Long,
     @SerialName("duration") val duration: Int,
-    @SerialName("access_key") val accessKey: String? = null,
     @SerialName("owner_id") val ownerId: Long,
+    @SerialName("link_mp3") val linkMp3: String,
     @SerialName("link_ogg") val linkOgg: String,
     @SerialName("waveform") val waveform: List<Int>,
+    @SerialName("access_key") val accessKey: String? = null,
+    @SerialName("transcript_error") val transcriptError: Int? = null,
 )

@@ -10,8 +10,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class PrettyCardsDeleteResponse (
-    @SerialName("owner_id") val ownerId: Long,
     @SerialName("card_id") val cardId: String,
+    @SerialName("owner_id") val ownerId: Long,
     @SerialName("error") val error: String? = null,
 )
 

@@ -11,6 +11,6 @@ import ru.krindra.vknorthtypes.types.base.BaseBoolInt
  */
 @Serializable
 data class SecureSetCounterItem (
-    @SerialName("result") val result: BaseBoolInt,
     @SerialName("id") val id: Long,
+    @SerialName("result") val result: BaseBoolInt,
 )

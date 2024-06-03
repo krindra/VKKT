@@ -4,8 +4,8 @@ import ru.krindra.vknorthtypes.types.ads.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
 import kotlinx.serialization.builtins.ListSerializer
-import ru.krindra.vknorthtypes.types.base.BaseUndefinedResponse
 import ru.krindra.vknorthtypes.types.base.BaseOkResponse
+import ru.krindra.vknorthtypes.types.base.BaseUndefinedResponse
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
 
 class Ads(
@@ -409,11 +409,11 @@ class Ads(
      * @param cities IDs of cities where objects are searched in, separated with a comma.
      * @param lang Language of the returned string values. Supported languages: *ru - Russian,, *ua - Ukrainian,, *en - English.
      */
-    suspend fun getSuggestions(section: String, ids: String? = null, q: String? = null, country: Int? = null, cities: String? = null, lang: String? = null): GetsuggestionsResponse {
+    suspend fun getSuggestions(section: String, ids: String? = null, q: String? = null, country: Int? = null, cities: String? = null, lang: String? = null): GetSuggestionsResponse {
         val response = method("ads.getSuggestions", mapOf("section" to section, "ids" to ids, "q" to q, "country" to country, "cities" to cities, "lang" to lang))
-        return GetsuggestionsResponse(response, json)
+        return GetSuggestionsResponse(response, json)
     }
-    class GetsuggestionsResponse(
+    class GetSuggestionsResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun AdsGetSuggestionsCitiesResponse(): AdsGetSuggestionsCitiesResponse? {

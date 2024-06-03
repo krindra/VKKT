@@ -3,8 +3,8 @@ package ru.krindra.vknorthtypes.methods
 import ru.krindra.vknorthtypes.types.apps.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
-import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.types.users.UsersFields
+import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
 
@@ -82,11 +82,11 @@ class Apps(
      * @param fields Additional profile fields, see [vk.com/dev/fields|description].
      * @param query Search query string (e.g., 'Vasya Babich').
      */
-    suspend fun getFriendsList(extended: Boolean? = false, count: Int? = 20, offset: Int? = 0, type: String? = "invite", fields: List<UsersFields>? = null, query: String? = null): GetfriendslistResponse {
+    suspend fun getFriendsList(extended: Boolean? = false, count: Int? = 20, offset: Int? = 0, type: String? = "invite", fields: List<UsersFields>? = null, query: String? = null): GetFriendsListResponse {
         val response = method("apps.getFriendsList", mapOf("extended" to extended, "count" to count, "offset" to offset, "type" to type, "fields" to fields, "query" to query))
-        return GetfriendslistResponse(response, json)
+        return GetFriendsListResponse(response, json)
     }
-    class GetfriendslistResponse(
+    class GetFriendsListResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun AppsGetFriendsListExtendedResponse(): AppsGetFriendsListExtendedResponse? {
@@ -113,11 +113,11 @@ class Apps(
      * @param global_ Rating type. Possible values: *'1' - global rating among all players,, *'0' - rating among user friends.
      * @param extended 1 - to return additional info about users.
      */
-    suspend fun getLeaderboard(type: String, global_: Boolean? = true, extended: Boolean? = false): GetleaderboardResponse {
+    suspend fun getLeaderboard(type: String, global_: Boolean? = true, extended: Boolean? = false): GetLeaderboardResponse {
         val response = method("apps.getLeaderboard", mapOf("type" to type, "global_" to global_, "extended" to extended))
-        return GetleaderboardResponse(response, json)
+        return GetLeaderboardResponse(response, json)
     }
-    class GetleaderboardResponse(
+    class GetLeaderboardResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun AppsGetLeaderboardExtendedResponse(): AppsGetLeaderboardExtendedResponse? {

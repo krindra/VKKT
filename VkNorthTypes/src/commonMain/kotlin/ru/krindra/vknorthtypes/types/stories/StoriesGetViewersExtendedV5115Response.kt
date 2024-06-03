@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class StoriesGetViewersExtendedV5115Response (
     @SerialName("count") val count: Int,
+    @SerialName("next_from") val nextFrom: String? = null,
     @SerialName("items") val items: List<StoriesViewersItem>,
     @SerialName("hidden_reason") val hiddenReason: String? = null,
-    @SerialName("next_from") val nextFrom: String? = null,
 )
 

@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesKeyboardButton (
-    @SerialName("action") val action: MessagesKeyboardButtonPropertyAction,
     @SerialName("color") val color: String? = null,
+    @SerialName("action") val action: MessagesKeyboardButtonPropertyAction,
 )

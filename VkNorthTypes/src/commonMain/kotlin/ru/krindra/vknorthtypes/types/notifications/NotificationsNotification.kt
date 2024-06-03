@@ -15,7 +15,7 @@ import kotlinx.serialization.Serializable
 data class NotificationsNotification (
     @SerialName("date") val date: Int? = null,
     @SerialName("type") val type: String? = null,
+    @SerialName("reply") val reply: NotificationsReply? = null,
     @SerialName("feedback") val feedback: NotificationsFeedback? = null,
     @SerialName("parent") val parent: NotificationsNotification? = null,
-    @SerialName("reply") val reply: NotificationsReply? = null,
 )

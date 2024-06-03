@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsMobileStatItem (
-    @SerialName("value") val value: Double? = null,
     @SerialName("key") val key: String? = null,
+    @SerialName("value") val value: Double? = null,
 )

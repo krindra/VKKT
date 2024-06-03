@@ -19,15 +19,15 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MarketMarketItemBasicWithGroup (
-    @SerialName("title") val title: String,
-    @SerialName("is_group_verified") val isGroupVerified: Boolean? = null,
-    @SerialName("is_favorite") val isFavorite: Boolean? = null,
     @SerialName("id") val id: Long,
-    @SerialName("is_adult") val isAdult: Boolean? = null,
-    @SerialName("thumb_photo") val thumbPhoto: String? = null,
+    @SerialName("title") val title: String,
     @SerialName("owner_id") val ownerId: Long,
     @SerialName("price") val price: MarketPrice,
+    @SerialName("is_adult") val isAdult: Boolean? = null,
     @SerialName("is_owner") val isOwner: Boolean? = null,
-    @SerialName("group_name") val groupName: String? = null,
     @SerialName("group_link") val groupLink: String? = null,
+    @SerialName("group_name") val groupName: String? = null,
+    @SerialName("thumb_photo") val thumbPhoto: String? = null,
+    @SerialName("is_favorite") val isFavorite: Boolean? = null,
+    @SerialName("is_group_verified") val isGroupVerified: Boolean? = null,
 )

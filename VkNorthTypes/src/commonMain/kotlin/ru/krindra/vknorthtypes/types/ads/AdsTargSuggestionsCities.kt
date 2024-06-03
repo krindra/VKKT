@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsTargSuggestionsCities (
-    @SerialName("name") val name: String? = null,
     @SerialName("id") val id: Long? = null,
+    @SerialName("name") val name: String? = null,
     @SerialName("parent") val parent: String? = null,
 )

@@ -19,15 +19,15 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsStoriesOwner (
-    @SerialName("gender") val gender: String? = null,
-    @SerialName("name_get") val nameGet: String? = null,
-    @SerialName("verify") val verify: String? = null,
-    @SerialName("href") val href: String? = null,
-    @SerialName("firstName") val firstName: String? = null,
-    @SerialName("name") val name: String? = null,
     @SerialName("id") val id: Long? = null,
+    @SerialName("href") val href: String? = null,
+    @SerialName("name") val name: String? = null,
+    @SerialName("photo") val photo: String? = null,
+    @SerialName("gender") val gender: String? = null,
+    @SerialName("verify") val verify: String? = null,
+    @SerialName("name_get") val nameGet: String? = null,
+    @SerialName("firstName") val firstName: String? = null,
+    @SerialName("can_follow") val canFollow: Boolean? = null,
     @SerialName("first_name_gen") val firstNameGen: String? = null,
     @SerialName("first_name_ins") val firstNameIns: String? = null,
-    @SerialName("photo") val photo: String? = null,
-    @SerialName("can_follow") val canFollow: Boolean? = null,
 )

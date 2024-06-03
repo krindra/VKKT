@@ -3,11 +3,8 @@ package ru.krindra.vknorthtypes.types.photos
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import ru.krindra.vknorthtypes.types.groups.GroupsGroupFull
-
 import ru.krindra.vknorthtypes.types.wall.WallWallComment
-
 import ru.krindra.vknorthtypes.types.users.UsersUserFull
-
 
 /**
  * @param count Total number
@@ -19,9 +16,9 @@ import ru.krindra.vknorthtypes.types.users.UsersUserFull
 @Serializable
 data class PhotosGetCommentsExtendedResponse (
     @SerialName("count") val count: Int,
-    @SerialName("real_offset") val realOffset: Int? = null,
     @SerialName("items") val items: List<WallWallComment>,
-    @SerialName("profiles") val profiles: List<UsersUserFull>,
+    @SerialName("real_offset") val realOffset: Int? = null,
     @SerialName("groups") val groups: List<GroupsGroupFull>,
+    @SerialName("profiles") val profiles: List<UsersUserFull>,
 )
 

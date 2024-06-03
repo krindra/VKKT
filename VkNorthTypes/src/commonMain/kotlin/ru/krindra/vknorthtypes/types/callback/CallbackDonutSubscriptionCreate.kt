@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class CallbackDonutSubscriptionCreate (
+    @SerialName("amount") val amount: Int,
     @SerialName("user_id") val userId: Long? = null,
     @SerialName("amount_without_fee") val amountWithoutFee: Double,
-    @SerialName("amount") val amount: Int,
 )

@@ -2,14 +2,14 @@ package ru.krindra.vknorthtypes.types.account
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import ru.krindra.vknorthtypes.types.users.UsersPersonal
+import ru.krindra.vknorthtypes.types.users.UsersUserMin
 import ru.krindra.vknorthtypes.types.base.BaseCity
+import ru.krindra.vknorthtypes.types.base.BaseCountry
 import ru.krindra.vknorthtypes.types.users.UsersUserRelation
 import ru.krindra.vknorthtypes.types.base.BaseBoolInt
-import ru.krindra.vknorthtypes.types.users.UsersPersonal
-import ru.krindra.vknorthtypes.types.audio.AudioAudio
-import ru.krindra.vknorthtypes.types.users.UsersUserMin
 import ru.krindra.vknorthtypes.types.base.BaseSex
-import ru.krindra.vknorthtypes.types.base.BaseCountry
+import ru.krindra.vknorthtypes.types.audio.AudioAudio
 import ru.krindra.vknorthtypes.types.users.UsersUserConnections
 
 /**
@@ -46,33 +46,33 @@ import ru.krindra.vknorthtypes.types.users.UsersUserConnections
  */
 @Serializable
 data class AccountUserSettings (
-    @SerialName("personal") val personal: UsersPersonal? = null,
-    @SerialName("phone") val phone: String? = null,
+    @SerialName("id") val id: Long,
+    @SerialName("status") val status: String,
+    @SerialName("sex") val sex: BaseSex? = null,
+    @SerialName("hidden") val hidden: Int? = null,
+    @SerialName("home_town") val homeTown: String,
+    @SerialName("bdate") val bdate: String? = null,
     @SerialName("city") val city: BaseCity? = null,
-    @SerialName("relation") val relation: UsersUserRelation? = null,
+    @SerialName("phone") val phone: String? = null,
+    @SerialName("last_name") val lastName: String? = null,
     @SerialName("photo_200") val photo200: String? = null,
     @SerialName("is_closed") val isClosed: Boolean? = null,
-    @SerialName("bdate_visibility") val bdateVisibility: Int? = null,
-    @SerialName("hidden") val hidden: Int? = null,
-    @SerialName("languages") val languages: List<String>? = null,
-    @SerialName("status") val status: String,
-    @SerialName("relation_partner") val relationPartner: UsersUserMin? = null,
-    @SerialName("status_audio") val statusAudio: AudioAudio? = null,
-    @SerialName("screen_name") val screenName: String? = null,
-    @SerialName("first_name") val firstName: String? = null,
-    @SerialName("id") val id: Long,
-    @SerialName("is_service_account") val isServiceAccount: Boolean? = null,
-    @SerialName("deactivated") val deactivated: String? = null,
-    @SerialName("interests") val interests: AccountUserSettingsInterests? = null,
-    @SerialName("relation_pending") val relationPending: BaseBoolInt? = null,
-    @SerialName("sex") val sex: BaseSex? = null,
-    @SerialName("connections") val connections: UsersUserConnections? = null,
-    @SerialName("home_town") val homeTown: String,
-    @SerialName("name_request") val nameRequest: AccountNameRequest? = null,
     @SerialName("country") val country: BaseCountry? = null,
-    @SerialName("relation_requests") val relationRequests: List<UsersUserMin>? = null,
-    @SerialName("can_access_closed") val canAccessClosed: Boolean? = null,
+    @SerialName("first_name") val firstName: String? = null,
     @SerialName("maiden_name") val maidenName: String? = null,
-    @SerialName("last_name") val lastName: String? = null,
-    @SerialName("bdate") val bdate: String? = null,
+    @SerialName("screen_name") val screenName: String? = null,
+    @SerialName("deactivated") val deactivated: String? = null,
+    @SerialName("personal") val personal: UsersPersonal? = null,
+    @SerialName("languages") val languages: List<String>? = null,
+    @SerialName("relation") val relation: UsersUserRelation? = null,
+    @SerialName("status_audio") val statusAudio: AudioAudio? = null,
+    @SerialName("bdate_visibility") val bdateVisibility: Int? = null,
+    @SerialName("can_access_closed") val canAccessClosed: Boolean? = null,
+    @SerialName("is_service_account") val isServiceAccount: Boolean? = null,
+    @SerialName("name_request") val nameRequest: AccountNameRequest? = null,
+    @SerialName("connections") val connections: UsersUserConnections? = null,
+    @SerialName("relation_pending") val relationPending: BaseBoolInt? = null,
+    @SerialName("relation_partner") val relationPartner: UsersUserMin? = null,
+    @SerialName("interests") val interests: AccountUserSettingsInterests? = null,
+    @SerialName("relation_requests") val relationRequests: List<UsersUserMin>? = null,
 )

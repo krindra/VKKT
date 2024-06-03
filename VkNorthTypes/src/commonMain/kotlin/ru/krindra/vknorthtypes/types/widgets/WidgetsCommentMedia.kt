@@ -13,7 +13,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class WidgetsCommentMedia (
     @SerialName("item_id") val itemId: Long? = null,
-    @SerialName("type") val type: WidgetsCommentMediaType? = null,
-    @SerialName("thumb_src") val thumbSrc: String? = null,
     @SerialName("owner_id") val ownerId: Long? = null,
+    @SerialName("thumb_src") val thumbSrc: String? = null,
+    @SerialName("type") val type: WidgetsCommentMediaType? = null,
 )

@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class GroupsGroupBanInfo (
-    @SerialName("reason") val reason: GroupsBanInfoReason? = null,
-    @SerialName("comment") val comment: String? = null,
     @SerialName("end_date") val endDate: Int? = null,
+    @SerialName("comment") val comment: String? = null,
+    @SerialName("reason") val reason: GroupsBanInfoReason? = null,
 )

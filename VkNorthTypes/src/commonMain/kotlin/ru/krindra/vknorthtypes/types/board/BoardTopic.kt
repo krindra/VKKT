@@ -20,15 +20,15 @@ import ru.krindra.vknorthtypes.types.base.BaseBoolInt
  */
 @Serializable
 data class BoardTopic (
-    @SerialName("updated_by") val updatedBy: Int? = null,
-    @SerialName("is_fixed") val isFixed: BaseBoolInt? = null,
-    @SerialName("last_comment") val lastComment: String? = null,
-    @SerialName("is_closed") val isClosed: BaseBoolInt? = null,
     @SerialName("id") val id: Long? = null,
-    @SerialName("updated") val updated: Int? = null,
-    @SerialName("first_comment") val firstComment: String? = null,
-    @SerialName("comments") val comments: Int? = null,
     @SerialName("title") val title: String? = null,
     @SerialName("created") val created: Int? = null,
+    @SerialName("updated") val updated: Int? = null,
+    @SerialName("comments") val comments: Int? = null,
     @SerialName("created_by") val createdBy: Int? = null,
+    @SerialName("updated_by") val updatedBy: Int? = null,
+    @SerialName("is_fixed") val isFixed: BaseBoolInt? = null,
+    @SerialName("is_closed") val isClosed: BaseBoolInt? = null,
+    @SerialName("last_comment") val lastComment: String? = null,
+    @SerialName("first_comment") val firstComment: String? = null,
 )

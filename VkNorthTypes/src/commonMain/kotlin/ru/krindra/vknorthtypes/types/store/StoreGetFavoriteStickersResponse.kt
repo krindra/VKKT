@@ -4,7 +4,6 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import ru.krindra.vknorthtypes.types.base.BaseStickerNew
 
-
 /**
  * @param count Count of favorite stickers
  * @param items List of sticker objects

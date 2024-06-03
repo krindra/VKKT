@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class UsersUsersArray (
-    @SerialName("items") val items: List<Int>,
     @SerialName("count") val count: Int,
+    @SerialName("items") val items: List<Int>,
 )

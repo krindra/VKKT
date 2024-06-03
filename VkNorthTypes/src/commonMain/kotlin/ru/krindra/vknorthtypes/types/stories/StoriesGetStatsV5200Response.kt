@@ -14,8 +14,8 @@ import kotlinx.serialization.Serializable
 data class StoriesGetStatsV5200Response (
     @SerialName("preview") val preview: String? = null,
     @SerialName("achievement") val achievement: String? = null,
+    @SerialName("need_privacy_block") val needPrivacyBlock: Boolean? = null,
     @SerialName("achievement_subtitle") val achievementSubtitle: String? = null,
     @SerialName("categories") val categories: List<StoriesStatCategory>? = null,
-    @SerialName("need_privacy_block") val needPrivacyBlock: Boolean? = null,
 )
 

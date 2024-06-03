@@ -4,7 +4,6 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import ru.krindra.vknorthtypes.types.users.UsersUserFull
 
-
 /**
  * @param count Total results number
  * @param items 

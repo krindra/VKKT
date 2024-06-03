@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class CallbackGroupOfficersEdit (
-    @SerialName("admin_id") val adminId: Long,
     @SerialName("user_id") val userId: Long,
-    @SerialName("level_old") val levelOld: CallbackGroupOfficerRole,
+    @SerialName("admin_id") val adminId: Long,
     @SerialName("level_new") val levelNew: CallbackGroupOfficerRole,
+    @SerialName("level_old") val levelOld: CallbackGroupOfficerRole,
 )

@@ -4,8 +4,8 @@ import ru.krindra.vknorthtypes.types.market.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
 import ru.krindra.vknorthtypes.types.users.UsersFields
-import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
 import ru.krindra.vknorthtypes.types.base.BaseOkResponse
+import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
 
 class Market(
@@ -274,11 +274,11 @@ class Market(
      * @param itemIds Comma-separated ids list: {user id}_{item id}. If an item belongs to a community -{community id} is used. " 'Videos' value example: , '-4363_136089719,13245770_137352259'".
      * @param extended '1' - to return additional fields: 'likes, can_comment, car_repost, photos'. By default: '0'.
      */
-    suspend fun getById(itemIds: List<String>, extended: Boolean? = false): GetbyidResponse {
+    suspend fun getById(itemIds: List<String>, extended: Boolean? = false): GetByIdResponse {
         val response = method("market.getById", mapOf("item_ids" to itemIds, "extended" to extended))
-        return GetbyidResponse(response, json)
+        return GetByIdResponse(response, json)
     }
-    class GetbyidResponse(
+    class GetByIdResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun MarketGetByIdExtendedResponse(): MarketGetByIdExtendedResponse? {
@@ -368,11 +368,11 @@ class Market(
      * @param dateFrom Orders status updated date from (format: yyyy-mm-dd).
      * @param dateTo Orders status updated date to (format: yyyy-mm-dd).
      */
-    suspend fun getOrders(offset: Int? = 0, count: Int? = 10, extended: Boolean? = false, dateFrom: String? = null, dateTo: String? = null): GetordersResponse {
+    suspend fun getOrders(offset: Int? = 0, count: Int? = 10, extended: Boolean? = false, dateFrom: String? = null, dateTo: String? = null): GetOrdersResponse {
         val response = method("market.getOrders", mapOf("offset" to offset, "count" to count, "extended" to extended, "date_from" to dateFrom, "date_to" to dateTo))
-        return GetordersResponse(response, json)
+        return GetOrdersResponse(response, json)
     }
-    class GetordersResponse(
+    class GetOrdersResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun MarketGetOrdersExtendedResponse(): MarketGetOrdersExtendedResponse? {

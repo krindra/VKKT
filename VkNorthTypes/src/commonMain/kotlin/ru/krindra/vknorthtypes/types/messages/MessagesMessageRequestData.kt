@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesMessageRequestData (
-    @SerialName("request_date") val requestDate: Int? = null,
-    @SerialName("inviter_id") val inviterId: Long? = null,
     @SerialName("status") val status: String? = null,
+    @SerialName("inviter_id") val inviterId: Long? = null,
+    @SerialName("request_date") val requestDate: Int? = null,
 )

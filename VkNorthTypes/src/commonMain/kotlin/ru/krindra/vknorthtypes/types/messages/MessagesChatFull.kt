@@ -23,18 +23,18 @@ import ru.krindra.vknorthtypes.types.base.BaseBoolInt
  */
 @Serializable
 data class MessagesChatFull (
-    @SerialName("photo_200") val photo200: String? = null,
-    @SerialName("kicked") val kicked: BaseBoolInt? = null,
     @SerialName("id") val id: Long,
-    @SerialName("members_count") val membersCount: Int,
-    @SerialName("is_default_photo") val isDefaultPhoto: Boolean? = null,
-    @SerialName("left") val left: BaseBoolInt? = null,
-    @SerialName("push_settings") val pushSettings: MessagesChatPushSettings? = null,
-    @SerialName("admin_id") val adminId: Long,
     @SerialName("type") val type: String,
-    @SerialName("is_group_channel") val isGroupChannel: Boolean? = null,
+    @SerialName("admin_id") val adminId: Long,
     @SerialName("title") val title: String? = null,
-    @SerialName("users") val users: List<MessagesUserXtrInvitedBy>,
+    @SerialName("left") val left: BaseBoolInt? = null,
+    @SerialName("members_count") val membersCount: Int,
     @SerialName("photo_50") val photo50: String? = null,
+    @SerialName("kicked") val kicked: BaseBoolInt? = null,
     @SerialName("photo_100") val photo100: String? = null,
+    @SerialName("photo_200") val photo200: String? = null,
+    @SerialName("users") val users: List<MessagesUserXtrInvitedBy>,
+    @SerialName("is_default_photo") val isDefaultPhoto: Boolean? = null,
+    @SerialName("is_group_channel") val isGroupChannel: Boolean? = null,
+    @SerialName("push_settings") val pushSettings: MessagesChatPushSettings? = null,
 )

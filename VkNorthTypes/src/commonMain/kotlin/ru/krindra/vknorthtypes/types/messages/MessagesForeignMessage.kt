@@ -22,17 +22,17 @@ import ru.krindra.vknorthtypes.types.base.BaseGeo
  */
 @Serializable
 data class MessagesForeignMessage (
-    @SerialName("conversation_message_id") val conversationMessageId: Long? = null,
-    @SerialName("geo") val geo: BaseGeo? = null,
-    @SerialName("fwd_messages") val fwdMessages: List<MessagesForeignMessage>? = null,
-    @SerialName("peer_id") val peerId: Long? = null,
-    @SerialName("id") val id: Long? = null,
-    @SerialName("reply_message") val replyMessage: MessagesForeignMessage? = null,
     @SerialName("date") val date: Int,
-    @SerialName("from_id") val fromId: Long,
-    @SerialName("payload") val payload: String? = null,
     @SerialName("text") val text: String,
-    @SerialName("was_listened") val wasListened: Boolean? = null,
-    @SerialName("attachments") val attachments: List<MessagesMessageAttachment>? = null,
+    @SerialName("id") val id: Long? = null,
+    @SerialName("from_id") val fromId: Long,
+    @SerialName("geo") val geo: BaseGeo? = null,
+    @SerialName("peer_id") val peerId: Long? = null,
+    @SerialName("payload") val payload: String? = null,
     @SerialName("update_time") val updateTime: Int? = null,
+    @SerialName("was_listened") val wasListened: Boolean? = null,
+    @SerialName("reply_message") val replyMessage: MessagesForeignMessage? = null,
+    @SerialName("conversation_message_id") val conversationMessageId: Long? = null,
+    @SerialName("fwd_messages") val fwdMessages: List<MessagesForeignMessage>? = null,
+    @SerialName("attachments") val attachments: List<MessagesMessageAttachment>? = null,
 )

@@ -15,10 +15,10 @@ import ru.krindra.vknorthtypes.types.base.BaseBoolInt
  */
 @Serializable
 data class DatabaseCity (
-    @SerialName("title") val title: String,
-    @SerialName("important") val important: BaseBoolInt? = null,
-    @SerialName("region") val region: String? = null,
     @SerialName("id") val id: Long,
-    @SerialName("country") val country: String? = null,
+    @SerialName("title") val title: String,
     @SerialName("area") val area: String? = null,
+    @SerialName("region") val region: String? = null,
+    @SerialName("country") val country: String? = null,
+    @SerialName("important") val important: BaseBoolInt? = null,
 )

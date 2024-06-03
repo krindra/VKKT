@@ -19,12 +19,12 @@ import ru.krindra.vknorthtypes.types.photos.PhotosPhoto
 @Serializable
 data class MarketOrderItem (
     @SerialName("item_id") val itemId: Long,
-    @SerialName("item") val item: MarketMarketItem,
-    @SerialName("variants") val variants: List<String>? = null,
-    @SerialName("quantity") val quantity: Int,
-    @SerialName("photo") val photo: PhotosPhoto? = null,
     @SerialName("owner_id") val ownerId: Long,
+    @SerialName("quantity") val quantity: Int,
     @SerialName("price") val price: MarketPrice,
+    @SerialName("item") val item: MarketMarketItem,
     @SerialName("title") val title: String? = null,
+    @SerialName("photo") val photo: PhotosPhoto? = null,
+    @SerialName("variants") val variants: List<String>? = null,
     @SerialName("can_add_review") val canAddReview: Boolean? = null,
 )

@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class StoriesClickableStickers (
+    @SerialName("original_width") val originalWidth: Int,
     @SerialName("original_height") val originalHeight: Int,
     @SerialName("clickable_stickers") val clickableStickers: List<StoriesClickableSticker>,
-    @SerialName("original_width") val originalWidth: Int,
 )

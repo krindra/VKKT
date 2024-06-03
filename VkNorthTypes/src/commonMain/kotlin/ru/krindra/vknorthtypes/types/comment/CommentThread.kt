@@ -14,9 +14,9 @@ import ru.krindra.vknorthtypes.types.wall.WallWallComment
  */
 @Serializable
 data class CommentThread (
-    @SerialName("groups_can_post") val groupsCanPost: Boolean? = null,
-    @SerialName("can_post") val canPost: Boolean? = null,
-    @SerialName("show_reply_button") val showReplyButton: Boolean? = null,
     @SerialName("count") val count: Int,
+    @SerialName("can_post") val canPost: Boolean? = null,
     @SerialName("items") val items: List<WallWallComment>? = null,
+    @SerialName("groups_can_post") val groupsCanPost: Boolean? = null,
+    @SerialName("show_reply_button") val showReplyButton: Boolean? = null,
 )

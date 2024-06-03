@@ -13,8 +13,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesPushSettings (
-    @SerialName("disabled_forever") val disabledForever: Boolean,
     @SerialName("no_sound") val noSound: Boolean,
+    @SerialName("disabled_forever") val disabledForever: Boolean,
     @SerialName("disabled_until") val disabledUntil: Int? = null,
     @SerialName("disabled_mentions") val disabledMentions: Boolean? = null,
     @SerialName("disabled_mass_mentions") val disabledMassMentions: Boolean? = null,

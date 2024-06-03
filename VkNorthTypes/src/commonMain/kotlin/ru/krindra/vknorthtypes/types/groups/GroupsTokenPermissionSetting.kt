@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class GroupsTokenPermissionSetting (
-    @SerialName("setting") val setting: Int,
     @SerialName("name") val name: String,
+    @SerialName("setting") val setting: Int,
 )

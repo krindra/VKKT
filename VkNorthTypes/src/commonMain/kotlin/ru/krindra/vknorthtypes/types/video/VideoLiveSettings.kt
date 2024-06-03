@@ -15,8 +15,8 @@ import ru.krindra.vknorthtypes.types.base.BaseBoolInt
  */
 @Serializable
 data class VideoLiveSettings (
-    @SerialName("can_rewind") val canRewind: BaseBoolInt? = null,
     @SerialName("max_duration") val maxDuration: Int? = null,
-    @SerialName("is_clips_live") val isClipsLive: BaseBoolInt? = null,
+    @SerialName("can_rewind") val canRewind: BaseBoolInt? = null,
     @SerialName("is_endless") val isEndless: BaseBoolInt? = null,
+    @SerialName("is_clips_live") val isClipsLive: BaseBoolInt? = null,
 )

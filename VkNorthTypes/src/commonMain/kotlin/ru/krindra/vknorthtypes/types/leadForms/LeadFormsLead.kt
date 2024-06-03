@@ -13,9 +13,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class LeadFormsLead (
-    @SerialName("lead_id") val leadId: Long,
-    @SerialName("ad_id") val adId: Long? = null,
     @SerialName("date") val date: Int,
+    @SerialName("lead_id") val leadId: Long,
     @SerialName("user_id") val userId: Long,
+    @SerialName("ad_id") val adId: Long? = null,
     @SerialName("answers") val answers: List<LeadFormsAnswer>,
 )

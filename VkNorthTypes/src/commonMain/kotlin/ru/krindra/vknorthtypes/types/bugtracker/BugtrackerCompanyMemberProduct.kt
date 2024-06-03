@@ -14,10 +14,10 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BugtrackerCompanyMemberProduct (
-    @SerialName("photo_url") val photoUrl: String? = null,
     @SerialName("id") val id: Long,
-    @SerialName("status") val status: Int,
-    @SerialName("licence_status_text") val licenceStatusText: String? = null,
     @SerialName("access") val access: Int,
+    @SerialName("status") val status: Int,
     @SerialName("title") val title: String? = null,
+    @SerialName("photo_url") val photoUrl: String? = null,
+    @SerialName("licence_status_text") val licenceStatusText: String? = null,
 )

@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class NewsfeedItemPromoButtonAction (
+    @SerialName("url") val url: String? = null,
     @SerialName("type") val type: String? = null,
     @SerialName("target") val target: String? = null,
-    @SerialName("url") val url: String? = null,
 )

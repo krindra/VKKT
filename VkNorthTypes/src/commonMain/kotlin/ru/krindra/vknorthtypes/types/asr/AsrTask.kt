@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AsrTask (
+    @SerialName("id") val id: String,
     @SerialName("text") val text: String,
     @SerialName("status") val status: String,
-    @SerialName("id") val id: String,
 )

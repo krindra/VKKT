@@ -2,9 +2,9 @@ package ru.krindra.vknorthtypes.types.users
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.types.friends.FriendsRequestsMutual
-import ru.krindra.vknorthtypes.types.friends.FriendsFriendStatusStatus
 import ru.krindra.vknorthtypes.types.base.BaseSex
+import ru.krindra.vknorthtypes.types.friends.FriendsFriendStatusStatus
+import ru.krindra.vknorthtypes.types.friends.FriendsRequestsMutual
 import ru.krindra.vknorthtypes.types.base.BaseBoolInt
 
 /**
@@ -31,23 +31,23 @@ import ru.krindra.vknorthtypes.types.base.BaseBoolInt
  */
 @Serializable
 data class UsersUser (
-    @SerialName("online_info") val onlineInfo: UsersOnlineInfo? = null,
-    @SerialName("online") val online: BaseBoolInt? = null,
-    @SerialName("is_closed") val isClosed: Boolean? = null,
-    @SerialName("online_mobile") val onlineMobile: BaseBoolInt? = null,
-    @SerialName("hidden") val hidden: Int? = null,
-    @SerialName("screen_name") val screenName: String? = null,
-    @SerialName("first_name") val firstName: String? = null,
     @SerialName("id") val id: Long,
+    @SerialName("sex") val sex: BaseSex? = null,
+    @SerialName("hidden") val hidden: Int? = null,
+    @SerialName("photo_50") val photo50: String? = null,
+    @SerialName("online_app") val onlineApp: Int? = null,
+    @SerialName("last_name") val lastName: String? = null,
+    @SerialName("online") val online: BaseBoolInt? = null,
+    @SerialName("photo_100") val photo100: String? = null,
+    @SerialName("is_closed") val isClosed: Boolean? = null,
+    @SerialName("first_name") val firstName: String? = null,
+    @SerialName("screen_name") val screenName: String? = null,
+    @SerialName("trending") val trending: BaseBoolInt? = null,
     @SerialName("verified") val verified: BaseBoolInt? = null,
     @SerialName("deactivated") val deactivated: String? = null,
-    @SerialName("sex") val sex: BaseSex? = null,
-    @SerialName("trending") val trending: BaseBoolInt? = null,
     @SerialName("mutual") val mutual: FriendsRequestsMutual? = null,
-    @SerialName("photo_100") val photo100: String? = null,
-    @SerialName("online_app") val onlineApp: Int? = null,
-    @SerialName("friend_status") val friendStatus: FriendsFriendStatusStatus? = null,
+    @SerialName("online_info") val onlineInfo: UsersOnlineInfo? = null,
+    @SerialName("online_mobile") val onlineMobile: BaseBoolInt? = null,
     @SerialName("can_access_closed") val canAccessClosed: Boolean? = null,
-    @SerialName("last_name") val lastName: String? = null,
-    @SerialName("photo_50") val photo50: String? = null,
+    @SerialName("friend_status") val friendStatus: FriendsFriendStatusStatus? = null,
 )

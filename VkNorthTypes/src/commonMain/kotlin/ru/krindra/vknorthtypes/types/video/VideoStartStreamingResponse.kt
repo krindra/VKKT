@@ -14,12 +14,12 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class VideoStartStreamingResponse (
+    @SerialName("name") val name: String,
     @SerialName("owner_id") val ownerId: Long,
     @SerialName("video_id") val videoId: Long,
-    @SerialName("name") val name: String,
-    @SerialName("description") val description: String,
     @SerialName("access_key") val accessKey: String,
-    @SerialName("stream") val stream: VideoStreamInputParams,
     @SerialName("post_id") val postId: Long? = null,
+    @SerialName("description") val description: String,
+    @SerialName("stream") val stream: VideoStreamInputParams,
 )
 

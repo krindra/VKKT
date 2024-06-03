@@ -9,7 +9,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AuthRestoreResponse (
-    @SerialName("success") val success: Int? = null,
     @SerialName("sid") val sid: String? = null,
+    @SerialName("success") val success: Int? = null,
 )
 

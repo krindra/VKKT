@@ -15,8 +15,8 @@ import ru.krindra.vknorthtypes.types.base.BaseBoolInt
 @Serializable
 data class WidgetsCommentReplies (
     @SerialName("count") val count: Int? = null,
-    @SerialName("replies") val replies: List<WidgetsCommentRepliesItem>? = null,
-    @SerialName("groups_can_post") val groupsCanPost: BaseBoolInt? = null,
-    @SerialName("can_view") val canView: BaseBoolInt? = null,
     @SerialName("can_post") val canPost: BaseBoolInt? = null,
+    @SerialName("can_view") val canView: BaseBoolInt? = null,
+    @SerialName("groups_can_post") val groupsCanPost: BaseBoolInt? = null,
+    @SerialName("replies") val replies: List<WidgetsCommentRepliesItem>? = null,
 )

@@ -14,10 +14,10 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class UsersUserConnections (
-    @SerialName("instagram") val instagram: String,
-    @SerialName("facebook_name") val facebookName: String? = null,
-    @SerialName("livejournal") val livejournal: String? = null,
-    @SerialName("twitter") val twitter: String,
     @SerialName("skype") val skype: String,
+    @SerialName("twitter") val twitter: String,
     @SerialName("facebook") val facebook: String,
+    @SerialName("instagram") val instagram: String,
+    @SerialName("livejournal") val livejournal: String? = null,
+    @SerialName("facebook_name") val facebookName: String? = null,
 )

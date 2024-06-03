@@ -4,9 +4,9 @@ import ru.krindra.vknorthtypes.types.newsfeed.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
 import ru.krindra.vknorthtypes.types.users.UsersFields
+import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
 import ru.krindra.vknorthtypes.types.base.BaseUserGroupFields
-import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
 
 class Newsfeed(
@@ -74,11 +74,11 @@ class Newsfeed(
      * @param fields Profile fields to return.
      * @param nameCase Case for declension of user name and surname: 'nom' - nominative (default), 'gen' - genitive , 'dat' - dative, 'acc' - accusative , 'ins' - instrumental , 'abl' - prepositional.
      */
-    suspend fun getBanned(extended: Boolean? = false, fields: List<UsersFields>? = null, nameCase: String? = null): GetbannedResponse {
+    suspend fun getBanned(extended: Boolean? = false, fields: List<UsersFields>? = null, nameCase: String? = null): GetBannedResponse {
         val response = method("newsfeed.getBanned", mapOf("extended" to extended, "fields" to fields, "name_case" to nameCase))
-        return GetbannedResponse(response, json)
+        return GetBannedResponse(response, json)
     }
-    class GetbannedResponse(
+    class GetBannedResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun NewsfeedGetBannedExtendedResponse(): NewsfeedGetBannedExtendedResponse? {
@@ -114,11 +114,11 @@ class Newsfeed(
      * @param listIds numeric list identifiers.
      * @param extended Return additional list info.
      */
-    suspend fun getLists(listIds: List<Int>? = null, extended: Boolean? = false): GetlistsResponse {
+    suspend fun getLists(listIds: List<Int>? = null, extended: Boolean? = false): GetListsResponse {
         val response = method("newsfeed.getLists", mapOf("list_ids" to listIds, "extended" to extended))
-        return GetlistsResponse(response, json)
+        return GetListsResponse(response, json)
     }
-    class GetlistsResponse(
+    class GetListsResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun NewsfeedGetListsExtendedResponse(): NewsfeedGetListsExtendedResponse? {

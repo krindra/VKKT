@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class SupportUnblockScreenTutorialAnswers (
-    @SerialName("title") val title: String? = null,
-    @SerialName("explanation") val explanation: String? = null,
     @SerialName("id") val id: String? = null,
+    @SerialName("title") val title: String? = null,
     @SerialName("is_right") val isRight: Boolean? = null,
+    @SerialName("explanation") val explanation: String? = null,
 )

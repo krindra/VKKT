@@ -2,8 +2,8 @@ package ru.krindra.vknorthtypes.types.video
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.types.base.BasePropertyExists
 import ru.krindra.vknorthtypes.types.base.BaseBoolInt
+import ru.krindra.vknorthtypes.types.base.BasePropertyExists
 
 /**
  *
@@ -23,17 +23,17 @@ import ru.krindra.vknorthtypes.types.base.BaseBoolInt
  */
 @Serializable
 data class VideoVideoAlbumFull (
-    @SerialName("is_system") val isSystem: BasePropertyExists? = null,
-    @SerialName("title") val title: String,
     @SerialName("id") val id: Long,
-    @SerialName("can_upload") val canUpload: BaseBoolInt? = null,
-    @SerialName("can_edit") val canEdit: BaseBoolInt? = null,
-    @SerialName("response_type") val responseType: String? = null,
-    @SerialName("owner_id") val ownerId: Long,
     @SerialName("count") val count: Int,
-    @SerialName("image") val image: List<VideoVideoImage>? = null,
-    @SerialName("image_blur") val imageBlur: BasePropertyExists? = null,
-    @SerialName("track_code") val trackCode: String? = null,
+    @SerialName("title") val title: String,
+    @SerialName("owner_id") val ownerId: Long,
     @SerialName("updated_time") val updatedTime: Int,
+    @SerialName("track_code") val trackCode: String? = null,
+    @SerialName("can_edit") val canEdit: BaseBoolInt? = null,
     @SerialName("can_delete") val canDelete: BaseBoolInt? = null,
+    @SerialName("can_upload") val canUpload: BaseBoolInt? = null,
+    @SerialName("image") val image: List<VideoVideoImage>? = null,
+    @SerialName("response_type") val responseType: String? = null,
+    @SerialName("is_system") val isSystem: BasePropertyExists? = null,
+    @SerialName("image_blur") val imageBlur: BasePropertyExists? = null,
 )

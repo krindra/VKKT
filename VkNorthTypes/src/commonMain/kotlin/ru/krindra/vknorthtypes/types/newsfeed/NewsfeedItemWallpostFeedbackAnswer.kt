@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class NewsfeedItemWallpostFeedbackAnswer (
-    @SerialName("title") val title: String,
     @SerialName("id") val id: String,
+    @SerialName("title") val title: String,
 )

@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsStories (
-    @SerialName("stories") val stories: List<AdsStoryItem>? = null,
     @SerialName("owner") val owner: AdsStoriesOwner? = null,
+    @SerialName("stories") val stories: List<AdsStoryItem>? = null,
     @SerialName("stories_disclaimers_text") val storiesDisclaimersText: String? = null,
 )

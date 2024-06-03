@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class NewsfeedItemDigestButton (
-    @SerialName("style") val style: String? = null,
     @SerialName("title") val title: String,
+    @SerialName("style") val style: String? = null,
 )

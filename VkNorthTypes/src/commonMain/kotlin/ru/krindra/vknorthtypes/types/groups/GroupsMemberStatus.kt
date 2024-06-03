@@ -11,6 +11,6 @@ import ru.krindra.vknorthtypes.types.base.BaseBoolInt
  */
 @Serializable
 data class GroupsMemberStatus (
-    @SerialName("member") val member: BaseBoolInt,
     @SerialName("user_id") val userId: Long,
+    @SerialName("member") val member: BaseBoolInt,
 )

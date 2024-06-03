@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class GroupsContactsItem (
+    @SerialName("desc") val desc: String? = null,
+    @SerialName("email") val email: String? = null,
     @SerialName("phone") val phone: String? = null,
     @SerialName("user_id") val userId: Long? = null,
-    @SerialName("email") val email: String? = null,
-    @SerialName("desc") val desc: String? = null,
 )

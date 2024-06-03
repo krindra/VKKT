@@ -12,7 +12,7 @@ import ru.krindra.vknorthtypes.types.base.BaseError
  */
 @Serializable
 data class AdsUpdateOfficeUsersResult (
-    @SerialName("error") val error: BaseError? = null,
     @SerialName("user_id") val userId: Long,
     @SerialName("is_success") val isSuccess: Boolean,
+    @SerialName("error") val error: BaseError? = null,
 )

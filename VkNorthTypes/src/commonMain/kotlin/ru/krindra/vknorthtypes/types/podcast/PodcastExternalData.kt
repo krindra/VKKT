@@ -13,9 +13,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class PodcastExternalData (
-    @SerialName("owner_name") val ownerName: String? = null,
+    @SerialName("url") val url: String? = null,
+    @SerialName("title") val title: String? = null,
     @SerialName("cover") val cover: PodcastCover? = null,
     @SerialName("owner_url") val ownerUrl: String? = null,
-    @SerialName("title") val title: String? = null,
-    @SerialName("url") val url: String? = null,
+    @SerialName("owner_name") val ownerName: String? = null,
 )

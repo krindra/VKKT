@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class SupportUnblockScreenModalButtonFields (
-    @SerialName("modal") val modal: SupportUnblockScreenModalButtonModalContent? = null,
-    @SerialName("label") val label: String? = null,
-    @SerialName("id") val id: Double? = null,
     @SerialName("type") val type: String,
+    @SerialName("id") val id: Double? = null,
+    @SerialName("label") val label: String? = null,
+    @SerialName("modal") val modal: SupportUnblockScreenModalButtonModalContent? = null,
 )

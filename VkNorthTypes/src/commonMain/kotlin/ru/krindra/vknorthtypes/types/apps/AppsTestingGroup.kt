@@ -14,8 +14,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class AppsTestingGroup (
     @SerialName("group_id") val groupId: Long,
-    @SerialName("webview") val webview: String? = null,
-    @SerialName("platforms") val platforms: List<String>? = null,
     @SerialName("name") val name: String? = null,
     @SerialName("user_ids") val userIds: List<Int>,
+    @SerialName("webview") val webview: String? = null,
+    @SerialName("platforms") val platforms: List<String>? = null,
 )

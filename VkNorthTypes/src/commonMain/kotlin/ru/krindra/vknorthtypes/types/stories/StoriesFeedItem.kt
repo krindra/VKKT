@@ -19,14 +19,14 @@ import ru.krindra.vknorthtypes.types.apps.AppsAppMin
  */
 @Serializable
 data class StoriesFeedItem (
-    @SerialName("stories") val stories: List<StoriesStory>? = null,
+    @SerialName("type") val type: String,
+    @SerialName("id") val id: String? = null,
     @SerialName("name") val name: String? = null,
     @SerialName("app") val app: AppsAppMin? = null,
+    @SerialName("owner_id") val ownerId: Long? = null,
+    @SerialName("track_code") val trackCode: String? = null,
     @SerialName("has_unseen") val hasUnseen: Boolean? = null,
+    @SerialName("stories") val stories: List<StoriesStory>? = null,
     @SerialName("grouped") val grouped: List<StoriesFeedItem>? = null,
     @SerialName("promo_data") val promoData: StoriesPromoBlock? = null,
-    @SerialName("type") val type: String,
-    @SerialName("owner_id") val ownerId: Long? = null,
-    @SerialName("id") val id: String? = null,
-    @SerialName("track_code") val trackCode: String? = null,
 )

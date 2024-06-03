@@ -15,9 +15,9 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class MarketMarketCategoryTree (
     @SerialName("id") val id: Long,
-    @SerialName("icon_name") val iconName: String? = null,
     @SerialName("name") val name: String,
+    @SerialName("url") val url: String? = null,
+    @SerialName("icon_name") val iconName: String? = null,
     @SerialName("view") val view: MarketMarketCategoryTreeView? = null,
     @SerialName("children") val children: List<MarketMarketCategoryTree>? = null,
-    @SerialName("url") val url: String? = null,
 )

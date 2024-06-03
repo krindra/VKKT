@@ -11,6 +11,6 @@ import ru.krindra.vknorthtypes.types.base.BaseBoolInt
  */
 @Serializable
 data class VideoLiveInfo (
-    @SerialName("is_notifications_blocked") val isNotificationsBlocked: BaseBoolInt? = null,
     @SerialName("enabled") val enabled: BaseBoolInt,
+    @SerialName("is_notifications_blocked") val isNotificationsBlocked: BaseBoolInt? = null,
 )

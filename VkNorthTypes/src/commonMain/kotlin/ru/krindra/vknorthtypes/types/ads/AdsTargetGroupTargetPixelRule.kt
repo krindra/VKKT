@@ -14,10 +14,10 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsTargetGroupTargetPixelRule (
-    @SerialName("event_regex_match") val eventRegexMatch: String? = null,
-    @SerialName("event_full_match") val eventFullMatch: String? = null,
-    @SerialName("url_substrings_match") val urlSubstringsMatch: List<String>? = null,
     @SerialName("url_full_match") val urlFullMatch: String? = null,
-    @SerialName("event_substrings_match") val eventSubstringsMatch: List<String>? = null,
     @SerialName("url_regex_match") val urlRegexMatch: String? = null,
+    @SerialName("event_full_match") val eventFullMatch: String? = null,
+    @SerialName("event_regex_match") val eventRegexMatch: String? = null,
+    @SerialName("url_substrings_match") val urlSubstringsMatch: List<String>? = null,
+    @SerialName("event_substrings_match") val eventSubstringsMatch: List<String>? = null,
 )

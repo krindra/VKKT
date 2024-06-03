@@ -2,8 +2,8 @@ package ru.krindra.vknorthtypes.types.groups
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.types.market.MarketCurrency
 import ru.krindra.vknorthtypes.types.market.MarketPrice
+import ru.krindra.vknorthtypes.types.market.MarketCurrency
 import ru.krindra.vknorthtypes.types.base.BaseBoolInt
 
 /**
@@ -22,13 +22,13 @@ import ru.krindra.vknorthtypes.types.base.BaseBoolInt
 @Serializable
 data class GroupsMarketInfo (
     @SerialName("type") val type: String? = null,
-    @SerialName("is_show_header_items_link") val isShowHeaderItemsLink: BaseBoolInt? = null,
+    @SerialName("contact_id") val contactId: Long? = null,
+    @SerialName("price_max") val priceMax: String? = null,
     @SerialName("price_min") val priceMin: String? = null,
+    @SerialName("enabled") val enabled: BaseBoolInt? = null,
+    @SerialName("main_album_id") val mainAlbumId: Long? = null,
+    @SerialName("currency") val currency: MarketCurrency? = null,
     @SerialName("currency_text") val currencyText: String? = null,
     @SerialName("min_order_price") val minOrderPrice: MarketPrice? = null,
-    @SerialName("price_max") val priceMax: String? = null,
-    @SerialName("currency") val currency: MarketCurrency? = null,
-    @SerialName("main_album_id") val mainAlbumId: Long? = null,
-    @SerialName("contact_id") val contactId: Long? = null,
-    @SerialName("enabled") val enabled: BaseBoolInt? = null,
+    @SerialName("is_show_header_items_link") val isShowHeaderItemsLink: BaseBoolInt? = null,
 )

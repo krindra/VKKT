@@ -11,9 +11,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class CallsStartResponse (
-    @SerialName("call_id") val callId: String? = null,
     @SerialName("join_link") val joinLink: String,
-    @SerialName("broadcast_video_id") val broadcastVideoId: String? = null,
+    @SerialName("call_id") val callId: String? = null,
     @SerialName("broadcast_ov_id") val broadcastOvId: String? = null,
+    @SerialName("broadcast_video_id") val broadcastVideoId: String? = null,
 )
 

@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class NotificationsReply (
+    @SerialName("id") val id: Long? = null,
     @SerialName("date") val date: Int? = null,
     @SerialName("text") val text: Int? = null,
-    @SerialName("id") val id: Long? = null,
 )

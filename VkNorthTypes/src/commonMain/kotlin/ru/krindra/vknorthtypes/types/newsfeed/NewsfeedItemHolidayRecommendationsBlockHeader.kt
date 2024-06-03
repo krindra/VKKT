@@ -14,8 +14,8 @@ import ru.krindra.vknorthtypes.types.base.BaseLinkButtonAction
  */
 @Serializable
 data class NewsfeedItemHolidayRecommendationsBlockHeader (
-    @SerialName("subtitle") val subtitle: String? = null,
     @SerialName("title") val title: String? = null,
-    @SerialName("action") val action: BaseLinkButtonAction? = null,
+    @SerialName("subtitle") val subtitle: String? = null,
     @SerialName("image") val image: List<BaseImage>? = null,
+    @SerialName("action") val action: BaseLinkButtonAction? = null,
 )

@@ -15,7 +15,7 @@ import kotlinx.serialization.Serializable
 data class UtilsStatsExtended (
     @SerialName("views") val views: Int? = null,
     @SerialName("timestamp") val timestamp: Int? = null,
-    @SerialName("countries") val countries: List<UtilsStatsCountry>? = null,
     @SerialName("cities") val cities: List<UtilsStatsCity>? = null,
     @SerialName("sex_age") val sexAge: List<UtilsStatsSexAge>? = null,
+    @SerialName("countries") val countries: List<UtilsStatsCountry>? = null,
 )

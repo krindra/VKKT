@@ -22,18 +22,18 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsTargetGroup (
-    @SerialName("target_pixel_id") val targetPixelId: Long? = null,
-    @SerialName("target_pixel_rules") val targetPixelRules: List<AdsTargetGroupTargetPixelRule>? = null,
-    @SerialName("lifetime") val lifetime: Int? = null,
-    @SerialName("name") val name: String? = null,
-    @SerialName("domain") val domain: String? = null,
-    @SerialName("pixel") val pixel: String? = null,
-    @SerialName("is_shared") val isShared: Boolean? = null,
     @SerialName("id") val id: Long? = null,
-    @SerialName("last_updated") val lastUpdated: Int? = null,
-    @SerialName("is_audience") val isAudience: Boolean? = null,
+    @SerialName("name") val name: String? = null,
+    @SerialName("pixel") val pixel: String? = null,
+    @SerialName("domain") val domain: String? = null,
+    @SerialName("lifetime") val lifetime: Int? = null,
+    @SerialName("is_shared") val isShared: Boolean? = null,
     @SerialName("api_source") val apiSource: Boolean? = null,
-    @SerialName("audience_count") val audienceCount: Int? = null,
+    @SerialName("last_updated") val lastUpdated: Int? = null,
     @SerialName("file_source") val fileSource: Boolean? = null,
+    @SerialName("is_audience") val isAudience: Boolean? = null,
+    @SerialName("audience_count") val audienceCount: Int? = null,
+    @SerialName("target_pixel_id") val targetPixelId: Long? = null,
     @SerialName("lookalike_source") val lookalikeSource: Boolean? = null,
+    @SerialName("target_pixel_rules") val targetPixelRules: List<AdsTargetGroupTargetPixelRule>? = null,
 )

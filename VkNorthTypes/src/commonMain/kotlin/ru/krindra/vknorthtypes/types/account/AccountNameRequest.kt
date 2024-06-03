@@ -15,11 +15,11 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AccountNameRequest (
-    @SerialName("link_href") val linkHref: String? = null,
-    @SerialName("lang") val lang: String? = null,
-    @SerialName("first_name") val firstName: String? = null,
-    @SerialName("status") val status: AccountNameRequestStatus? = null,
     @SerialName("id") val id: Long? = null,
-    @SerialName("link_label") val linkLabel: String? = null,
+    @SerialName("lang") val lang: String? = null,
     @SerialName("last_name") val lastName: String? = null,
+    @SerialName("link_href") val linkHref: String? = null,
+    @SerialName("first_name") val firstName: String? = null,
+    @SerialName("link_label") val linkLabel: String? = null,
+    @SerialName("status") val status: AccountNameRequestStatus? = null,
 )

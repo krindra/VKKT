@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class GroupsLongPollServer (
-    @SerialName("server") val server: String,
     @SerialName("ts") val ts: String,
     @SerialName("key") val key: String,
+    @SerialName("server") val server: String,
 )

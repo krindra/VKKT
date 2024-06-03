@@ -2,8 +2,8 @@ package ru.krindra.vknorthtypes.types.fave
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.types.users.UsersUserFull
 import ru.krindra.vknorthtypes.types.groups.GroupsGroupFull
+import ru.krindra.vknorthtypes.types.users.UsersUserFull
 
 /**
  *
@@ -17,9 +17,9 @@ import ru.krindra.vknorthtypes.types.groups.GroupsGroupFull
 @Serializable
 data class FavePage (
     @SerialName("type") val type: FavePageType,
-    @SerialName("description") val description: String,
-    @SerialName("group") val group: GroupsGroupFull? = null,
-    @SerialName("user") val user: UsersUserFull? = null,
     @SerialName("tags") val tags: List<FaveTag>,
+    @SerialName("description") val description: String,
+    @SerialName("user") val user: UsersUserFull? = null,
+    @SerialName("group") val group: GroupsGroupFull? = null,
     @SerialName("updated_date") val updatedDate: Int? = null,
 )

@@ -13,11 +13,11 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class PhotosMarketUploadResponse (
+    @SerialName("hash") val hash: String? = null,
+    @SerialName("server") val server: Int? = null,
+    @SerialName("photo") val photo: String? = null,
+    @SerialName("group_id") val groupId: Long? = null,
     @SerialName("crop_data") val cropData: String? = null,
     @SerialName("crop_hash") val cropHash: String? = null,
-    @SerialName("group_id") val groupId: Long? = null,
-    @SerialName("hash") val hash: String? = null,
-    @SerialName("photo") val photo: String? = null,
-    @SerialName("server") val server: Int? = null,
 )
 

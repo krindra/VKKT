@@ -3,15 +3,15 @@ package ru.krindra.vknorthtypes.methods
 import ru.krindra.vknorthtypes.types.groups.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
-import ru.krindra.vknorthtypes.types.users.UsersFields
-import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
 import kotlinx.serialization.builtins.serializer
 import kotlinx.serialization.builtins.ListSerializer
-import ru.krindra.vknorthtypes.types.address.AddressFields
-import ru.krindra.vknorthtypes.types.base.BaseUserGroupFields
-import ru.krindra.vknorthtypes.types.base.BaseOkResponse
-import ru.krindra.vknorthtypes.BaseMultivariateResponse
 import ru.krindra.vknorthtypes.types.base.BaseBoolInt
+import ru.krindra.vknorthtypes.types.users.UsersFields
+import ru.krindra.vknorthtypes.types.base.BaseOkResponse
+import ru.krindra.vknorthtypes.types.address.AddressFields
+import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
+import ru.krindra.vknorthtypes.types.base.BaseUserGroupFields
+import ru.krindra.vknorthtypes.BaseMultivariateResponse
 
 class Groups(
     private val method: suspend (String, Map<String, Any?>?) -> String,
@@ -386,11 +386,11 @@ class Groups(
      * @param extended 1 - to return communities count and three communities for preview. By default: 0.
      * @param subcategories 1 - to return subcategories info. By default: 0.
      */
-    suspend fun getCatalogInfo(extended: Boolean? = false, subcategories: Boolean? = false): GetcataloginfoResponse {
+    suspend fun getCatalogInfo(extended: Boolean? = false, subcategories: Boolean? = false): GetCatalogInfoResponse {
         val response = method("groups.getCatalogInfo", mapOf("extended" to extended, "subcategories" to subcategories))
-        return GetcataloginfoResponse(response, json)
+        return GetCatalogInfoResponse(response, json)
     }
-    class GetcataloginfoResponse(
+    class GetCatalogInfoResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun GroupsGetCatalogInfoExtendedResponse(): GroupsGetCatalogInfoExtendedResponse? {
@@ -424,11 +424,11 @@ class Groups(
      * @param count Number of invitations to return.
      * @param extended '1' - to return additional [vk.com/dev/fields_groups|fields] for communities..
      */
-    suspend fun getInvites(offset: Int? = null, count: Int? = 20, extended: Boolean? = false): GetinvitesResponse {
+    suspend fun getInvites(offset: Int? = null, count: Int? = 20, extended: Boolean? = false): GetInvitesResponse {
         val response = method("groups.getInvites", mapOf("offset" to offset, "count" to count, "extended" to extended))
-        return GetinvitesResponse(response, json)
+        return GetInvitesResponse(response, json)
     }
-    class GetinvitesResponse(
+    class GetInvitesResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun GroupsGetInvitesExtendedResponse(): GroupsGetInvitesExtendedResponse? {
@@ -472,11 +472,11 @@ class Groups(
      * @param fields List of additional fields to be returned. Available values: 'sex, bdate, city, country, photo_50, photo_100, photo_200_orig, photo_200, photo_400_orig, photo_max, photo_max_orig, online, online_mobile, lists, domain, has_mobile, contacts, connections, site, education, universities, schools, can_post, can_see_all_posts, can_see_audio, can_write_private_message, status, last_seen, common_count, relation, relatives, counters'.
      * @param filter *'friends' - only friends in this community will be returned,, *'unsure' - only those who pressed 'I may attend' will be returned (if it's an event).
      */
-    suspend fun getMembers(groupId: List<Any>? = null, sort: String? = "id_asc", offset: Int? = null, count: Int? = 1000, fields: List<UsersFields>? = null, filter: String? = null): GetmembersResponse {
+    suspend fun getMembers(groupId: List<Any>? = null, sort: String? = "id_asc", offset: Int? = null, count: Int? = 1000, fields: List<UsersFields>? = null, filter: String? = null): GetMembersResponse {
         val response = method("groups.getMembers", mapOf("group_id" to groupId, "sort" to sort, "offset" to offset, "count" to count, "fields" to fields, "filter" to filter))
-        return GetmembersResponse(response, json)
+        return GetMembersResponse(response, json)
     }
-    class GetmembersResponse(
+    class GetMembersResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun GroupsGetMembersFieldsResponse(): GroupsGetMembersFieldsResponse? {
@@ -508,11 +508,11 @@ class Groups(
      * @param count Number of results to return.
      * @param fields Profile fields to return.
      */
-    suspend fun getRequests(groupId: Long, offset: Int? = null, count: Int? = 20, fields: List<UsersFields>? = null): GetrequestsResponse {
+    suspend fun getRequests(groupId: Long, offset: Int? = null, count: Int? = 20, fields: List<UsersFields>? = null): GetRequestsResponse {
         val response = method("groups.getRequests", mapOf("group_id" to groupId, "offset" to offset, "count" to count, "fields" to fields))
-        return GetrequestsResponse(response, json)
+        return GetRequestsResponse(response, json)
     }
-    class GetrequestsResponse(
+    class GetRequestsResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun GroupsGetRequestsFieldsResponse(): GroupsGetRequestsFieldsResponse? {
@@ -585,11 +585,11 @@ class Groups(
      * @param userIds User IDs.
      * @param extended '1' - to return an extended response with additional fields. By default: '0'.
      */
-    suspend fun isMember(groupId: List<Any>, userId: Long? = null, userIds: List<Int>? = null, extended: Boolean? = false): IsmemberResponse {
+    suspend fun isMember(groupId: List<Any>, userId: Long? = null, userIds: List<Int>? = null, extended: Boolean? = false): IsMemberResponse {
         val response = method("groups.isMember", mapOf("group_id" to groupId, "user_id" to userId, "user_ids" to userIds, "extended" to extended))
-        return IsmemberResponse(response, json)
+        return IsMemberResponse(response, json)
     }
-    class IsmemberResponse(
+    class IsMemberResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun BaseBoolResponse(): BaseBoolResponse? {

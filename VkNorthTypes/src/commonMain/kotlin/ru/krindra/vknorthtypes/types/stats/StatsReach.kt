@@ -19,11 +19,11 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class StatsReach (
     @SerialName("reach") val reach: Int? = null,
-    @SerialName("reach_subscribers") val reachSubscribers: Int? = null,
-    @SerialName("countries") val countries: List<StatsCountry>? = null,
     @SerialName("age") val age: List<StatsSexAge>? = null,
-    @SerialName("sex_age") val sexAge: List<StatsSexAge>? = null,
-    @SerialName("cities") val cities: List<StatsCity>? = null,
     @SerialName("sex") val sex: List<StatsSexAge>? = null,
     @SerialName("mobile_reach") val mobileReach: Int? = null,
+    @SerialName("cities") val cities: List<StatsCity>? = null,
+    @SerialName("sex_age") val sexAge: List<StatsSexAge>? = null,
+    @SerialName("countries") val countries: List<StatsCountry>? = null,
+    @SerialName("reach_subscribers") val reachSubscribers: Int? = null,
 )

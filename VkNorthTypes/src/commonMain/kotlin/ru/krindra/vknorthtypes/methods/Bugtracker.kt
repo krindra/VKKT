@@ -3,10 +3,10 @@ package ru.krindra.vknorthtypes.methods
 import ru.krindra.vknorthtypes.types.bugtracker.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
-import ru.krindra.vknorthtypes.types.base.BaseGetUploadServerResponse
 import ru.krindra.vknorthtypes.types.base.BaseOkResponse
-import ru.krindra.vknorthtypes.types.base.BaseUserGroupFields
 import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
+import ru.krindra.vknorthtypes.types.base.BaseUserGroupFields
+import ru.krindra.vknorthtypes.types.base.BaseGetUploadServerResponse
 
 class Bugtracker(
     private val method: suspend (String, Map<String, Any?>?) -> String,

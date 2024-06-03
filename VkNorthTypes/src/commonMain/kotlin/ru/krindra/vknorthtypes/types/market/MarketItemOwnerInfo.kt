@@ -17,10 +17,10 @@ import ru.krindra.vknorthtypes.types.base.BaseImage
  */
 @Serializable
 data class MarketItemOwnerInfo (
-    @SerialName("is_corporated_market") val isCorporatedMarket: Boolean? = null,
-    @SerialName("avatar") val avatar: List<BaseImage>? = null,
     @SerialName("name") val name: String? = null,
+    @SerialName("category") val category: String? = null,
+    @SerialName("avatar") val avatar: List<BaseImage>? = null,
     @SerialName("category_url") val categoryUrl: String? = null,
     @SerialName("market_type") val marketType: MarketOwnerType? = null,
-    @SerialName("category") val category: String? = null,
+    @SerialName("is_corporated_market") val isCorporatedMarket: Boolean? = null,
 )

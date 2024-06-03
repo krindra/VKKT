@@ -12,6 +12,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsStoryItemStatsFollow (
-    @SerialName("event_type") val eventType: String? = null,
     @SerialName("rhash") val rhash: String? = null,
+    @SerialName("event_type") val eventType: String? = null,
 )

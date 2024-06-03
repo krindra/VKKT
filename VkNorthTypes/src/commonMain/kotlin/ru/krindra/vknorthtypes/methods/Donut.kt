@@ -3,8 +3,8 @@ package ru.krindra.vknorthtypes.methods
 import ru.krindra.vknorthtypes.types.donut.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
-import ru.krindra.vknorthtypes.types.base.BaseUserGroupFields
 import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
+import ru.krindra.vknorthtypes.types.base.BaseUserGroupFields
 import ru.krindra.vknorthtypes.types.groups.GroupsGetMembersFieldsResponse
 
 class Donut(

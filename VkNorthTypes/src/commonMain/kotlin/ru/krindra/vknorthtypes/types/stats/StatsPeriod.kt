@@ -13,9 +13,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class StatsPeriod (
-    @SerialName("visitors") val visitors: StatsVisitorsOneOf? = null,
-    @SerialName("activity") val activity: StatsActivity? = null,
-    @SerialName("period_to") val periodTo: StatsPeriodToOneOf? = null,
     @SerialName("reach") val reach: StatsReachOneOf? = null,
+    @SerialName("activity") val activity: StatsActivity? = null,
+    @SerialName("visitors") val visitors: StatsVisitorsOneOf? = null,
+    @SerialName("period_to") val periodTo: StatsPeriodToOneOf? = null,
     @SerialName("period_from") val periodFrom: StatsPeriodFromOneOf? = null,
 )

@@ -12,6 +12,6 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class SupportUnblockScreenSlidersFieldsItem (
     @SerialName("title") val title: String? = null,
-    @SerialName("target_screen") val targetScreen: String? = null,
     @SerialName("short_desc") val shortDesc: String? = null,
+    @SerialName("target_screen") val targetScreen: String? = null,
 )

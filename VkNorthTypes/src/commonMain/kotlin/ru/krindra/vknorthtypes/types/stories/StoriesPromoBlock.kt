@@ -15,9 +15,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class StoriesPromoBlock (
+    @SerialName("name") val name: String,
     @SerialName("photo_50") val photo50: String,
     @SerialName("photo_100") val photo100: String,
-    @SerialName("not_animated") val notAnimated: Boolean,
-    @SerialName("name") val name: String,
     @SerialName("is_advice") val isAdvice: Boolean,
+    @SerialName("not_animated") val notAnimated: Boolean,
 )

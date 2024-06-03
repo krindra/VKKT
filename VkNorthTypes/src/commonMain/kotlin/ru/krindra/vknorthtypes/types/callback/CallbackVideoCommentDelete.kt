@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class CallbackVideoCommentDelete (
-    @SerialName("owner_id") val ownerId: Long,
-    @SerialName("user_id") val userId: Long,
-    @SerialName("video_id") val videoId: Long,
     @SerialName("id") val id: Long,
+    @SerialName("user_id") val userId: Long,
+    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("video_id") val videoId: Long,
 )

@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class UtilsLinkStats (
-    @SerialName("stats") val stats: List<UtilsStats>? = null,
     @SerialName("key") val key: String? = null,
+    @SerialName("stats") val stats: List<UtilsStats>? = null,
 )

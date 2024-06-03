@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BugtrackerBugreportSubscribeState (
+    @SerialName("can_set_subscribe") val canSetSubscribe: Boolean,
     @SerialName("is_subscribed") val isSubscribed: Boolean? = null,
     @SerialName("set_subscribe_hash") val setSubscribeHash: String? = null,
-    @SerialName("can_set_subscribe") val canSetSubscribe: Boolean,
 )

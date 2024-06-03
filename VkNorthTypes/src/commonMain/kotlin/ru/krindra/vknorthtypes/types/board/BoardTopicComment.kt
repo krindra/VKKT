@@ -19,12 +19,12 @@ import ru.krindra.vknorthtypes.types.base.BaseBoolInt
  */
 @Serializable
 data class BoardTopicComment (
-    @SerialName("attachments") val attachments: List<WallCommentAttachment>? = null,
     @SerialName("id") val id: Long,
-    @SerialName("can_edit") val canEdit: BaseBoolInt? = null,
-    @SerialName("real_offset") val realOffset: Int? = null,
-    @SerialName("likes") val likes: BaseLikesInfo? = null,
     @SerialName("date") val date: Int,
-    @SerialName("from_id") val fromId: Long,
     @SerialName("text") val text: String,
+    @SerialName("from_id") val fromId: Long,
+    @SerialName("likes") val likes: BaseLikesInfo? = null,
+    @SerialName("real_offset") val realOffset: Int? = null,
+    @SerialName("can_edit") val canEdit: BaseBoolInt? = null,
+    @SerialName("attachments") val attachments: List<WallCommentAttachment>? = null,
 )

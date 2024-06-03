@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsRules (
-    @SerialName("help_label") val helpLabel: String? = null,
-    @SerialName("help_url") val helpUrl: AdsRulesHelpUrl? = null,
-    @SerialName("content_html") val contentHtml: String? = null,
     @SerialName("help_chat") val helpChat: Boolean? = null,
+    @SerialName("help_label") val helpLabel: String? = null,
+    @SerialName("content_html") val contentHtml: String? = null,
+    @SerialName("help_url") val helpUrl: AdsRulesHelpUrl? = null,
 )

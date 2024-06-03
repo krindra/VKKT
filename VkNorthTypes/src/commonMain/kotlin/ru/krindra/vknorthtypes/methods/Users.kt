@@ -33,11 +33,11 @@ class Users(
      * @param fields Profile fields to return. Sample values: 'nickname', 'screen_name', 'sex', 'bdate' (birthdate), 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'has_mobile', 'rate', 'contacts', 'education', 'online'.
      * @param nameCase Case for declension of user name and surname: 'nom' - nominative (default), 'gen' - genitive , 'dat' - dative, 'acc' - accusative , 'ins' - instrumental , 'abl' - prepositional.
      */
-    suspend fun getFollowers(userId: Long? = null, offset: Int? = null, count: Int? = 100, fields: List<UsersFields>? = null, nameCase: String? = null): GetfollowersResponse {
+    suspend fun getFollowers(userId: Long? = null, offset: Int? = null, count: Int? = 100, fields: List<UsersFields>? = null, nameCase: String? = null): GetFollowersResponse {
         val response = method("users.getFollowers", mapOf("user_id" to userId, "offset" to offset, "count" to count, "fields" to fields, "name_case" to nameCase))
-        return GetfollowersResponse(response, json)
+        return GetFollowersResponse(response, json)
     }
-    class GetfollowersResponse(
+    class GetFollowersResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun UsersGetFollowersFieldsResponse(): UsersGetFollowersFieldsResponse? {
@@ -58,11 +58,11 @@ class Users(
      * @param count Number of users and communities to return.
      * @param fields 
      */
-    suspend fun getSubscriptions(userId: Long? = null, extended: Boolean? = false, offset: Int? = null, count: Int? = 20, fields: List<UsersFields>? = null): GetsubscriptionsResponse {
+    suspend fun getSubscriptions(userId: Long? = null, extended: Boolean? = false, offset: Int? = null, count: Int? = 20, fields: List<UsersFields>? = null): GetSubscriptionsResponse {
         val response = method("users.getSubscriptions", mapOf("user_id" to userId, "extended" to extended, "offset" to offset, "count" to count, "fields" to fields))
-        return GetsubscriptionsResponse(response, json)
+        return GetSubscriptionsResponse(response, json)
     }
-    class GetsubscriptionsResponse(
+    class GetSubscriptionsResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun UsersGetSubscriptionsExtendedResponse(): UsersGetSubscriptionsExtendedResponse? {

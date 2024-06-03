@@ -13,7 +13,7 @@ import kotlinx.serialization.Serializable
 data class PhotosMarketAlbumUploadResponse (
     @SerialName("gid") val gid: Long? = null,
     @SerialName("hash") val hash: String? = null,
-    @SerialName("photo") val photo: String? = null,
     @SerialName("server") val server: Int? = null,
+    @SerialName("photo") val photo: String? = null,
 )
 

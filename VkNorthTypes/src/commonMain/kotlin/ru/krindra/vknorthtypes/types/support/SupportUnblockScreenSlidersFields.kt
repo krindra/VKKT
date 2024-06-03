@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class SupportUnblockScreenSlidersFields (
-    @SerialName("items") val items: List<SupportUnblockScreenSlidersFieldsItem>? = null,
     @SerialName("type") val type: String,
+    @SerialName("items") val items: List<SupportUnblockScreenSlidersFieldsItem>? = null,
 )

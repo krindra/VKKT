@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class CallbackGroupJoin (
-    @SerialName("join_type") val joinType: CallbackGroupJoinType,
     @SerialName("user_id") val userId: Long,
+    @SerialName("join_type") val joinType: CallbackGroupJoinType,
 )

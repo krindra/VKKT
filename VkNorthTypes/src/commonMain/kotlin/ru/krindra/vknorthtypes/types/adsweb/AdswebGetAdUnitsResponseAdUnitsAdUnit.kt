@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdswebGetAdUnitsResponseAdUnitsAdUnit (
-    @SerialName("name") val name: String? = null,
-    @SerialName("site_id") val siteId: Long,
     @SerialName("id") val id: Long,
+    @SerialName("site_id") val siteId: Long,
+    @SerialName("name") val name: String? = null,
 )

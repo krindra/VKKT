@@ -15,9 +15,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class WallWallpostDonut (
-    @SerialName("edit_mode") val editMode: String? = null,
-    @SerialName("placeholder") val placeholder: WallWallpostDonutPlaceholder? = null,
-    @SerialName("can_publish_free_copy") val canPublishFreeCopy: Boolean? = null,
-    @SerialName("paid_duration") val paidDuration: Int? = null,
     @SerialName("is_donut") val isDonut: Boolean,
+    @SerialName("edit_mode") val editMode: String? = null,
+    @SerialName("paid_duration") val paidDuration: Int? = null,
+    @SerialName("can_publish_free_copy") val canPublishFreeCopy: Boolean? = null,
+    @SerialName("placeholder") val placeholder: WallWallpostDonutPlaceholder? = null,
 )

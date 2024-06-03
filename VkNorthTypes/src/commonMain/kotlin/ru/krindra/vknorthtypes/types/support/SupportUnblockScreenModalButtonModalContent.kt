@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class SupportUnblockScreenModalButtonModalContent (
-    @SerialName("title") val title: String? = null,
     @SerialName("text") val text: String? = null,
+    @SerialName("title") val title: String? = null,
 )

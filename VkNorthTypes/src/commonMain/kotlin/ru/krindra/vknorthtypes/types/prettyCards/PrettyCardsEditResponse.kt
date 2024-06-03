@@ -9,7 +9,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class PrettyCardsEditResponse (
-    @SerialName("owner_id") val ownerId: Long,
     @SerialName("card_id") val cardId: String,
+    @SerialName("owner_id") val ownerId: Long,
 )
 

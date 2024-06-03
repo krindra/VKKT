@@ -21,16 +21,16 @@ import ru.krindra.vknorthtypes.types.base.BaseLinkButton
  */
 @Serializable
 data class MessagesChatPreview (
-    @SerialName("is_member") val isMember: Boolean? = null,
-    @SerialName("is_nft") val isNft: Boolean? = null,
+    @SerialName("title") val title: String? = null,
     @SerialName("is_don") val isDon: Boolean? = null,
-    @SerialName("button") val button: BaseLinkButton? = null,
-    @SerialName("is_group_channel") val isGroupChannel: Boolean? = null,
+    @SerialName("is_nft") val isNft: Boolean? = null,
+    @SerialName("admin_id") val adminId: Long? = null,
+    @SerialName("joined") val joined: Boolean? = null,
     @SerialName("local_id") val localId: Long? = null,
     @SerialName("members") val members: List<Int>? = null,
-    @SerialName("joined") val joined: Boolean? = null,
+    @SerialName("is_member") val isMember: Boolean? = null,
+    @SerialName("button") val button: BaseLinkButton? = null,
     @SerialName("members_count") val membersCount: Int? = null,
-    @SerialName("admin_id") val adminId: Long? = null,
-    @SerialName("title") val title: String? = null,
     @SerialName("photo") val photo: MessagesChatSettingsPhoto? = null,
+    @SerialName("is_group_channel") val isGroupChannel: Boolean? = null,
 )

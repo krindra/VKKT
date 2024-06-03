@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class DatabaseLanguageFull (
-    @SerialName("native_name") val nativeName: String,
     @SerialName("id") val id: Long,
+    @SerialName("native_name") val nativeName: String,
 )

@@ -21,16 +21,16 @@ import ru.krindra.vknorthtypes.types.wall.WallWallpostAttachment
  */
 @Serializable
 data class NewsfeedItemDigestFullItem (
-    @SerialName("post") val post: NewsfeedItemWallpost,
-    @SerialName("attachment_index") val attachmentIndex: Int? = null,
-    @SerialName("feedback") val feedback: NewsfeedItemWallpostFeedback? = null,
-    @SerialName("badge_text") val badgeText: String? = null,
-    @SerialName("source_name") val sourceName: String? = null,
     @SerialName("source_id") val sourceId: Long,
-    @SerialName("date") val date: Int/* WARN! Int? = null */,
-    @SerialName("short_text_rate") val shortTextRate: Double? = null,
-    @SerialName("type") val type: NewsfeedNewsfeedItemType/* WARN! WallPostType? = null */,
-    @SerialName("style") val style: String? = null,
-    @SerialName("attachment") val attachment: WallWallpostAttachment? = null,
     @SerialName("text") val text: String? = null,
+    @SerialName("style") val style: String? = null,
+    @SerialName("post") val post: NewsfeedItemWallpost,
+    @SerialName("badge_text") val badgeText: String? = null,
+    @SerialName("date") val date: Int/* WARN! Int? = null */,
+    @SerialName("source_name") val sourceName: String? = null,
+    @SerialName("attachment_index") val attachmentIndex: Int? = null,
+    @SerialName("short_text_rate") val shortTextRate: Double? = null,
+    @SerialName("attachment") val attachment: WallWallpostAttachment? = null,
+    @SerialName("feedback") val feedback: NewsfeedItemWallpostFeedback? = null,
+    @SerialName("type") val type: NewsfeedNewsfeedItemType/* WARN! WallPostType? = null */,
 )

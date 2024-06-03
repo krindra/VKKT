@@ -14,10 +14,10 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class VideoSaveResult (
-    @SerialName("access_key") val accessKey: String? = null,
-    @SerialName("owner_id") val ownerId: Long? = null,
-    @SerialName("description") val description: String? = null,
     @SerialName("title") val title: String? = null,
+    @SerialName("owner_id") val ownerId: Long? = null,
     @SerialName("video_id") val videoId: Long? = null,
+    @SerialName("access_key") val accessKey: String? = null,
     @SerialName("upload_url") val uploadUrl: String? = null,
+    @SerialName("description") val description: String? = null,
 )

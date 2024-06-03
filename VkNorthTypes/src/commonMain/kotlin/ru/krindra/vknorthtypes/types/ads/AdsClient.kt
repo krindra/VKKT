@@ -14,8 +14,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class AdsClient (
     @SerialName("id") val id: Long,
-    @SerialName("ord_data") val ordData: AdsOrdData? = null,
+    @SerialName("name") val name: String,
     @SerialName("all_limit") val allLimit: String,
     @SerialName("day_limit") val dayLimit: String,
-    @SerialName("name") val name: String,
+    @SerialName("ord_data") val ordData: AdsOrdData? = null,
 )

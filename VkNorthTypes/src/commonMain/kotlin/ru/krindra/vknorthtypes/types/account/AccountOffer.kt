@@ -20,16 +20,16 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AccountOffer (
-    @SerialName("link_id") val linkId: Long? = null,
-    @SerialName("tag") val tag: String? = null,
-    @SerialName("currency_amount") val currencyAmount: Double? = null,
-    @SerialName("short_description") val shortDescription: String? = null,
-    @SerialName("img") val img: String? = null,
     @SerialName("id") val id: Long? = null,
+    @SerialName("img") val img: String? = null,
+    @SerialName("tag") val tag: String? = null,
     @SerialName("price") val price: Int? = null,
+    @SerialName("title") val title: String? = null,
+    @SerialName("link_id") val linkId: Long? = null,
     @SerialName("link_type") val linkType: String? = null,
     @SerialName("description") val description: String? = null,
-    @SerialName("title") val title: String? = null,
-    @SerialName("instruction_html") val instructionHtml: String? = null,
     @SerialName("instruction") val instruction: String? = null,
+    @SerialName("currency_amount") val currencyAmount: Double? = null,
+    @SerialName("instruction_html") val instructionHtml: String? = null,
+    @SerialName("short_description") val shortDescription: String? = null,
 )

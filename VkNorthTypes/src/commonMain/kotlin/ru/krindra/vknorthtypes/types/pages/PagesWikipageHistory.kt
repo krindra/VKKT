@@ -14,8 +14,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class PagesWikipageHistory (
     @SerialName("id") val id: Long,
-    @SerialName("length") val length: Int,
-    @SerialName("editor_name") val editorName: String,
     @SerialName("date") val date: Int,
+    @SerialName("length") val length: Int,
     @SerialName("editor_id") val editorId: Long,
+    @SerialName("editor_name") val editorName: String,
 )

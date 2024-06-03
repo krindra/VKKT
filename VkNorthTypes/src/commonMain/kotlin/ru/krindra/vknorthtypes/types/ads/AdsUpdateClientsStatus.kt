@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsUpdateClientsStatus (
-    @SerialName("error_desc") val errorDesc: String? = null,
-    @SerialName("error_code") val errorCode: Int? = null,
     @SerialName("id") val id: Long,
+    @SerialName("error_code") val errorCode: Int? = null,
+    @SerialName("error_desc") val errorDesc: String? = null,
 )

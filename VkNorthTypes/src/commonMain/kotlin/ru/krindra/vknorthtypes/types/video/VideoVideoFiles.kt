@@ -18,14 +18,14 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class VideoVideoFiles (
-    @SerialName("mp4_360") val mp4360: String? = null,
-    @SerialName("external") val external: String? = null,
     @SerialName("flv_320") val flv320: String? = null,
     @SerialName("mp4_144") val mp4144: String? = null,
     @SerialName("mp4_240") val mp4240: String? = null,
-    @SerialName("mp4_2160") val mp42160: String? = null,
+    @SerialName("mp4_360") val mp4360: String? = null,
     @SerialName("mp4_480") val mp4480: String? = null,
-    @SerialName("mp4_1080") val mp41080: String? = null,
     @SerialName("mp4_720") val mp4720: String? = null,
+    @SerialName("mp4_1080") val mp41080: String? = null,
     @SerialName("mp4_1440") val mp41440: String? = null,
+    @SerialName("mp4_2160") val mp42160: String? = null,
+    @SerialName("external") val external: String? = null,
 )

@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class LeadFormsAnswer (
-    @SerialName("answer") val answer: LeadFormsAnswerOneOf,
     @SerialName("key") val key: String,
+    @SerialName("answer") val answer: LeadFormsAnswerOneOf,
 )

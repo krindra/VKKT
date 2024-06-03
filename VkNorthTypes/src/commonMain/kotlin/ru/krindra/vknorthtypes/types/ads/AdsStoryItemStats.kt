@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsStoryItemStats (
-    @SerialName("url_view") val urlView: AdsStoryItemStatsUrlView? = null,
     @SerialName("follow") val follow: AdsStoryItemStatsFollow? = null,
+    @SerialName("url_view") val urlView: AdsStoryItemStatsUrlView? = null,
 )

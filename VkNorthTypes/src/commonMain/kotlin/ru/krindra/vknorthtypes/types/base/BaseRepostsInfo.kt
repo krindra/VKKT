@@ -14,8 +14,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BaseRepostsInfo (
-    @SerialName("user_reposted") val userReposted: BaseBoolInt? = null,
     @SerialName("count") val count: Int,
     @SerialName("mail_count") val mailCount: Int? = null,
     @SerialName("wall_count") val wallCount: Int? = null,
+    @SerialName("user_reposted") val userReposted: BaseBoolInt? = null,
 )

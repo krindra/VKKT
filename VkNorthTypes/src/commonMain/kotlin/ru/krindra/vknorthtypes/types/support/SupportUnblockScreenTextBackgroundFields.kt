@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class SupportUnblockScreenTextBackgroundFields (
-    @SerialName("bg_image") val bgImage: String? = null,
     @SerialName("type") val type: String,
     @SerialName("text") val text: String? = null,
+    @SerialName("bg_image") val bgImage: String? = null,
 )

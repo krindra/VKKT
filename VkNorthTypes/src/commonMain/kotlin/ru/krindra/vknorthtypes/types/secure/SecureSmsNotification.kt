@@ -13,9 +13,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class SecureSmsNotification (
-    @SerialName("user_id") val userId: String? = null,
-    @SerialName("date") val date: String? = null,
-    @SerialName("message") val message: String? = null,
-    @SerialName("app_id") val appId: String? = null,
     @SerialName("id") val id: String? = null,
+    @SerialName("date") val date: String? = null,
+    @SerialName("app_id") val appId: String? = null,
+    @SerialName("user_id") val userId: String? = null,
+    @SerialName("message") val message: String? = null,
 )

@@ -3,11 +3,8 @@ package ru.krindra.vknorthtypes.types.market
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import ru.krindra.vknorthtypes.types.groups.GroupsGroupFull
-
 import ru.krindra.vknorthtypes.types.wall.WallWallComment
-
 import ru.krindra.vknorthtypes.types.users.UsersUserFull
-
 
 /**
  * @param count Total number
@@ -19,7 +16,7 @@ import ru.krindra.vknorthtypes.types.users.UsersUserFull
 data class MarketGetCommentsResponse (
     @SerialName("count") val count: Int,
     @SerialName("items") val items: List<WallWallComment>,
-    @SerialName("profiles") val profiles: List<UsersUserFull>? = null,
     @SerialName("groups") val groups: List<GroupsGroupFull>? = null,
+    @SerialName("profiles") val profiles: List<UsersUserFull>? = null,
 )
 

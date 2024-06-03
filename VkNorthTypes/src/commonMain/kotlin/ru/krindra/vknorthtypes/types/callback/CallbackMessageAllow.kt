@@ -14,10 +14,10 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class CallbackMessageAllow (
+    @SerialName("v") val v: String,
     @SerialName("group_id") val groupId: Long,
     @SerialName("event_id") val eventId: String,
+    @SerialName("secret") val secret: String? = null,
     @SerialName("type") val type: CallbackType? = null,
     @SerialName("object_") val object_: CallbackMessageAllowObject,
-    @SerialName("secret") val secret: String? = null,
-    @SerialName("v") val v: String,
 )

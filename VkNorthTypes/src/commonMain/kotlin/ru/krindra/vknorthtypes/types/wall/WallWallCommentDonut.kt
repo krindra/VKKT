@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class WallWallCommentDonut (
-    @SerialName("placeholder") val placeholder: WallWallCommentDonutPlaceholder? = null,
     @SerialName("is_don") val isDon: Boolean? = null,
+    @SerialName("placeholder") val placeholder: WallWallCommentDonutPlaceholder? = null,
 )

@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class GroupsMemberRole (
+    @SerialName("id") val id: Long,
+    @SerialName("role") val role: GroupsMemberRoleStatus? = null,
     @SerialName("is_call_operator") val isCallOperator: Boolean? = null,
     @SerialName("permissions") val permissions: List<GroupsMemberRolePermission>? = null,
-    @SerialName("role") val role: GroupsMemberRoleStatus? = null,
-    @SerialName("id") val id: Long,
 )

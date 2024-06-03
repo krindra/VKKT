@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class LeadFormsQuestionItem (
-    @SerialName("options") val options: List<LeadFormsQuestionItemOption>? = null,
-    @SerialName("label") val label: String? = null,
-    @SerialName("type") val type: String,
     @SerialName("key") val key: String,
+    @SerialName("type") val type: String,
+    @SerialName("label") val label: String? = null,
+    @SerialName("options") val options: List<LeadFormsQuestionItemOption>? = null,
 )

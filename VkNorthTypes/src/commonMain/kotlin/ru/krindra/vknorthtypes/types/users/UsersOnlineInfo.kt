@@ -14,10 +14,10 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class UsersOnlineInfo (
-    @SerialName("app_id") val appId: Long? = null,
-    @SerialName("is_online") val isOnline: Boolean? = null,
-    @SerialName("last_seen") val lastSeen: Int? = null,
-    @SerialName("status") val status: String? = null,
     @SerialName("visible") val visible: Boolean,
+    @SerialName("app_id") val appId: Long? = null,
+    @SerialName("status") val status: String? = null,
+    @SerialName("last_seen") val lastSeen: Int? = null,
     @SerialName("is_mobile") val isMobile: Boolean? = null,
+    @SerialName("is_online") val isOnline: Boolean? = null,
 )

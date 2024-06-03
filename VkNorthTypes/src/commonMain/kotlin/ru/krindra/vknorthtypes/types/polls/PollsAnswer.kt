@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class PollsAnswer (
-    @SerialName("votes") val votes: Int,
-    @SerialName("text") val text: String,
-    @SerialName("rate") val rate: Double,
     @SerialName("id") val id: Long,
+    @SerialName("votes") val votes: Int,
+    @SerialName("rate") val rate: Double,
+    @SerialName("text") val text: String,
 )

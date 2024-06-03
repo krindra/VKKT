@@ -13,9 +13,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class StatsSexAge (
-    @SerialName("count") val count: Int? = null,
-    @SerialName("count_subscribers") val countSubscribers: Int? = null,
     @SerialName("value") val value: String,
+    @SerialName("count") val count: Int? = null,
     @SerialName("reach") val reach: Int? = null,
+    @SerialName("count_subscribers") val countSubscribers: Int? = null,
     @SerialName("reach_subscribers") val reachSubscribers: Int? = null,
 )

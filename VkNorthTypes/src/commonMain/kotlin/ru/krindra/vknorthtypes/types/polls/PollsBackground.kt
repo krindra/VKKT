@@ -19,13 +19,13 @@ import ru.krindra.vknorthtypes.types.base.BaseGradientPoint
  */
 @Serializable
 data class PollsBackground (
-    @SerialName("points") val points: List<BaseGradientPoint>? = null,
-    @SerialName("angle") val angle: Int? = null,
-    @SerialName("images") val images: List<BaseImage>? = null,
-    @SerialName("type") val type: String? = null,
-    @SerialName("name") val name: String? = null,
     @SerialName("id") val id: Long? = null,
-    @SerialName("height") val height: Int? = null,
+    @SerialName("angle") val angle: Int? = null,
     @SerialName("width") val width: Int? = null,
+    @SerialName("name") val name: String? = null,
+    @SerialName("type") val type: String? = null,
+    @SerialName("height") val height: Int? = null,
     @SerialName("color") val color: String? = null,
+    @SerialName("images") val images: List<BaseImage>? = null,
+    @SerialName("points") val points: List<BaseGradientPoint>? = null,
 )

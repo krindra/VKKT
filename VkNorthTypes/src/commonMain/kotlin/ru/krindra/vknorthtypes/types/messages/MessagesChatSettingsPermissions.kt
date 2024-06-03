@@ -15,11 +15,11 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesChatSettingsPermissions (
-    @SerialName("see_invite_link") val seeInviteLink: String? = null,
-    @SerialName("change_admins") val changeAdmins: String? = null,
     @SerialName("call") val call: String? = null,
     @SerialName("invite") val invite: String? = null,
     @SerialName("change_pin") val changePin: String? = null,
-    @SerialName("use_mass_mentions") val useMassMentions: String? = null,
     @SerialName("change_info") val changeInfo: String? = null,
+    @SerialName("change_admins") val changeAdmins: String? = null,
+    @SerialName("see_invite_link") val seeInviteLink: String? = null,
+    @SerialName("use_mass_mentions") val useMassMentions: String? = null,
 )

@@ -15,11 +15,11 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class UsersUserMin (
-    @SerialName("first_name") val firstName: String? = null,
     @SerialName("id") val id: Long,
-    @SerialName("is_closed") val isClosed: Boolean? = null,
     @SerialName("hidden") val hidden: Int? = null,
+    @SerialName("last_name") val lastName: String? = null,
+    @SerialName("is_closed") val isClosed: Boolean? = null,
+    @SerialName("first_name") val firstName: String? = null,
     @SerialName("deactivated") val deactivated: String? = null,
     @SerialName("can_access_closed") val canAccessClosed: Boolean? = null,
-    @SerialName("last_name") val lastName: String? = null,
 )

@@ -19,13 +19,13 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class OrdersOrder (
     @SerialName("id") val id: String,
-    @SerialName("cancel_transaction_id") val cancelTransactionId: String? = null,
-    @SerialName("app_order_id") val appOrderId: String,
-    @SerialName("user_id") val userId: String,
-    @SerialName("status") val status: String,
-    @SerialName("transaction_id") val transactionId: String? = null,
-    @SerialName("amount") val amount: String,
     @SerialName("date") val date: String,
-    @SerialName("receiver_id") val receiverId: String,
     @SerialName("item") val item: String,
+    @SerialName("amount") val amount: String,
+    @SerialName("status") val status: String,
+    @SerialName("user_id") val userId: String,
+    @SerialName("receiver_id") val receiverId: String,
+    @SerialName("app_order_id") val appOrderId: String,
+    @SerialName("transaction_id") val transactionId: String? = null,
+    @SerialName("cancel_transaction_id") val cancelTransactionId: String? = null,
 )

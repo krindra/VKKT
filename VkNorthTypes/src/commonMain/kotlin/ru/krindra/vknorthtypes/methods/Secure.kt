@@ -4,10 +4,10 @@ import ru.krindra.vknorthtypes.types.secure.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
 import kotlinx.serialization.builtins.ListSerializer
+import ru.krindra.vknorthtypes.types.base.BaseBoolInt
 import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
-import ru.krindra.vknorthtypes.types.base.BaseBoolInt
 
 class Secure(
     private val method: suspend (String, Map<String, Any?>?) -> String,
@@ -137,11 +137,11 @@ class Secure(
      * @param counter counter value.
      * @param increment 
      */
-    suspend fun setCounter(counters: List<String>? = null, userId: Long? = null, counter: Int? = null, increment: Boolean? = false): SetcounterResponse {
+    suspend fun setCounter(counters: List<String>? = null, userId: Long? = null, counter: Int? = null, increment: Boolean? = false): SetCounterResponse {
         val response = method("secure.setCounter", mapOf("counters" to counters, "user_id" to userId, "counter" to counter, "increment" to increment))
-        return SetcounterResponse(response, json)
+        return SetCounterResponse(response, json)
     }
-    class SetcounterResponse(
+    class SetCounterResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun BaseBoolResponse(): BaseBoolResponse? {

@@ -53,11 +53,11 @@ class Likes(
      * @param skipOwn 
      * @param fields 
      */
-    suspend fun getList(type: String, ownerId: Long? = null, itemId: Long? = null, pageUrl: String? = null, filter: String? = null, friendsOnly: Int? = 0, extended: Boolean? = false, offset: Int? = null, count: Int? = null, skipOwn: Boolean? = false, fields: List<String>? = null): GetlistResponse {
+    suspend fun getList(type: String, ownerId: Long? = null, itemId: Long? = null, pageUrl: String? = null, filter: String? = null, friendsOnly: Int? = 0, extended: Boolean? = false, offset: Int? = null, count: Int? = null, skipOwn: Boolean? = false, fields: List<String>? = null): GetListResponse {
         val response = method("likes.getList", mapOf("type" to type, "owner_id" to ownerId, "item_id" to itemId, "page_url" to pageUrl, "filter" to filter, "friends_only" to friendsOnly, "extended" to extended, "offset" to offset, "count" to count, "skip_own" to skipOwn, "fields" to fields))
-        return GetlistResponse(response, json)
+        return GetListResponse(response, json)
     }
-    class GetlistResponse(
+    class GetListResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun LikesGetListExtendedResponse(): LikesGetListExtendedResponse? {

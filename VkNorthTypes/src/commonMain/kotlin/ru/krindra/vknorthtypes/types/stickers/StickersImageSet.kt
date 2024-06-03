@@ -12,7 +12,7 @@ import ru.krindra.vknorthtypes.types.base.BaseImage
  */
 @Serializable
 data class StickersImageSet (
+    @SerialName("base_url") val baseUrl: String,
     @SerialName("version") val version: Int? = null,
     @SerialName("images") val images: List<BaseImage>? = null,
-    @SerialName("base_url") val baseUrl: String,
 )

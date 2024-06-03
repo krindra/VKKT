@@ -15,11 +15,11 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class GiftsGift (
+    @SerialName("id") val id: Long? = null,
     @SerialName("date") val date: Int? = null,
     @SerialName("from_id") val fromId: Long? = null,
     @SerialName("gift") val gift: GiftsLayout? = null,
-    @SerialName("id") val id: Long? = null,
+    @SerialName("message") val message: String? = null,
     @SerialName("gift_hash") val giftHash: String? = null,
     @SerialName("privacy") val privacy: GiftsGiftPrivacy? = null,
-    @SerialName("message") val message: String? = null,
 )

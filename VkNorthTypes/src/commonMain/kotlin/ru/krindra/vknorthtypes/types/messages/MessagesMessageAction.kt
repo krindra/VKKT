@@ -15,11 +15,11 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesMessageAction (
-    @SerialName("conversation_message_id") val conversationMessageId: Long? = null,
+    @SerialName("text") val text: String? = null,
     @SerialName("email") val email: String? = null,
+    @SerialName("message") val message: String? = null,
     @SerialName("member_id") val memberId: Long? = null,
     @SerialName("type") val type: MessagesMessageActionStatus,
-    @SerialName("message") val message: String? = null,
     @SerialName("photo") val photo: MessagesMessageActionPhoto? = null,
-    @SerialName("text") val text: String? = null,
+    @SerialName("conversation_message_id") val conversationMessageId: Long? = null,
 )

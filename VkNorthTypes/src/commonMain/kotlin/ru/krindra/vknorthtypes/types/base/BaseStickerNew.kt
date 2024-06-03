@@ -15,11 +15,11 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BaseStickerNew (
-    @SerialName("images_with_background") val imagesWithBackground: List<BaseImage>? = null,
+    @SerialName("product_id") val productId: Long? = null,
+    @SerialName("sticker_id") val stickerId: Long? = null,
+    @SerialName("is_allowed") val isAllowed: Boolean? = null,
     @SerialName("images") val images: List<BaseImage>? = null,
     @SerialName("animation_url") val animationUrl: String? = null,
-    @SerialName("is_allowed") val isAllowed: Boolean? = null,
     @SerialName("animations") val animations: List<BaseStickerAnimation>? = null,
-    @SerialName("sticker_id") val stickerId: Long? = null,
-    @SerialName("product_id") val productId: Long? = null,
+    @SerialName("images_with_background") val imagesWithBackground: List<BaseImage>? = null,
 )

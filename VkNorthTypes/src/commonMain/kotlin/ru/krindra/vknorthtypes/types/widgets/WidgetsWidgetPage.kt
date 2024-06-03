@@ -18,13 +18,13 @@ import ru.krindra.vknorthtypes.types.base.BaseObjectCount
  */
 @Serializable
 data class WidgetsWidgetPage (
-    @SerialName("date") val date: Int? = null,
     @SerialName("id") val id: Long? = null,
+    @SerialName("date") val date: Int? = null,
+    @SerialName("url") val url: String? = null,
+    @SerialName("photo") val photo: String? = null,
+    @SerialName("title") val title: String? = null,
     @SerialName("page_id") val pageId: String? = null,
-    @SerialName("comments") val comments: BaseObjectCount? = null,
     @SerialName("likes") val likes: BaseObjectCount? = null,
     @SerialName("description") val description: String? = null,
-    @SerialName("title") val title: String? = null,
-    @SerialName("photo") val photo: String? = null,
-    @SerialName("url") val url: String? = null,
+    @SerialName("comments") val comments: BaseObjectCount? = null,
 )

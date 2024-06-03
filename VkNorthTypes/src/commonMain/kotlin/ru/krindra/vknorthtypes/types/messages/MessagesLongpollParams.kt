@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesLongpollParams (
-    @SerialName("server") val server: String,
-    @SerialName("pts") val pts: Int? = null,
     @SerialName("ts") val ts: Int,
     @SerialName("key") val key: String,
+    @SerialName("pts") val pts: Int? = null,
+    @SerialName("server") val server: String,
 )

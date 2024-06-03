@@ -55,11 +55,11 @@ class Stories(
      * @param extended '1' - to return additional fields for users and communities. Default value is 0.
      * @param fields Additional fields to return.
      */
-    suspend fun getBanned(extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null): GetbannedResponse {
+    suspend fun getBanned(extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null): GetBannedResponse {
         val response = method("stories.getBanned", mapOf("extended" to extended, "fields" to fields))
-        return GetbannedResponse(response, json)
+        return GetBannedResponse(response, json)
     }
-    class GetbannedResponse(
+    class GetBannedResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun StoriesGetBannedExtendedResponse(): StoriesGetBannedExtendedResponse? {

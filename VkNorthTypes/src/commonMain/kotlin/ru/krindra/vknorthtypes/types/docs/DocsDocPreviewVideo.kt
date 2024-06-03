@@ -13,7 +13,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class DocsDocPreviewVideo (
     @SerialName("src") val src: String,
-    @SerialName("file_size") val fileSize: Int,
-    @SerialName("height") val height: Int,
     @SerialName("width") val width: Int,
+    @SerialName("height") val height: Int,
+    @SerialName("file_size") val fileSize: Int,
 )

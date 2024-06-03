@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BaseLinkRating (
+    @SerialName("type") val type: String? = null,
     @SerialName("stars") val stars: Double? = null,
     @SerialName("reviews_count") val reviewsCount: Int? = null,
-    @SerialName("type") val type: String? = null,
 )

@@ -19,13 +19,13 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class BaseStickerOld (
     @SerialName("id") val id: Long? = null,
-    @SerialName("is_allowed") val isAllowed: Boolean? = null,
-    @SerialName("height") val height: Int? = null,
-    @SerialName("product_id") val productId: Long? = null,
-    @SerialName("photo_128") val photo128: String? = null,
-    @SerialName("photo_64") val photo64: String? = null,
-    @SerialName("photo_256") val photo256: String? = null,
-    @SerialName("photo_512") val photo512: String? = null,
-    @SerialName("photo_352") val photo352: String? = null,
     @SerialName("width") val width: Int? = null,
+    @SerialName("height") val height: Int? = null,
+    @SerialName("photo_64") val photo64: String? = null,
+    @SerialName("photo_128") val photo128: String? = null,
+    @SerialName("photo_256") val photo256: String? = null,
+    @SerialName("photo_352") val photo352: String? = null,
+    @SerialName("photo_512") val photo512: String? = null,
+    @SerialName("product_id") val productId: Long? = null,
+    @SerialName("is_allowed") val isAllowed: Boolean? = null,
 )

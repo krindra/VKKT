@@ -14,10 +14,10 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsTargetPixelInfo (
-    @SerialName("category_id") val categoryId: Long,
-    @SerialName("pixel") val pixel: String,
-    @SerialName("last_updated") val lastUpdated: Int,
-    @SerialName("domain") val domain: String,
     @SerialName("name") val name: String,
+    @SerialName("pixel") val pixel: String,
+    @SerialName("domain") val domain: String,
+    @SerialName("category_id") val categoryId: Long,
+    @SerialName("last_updated") val lastUpdated: Int,
     @SerialName("target_pixel_id") val targetPixelId: Long,
 )

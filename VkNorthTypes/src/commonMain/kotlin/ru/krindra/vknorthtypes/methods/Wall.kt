@@ -3,9 +3,9 @@ package ru.krindra.vknorthtypes.methods
 import ru.krindra.vknorthtypes.types.wall.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
+import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
 import ru.krindra.vknorthtypes.types.base.BaseUserGroupFields
-import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
 
 class Wall(
@@ -175,11 +175,11 @@ class Wall(
      * @param copyHistoryDepth Sets the number of parent elements to include in the array 'copy_history' that is returned if the post is a repost from another wall.
      * @param fields 
      */
-    suspend fun getById(posts: List<String>, extended: Boolean? = false, copyHistoryDepth: Int? = 2, fields: List<BaseUserGroupFields>? = null): GetbyidResponse {
+    suspend fun getById(posts: List<String>, extended: Boolean? = false, copyHistoryDepth: Int? = 2, fields: List<BaseUserGroupFields>? = null): GetByIdResponse {
         val response = method("wall.getById", mapOf("posts" to posts, "extended" to extended, "copy_history_depth" to copyHistoryDepth, "fields" to fields))
-        return GetbyidResponse(response, json)
+        return GetByIdResponse(response, json)
     }
-    class GetbyidResponse(
+    class GetByIdResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun WallGetByIdExtendedResponse(): WallGetByIdExtendedResponse? {
@@ -199,11 +199,11 @@ class Wall(
      * @param extended 
      * @param fields 
      */
-    suspend fun getComment(commentId: Long, ownerId: Long? = null, extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null): GetcommentResponse {
+    suspend fun getComment(commentId: Long, ownerId: Long? = null, extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null): GetCommentResponse {
         val response = method("wall.getComment", mapOf("owner_id" to ownerId, "comment_id" to commentId, "extended" to extended, "fields" to fields))
-        return GetcommentResponse(response, json)
+        return GetCommentResponse(response, json)
     }
-    class GetcommentResponse(
+    class GetCommentResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun WallGetCommentExtendedResponse(): WallGetCommentExtendedResponse? {
@@ -231,11 +231,11 @@ class Wall(
      * @param commentId Comment ID.
      * @param threadItemsCount Count items in threads.
      */
-    suspend fun getComments(ownerId: Long? = null, postId: Long? = null, needLikes: Boolean? = false, startCommentId: Long? = null, offset: Int? = null, count: Int? = null, sort: String? = null, previewLength: Int? = null, extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null, commentId: Long? = null, threadItemsCount: Int? = 0): GetcommentsResponse {
+    suspend fun getComments(ownerId: Long? = null, postId: Long? = null, needLikes: Boolean? = false, startCommentId: Long? = null, offset: Int? = null, count: Int? = null, sort: String? = null, previewLength: Int? = null, extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null, commentId: Long? = null, threadItemsCount: Int? = 0): GetCommentsResponse {
         val response = method("wall.getComments", mapOf("owner_id" to ownerId, "post_id" to postId, "need_likes" to needLikes, "start_comment_id" to startCommentId, "offset" to offset, "count" to count, "sort" to sort, "preview_length" to previewLength, "extended" to extended, "fields" to fields, "comment_id" to commentId, "thread_items_count" to threadItemsCount))
-        return GetcommentsResponse(response, json)
+        return GetCommentsResponse(response, json)
     }
-    class GetcommentsResponse(
+    class GetCommentsResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun WallGetCommentsExtendedResponse(): WallGetCommentsExtendedResponse? {

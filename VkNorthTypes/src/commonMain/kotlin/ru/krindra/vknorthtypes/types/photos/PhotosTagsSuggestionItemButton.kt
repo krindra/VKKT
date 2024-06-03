@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class PhotosTagsSuggestionItemButton (
-    @SerialName("title") val title: String? = null,
     @SerialName("style") val style: String? = null,
+    @SerialName("title") val title: String? = null,
     @SerialName("action") val action: String? = null,
 )

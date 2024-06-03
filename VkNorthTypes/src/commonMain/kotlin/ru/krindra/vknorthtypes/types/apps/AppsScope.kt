@@ -12,6 +12,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AppsScope (
-    @SerialName("title") val title: String? = null,
     @SerialName("name") val name: String,
+    @SerialName("title") val title: String? = null,
 )

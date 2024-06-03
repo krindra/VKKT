@@ -3,9 +3,9 @@ package ru.krindra.vknorthtypes.methods
 import ru.krindra.vknorthtypes.types.friends.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
-import ru.krindra.vknorthtypes.types.users.UsersFields
-import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.builtins.serializer
+import kotlinx.serialization.builtins.ListSerializer
+import ru.krindra.vknorthtypes.types.users.UsersFields
 import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
 
@@ -46,11 +46,11 @@ class Friends(
      * @param needSign '1' - to return 'sign' field. 'sign' is md5("{id}_{user_id}_{friends_status}_{application_secret}"), where id is current user ID. This field allows to check that data has not been modified by the client. By default: '0'.
      * @param extended Return friend request read_state field.
      */
-    suspend fun areFriends(userIds: List<Int>, needSign: Boolean? = false, extended: Boolean? = false): ArefriendsResponse {
+    suspend fun areFriends(userIds: List<Int>, needSign: Boolean? = false, extended: Boolean? = false): AreFriendsResponse {
         val response = method("friends.areFriends", mapOf("user_ids" to userIds, "need_sign" to needSign, "extended" to extended))
-        return ArefriendsResponse(response, json)
+        return AreFriendsResponse(response, json)
     }
-    class ArefriendsResponse(
+    class AreFriendsResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun FriendsAreFriendsExtendedResponse(): FriendsAreFriendsExtendedResponse? {
@@ -192,11 +192,11 @@ class Friends(
      * @param count Number of mutual friends to return.
      * @param offset Offset needed to return a specific subset of mutual friends.
      */
-    suspend fun getMutual(sourceUid: Long? = null, targetUid: Long? = null, targetUids: List<Int>? = null, order: String? = null, count: Int? = null, offset: Int? = null): GetmutualResponse {
+    suspend fun getMutual(sourceUid: Long? = null, targetUid: Long? = null, targetUids: List<Int>? = null, order: String? = null, count: Int? = null, offset: Int? = null): GetMutualResponse {
         val response = method("friends.getMutual", mapOf("source_uid" to sourceUid, "target_uid" to targetUid, "target_uids" to targetUids, "order" to order, "count" to count, "offset" to offset))
-        return GetmutualResponse(response, json)
+        return GetMutualResponse(response, json)
     }
-    class GetmutualResponse(
+    class GetMutualResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun FriendsGetMutualResponse(): FriendsGetMutualResponse? {
@@ -218,11 +218,11 @@ class Friends(
      * @param count Number of friends to return.
      * @param offset Offset needed to return a specific subset of friends.
      */
-    suspend fun getOnline(userId: Long? = null, listId: Long? = null, onlineMobile: Boolean? = false, order: String? = null, count: Int? = null, offset: Int? = null): GetonlineResponse {
+    suspend fun getOnline(userId: Long? = null, listId: Long? = null, onlineMobile: Boolean? = false, order: String? = null, count: Int? = null, offset: Int? = null): GetOnlineResponse {
         val response = method("friends.getOnline", mapOf("user_id" to userId, "list_id" to listId, "online_mobile" to onlineMobile, "order" to order, "count" to count, "offset" to offset))
-        return GetonlineResponse(response, json)
+        return GetOnlineResponse(response, json)
     }
-    class GetonlineResponse(
+    class GetOnlineResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun FriendsGetOnlineOnlineMobileResponse(): FriendsGetOnlineOnlineMobileResponse? {
@@ -259,11 +259,11 @@ class Friends(
      * @param ref 
      * @param fields 
      */
-    suspend fun getRequests(offset: Int? = null, count: Int? = 100, extended: Boolean? = false, needMutual: Boolean? = false, out: Boolean? = false, sort: Int? = null, needViewed: Boolean? = false, suggested: Boolean? = false, ref: String? = null, fields: List<UsersFields>? = null): GetrequestsResponse {
+    suspend fun getRequests(offset: Int? = null, count: Int? = 100, extended: Boolean? = false, needMutual: Boolean? = false, out: Boolean? = false, sort: Int? = null, needViewed: Boolean? = false, suggested: Boolean? = false, ref: String? = null, fields: List<UsersFields>? = null): GetRequestsResponse {
         val response = method("friends.getRequests", mapOf("offset" to offset, "count" to count, "extended" to extended, "need_mutual" to needMutual, "out" to out, "sort" to sort, "need_viewed" to needViewed, "suggested" to suggested, "ref" to ref, "fields" to fields))
-        return GetrequestsResponse(response, json)
+        return GetRequestsResponse(response, json)
     }
-    class GetrequestsResponse(
+    class GetRequestsResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun FriendsGetRequestsExtendedResponse(): FriendsGetRequestsExtendedResponse? {

@@ -12,6 +12,6 @@ import ru.krindra.vknorthtypes.types.client.ClientInfoForBots
  */
 @Serializable
 data class CallbackMessageObject (
-    @SerialName("client_info") val clientInfo: ClientInfoForBots? = null,
     @SerialName("message") val message: MessagesMessage? = null,
+    @SerialName("client_info") val clientInfo: ClientInfoForBots? = null,
 )

@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class SupportUnblockScreenTextBorderedFields (
-    @SerialName("notify_btn") val notifyBtn: Boolean? = null,
     @SerialName("type") val type: String,
     @SerialName("text") val text: String? = null,
+    @SerialName("notify_btn") val notifyBtn: Boolean? = null,
 )

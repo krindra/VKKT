@@ -12,6 +12,6 @@ import ru.krindra.vknorthtypes.types.base.BaseCountry
  */
 @Serializable
 data class MarketGlobalSearchFilters (
-    @SerialName("country") val country: BaseCountry? = null,
     @SerialName("city") val city: BaseCity? = null,
+    @SerialName("country") val country: BaseCountry? = null,
 )

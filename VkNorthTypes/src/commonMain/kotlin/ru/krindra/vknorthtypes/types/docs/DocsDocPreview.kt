@@ -13,7 +13,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class DocsDocPreview (
     @SerialName("photo") val photo: DocsDocPreviewPhoto? = null,
-    @SerialName("audio_msg") val audioMsg: DocsDocPreviewAudioMsg? = null,
     @SerialName("video") val video: DocsDocPreviewVideo? = null,
     @SerialName("graffiti") val graffiti: DocsDocPreviewGraffiti? = null,
+    @SerialName("audio_msg") val audioMsg: DocsDocPreviewAudioMsg? = null,
 )

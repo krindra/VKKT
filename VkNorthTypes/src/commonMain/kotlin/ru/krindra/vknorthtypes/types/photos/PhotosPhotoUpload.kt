@@ -13,9 +13,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class PhotosPhotoUpload (
-    @SerialName("fallback_upload_url") val fallbackUploadUrl: String? = null,
-    @SerialName("album_id") val albumId: Long,
-    @SerialName("group_id") val groupId: Long? = null,
-    @SerialName("upload_url") val uploadUrl: String,
     @SerialName("user_id") val userId: Long,
+    @SerialName("album_id") val albumId: Long,
+    @SerialName("upload_url") val uploadUrl: String,
+    @SerialName("group_id") val groupId: Long? = null,
+    @SerialName("fallback_upload_url") val fallbackUploadUrl: String? = null,
 )

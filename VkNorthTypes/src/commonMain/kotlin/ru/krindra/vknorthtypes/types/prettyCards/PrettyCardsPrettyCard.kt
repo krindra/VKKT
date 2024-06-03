@@ -18,13 +18,13 @@ import ru.krindra.vknorthtypes.types.base.BaseImage
  */
 @Serializable
 data class PrettyCardsPrettyCard (
+    @SerialName("photo") val photo: String,
+    @SerialName("title") val title: String,
     @SerialName("card_id") val cardId: String,
     @SerialName("link_url") val linkUrl: String,
-    @SerialName("images") val images: List<BaseImage>? = null,
-    @SerialName("title") val title: String,
-    @SerialName("photo") val photo: String,
-    @SerialName("button") val button: PrettyCardsButtonOneOf? = null,
-    @SerialName("price_old") val priceOld: String? = null,
     @SerialName("price") val price: String? = null,
+    @SerialName("price_old") val priceOld: String? = null,
     @SerialName("button_text") val buttonText: String? = null,
+    @SerialName("images") val images: List<BaseImage>? = null,
+    @SerialName("button") val button: PrettyCardsButtonOneOf? = null,
 )

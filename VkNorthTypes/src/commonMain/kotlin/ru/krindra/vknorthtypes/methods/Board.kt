@@ -132,11 +132,11 @@ class Board(
      * @param extended '1' - to return information about users who posted comments, '0' - to return no additional fields (default).
      * @param sort Sort order: 'asc' - by creation date in chronological order, 'desc' - by creation date in reverse chronological order,.
      */
-    suspend fun getComments(groupId: Long, topicId: Long, needLikes: Boolean? = false, startCommentId: Long? = null, offset: Int? = null, count: Int? = 20, extended: Boolean? = false, sort: String? = null): GetcommentsResponse {
+    suspend fun getComments(groupId: Long, topicId: Long, needLikes: Boolean? = false, startCommentId: Long? = null, offset: Int? = null, count: Int? = 20, extended: Boolean? = false, sort: String? = null): GetCommentsResponse {
         val response = method("board.getComments", mapOf("group_id" to groupId, "topic_id" to topicId, "need_likes" to needLikes, "start_comment_id" to startCommentId, "offset" to offset, "count" to count, "extended" to extended, "sort" to sort))
-        return GetcommentsResponse(response, json)
+        return GetCommentsResponse(response, json)
     }
-    class GetcommentsResponse(
+    class GetCommentsResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun BoardGetCommentsExtendedResponse(): BoardGetCommentsExtendedResponse? {
@@ -160,11 +160,11 @@ class Board(
      * @param preview '1' - to return the first comment in each topic,, '2' - to return the last comment in each topic,, '0' - to return no comments. By default: '0'.
      * @param previewLength Number of characters after which to truncate the previewed comment. To preview the full comment, specify '0'.
      */
-    suspend fun getTopics(groupId: Long, topicIds: List<Int>? = null, order: Int? = null, offset: Int? = null, count: Int? = 40, extended: Boolean? = false, preview: Int? = null, previewLength: Int? = 90): GettopicsResponse {
+    suspend fun getTopics(groupId: Long, topicIds: List<Int>? = null, order: Int? = null, offset: Int? = null, count: Int? = 40, extended: Boolean? = false, preview: Int? = null, previewLength: Int? = 90): GetTopicsResponse {
         val response = method("board.getTopics", mapOf("group_id" to groupId, "topic_ids" to topicIds, "order" to order, "offset" to offset, "count" to count, "extended" to extended, "preview" to preview, "preview_length" to previewLength))
-        return GettopicsResponse(response, json)
+        return GetTopicsResponse(response, json)
     }
-    class GettopicsResponse(
+    class GetTopicsResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun BoardGetTopicsExtendedResponse(): BoardGetTopicsExtendedResponse? {

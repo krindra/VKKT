@@ -13,9 +13,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BaseError (
-    @SerialName("request_params") val requestParams: List<BaseRequestParam>? = null,
-    @SerialName("error_text") val errorText: String? = null,
-    @SerialName("error_subcode") val errorSubcode: Int? = null,
     @SerialName("error_code") val errorCode: Int,
     @SerialName("error_msg") val errorMsg: String? = null,
+    @SerialName("error_text") val errorText: String? = null,
+    @SerialName("error_subcode") val errorSubcode: Int? = null,
+    @SerialName("request_params") val requestParams: List<BaseRequestParam>? = null,
 )

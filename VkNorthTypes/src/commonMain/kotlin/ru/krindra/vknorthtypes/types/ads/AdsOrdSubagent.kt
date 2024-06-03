@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsOrdSubagent (
-    @SerialName("type") val type: AdsOrdClientType,
-    @SerialName("phone") val phone: String,
     @SerialName("name") val name: String,
+    @SerialName("phone") val phone: String,
     @SerialName("inn") val inn: String? = null,
+    @SerialName("type") val type: AdsOrdClientType,
 )

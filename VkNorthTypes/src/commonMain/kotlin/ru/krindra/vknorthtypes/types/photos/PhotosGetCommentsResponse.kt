@@ -4,7 +4,6 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import ru.krindra.vknorthtypes.types.wall.WallWallComment
 
-
 /**
  * @param count Total number
  * @param realOffset Real offset of the comments
@@ -13,7 +12,7 @@ import ru.krindra.vknorthtypes.types.wall.WallWallComment
 @Serializable
 data class PhotosGetCommentsResponse (
     @SerialName("count") val count: Int,
-    @SerialName("real_offset") val realOffset: Int? = null,
     @SerialName("items") val items: List<WallWallComment>,
+    @SerialName("real_offset") val realOffset: Int? = null,
 )
 

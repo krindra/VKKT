@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MarketMarketCategoryTreeView (
-    @SerialName("selected") val selected: Boolean? = null,
     @SerialName("type") val type: String? = null,
+    @SerialName("selected") val selected: Boolean? = null,
     @SerialName("root_path") val rootPath: List<String>? = null,
 )

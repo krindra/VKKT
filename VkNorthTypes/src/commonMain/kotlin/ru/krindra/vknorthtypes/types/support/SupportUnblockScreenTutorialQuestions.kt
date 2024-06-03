@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class SupportUnblockScreenTutorialQuestions (
-    @SerialName("title") val title: String? = null,
     @SerialName("id") val id: String? = null,
+    @SerialName("title") val title: String? = null,
     @SerialName("answers") val answers: List<SupportUnblockScreenTutorialAnswers>? = null,
 )

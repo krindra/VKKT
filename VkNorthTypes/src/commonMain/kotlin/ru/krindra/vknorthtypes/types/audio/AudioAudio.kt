@@ -18,14 +18,14 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AudioAudio (
-    @SerialName("date") val date: Int? = null,
-    @SerialName("title") val title: String,
     @SerialName("id") val id: Long,
+    @SerialName("title") val title: String,
     @SerialName("artist") val artist: String,
+    @SerialName("date") val date: Int? = null,
     @SerialName("duration") val duration: Int,
-    @SerialName("access_key") val accessKey: String? = null,
     @SerialName("owner_id") val ownerId: Long,
-    @SerialName("performer") val performer: String? = null,
-    @SerialName("album_id") val albumId: Long? = null,
     @SerialName("url") val url: String? = null,
+    @SerialName("album_id") val albumId: Long? = null,
+    @SerialName("performer") val performer: String? = null,
+    @SerialName("access_key") val accessKey: String? = null,
 )

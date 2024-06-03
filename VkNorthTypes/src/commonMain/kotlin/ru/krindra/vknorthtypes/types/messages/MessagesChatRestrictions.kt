@@ -14,8 +14,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class MessagesChatRestrictions (
     @SerialName("only_admins_kick") val onlyAdminsKick: Boolean? = null,
-    @SerialName("only_admins_edit_info") val onlyAdminsEditInfo: Boolean? = null,
-    @SerialName("only_admins_edit_pin") val onlyAdminsEditPin: Boolean? = null,
     @SerialName("only_admins_invite") val onlyAdminsInvite: Boolean? = null,
+    @SerialName("only_admins_edit_pin") val onlyAdminsEditPin: Boolean? = null,
     @SerialName("admins_promote_users") val adminsPromoteUsers: Boolean? = null,
+    @SerialName("only_admins_edit_info") val onlyAdminsEditInfo: Boolean? = null,
 )

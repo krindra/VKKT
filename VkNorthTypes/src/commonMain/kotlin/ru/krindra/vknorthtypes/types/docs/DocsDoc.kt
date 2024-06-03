@@ -21,16 +21,16 @@ import ru.krindra.vknorthtypes.types.base.BaseBoolInt
  */
 @Serializable
 data class DocsDoc (
-    @SerialName("title") val title: String,
     @SerialName("id") val id: Long,
-    @SerialName("type") val type: Int,
-    @SerialName("access_key") val accessKey: String? = null,
-    @SerialName("owner_id") val ownerId: Long,
-    @SerialName("is_licensed") val isLicensed: BaseBoolInt? = null,
     @SerialName("date") val date: Int,
-    @SerialName("preview") val preview: DocsDocPreview? = null,
-    @SerialName("ext") val ext: String,
-    @SerialName("tags") val tags: List<String>? = null,
     @SerialName("size") val size: Int,
+    @SerialName("type") val type: Int,
+    @SerialName("ext") val ext: String,
+    @SerialName("title") val title: String,
+    @SerialName("owner_id") val ownerId: Long,
     @SerialName("url") val url: String? = null,
+    @SerialName("tags") val tags: List<String>? = null,
+    @SerialName("access_key") val accessKey: String? = null,
+    @SerialName("preview") val preview: DocsDocPreview? = null,
+    @SerialName("is_licensed") val isLicensed: BaseBoolInt? = null,
 )

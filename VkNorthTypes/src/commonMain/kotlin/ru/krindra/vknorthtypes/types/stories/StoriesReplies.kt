@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class StoriesReplies (
-    @SerialName("new") val new: Int? = null,
     @SerialName("count") val count: Int,
+    @SerialName("new") val new: Int? = null,
 )

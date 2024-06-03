@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class OwnerState (
-    @SerialName("description") val description: String? = null,
     @SerialName("state") val state: Int? = null,
+    @SerialName("description") val description: String? = null,
 )

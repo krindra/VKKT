@@ -14,8 +14,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class GroupsAddressTimetableDay (
+    @SerialName("open_time") val openTime: Int,
     @SerialName("close_time") val closeTime: Int,
     @SerialName("break_open_time") val breakOpenTime: Int? = null,
-    @SerialName("open_time") val openTime: Int,
     @SerialName("break_close_time") val breakCloseTime: Int? = null,
 )

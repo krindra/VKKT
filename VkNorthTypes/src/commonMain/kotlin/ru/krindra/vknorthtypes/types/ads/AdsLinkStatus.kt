@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsLinkStatus (
+    @SerialName("status") val status: String,
     @SerialName("description") val description: String? = null,
     @SerialName("redirect_url") val redirectUrl: String? = null,
-    @SerialName("status") val status: String,
 )

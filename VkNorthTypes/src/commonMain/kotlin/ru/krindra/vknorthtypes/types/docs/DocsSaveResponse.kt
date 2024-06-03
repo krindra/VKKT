@@ -3,9 +3,7 @@ package ru.krindra.vknorthtypes.types.docs
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import ru.krindra.vknorthtypes.types.messages.MessagesGraffiti
-
 import ru.krindra.vknorthtypes.types.messages.MessagesAudioMessage
-
 
 /**
  * @param type 
@@ -15,9 +13,9 @@ import ru.krindra.vknorthtypes.types.messages.MessagesAudioMessage
  */
 @Serializable
 data class DocsSaveResponse (
-    @SerialName("type") val type: DocsDocAttachmentType? = null,
-    @SerialName("audio_message") val audioMessage: MessagesAudioMessage? = null,
     @SerialName("doc") val doc: DocsDoc? = null,
+    @SerialName("type") val type: DocsDocAttachmentType? = null,
     @SerialName("graffiti") val graffiti: MessagesGraffiti? = null,
+    @SerialName("audio_message") val audioMessage: MessagesAudioMessage? = null,
 )
 

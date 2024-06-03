@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class FriendsFriendStatus (
-    @SerialName("friend_status") val friendStatus: FriendsFriendStatusStatus,
     @SerialName("user_id") val userId: Long,
     @SerialName("sign") val sign: String? = null,
+    @SerialName("friend_status") val friendStatus: FriendsFriendStatusStatus,
 )

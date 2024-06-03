@@ -17,13 +17,13 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsDemostatsFormat (
-    @SerialName("sex_age") val sexAge: List<AdsStatsSexAge>? = null,
-    @SerialName("overall") val overall: Int? = null,
-    @SerialName("day_from") val dayFrom: String? = null,
-    @SerialName("cities") val cities: List<AdsStatsCities>? = null,
-    @SerialName("day_to") val dayTo: String? = null,
     @SerialName("day") val day: String? = null,
     @SerialName("month") val month: String? = null,
+    @SerialName("day_to") val dayTo: String? = null,
+    @SerialName("overall") val overall: Int? = null,
+    @SerialName("day_from") val dayFrom: String? = null,
     @SerialName("age") val age: List<AdsStatsAge>? = null,
     @SerialName("sex") val sex: List<AdsStatsSex>? = null,
+    @SerialName("cities") val cities: List<AdsStatsCities>? = null,
+    @SerialName("sex_age") val sexAge: List<AdsStatsSexAge>? = null,
 )

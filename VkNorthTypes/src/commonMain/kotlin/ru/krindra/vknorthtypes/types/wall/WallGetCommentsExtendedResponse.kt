@@ -3,9 +3,7 @@ package ru.krindra.vknorthtypes.types.wall
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import ru.krindra.vknorthtypes.types.groups.GroupsGroupFull
-
 import ru.krindra.vknorthtypes.types.users.UsersUserFull
-
 
 /**
  * @param count Total number
@@ -20,12 +18,12 @@ import ru.krindra.vknorthtypes.types.users.UsersUserFull
 @Serializable
 data class WallGetCommentsExtendedResponse (
     @SerialName("count") val count: Int,
-    @SerialName("items") val items: List<WallWallComment>,
-    @SerialName("profiles") val profiles: List<UsersUserFull>,
-    @SerialName("groups") val groups: List<GroupsGroupFull>,
-    @SerialName("current_level_count") val currentLevelCount: Int? = null,
     @SerialName("can_post") val canPost: Boolean? = null,
-    @SerialName("show_reply_button") val showReplyButton: Boolean? = null,
+    @SerialName("items") val items: List<WallWallComment>,
+    @SerialName("groups") val groups: List<GroupsGroupFull>,
+    @SerialName("profiles") val profiles: List<UsersUserFull>,
     @SerialName("groups_can_post") val groupsCanPost: Boolean? = null,
+    @SerialName("current_level_count") val currentLevelCount: Int? = null,
+    @SerialName("show_reply_button") val showReplyButton: Boolean? = null,
 )
 

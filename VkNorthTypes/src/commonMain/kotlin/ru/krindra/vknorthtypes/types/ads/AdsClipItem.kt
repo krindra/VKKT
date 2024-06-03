@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsClipItem (
-    @SerialName("link") val link: AdsClipItemLink? = null,
     @SerialName("video_id") val videoId: Long? = null,
+    @SerialName("link") val link: AdsClipItemLink? = null,
     @SerialName("preview_url") val previewUrl: String? = null,
 )

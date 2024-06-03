@@ -2,10 +2,10 @@ package ru.krindra.vknorthtypes.types.wall
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.types.newsfeed.NewsfeedItemWallpostFeedback
-import ru.krindra.vknorthtypes.types.base.BaseCommentsInfo
-import ru.krindra.vknorthtypes.types.base.BaseBoolInt
 import ru.krindra.vknorthtypes.types.base.BaseLikesInfo
+import ru.krindra.vknorthtypes.types.base.BaseCommentsInfo
+import ru.krindra.vknorthtypes.types.newsfeed.NewsfeedItemWallpostFeedback
+import ru.krindra.vknorthtypes.types.base.BaseBoolInt
 import ru.krindra.vknorthtypes.types.base.BaseRepostsInfo
 
 /**
@@ -52,43 +52,43 @@ import ru.krindra.vknorthtypes.types.base.BaseRepostsInfo
  */
 @Serializable
 data class WallWallpostFull (
-    @SerialName("is_pinned") val isPinned: BaseBoolInt? = null,
-    @SerialName("feedback") val feedback: NewsfeedItemWallpostFeedback? = null,
-    @SerialName("can_edit") val canEdit: BaseBoolInt? = null,
-    @SerialName("is_archived") val isArchived: Boolean? = null,
     @SerialName("id") val id: Long? = null,
-    @SerialName("copyright") val copyright: WallPostCopyright? = null,
-    @SerialName("can_pin") val canPin: BaseBoolInt? = null,
-    @SerialName("attachments") val attachments: List<WallWallpostAttachment>? = null,
-    @SerialName("carousel_offset") val carouselOffset: Int? = null,
-    @SerialName("geo") val geo: WallGeo? = null,
-    @SerialName("parents_stack") val parentsStack: List<Int>? = null,
-    @SerialName("is_favorite") val isFavorite: Boolean? = null,
-    @SerialName("signer_id") val signerId: Long? = null,
-    @SerialName("post_type") val postType: WallPostType? = null,
-    @SerialName("created_by") val createdBy: Int? = null,
-    @SerialName("can_delete") val canDelete: BaseBoolInt? = null,
-    @SerialName("to_id") val toId: Long? = null,
-    @SerialName("views") val views: WallViews? = null,
-    @SerialName("deleted_details") val deletedDetails: String? = null,
-    @SerialName("access_key") val accessKey: String? = null,
-    @SerialName("post_id") val postId: Long? = null,
-    @SerialName("hash") val hash: String? = null,
-    @SerialName("type") val type: WallPostType? = null,
-    @SerialName("comments") val comments: BaseCommentsInfo? = null,
-    @SerialName("post_source") val postSource: WallPostSource? = null,
-    @SerialName("reposts") val reposts: BaseRepostsInfo? = null,
-    @SerialName("donut") val donut: WallWallpostDonut? = null,
-    @SerialName("likes") val likes: BaseLikesInfo? = null,
-    @SerialName("edited") val edited: Int? = null,
-    @SerialName("text") val text: String? = null,
     @SerialName("date") val date: Int? = null,
-    @SerialName("topic_id") val topicId: Long? = null,
+    @SerialName("geo") val geo: WallGeo? = null,
+    @SerialName("to_id") val toId: Long? = null,
+    @SerialName("hash") val hash: String? = null,
+    @SerialName("text") val text: String? = null,
+    @SerialName("edited") val edited: Int? = null,
     @SerialName("from_id") val fromId: Long? = null,
-    @SerialName("copy_history") val copyHistory: List<WallWallpostFull>? = null,
-    @SerialName("is_deleted") val isDeleted: Boolean? = null,
-    @SerialName("marked_as_ads") val markedAsAds: BaseBoolInt? = null,
-    @SerialName("short_text_rate") val shortTextRate: Double? = null,
+    @SerialName("post_id") val postId: Long? = null,
     @SerialName("owner_id") val ownerId: Long? = null,
+    @SerialName("topic_id") val topicId: Long? = null,
+    @SerialName("views") val views: WallViews? = null,
+    @SerialName("type") val type: WallPostType? = null,
+    @SerialName("signer_id") val signerId: Long? = null,
+    @SerialName("created_by") val createdBy: Int? = null,
+    @SerialName("likes") val likes: BaseLikesInfo? = null,
+    @SerialName("can_pin") val canPin: BaseBoolInt? = null,
+    @SerialName("access_key") val accessKey: String? = null,
+    @SerialName("can_edit") val canEdit: BaseBoolInt? = null,
+    @SerialName("is_deleted") val isDeleted: Boolean? = null,
+    @SerialName("donut") val donut: WallWallpostDonut? = null,
+    @SerialName("is_archived") val isArchived: Boolean? = null,
+    @SerialName("is_favorite") val isFavorite: Boolean? = null,
+    @SerialName("is_pinned") val isPinned: BaseBoolInt? = null,
+    @SerialName("post_type") val postType: WallPostType? = null,
+    @SerialName("reposts") val reposts: BaseRepostsInfo? = null,
+    @SerialName("can_delete") val canDelete: BaseBoolInt? = null,
+    @SerialName("carousel_offset") val carouselOffset: Int? = null,
+    @SerialName("comments") val comments: BaseCommentsInfo? = null,
     @SerialName("deleted_reason") val deletedReason: String? = null,
+    @SerialName("parents_stack") val parentsStack: List<Int>? = null,
+    @SerialName("short_text_rate") val shortTextRate: Double? = null,
+    @SerialName("copyright") val copyright: WallPostCopyright? = null,
+    @SerialName("deleted_details") val deletedDetails: String? = null,
+    @SerialName("marked_as_ads") val markedAsAds: BaseBoolInt? = null,
+    @SerialName("post_source") val postSource: WallPostSource? = null,
+    @SerialName("feedback") val feedback: NewsfeedItemWallpostFeedback? = null,
+    @SerialName("copy_history") val copyHistory: List<WallWallpostFull>? = null,
+    @SerialName("attachments") val attachments: List<WallWallpostAttachment>? = null,
 )

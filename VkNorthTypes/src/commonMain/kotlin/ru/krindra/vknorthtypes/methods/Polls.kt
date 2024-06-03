@@ -3,11 +3,11 @@ package ru.krindra.vknorthtypes.methods
 import ru.krindra.vknorthtypes.types.polls.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
-import ru.krindra.vknorthtypes.types.base.BaseGetUploadServerResponse
 import kotlinx.serialization.builtins.ListSerializer
-import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.types.users.UsersFields
+import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
+import ru.krindra.vknorthtypes.types.base.BaseGetUploadServerResponse
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
 
 class Polls(
@@ -128,11 +128,11 @@ class Polls(
      * @param fields Profile fields to return. Sample values: 'nickname', 'screen_name', 'sex', 'bdate (birthdate)', 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'has_mobile', 'rate', 'contacts', 'education', 'online', 'counters'.
      * @param nameCase Case for declension of user name and surname: , 'nom' - nominative (default) , 'gen' - genitive , 'dat' - dative , 'acc' - accusative , 'ins' - instrumental , 'abl' - prepositional.
      */
-    suspend fun getVoters(pollId: Long, answerIds: List<Int>, ownerId: Long? = null, isBoard: Boolean? = false, friendsOnly: Boolean? = false, offset: Int? = null, count: Int? = null, fields: List<UsersFields>? = null, nameCase: String? = null): GetvotersResponse {
+    suspend fun getVoters(pollId: Long, answerIds: List<Int>, ownerId: Long? = null, isBoard: Boolean? = false, friendsOnly: Boolean? = false, offset: Int? = null, count: Int? = null, fields: List<UsersFields>? = null, nameCase: String? = null): GetVotersResponse {
         val response = method("polls.getVoters", mapOf("owner_id" to ownerId, "poll_id" to pollId, "answer_ids" to answerIds, "is_board" to isBoard, "friends_only" to friendsOnly, "offset" to offset, "count" to count, "fields" to fields, "name_case" to nameCase))
-        return GetvotersResponse(response, json)
+        return GetVotersResponse(response, json)
     }
-    class GetvotersResponse(
+    class GetVotersResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun PollsGetVotersFieldsResponse(): PollsGetVotersFieldsResponse? {

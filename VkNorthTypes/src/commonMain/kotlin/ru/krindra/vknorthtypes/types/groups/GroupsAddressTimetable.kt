@@ -17,11 +17,11 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class GroupsAddressTimetable (
+    @SerialName("fri") val fri: GroupsAddressTimetableDay? = null,
+    @SerialName("mon") val mon: GroupsAddressTimetableDay? = null,
+    @SerialName("sat") val sat: GroupsAddressTimetableDay? = null,
+    @SerialName("sun") val sun: GroupsAddressTimetableDay? = null,
+    @SerialName("thu") val thu: GroupsAddressTimetableDay? = null,
     @SerialName("tue") val tue: GroupsAddressTimetableDay? = null,
     @SerialName("wed") val wed: GroupsAddressTimetableDay? = null,
-    @SerialName("mon") val mon: GroupsAddressTimetableDay? = null,
-    @SerialName("thu") val thu: GroupsAddressTimetableDay? = null,
-    @SerialName("sun") val sun: GroupsAddressTimetableDay? = null,
-    @SerialName("sat") val sat: GroupsAddressTimetableDay? = null,
-    @SerialName("fri") val fri: GroupsAddressTimetableDay? = null,
 )

@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class WallPostCopyright (
-    @SerialName("name") val name: String,
     @SerialName("link") val link: String,
-    @SerialName("id") val id: Long? = null,
+    @SerialName("name") val name: String,
     @SerialName("type") val type: String,
+    @SerialName("id") val id: Long? = null,
 )

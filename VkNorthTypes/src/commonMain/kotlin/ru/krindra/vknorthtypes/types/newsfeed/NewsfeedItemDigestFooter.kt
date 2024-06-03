@@ -12,6 +12,6 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class NewsfeedItemDigestFooter (
     @SerialName("text") val text: String,
-    @SerialName("button") val button: NewsfeedItemDigestButton? = null,
     @SerialName("style") val style: String,
+    @SerialName("button") val button: NewsfeedItemDigestButton? = null,
 )

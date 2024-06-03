@@ -14,8 +14,8 @@ import kotlinx.serialization.Serializable
 data class FriendsDeleteResponse (
     @SerialName("success") val success: Int,
     @SerialName("friend_deleted") val friendDeleted: Int? = null,
-    @SerialName("out_request_deleted") val outRequestDeleted: Int? = null,
     @SerialName("in_request_deleted") val inRequestDeleted: Int? = null,
     @SerialName("suggestion_deleted") val suggestionDeleted: Int? = null,
+    @SerialName("out_request_deleted") val outRequestDeleted: Int? = null,
 )
 

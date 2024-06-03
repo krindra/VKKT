@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class StoreGetStickersKeywordsResponse (
     @SerialName("count") val count: Int,
-    @SerialName("dictionary") val dictionary: List<StoreStickersKeyword>,
     @SerialName("chunks_count") val chunksCount: Int? = null,
     @SerialName("chunks_hash") val chunksHash: String? = null,
+    @SerialName("dictionary") val dictionary: List<StoreStickersKeyword>,
 )
 

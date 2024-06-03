@@ -13,9 +13,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesChatSettingsPhoto (
-    @SerialName("photo_200") val photo200: String? = null,
-    @SerialName("is_default_photo") val isDefaultPhoto: Boolean? = null,
     @SerialName("photo_50") val photo50: String? = null,
     @SerialName("photo_100") val photo100: String? = null,
+    @SerialName("photo_200") val photo200: String? = null,
+    @SerialName("is_default_photo") val isDefaultPhoto: Boolean? = null,
     @SerialName("is_default_call_photo") val isDefaultCallPhoto: Boolean? = null,
 )

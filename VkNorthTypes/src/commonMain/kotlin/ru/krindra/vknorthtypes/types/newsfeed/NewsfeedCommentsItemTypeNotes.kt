@@ -17,10 +17,10 @@ import ru.krindra.vknorthtypes.types.base.BaseLikes
 @Serializable
 data class NewsfeedCommentsItemTypeNotes (
     @SerialName("date") val date: Int? = null,
-    @SerialName("source_id") val sourceId: Long? = null,
+    @SerialName("text") val text: String? = null,
     @SerialName("post_id") val postId: Long? = null,
+    @SerialName("likes") val likes: BaseLikes? = null,
+    @SerialName("source_id") val sourceId: Long? = null,
     @SerialName("comments") val comments: NewsfeedCommentsBase? = null,
     @SerialName("type") val type: NewsfeedNewsfeedItemType/* WARN! WallPostType? = null */,
-    @SerialName("likes") val likes: BaseLikes? = null,
-    @SerialName("text") val text: String? = null,
 )

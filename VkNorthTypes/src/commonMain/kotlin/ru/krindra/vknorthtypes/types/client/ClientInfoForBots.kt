@@ -14,9 +14,9 @@ import ru.krindra.vknorthtypes.types.messages.MessagesTemplateActionTypeNames
  */
 @Serializable
 data class ClientInfoForBots (
-    @SerialName("inline_keyboard") val inlineKeyboard: Boolean? = null,
-    @SerialName("button_actions") val buttonActions: List<MessagesTemplateActionTypeNames>? = null,
+    @SerialName("lang_id") val langId: Long? = null,
     @SerialName("carousel") val carousel: Boolean? = null,
     @SerialName("keyboard") val keyboard: Boolean? = null,
-    @SerialName("lang_id") val langId: Long? = null,
+    @SerialName("inline_keyboard") val inlineKeyboard: Boolean? = null,
+    @SerialName("button_actions") val buttonActions: List<MessagesTemplateActionTypeNames>? = null,
 )

@@ -18,14 +18,14 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsLookalikeRequest (
-    @SerialName("create_time") val createTime: Int,
     @SerialName("id") val id: Long,
+    @SerialName("status") val status: String,
+    @SerialName("create_time") val createTime: Int,
+    @SerialName("update_time") val updateTime: Int,
     @SerialName("source_type") val sourceType: String,
     @SerialName("source_name") val sourceName: String? = null,
-    @SerialName("save_audience_levels") val saveAudienceLevels: List<AdsLookalikeRequestSaveAudienceLevel>? = null,
-    @SerialName("status") val status: String,
-    @SerialName("update_time") val updateTime: Int,
-    @SerialName("scheduled_delete_time") val scheduledDeleteTime: Int? = null,
     @SerialName("audience_count") val audienceCount: Int? = null,
+    @SerialName("scheduled_delete_time") val scheduledDeleteTime: Int? = null,
     @SerialName("source_retargeting_group_id") val sourceRetargetingGroupId: Long? = null,
+    @SerialName("save_audience_levels") val saveAudienceLevels: List<AdsLookalikeRequestSaveAudienceLevel>? = null,
 )

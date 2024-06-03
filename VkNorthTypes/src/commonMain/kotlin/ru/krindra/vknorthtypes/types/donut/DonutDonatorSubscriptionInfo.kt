@@ -14,8 +14,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class DonutDonatorSubscriptionInfo (
-    @SerialName("owner_id") val ownerId: Long,
-    @SerialName("next_payment_date") val nextPaymentDate: Int,
     @SerialName("amount") val amount: Int,
     @SerialName("status") val status: String,
+    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("next_payment_date") val nextPaymentDate: Int,
 )

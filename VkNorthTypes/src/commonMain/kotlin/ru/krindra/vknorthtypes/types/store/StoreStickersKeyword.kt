@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class StoreStickersKeyword (
-    @SerialName("promoted_stickers") val promotedStickers: StoreStickersKeywordStickers? = null,
-    @SerialName("stickers") val stickers: List<StoreStickersKeywordSticker>? = null,
     @SerialName("words") val words: List<String>,
+    @SerialName("stickers") val stickers: List<StoreStickersKeywordSticker>? = null,
     @SerialName("user_stickers") val userStickers: StoreStickersKeywordStickers? = null,
+    @SerialName("promoted_stickers") val promotedStickers: StoreStickersKeywordStickers? = null,
 )

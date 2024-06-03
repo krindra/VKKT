@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BaseGeoCoordinates (
-    @SerialName("longitude") val longitude: Double,
     @SerialName("latitude") val latitude: Double,
+    @SerialName("longitude") val longitude: Double,
 )

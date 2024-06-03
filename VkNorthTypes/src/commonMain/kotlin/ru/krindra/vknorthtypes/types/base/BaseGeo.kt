@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BaseGeo (
-    @SerialName("place") val place: BasePlace? = null,
-    @SerialName("coordinates") val coordinates: BaseGeoCoordinates? = null,
     @SerialName("type") val type: String? = null,
     @SerialName("showmap") val showmap: Int? = null,
+    @SerialName("place") val place: BasePlace? = null,
+    @SerialName("coordinates") val coordinates: BaseGeoCoordinates? = null,
 )

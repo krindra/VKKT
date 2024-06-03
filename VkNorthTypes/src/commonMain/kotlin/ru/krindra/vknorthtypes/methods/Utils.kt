@@ -55,11 +55,11 @@ class Utils(
      * @param intervalsCount Number of intervals to return.
      * @param extended 1 - to return extended stats data (sex, age, geo). 0 - to return views number only.
      */
-    suspend fun getLinkStats(key: String, source: String? = "vk_cc", accessKey: String? = null, interval: String? = "day", intervalsCount: Int? = 1, extended: Boolean? = false): GetlinkstatsResponse {
+    suspend fun getLinkStats(key: String, source: String? = "vk_cc", accessKey: String? = null, interval: String? = "day", intervalsCount: Int? = 1, extended: Boolean? = false): GetLinkStatsResponse {
         val response = method("utils.getLinkStats", mapOf("key" to key, "source" to source, "access_key" to accessKey, "interval" to interval, "intervals_count" to intervalsCount, "extended" to extended))
-        return GetlinkstatsResponse(response, json)
+        return GetLinkStatsResponse(response, json)
     }
-    class GetlinkstatsResponse(
+    class GetLinkStatsResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun UtilsGetLinkStatsExtendedResponse(): UtilsGetLinkStatsExtendedResponse? {

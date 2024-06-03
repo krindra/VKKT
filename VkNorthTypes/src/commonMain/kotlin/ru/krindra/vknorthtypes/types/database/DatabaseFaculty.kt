@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class DatabaseFaculty (
-    @SerialName("title") val title: String? = null,
     @SerialName("id") val id: Long? = null,
+    @SerialName("title") val title: String? = null,
 )

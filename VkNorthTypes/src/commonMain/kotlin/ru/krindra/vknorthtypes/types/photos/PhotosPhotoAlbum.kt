@@ -16,12 +16,12 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class PhotosPhotoAlbum (
-    @SerialName("updated") val updated: Int,
+    @SerialName("id") val id: Long,
+    @SerialName("size") val size: Int,
     @SerialName("title") val title: String,
     @SerialName("created") val created: Int,
-    @SerialName("id") val id: Long,
+    @SerialName("updated") val updated: Int,
     @SerialName("owner_id") val ownerId: Long,
     @SerialName("thumb") val thumb: PhotosPhoto? = null,
     @SerialName("description") val description: String? = null,
-    @SerialName("size") val size: Int,
 )

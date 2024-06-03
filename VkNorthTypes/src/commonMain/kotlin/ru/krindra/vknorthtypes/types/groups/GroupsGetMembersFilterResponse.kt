@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class GroupsGetMembersFilterResponse (
     @SerialName("count") val count: Int,
-    @SerialName("items") val items: List<GroupsMemberRole>,
     @SerialName("next_from") val nextFrom: String? = null,
+    @SerialName("items") val items: List<GroupsMemberRole>,
 )
 

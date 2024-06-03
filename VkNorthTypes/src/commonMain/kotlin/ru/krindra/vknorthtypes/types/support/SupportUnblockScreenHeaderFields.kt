@@ -14,10 +14,10 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class SupportUnblockScreenHeaderFields (
-    @SerialName("gradient") val gradient: Boolean? = null,
-    @SerialName("image") val image: String? = null,
-    @SerialName("exit_btn") val exitBtn: Boolean? = null,
-    @SerialName("subheader") val subheader: String? = null,
     @SerialName("type") val type: String,
     @SerialName("text") val text: String? = null,
+    @SerialName("image") val image: String? = null,
+    @SerialName("exit_btn") val exitBtn: Boolean? = null,
+    @SerialName("gradient") val gradient: Boolean? = null,
+    @SerialName("subheader") val subheader: String? = null,
 )

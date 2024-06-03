@@ -15,10 +15,10 @@ import ru.krindra.vknorthtypes.types.users.UsersUserFull
  */
 @Serializable
 data class WidgetsCommentRepliesItem (
-    @SerialName("date") val date: Int? = null,
     @SerialName("cid") val cid: Long? = null,
-    @SerialName("likes") val likes: WidgetsWidgetLikes? = null,
     @SerialName("uid") val uid: Long? = null,
-    @SerialName("user") val user: UsersUserFull? = null,
+    @SerialName("date") val date: Int? = null,
     @SerialName("text") val text: String? = null,
+    @SerialName("user") val user: UsersUserFull? = null,
+    @SerialName("likes") val likes: WidgetsWidgetLikes? = null,
 )

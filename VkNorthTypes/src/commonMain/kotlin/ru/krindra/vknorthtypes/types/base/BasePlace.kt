@@ -19,15 +19,15 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BasePlace (
-    @SerialName("type") val type: String? = null,
-    @SerialName("checkins") val checkins: Int? = null,
-    @SerialName("longitude") val longitude: Double? = null,
-    @SerialName("country") val country: String? = null,
     @SerialName("id") val id: Long? = null,
     @SerialName("city") val city: String? = null,
-    @SerialName("address") val address: String? = null,
-    @SerialName("latitude") val latitude: Double? = null,
     @SerialName("icon") val icon: String? = null,
+    @SerialName("type") val type: String? = null,
     @SerialName("title") val title: String? = null,
     @SerialName("created") val created: Int? = null,
+    @SerialName("checkins") val checkins: Int? = null,
+    @SerialName("address") val address: String? = null,
+    @SerialName("country") val country: String? = null,
+    @SerialName("latitude") val latitude: Double? = null,
+    @SerialName("longitude") val longitude: Double? = null,
 )

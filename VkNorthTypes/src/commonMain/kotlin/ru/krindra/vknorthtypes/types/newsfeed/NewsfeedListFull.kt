@@ -13,8 +13,8 @@ import ru.krindra.vknorthtypes.types.base.BaseBoolInt
  */
 @Serializable
 data class NewsfeedListFull (
+    @SerialName("id") val id: Long,
     @SerialName("title") val title: String,
     @SerialName("source_ids") val sourceIds: List<Int>? = null,
-    @SerialName("id") val id: Long,
     @SerialName("no_reposts") val noReposts: BaseBoolInt? = null,
 )

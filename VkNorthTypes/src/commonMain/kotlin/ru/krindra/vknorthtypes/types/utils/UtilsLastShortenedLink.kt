@@ -14,10 +14,10 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class UtilsLastShortenedLink (
+    @SerialName("key") val key: String? = null,
+    @SerialName("url") val url: String? = null,
     @SerialName("views") val views: Int? = null,
     @SerialName("timestamp") val timestamp: Int? = null,
-    @SerialName("key") val key: String? = null,
     @SerialName("short_url") val shortUrl: String? = null,
     @SerialName("access_key") val accessKey: String? = null,
-    @SerialName("url") val url: String? = null,
 )

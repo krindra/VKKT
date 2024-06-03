@@ -23,19 +23,19 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsCampaign (
-    @SerialName("goal_type") val goalType: Int? = null,
-    @SerialName("ads_count") val adsCount: Int? = null,
     @SerialName("id") val id: Long,
+    @SerialName("name") val name: String,
     @SerialName("stop_time") val stopTime: Int,
     @SerialName("start_time") val startTime: Int,
-    @SerialName("user_goal_type") val userGoalType: Int? = null,
-    @SerialName("is_cbo_enabled") val isCboEnabled: Boolean? = null,
-    @SerialName("status") val status: AdsCampaignStatus,
-    @SerialName("type") val type: AdsCampaignType,
-    @SerialName("views_limit") val viewsLimit: Int? = null,
     @SerialName("all_limit") val allLimit: String,
     @SerialName("day_limit") val dayLimit: String,
+    @SerialName("type") val type: AdsCampaignType,
+    @SerialName("ads_count") val adsCount: Int? = null,
+    @SerialName("goal_type") val goalType: Int? = null,
+    @SerialName("status") val status: AdsCampaignStatus,
     @SerialName("create_time") val createTime: Int? = null,
-    @SerialName("name") val name: String,
     @SerialName("update_time") val updateTime: Int? = null,
+    @SerialName("views_limit") val viewsLimit: Int? = null,
+    @SerialName("user_goal_type") val userGoalType: Int? = null,
+    @SerialName("is_cbo_enabled") val isCboEnabled: Boolean? = null,
 )

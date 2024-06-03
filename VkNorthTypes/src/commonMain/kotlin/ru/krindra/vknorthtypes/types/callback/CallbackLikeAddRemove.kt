@@ -15,9 +15,9 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class CallbackLikeAddRemove (
     @SerialName("post_id") val postId: Long,
-    @SerialName("thread_reply_id") val threadReplyId: Long? = null,
-    @SerialName("object_id") val objectId: Long,
     @SerialName("liker_id") val likerId: Long,
-    @SerialName("object_owner_id") val objectOwnerId: Long,
+    @SerialName("object_id") val objectId: Long,
     @SerialName("object_type") val objectType: String,
+    @SerialName("object_owner_id") val objectOwnerId: Long,
+    @SerialName("thread_reply_id") val threadReplyId: Long? = null,
 )

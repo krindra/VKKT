@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class UtilsStatsSexAge (
+    @SerialName("male") val male: Int? = null,
     @SerialName("female") val female: Int? = null,
     @SerialName("age_range") val ageRange: String? = null,
-    @SerialName("male") val male: Int? = null,
 )

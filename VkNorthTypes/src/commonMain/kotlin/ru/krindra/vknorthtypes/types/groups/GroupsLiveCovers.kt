@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class GroupsLiveCovers (
-    @SerialName("story_ids") val storyIds: List<String>? = null,
-    @SerialName("is_scalable") val isScalable: Boolean? = null,
     @SerialName("is_enabled") val isEnabled: Boolean,
+    @SerialName("is_scalable") val isScalable: Boolean? = null,
+    @SerialName("story_ids") val storyIds: List<String>? = null,
 )

@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BaseOwnerCoverCropParams (
+    @SerialName("x") val x: Int? = null,
+    @SerialName("y") val y: Int? = null,
     @SerialName("width") val width: Int? = null,
     @SerialName("height") val height: Int? = null,
-    @SerialName("y") val y: Int? = null,
-    @SerialName("x") val x: Int? = null,
 )

@@ -9,7 +9,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AppsGetMiniAppPoliciesResponse (
-    @SerialName("privacy_policy") val privacyPolicy: String? = null,
     @SerialName("terms") val terms: String? = null,
+    @SerialName("privacy_policy") val privacyPolicy: String? = null,
 )
 

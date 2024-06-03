@@ -14,8 +14,8 @@ import kotlinx.serialization.Serializable
 data class PhotosPhotoUploadResponse (
     @SerialName("aid") val aid: Long? = null,
     @SerialName("hash") val hash: String? = null,
+    @SerialName("server") val server: Int? = null,
     @SerialName("photo") val photo: String? = null,
     @SerialName("photos_list") val photosList: String? = null,
-    @SerialName("server") val server: Int? = null,
 )
 

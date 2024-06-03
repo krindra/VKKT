@@ -16,12 +16,12 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class StoriesStoryStats (
-    @SerialName("subscribers") val subscribers: StoriesStoryStatsStat,
-    @SerialName("replies") val replies: StoriesStoryStatsStat,
     @SerialName("bans") val bans: StoriesStoryStatsStat,
-    @SerialName("answer") val answer: StoriesStoryStatsStat,
     @SerialName("likes") val likes: StoriesStoryStatsStat,
-    @SerialName("open_link") val openLink: StoriesStoryStatsStat,
-    @SerialName("shares") val shares: StoriesStoryStatsStat,
     @SerialName("views") val views: StoriesStoryStatsStat,
+    @SerialName("answer") val answer: StoriesStoryStatsStat,
+    @SerialName("shares") val shares: StoriesStoryStatsStat,
+    @SerialName("replies") val replies: StoriesStoryStatsStat,
+    @SerialName("open_link") val openLink: StoriesStoryStatsStat,
+    @SerialName("subscribers") val subscribers: StoriesStoryStatsStat,
 )

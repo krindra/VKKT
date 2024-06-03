@@ -13,7 +13,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class StatsCountry (
     @SerialName("count") val count: Int? = null,
+    @SerialName("value") val value: Int? = null,
     @SerialName("code") val code: String? = null,
     @SerialName("name") val name: String? = null,
-    @SerialName("value") val value: Int? = null,
 )

@@ -17,13 +17,13 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesHistoryAttachment (
-    @SerialName("message_id") val messageId: Long,
-    @SerialName("was_listened") val wasListened: Boolean? = null,
-    @SerialName("attachment") val attachment: MessagesHistoryMessageAttachment,
-    @SerialName("forward_level") val forwardLevel: Int? = null,
     @SerialName("date") val date: Int,
-    @SerialName("cmid") val cmid: Long? = null,
     @SerialName("from_id") val fromId: Long,
+    @SerialName("cmid") val cmid: Long? = null,
+    @SerialName("message_id") val messageId: Long,
     @SerialName("position") val position: Int? = null,
+    @SerialName("forward_level") val forwardLevel: Int? = null,
+    @SerialName("was_listened") val wasListened: Boolean? = null,
     @SerialName("message_expire_ttl") val messageExpireTtl: Int? = null,
+    @SerialName("attachment") val attachment: MessagesHistoryMessageAttachment,
 )

@@ -13,9 +13,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsTargSuggestionsSchools (
+    @SerialName("id") val id: Long? = null,
     @SerialName("desc") val desc: String? = null,
     @SerialName("name") val name: String? = null,
-    @SerialName("type") val type: AdsTargSuggestionsSchoolsType? = null,
-    @SerialName("id") val id: Long? = null,
     @SerialName("parent") val parent: String? = null,
+    @SerialName("type") val type: AdsTargSuggestionsSchoolsType? = null,
 )

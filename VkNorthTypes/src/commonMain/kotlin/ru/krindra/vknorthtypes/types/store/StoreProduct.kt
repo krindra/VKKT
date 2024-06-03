@@ -2,8 +2,8 @@ package ru.krindra.vknorthtypes.types.store
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.types.base.BaseStickersList
 import ru.krindra.vknorthtypes.types.base.BaseImage
+import ru.krindra.vknorthtypes.types.base.BaseStickersList
 import ru.krindra.vknorthtypes.types.base.BaseBoolInt
 
 /**
@@ -33,26 +33,26 @@ import ru.krindra.vknorthtypes.types.base.BaseBoolInt
  */
 @Serializable
 data class StoreProduct (
-    @SerialName("is_new") val isNew: Boolean? = null,
-    @SerialName("stickers") val stickers: BaseStickersList? = null,
-    @SerialName("active") val active: BaseBoolInt? = null,
-    @SerialName("style_ids") val styleIds: List<Int>? = null,
-    @SerialName("icon") val icon: StoreProductIcon? = null,
-    @SerialName("previews") val previews: List<BaseImage>? = null,
-    @SerialName("title") val title: String? = null,
-    @SerialName("url") val url: String? = null,
-    @SerialName("is_vmoji") val isVmoji: Boolean? = null,
     @SerialName("id") val id: Long,
-    @SerialName("style_sticker_ids") val styleStickerIds: List<Int>? = null,
-    @SerialName("purchased") val purchased: BaseBoolInt? = null,
-    @SerialName("base_id") val baseId: Long? = null,
     @SerialName("type") val type: String,
-    @SerialName("payment_region") val paymentRegion: String? = null,
-    @SerialName("has_animation") val hasAnimation: Boolean? = null,
-    @SerialName("title_lang_key") val titleLangKey: String? = null,
+    @SerialName("url") val url: String? = null,
+    @SerialName("title") val title: String? = null,
+    @SerialName("base_id") val baseId: Long? = null,
+    @SerialName("is_new") val isNew: Boolean? = null,
+    @SerialName("is_vmoji") val isVmoji: Boolean? = null,
     @SerialName("subtitle") val subtitle: String? = null,
-    @SerialName("purchase_date") val purchaseDate: Int? = null,
-    @SerialName("description_lang_key") val descriptionLangKey: String? = null,
+    @SerialName("active") val active: BaseBoolInt? = null,
     @SerialName("copyright") val copyright: String? = null,
+    @SerialName("icon") val icon: StoreProductIcon? = null,
+    @SerialName("style_ids") val styleIds: List<Int>? = null,
     @SerialName("promoted") val promoted: BaseBoolInt? = null,
+    @SerialName("purchase_date") val purchaseDate: Int? = null,
+    @SerialName("purchased") val purchased: BaseBoolInt? = null,
+    @SerialName("previews") val previews: List<BaseImage>? = null,
+    @SerialName("has_animation") val hasAnimation: Boolean? = null,
+    @SerialName("stickers") val stickers: BaseStickersList? = null,
+    @SerialName("title_lang_key") val titleLangKey: String? = null,
+    @SerialName("payment_region") val paymentRegion: String? = null,
+    @SerialName("style_sticker_ids") val styleStickerIds: List<Int>? = null,
+    @SerialName("description_lang_key") val descriptionLangKey: String? = null,
 )

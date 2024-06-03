@@ -15,10 +15,10 @@ import ru.krindra.vknorthtypes.types.base.BaseBoolInt
  */
 @Serializable
 data class GroupsMemberStatusFull (
+    @SerialName("user_id") val userId: Long,
     @SerialName("member") val member: BaseBoolInt,
     @SerialName("request") val request: BaseBoolInt? = null,
-    @SerialName("invitation") val invitation: BaseBoolInt? = null,
-    @SerialName("can_recall") val canRecall: BaseBoolInt? = null,
-    @SerialName("user_id") val userId: Long,
     @SerialName("can_invite") val canInvite: BaseBoolInt? = null,
+    @SerialName("can_recall") val canRecall: BaseBoolInt? = null,
+    @SerialName("invitation") val invitation: BaseBoolInt? = null,
 )

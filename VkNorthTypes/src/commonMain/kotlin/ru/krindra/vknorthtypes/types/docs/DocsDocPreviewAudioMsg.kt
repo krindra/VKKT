@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class DocsDocPreviewAudioMsg (
+    @SerialName("duration") val duration: Int,
     @SerialName("link_mp3") val linkMp3: String,
     @SerialName("link_ogg") val linkOgg: String,
-    @SerialName("duration") val duration: Int,
     @SerialName("waveform") val waveform: List<Int>,
 )

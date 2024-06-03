@@ -13,7 +13,7 @@ import kotlinx.serialization.Serializable
 data class FriendsGetRequestsResponse (
     @SerialName("count") val count: Int,
     @SerialName("items") val items: List<Int>,
-    @SerialName("count_unread") val countUnread: Int? = null,
     @SerialName("last_viewed") val lastViewed: Int? = null,
+    @SerialName("count_unread") val countUnread: Int? = null,
 )
 

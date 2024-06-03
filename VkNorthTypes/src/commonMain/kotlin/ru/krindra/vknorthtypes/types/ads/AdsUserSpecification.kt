@@ -13,9 +13,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsUserSpecification (
+    @SerialName("user_id") val userId: Long,
     @SerialName("role") val role: AdsAccessRolePublic,
     @SerialName("client_ids") val clientIds: List<Int>? = null,
     @SerialName("view_budget") val viewBudget: Boolean? = null,
-    @SerialName("user_id") val userId: Long,
     @SerialName("grant_access_to_all_clients") val grantAccessToAllClients: Boolean? = null,
 )

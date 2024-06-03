@@ -14,7 +14,7 @@ import ru.krindra.vknorthtypes.types.photos.PhotosPhotoSizesType
 @Serializable
 data class DocsDocPreviewPhotoSizes (
     @SerialName("src") val src: String,
-    @SerialName("type") val type: PhotosPhotoSizesType,
-    @SerialName("height") val height: Int,
     @SerialName("width") val width: Int,
+    @SerialName("height") val height: Int,
+    @SerialName("type") val type: PhotosPhotoSizesType,
 )

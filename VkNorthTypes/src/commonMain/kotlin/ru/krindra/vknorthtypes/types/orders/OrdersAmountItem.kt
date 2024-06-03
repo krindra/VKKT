@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class OrdersAmountItem (
-    @SerialName("description") val description: String? = null,
-    @SerialName("amount") val amount: Double? = null,
     @SerialName("votes") val votes: String? = null,
+    @SerialName("amount") val amount: Double? = null,
+    @SerialName("description") val description: String? = null,
 )

@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsStatsSex (
+    @SerialName("value") val value: AdsStatsSexValue? = null,
     @SerialName("clicks_rate") val clicksRate: Double? = null,
     @SerialName("impressions_rate") val impressionsRate: Double? = null,
-    @SerialName("value") val value: AdsStatsSexValue? = null,
 )

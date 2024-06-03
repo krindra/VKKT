@@ -17,12 +17,12 @@ import ru.krindra.vknorthtypes.types.base.BaseBoolInt
  */
 @Serializable
 data class GroupsLinksItem (
+    @SerialName("id") val id: Long? = null,
+    @SerialName("url") val url: String? = null,
     @SerialName("desc") val desc: String? = null,
     @SerialName("name") val name: String? = null,
-    @SerialName("id") val id: Long? = null,
-    @SerialName("image_processing") val imageProcessing: BaseBoolInt? = null,
     @SerialName("photo_50") val photo50: String? = null,
-    @SerialName("edit_title") val editTitle: BaseBoolInt? = null,
     @SerialName("photo_100") val photo100: String? = null,
-    @SerialName("url") val url: String? = null,
+    @SerialName("edit_title") val editTitle: BaseBoolInt? = null,
+    @SerialName("image_processing") val imageProcessing: BaseBoolInt? = null,
 )

@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class GroupsSettingsTwitter (
-    @SerialName("name") val name: String? = null,
     @SerialName("status") val status: String,
+    @SerialName("name") val name: String? = null,
 )

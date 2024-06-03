@@ -14,8 +14,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class SupportUnblockScreenStepperQuestions (
     @SerialName("title") val title: String,
-    @SerialName("yes_desc") val yesDesc: String? = null,
-    @SerialName("no_desc") val noDesc: String? = null,
     @SerialName("step") val step: Double? = null,
+    @SerialName("no_desc") val noDesc: String? = null,
+    @SerialName("yes_desc") val yesDesc: String? = null,
     @SerialName("target_screen") val targetScreen: String,
 )

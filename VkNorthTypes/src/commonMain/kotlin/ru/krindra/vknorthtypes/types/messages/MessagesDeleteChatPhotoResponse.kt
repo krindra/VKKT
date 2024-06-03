@@ -9,7 +9,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesDeleteChatPhotoResponse (
-    @SerialName("message_id") val messageId: Long? = null,
     @SerialName("chat") val chat: MessagesChat? = null,
+    @SerialName("message_id") val messageId: Long? = null,
 )
 

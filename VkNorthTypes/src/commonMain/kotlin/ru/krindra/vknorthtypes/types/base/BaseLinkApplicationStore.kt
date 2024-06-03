@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BaseLinkApplicationStore (
-    @SerialName("name") val name: String? = null,
     @SerialName("id") val id: Double? = null,
+    @SerialName("name") val name: String? = null,
 )

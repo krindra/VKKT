@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsMusician (
-    @SerialName("avatar") val avatar: String? = null,
-    @SerialName("name") val name: String,
     @SerialName("id") val id: Long,
+    @SerialName("name") val name: String,
+    @SerialName("avatar") val avatar: String? = null,
 )

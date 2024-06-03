@@ -13,9 +13,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class PhotosPhotoSizes (
-    @SerialName("height") val height: Int,
-    @SerialName("type") val type: PhotosPhotoSizesType,
     @SerialName("width") val width: Int,
+    @SerialName("height") val height: Int,
     @SerialName("src") val src: String? = null,
     @SerialName("url") val url: String? = null,
+    @SerialName("type") val type: PhotosPhotoSizesType,
 )

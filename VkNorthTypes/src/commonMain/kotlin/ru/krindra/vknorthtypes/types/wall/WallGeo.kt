@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class WallGeo (
-    @SerialName("coordinates") val coordinates: String? = null,
     @SerialName("type") val type: String? = null,
     @SerialName("showmap") val showmap: Int? = null,
+    @SerialName("coordinates") val coordinates: String? = null,
 )

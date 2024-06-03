@@ -4,9 +4,9 @@ import ru.krindra.vknorthtypes.types.photos.*
 import kotlinx.serialization.json.Json
 import ru.krindra.vknorthtypes.JsonSingleton
 import ru.krindra.vknorthtypes.types.users.UsersFields
+import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.types.base.BaseBoolResponse
 import ru.krindra.vknorthtypes.types.base.BaseGetUploadServerResponse
-import ru.krindra.vknorthtypes.types.base.BaseOkResponse
 import ru.krindra.vknorthtypes.BaseMultivariateResponse
 
 class Photos(
@@ -287,11 +287,11 @@ class Photos(
      * @param extended 
      * @param fields 
      */
-    suspend fun getComments(photoId: Long, ownerId: Long? = null, needLikes: Boolean? = false, startCommentId: Long? = null, offset: Int? = null, count: Int? = 20, sort: String? = null, accessKey: String? = null, extended: Boolean? = false, fields: List<UsersFields>? = null): GetcommentsResponse {
+    suspend fun getComments(photoId: Long, ownerId: Long? = null, needLikes: Boolean? = false, startCommentId: Long? = null, offset: Int? = null, count: Int? = 20, sort: String? = null, accessKey: String? = null, extended: Boolean? = false, fields: List<UsersFields>? = null): GetCommentsResponse {
         val response = method("photos.getComments", mapOf("owner_id" to ownerId, "photo_id" to photoId, "need_likes" to needLikes, "start_comment_id" to startCommentId, "offset" to offset, "count" to count, "sort" to sort, "access_key" to accessKey, "extended" to extended, "fields" to fields))
-        return GetcommentsResponse(response, json)
+        return GetCommentsResponse(response, json)
     }
-    class GetcommentsResponse(
+    class GetCommentsResponse(
         private val rawResponse: String, json: Json
     ): BaseMultivariateResponse(json) {
         fun PhotosGetCommentsExtendedResponse(): PhotosGetCommentsExtendedResponse? {

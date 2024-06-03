@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesGetConversationById (
-    @SerialName("items") val items: List<MessagesConversation>,
     @SerialName("count") val count: Int,
+    @SerialName("items") val items: List<MessagesConversation>,
 )

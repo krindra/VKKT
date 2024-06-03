@@ -15,11 +15,11 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class NewsfeedItemWallpostFeedback (
-    @SerialName("type") val type: NewsfeedItemWallpostFeedbackType,
-    @SerialName("gratitude") val gratitude: String? = null,
-    @SerialName("track_code") val trackCode: String? = null,
     @SerialName("question") val question: String,
+    @SerialName("gratitude") val gratitude: String? = null,
     @SerialName("stars_count") val starsCount: Int? = null,
-    @SerialName("answers") val answers: List<NewsfeedItemWallpostFeedbackAnswer>? = null,
+    @SerialName("track_code") val trackCode: String? = null,
+    @SerialName("type") val type: NewsfeedItemWallpostFeedbackType,
     @SerialName("descriptions") val descriptions: List<String>? = null,
+    @SerialName("answers") val answers: List<NewsfeedItemWallpostFeedbackAnswer>? = null,
 )

@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class StoriesStoryLink (
-    @SerialName("link_url_target") val linkUrlTarget: String? = null,
-    @SerialName("text") val text: String,
     @SerialName("url") val url: String,
+    @SerialName("text") val text: String,
+    @SerialName("link_url_target") val linkUrlTarget: String? = null,
 )

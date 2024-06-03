@@ -13,9 +13,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BaseOwnerCover (
-    @SerialName("images") val images: List<BaseImage>? = null,
+    @SerialName("enabled") val enabled: BaseBoolInt,
     @SerialName("photo_id") val photoId: Long? = null,
+    @SerialName("images") val images: List<BaseImage>? = null,
     @SerialName("original_image") val originalImage: BaseImage? = null,
     @SerialName("crop_params") val cropParams: BaseOwnerCoverCropParams? = null,
-    @SerialName("enabled") val enabled: BaseBoolInt,
 )

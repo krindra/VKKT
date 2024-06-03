@@ -11,6 +11,6 @@ import ru.krindra.vknorthtypes.types.base.BaseImage
  */
 @Serializable
 data class AppWidgetsPhoto (
-    @SerialName("images") val images: List<BaseImage>,
     @SerialName("id") val id: String,
+    @SerialName("images") val images: List<BaseImage>,
 )

@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class GroupsMarketProperties (
-    @SerialName("using_vkpay_market_app") val usingVkpayMarketApp: Boolean? = null,
-    @SerialName("has_market_app") val hasMarketApp: Boolean? = null,
     @SerialName("market") val market: GroupsMarketInfo? = null,
+    @SerialName("has_market_app") val hasMarketApp: Boolean? = null,
+    @SerialName("using_vkpay_market_app") val usingVkpayMarketApp: Boolean? = null,
 )

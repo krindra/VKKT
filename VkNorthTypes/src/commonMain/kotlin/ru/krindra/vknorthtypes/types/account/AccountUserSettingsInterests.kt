@@ -18,12 +18,12 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class AccountUserSettingsInterests (
     @SerialName("tv") val tv: AccountUserSettingsInterest? = null,
-    @SerialName("quotes") val quotes: AccountUserSettingsInterest? = null,
     @SerialName("about") val about: AccountUserSettingsInterest? = null,
-    @SerialName("movies") val movies: AccountUserSettingsInterest? = null,
-    @SerialName("music") val music: AccountUserSettingsInterest? = null,
-    @SerialName("interests") val interests: AccountUserSettingsInterest? = null,
-    @SerialName("games") val games: AccountUserSettingsInterest? = null,
     @SerialName("books") val books: AccountUserSettingsInterest? = null,
+    @SerialName("games") val games: AccountUserSettingsInterest? = null,
+    @SerialName("music") val music: AccountUserSettingsInterest? = null,
+    @SerialName("movies") val movies: AccountUserSettingsInterest? = null,
+    @SerialName("quotes") val quotes: AccountUserSettingsInterest? = null,
+    @SerialName("interests") val interests: AccountUserSettingsInterest? = null,
     @SerialName("activities") val activities: AccountUserSettingsInterest? = null,
 )

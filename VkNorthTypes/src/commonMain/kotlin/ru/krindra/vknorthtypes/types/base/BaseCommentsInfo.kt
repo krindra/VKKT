@@ -2,8 +2,8 @@ package ru.krindra.vknorthtypes.types.base
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.types.wall.WallWallpostCommentsDonut
 import ru.krindra.vknorthtypes.types.wall.WallWallComment
+import ru.krindra.vknorthtypes.types.wall.WallWallpostCommentsDonut
 
 /**
  *
@@ -19,11 +19,11 @@ import ru.krindra.vknorthtypes.types.wall.WallWallComment
 @Serializable
 data class BaseCommentsInfo (
     @SerialName("count") val count: Int? = null,
-    @SerialName("groups_can_post") val groupsCanPost: Boolean? = null,
     @SerialName("can_open") val canOpen: BaseBoolInt? = null,
-    @SerialName("can_close") val canClose: BaseBoolInt? = null,
-    @SerialName("can_view") val canView: BaseBoolInt? = null,
-    @SerialName("list") val list: List<WallWallComment>? = null,
     @SerialName("can_post") val canPost: BaseBoolInt? = null,
+    @SerialName("can_view") val canView: BaseBoolInt? = null,
+    @SerialName("can_close") val canClose: BaseBoolInt? = null,
+    @SerialName("list") val list: List<WallWallComment>? = null,
     @SerialName("donut") val donut: WallWallpostCommentsDonut? = null,
+    @SerialName("groups_can_post") val groupsCanPost: Boolean? = null,
 )

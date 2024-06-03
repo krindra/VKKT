@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class UtilsShortLink (
+    @SerialName("key") val key: String? = null,
     @SerialName("url") val url: String? = null,
     @SerialName("short_url") val shortUrl: String? = null,
-    @SerialName("key") val key: String? = null,
     @SerialName("access_key") val accessKey: String? = null,
 )

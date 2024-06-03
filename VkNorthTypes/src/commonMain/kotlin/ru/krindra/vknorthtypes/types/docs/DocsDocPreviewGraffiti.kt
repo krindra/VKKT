@@ -12,6 +12,6 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class DocsDocPreviewGraffiti (
     @SerialName("src") val src: String,
-    @SerialName("height") val height: Int,
     @SerialName("width") val width: Int,
+    @SerialName("height") val height: Int,
 )

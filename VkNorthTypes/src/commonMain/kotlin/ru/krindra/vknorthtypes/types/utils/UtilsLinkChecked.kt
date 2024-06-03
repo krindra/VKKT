@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class UtilsLinkChecked (
-    @SerialName("status") val status: UtilsLinkCheckedStatus? = null,
     @SerialName("link") val link: String? = null,
+    @SerialName("status") val status: UtilsLinkCheckedStatus? = null,
 )

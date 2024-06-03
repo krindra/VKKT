@@ -13,7 +13,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesKeyboardButtonActionVkpay (
-    @SerialName("payload") val payload: String? = null,
-    @SerialName("type") val type: String,
     @SerialName("hash") val hash: String,
+    @SerialName("type") val type: String,
+    @SerialName("payload") val payload: String? = null,
 )

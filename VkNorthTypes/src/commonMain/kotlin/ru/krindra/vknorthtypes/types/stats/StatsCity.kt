@@ -12,6 +12,6 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class StatsCity (
     @SerialName("count") val count: Int? = null,
-    @SerialName("name") val name: String? = null,
     @SerialName("value") val value: Int? = null,
+    @SerialName("name") val name: String? = null,
 )

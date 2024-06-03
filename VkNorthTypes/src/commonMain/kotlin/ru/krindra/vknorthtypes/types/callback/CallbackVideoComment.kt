@@ -13,9 +13,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class CallbackVideoComment (
-    @SerialName("video_owner_id") val videoOwnerId: Long,
     @SerialName("id") val id: Long,
     @SerialName("date") val date: Int,
-    @SerialName("from_id") val fromId: Long,
     @SerialName("text") val text: String,
+    @SerialName("from_id") val fromId: Long,
+    @SerialName("video_owner_id") val videoOwnerId: Long,
 )

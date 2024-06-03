@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class StorageValue (
-    @SerialName("value") val value: String,
     @SerialName("key") val key: String,
+    @SerialName("value") val value: String,
 )

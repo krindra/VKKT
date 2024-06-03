@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class FriendsGetRequestsExtendedResponse (
     @SerialName("count") val count: Int,
-    @SerialName("items") val items: List<FriendsRequestsXtrMessage>,
-    @SerialName("count_unread") val countUnread: Int? = null,
     @SerialName("last_viewed") val lastViewed: Int? = null,
+    @SerialName("count_unread") val countUnread: Int? = null,
+    @SerialName("items") val items: List<FriendsRequestsXtrMessage>,
 )
 

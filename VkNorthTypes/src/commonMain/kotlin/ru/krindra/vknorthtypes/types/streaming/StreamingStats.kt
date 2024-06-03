@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class StreamingStats (
-    @SerialName("stats") val stats: List<StreamingStatsPoint>,
     @SerialName("event_type") val eventType: String,
+    @SerialName("stats") val stats: List<StreamingStatsPoint>,
 )

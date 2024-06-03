@@ -2,10 +2,8 @@ package ru.krindra.vknorthtypes.types.video
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.types.groups.GroupsGroupFull
-
 import ru.krindra.vknorthtypes.types.users.UsersUser
-
+import ru.krindra.vknorthtypes.types.groups.GroupsGroupFull
 
 /**
  * @param count Total number

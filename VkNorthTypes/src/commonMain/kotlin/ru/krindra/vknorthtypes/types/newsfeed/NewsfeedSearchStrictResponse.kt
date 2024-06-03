@@ -4,7 +4,6 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import ru.krindra.vknorthtypes.types.wall.WallWallpostFull
 
-
 /**
  * @param items 
  * @param suggestedQueries 
@@ -14,10 +13,10 @@ import ru.krindra.vknorthtypes.types.wall.WallWallpostFull
  */
 @Serializable
 data class NewsfeedSearchStrictResponse (
-    @SerialName("items") val items: List<WallWallpostFull>,
-    @SerialName("suggested_queries") val suggestedQueries: List<String>? = null,
-    @SerialName("next_from") val nextFrom: String? = null,
     @SerialName("count") val count: Int,
+    @SerialName("next_from") val nextFrom: String? = null,
+    @SerialName("items") val items: List<WallWallpostFull>,
     @SerialName("total_count") val totalCount: Int? = null,
+    @SerialName("suggested_queries") val suggestedQueries: List<String>? = null,
 )
 

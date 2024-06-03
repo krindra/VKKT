@@ -12,6 +12,6 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class StoriesStatLine (
     @SerialName("name") val name: String,
-    @SerialName("is_unavailable") val isUnavailable: Boolean? = null,
     @SerialName("counter") val counter: Int? = null,
+    @SerialName("is_unavailable") val isUnavailable: Boolean? = null,
 )

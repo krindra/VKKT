@@ -19,13 +19,13 @@ import ru.krindra.vknorthtypes.types.base.BaseCommentsInfo
  */
 @Serializable
 data class NewsfeedItemTopic (
-    @SerialName("comments") val comments: BaseCommentsInfo? = null,
-    @SerialName("feedback") val feedback: NewsfeedItemWallpostFeedback? = null,
-    @SerialName("post_id") val postId: Long,
-    @SerialName("likes") val likes: BaseLikesInfo? = null,
-    @SerialName("source_id") val sourceId: Long,
-    @SerialName("date") val date: Int/* WARN! Int? = null */,
-    @SerialName("short_text_rate") val shortTextRate: Double? = null,
-    @SerialName("type") val type: NewsfeedNewsfeedItemType/* WARN! WallPostType? = null */,
     @SerialName("text") val text: String,
+    @SerialName("post_id") val postId: Long,
+    @SerialName("source_id") val sourceId: Long,
+    @SerialName("likes") val likes: BaseLikesInfo? = null,
+    @SerialName("date") val date: Int/* WARN! Int? = null */,
+    @SerialName("comments") val comments: BaseCommentsInfo? = null,
+    @SerialName("short_text_rate") val shortTextRate: Double? = null,
+    @SerialName("feedback") val feedback: NewsfeedItemWallpostFeedback? = null,
+    @SerialName("type") val type: NewsfeedNewsfeedItemType/* WARN! WallPostType? = null */,
 )

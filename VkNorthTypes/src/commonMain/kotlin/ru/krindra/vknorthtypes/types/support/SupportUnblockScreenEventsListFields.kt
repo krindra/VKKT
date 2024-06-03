@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class SupportUnblockScreenEventsListFields (
+    @SerialName("type") val type: String,
     @SerialName("header") val header: String? = null,
     @SerialName("items") val items: List<SupportUnblockScreenEventsListFieldsItem>? = null,
-    @SerialName("type") val type: String,
 )

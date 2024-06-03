@@ -13,9 +13,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class CallbackBase (
-    @SerialName("group_id") val groupId: Long,
-    @SerialName("event_id") val eventId: String,
-    @SerialName("type") val type: CallbackType,
-    @SerialName("secret") val secret: String? = null,
     @SerialName("v") val v: String,
+    @SerialName("group_id") val groupId: Long,
+    @SerialName("type") val type: CallbackType,
+    @SerialName("event_id") val eventId: String,
+    @SerialName("secret") val secret: String? = null,
 )
