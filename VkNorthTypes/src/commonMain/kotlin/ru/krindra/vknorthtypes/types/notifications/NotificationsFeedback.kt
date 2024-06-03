@@ -2,9 +2,9 @@ package ru.krindra.vknorthtypes.types.notifications
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import ru.krindra.vknorthtypes.types.base.BaseGeo
 import ru.krindra.vknorthtypes.types.wall.WallWallpostAttachment
 import ru.krindra.vknorthtypes.types.base.BaseLikesInfo
-import ru.krindra.vknorthtypes.types.base.BaseGeo
 
 /**
  *

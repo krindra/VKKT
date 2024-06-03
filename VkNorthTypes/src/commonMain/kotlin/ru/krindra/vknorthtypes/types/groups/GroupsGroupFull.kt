@@ -2,13 +2,13 @@ package ru.krindra.vknorthtypes.types.groups
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.types.video.VideoLiveInfo
-import ru.krindra.vknorthtypes.types.base.BaseObject
-import ru.krindra.vknorthtypes.types.base.BaseOwnerCover
-import ru.krindra.vknorthtypes.types.base.BaseCountry
-import ru.krindra.vknorthtypes.types.base.BaseCropPhoto
 import ru.krindra.vknorthtypes.types.base.BaseBoolInt
+import ru.krindra.vknorthtypes.types.base.BaseObject
 import ru.krindra.vknorthtypes.types.audio.AudioAudio
+import ru.krindra.vknorthtypes.types.base.BaseCropPhoto
+import ru.krindra.vknorthtypes.types.base.BaseOwnerCover
+import ru.krindra.vknorthtypes.types.video.VideoLiveInfo
+import ru.krindra.vknorthtypes.types.base.BaseCountry
 
 /**
  *

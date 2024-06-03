@@ -2,9 +2,9 @@ package ru.krindra.vknorthtypes.types.store
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import ru.krindra.vknorthtypes.types.base.BaseBoolInt
 import ru.krindra.vknorthtypes.types.base.BaseImage
 import ru.krindra.vknorthtypes.types.base.BaseStickersList
-import ru.krindra.vknorthtypes.types.base.BaseBoolInt
 
 /**
  *

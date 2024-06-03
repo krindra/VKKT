@@ -2,9 +2,9 @@ package ru.krindra.vknorthtypes.types.newsfeed
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import ru.krindra.vknorthtypes.types.base.BaseBoolInt
 import ru.krindra.vknorthtypes.types.wall.WallWallComment
 import ru.krindra.vknorthtypes.types.wall.WallWallpostCommentsDonut
-import ru.krindra.vknorthtypes.types.base.BaseBoolInt
 
 /**
  *

@@ -2,15 +2,15 @@ package ru.krindra.vknorthtypes.types.account
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.types.users.UsersPersonal
-import ru.krindra.vknorthtypes.types.users.UsersUserMin
-import ru.krindra.vknorthtypes.types.base.BaseCity
-import ru.krindra.vknorthtypes.types.base.BaseCountry
-import ru.krindra.vknorthtypes.types.users.UsersUserRelation
 import ru.krindra.vknorthtypes.types.base.BaseBoolInt
+import ru.krindra.vknorthtypes.types.users.UsersPersonal
 import ru.krindra.vknorthtypes.types.base.BaseSex
 import ru.krindra.vknorthtypes.types.audio.AudioAudio
+import ru.krindra.vknorthtypes.types.users.UsersUserMin
+import ru.krindra.vknorthtypes.types.base.BaseCity
+import ru.krindra.vknorthtypes.types.users.UsersUserRelation
 import ru.krindra.vknorthtypes.types.users.UsersUserConnections
+import ru.krindra.vknorthtypes.types.base.BaseCountry
 
 /**
  *

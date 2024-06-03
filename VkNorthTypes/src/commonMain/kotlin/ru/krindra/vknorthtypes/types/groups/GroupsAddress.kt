@@ -2,8 +2,8 @@ package ru.krindra.vknorthtypes.types.groups
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.types.database.DatabaseStation
 import ru.krindra.vknorthtypes.types.database.DatabaseCityById
+import ru.krindra.vknorthtypes.types.database.DatabaseStation
 import ru.krindra.vknorthtypes.types.base.BaseCountry
 
 /**

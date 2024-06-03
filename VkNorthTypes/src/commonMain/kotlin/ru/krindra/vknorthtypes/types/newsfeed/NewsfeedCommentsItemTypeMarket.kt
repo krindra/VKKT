@@ -2,10 +2,10 @@ package ru.krindra.vknorthtypes.types.newsfeed
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.types.market.MarketMarketCategory
 import ru.krindra.vknorthtypes.types.market.MarketPrice
 import ru.krindra.vknorthtypes.types.base.BaseLikes
 import ru.krindra.vknorthtypes.types.market.MarketMarketItemAvailability
+import ru.krindra.vknorthtypes.types.market.MarketMarketCategory
 
 /**
  *

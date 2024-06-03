@@ -2,19 +2,19 @@ package ru.krindra.vknorthtypes.types.users
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import ru.krindra.vknorthtypes.types.base.BaseBoolInt
+import ru.krindra.vknorthtypes.types.apps.AppsAppMin
+import ru.krindra.vknorthtypes.types.owner.OwnerState
+import ru.krindra.vknorthtypes.types.friends.FriendsFriendStatusStatus
+import ru.krindra.vknorthtypes.types.base.BaseSex
+import ru.krindra.vknorthtypes.types.friends.FriendsRequestsMutual
+import ru.krindra.vknorthtypes.types.audio.AudioAudio
+import ru.krindra.vknorthtypes.types.base.BaseCity
+import ru.krindra.vknorthtypes.types.base.BaseCropPhoto
 import ru.krindra.vknorthtypes.types.photos.PhotosPhotoFalseable
 import ru.krindra.vknorthtypes.types.video.VideoLiveInfo
-import ru.krindra.vknorthtypes.types.base.BaseCity
-import ru.krindra.vknorthtypes.types.friends.FriendsFriendStatusStatus
-import ru.krindra.vknorthtypes.types.friends.FriendsRequestsMutual
-import ru.krindra.vknorthtypes.types.base.BaseCountry
-import ru.krindra.vknorthtypes.types.base.BaseCropPhoto
-import ru.krindra.vknorthtypes.types.apps.AppsAppMin
 import ru.krindra.vknorthtypes.types.photos.PhotosPhoto
-import ru.krindra.vknorthtypes.types.base.BaseBoolInt
-import ru.krindra.vknorthtypes.types.base.BaseSex
-import ru.krindra.vknorthtypes.types.audio.AudioAudio
-import ru.krindra.vknorthtypes.types.owner.OwnerState
+import ru.krindra.vknorthtypes.types.base.BaseCountry
 
 /**
  *

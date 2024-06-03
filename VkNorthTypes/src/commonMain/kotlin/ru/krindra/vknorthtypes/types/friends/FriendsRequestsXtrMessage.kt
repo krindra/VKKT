@@ -2,31 +2,31 @@ package ru.krindra.vknorthtypes.types.friends
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.types.users.UsersOccupation
-import ru.krindra.vknorthtypes.types.users.UsersUserMin
-import ru.krindra.vknorthtypes.types.users.UsersRelative
 import ru.krindra.vknorthtypes.types.apps.AppsAppMin
-import ru.krindra.vknorthtypes.types.photos.PhotosPhoto
-import ru.krindra.vknorthtypes.types.base.BaseBoolInt
-import ru.krindra.vknorthtypes.types.users.UsersPersonal
-import ru.krindra.vknorthtypes.types.video.VideoLiveInfo
+import ru.krindra.vknorthtypes.types.base.BaseSex
+import ru.krindra.vknorthtypes.types.users.UsersUserMin
 import ru.krindra.vknorthtypes.types.base.BaseCity
 import ru.krindra.vknorthtypes.types.base.BaseCropPhoto
 import ru.krindra.vknorthtypes.types.users.UsersUniversity
+import ru.krindra.vknorthtypes.types.users.UsersOnlineInfo
+import ru.krindra.vknorthtypes.types.base.BaseCountry
+import ru.krindra.vknorthtypes.types.users.UsersMilitary
 import ru.krindra.vknorthtypes.types.audio.AudioAudio
-import ru.krindra.vknorthtypes.types.photos.PhotosPhotoFalseable
 import ru.krindra.vknorthtypes.types.users.UsersUserCounters
 import ru.krindra.vknorthtypes.types.users.UsersExports
-import ru.krindra.vknorthtypes.types.base.BaseSex
-import ru.krindra.vknorthtypes.types.users.UsersSchool
-import ru.krindra.vknorthtypes.types.owner.OwnerState
-import ru.krindra.vknorthtypes.types.users.UsersMilitary
-import ru.krindra.vknorthtypes.types.users.UsersLastSeen
-import ru.krindra.vknorthtypes.types.users.UsersUserType
-import ru.krindra.vknorthtypes.types.base.BaseCountry
+import ru.krindra.vknorthtypes.types.users.UsersRelative
 import ru.krindra.vknorthtypes.types.users.UsersUserRelation
-import ru.krindra.vknorthtypes.types.users.UsersOnlineInfo
+import ru.krindra.vknorthtypes.types.users.UsersUserType
+import ru.krindra.vknorthtypes.types.users.UsersPersonal
+import ru.krindra.vknorthtypes.types.users.UsersLastSeen
 import ru.krindra.vknorthtypes.types.users.UsersCareer
+import ru.krindra.vknorthtypes.types.photos.PhotosPhotoFalseable
+import ru.krindra.vknorthtypes.types.users.UsersOccupation
+import ru.krindra.vknorthtypes.types.video.VideoLiveInfo
+import ru.krindra.vknorthtypes.types.photos.PhotosPhoto
+import ru.krindra.vknorthtypes.types.base.BaseBoolInt
+import ru.krindra.vknorthtypes.types.owner.OwnerState
+import ru.krindra.vknorthtypes.types.users.UsersSchool
 
 /**
  *

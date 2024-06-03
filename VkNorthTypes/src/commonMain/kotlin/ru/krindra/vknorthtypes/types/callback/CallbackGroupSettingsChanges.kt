@@ -3,11 +3,11 @@ package ru.krindra.vknorthtypes.types.callback
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import ru.krindra.vknorthtypes.types.groups.GroupsGroupIsClosed
-import ru.krindra.vknorthtypes.types.groups.GroupsGroupAudio
-import ru.krindra.vknorthtypes.types.groups.GroupsGroupWall
-import ru.krindra.vknorthtypes.types.groups.GroupsGroupPhotos
-import ru.krindra.vknorthtypes.types.groups.GroupsGroupVideo
 import ru.krindra.vknorthtypes.types.groups.GroupsGroupFullAgeLimits
+import ru.krindra.vknorthtypes.types.groups.GroupsGroupWall
+import ru.krindra.vknorthtypes.types.groups.GroupsGroupVideo
+import ru.krindra.vknorthtypes.types.groups.GroupsGroupPhotos
+import ru.krindra.vknorthtypes.types.groups.GroupsGroupAudio
 
 /**
  *

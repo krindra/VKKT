@@ -3,17 +3,17 @@ package ru.krindra.vknorthtypes.types.newsfeed
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import ru.krindra.vknorthtypes.types.wall.WallWallpostFull
-import ru.krindra.vknorthtypes.types.wall.WallPostCopyright
-import ru.krindra.vknorthtypes.types.wall.WallPostSource
-import ru.krindra.vknorthtypes.types.base.BaseLikesInfo
-import ru.krindra.vknorthtypes.types.base.BaseCommentsInfo
-import ru.krindra.vknorthtypes.types.wall.WallViews
-import ru.krindra.vknorthtypes.types.wall.WallWallpostDonut
-import ru.krindra.vknorthtypes.types.wall.WallGeo
 import ru.krindra.vknorthtypes.types.base.BaseBoolInt
-import ru.krindra.vknorthtypes.types.base.BaseRepostsInfo
 import ru.krindra.vknorthtypes.types.wall.WallWallpostAttachment
+import ru.krindra.vknorthtypes.types.wall.WallPostSource
+import ru.krindra.vknorthtypes.types.wall.WallViews
 import ru.krindra.vknorthtypes.types.wall.WallPostType
+import ru.krindra.vknorthtypes.types.base.BaseRepostsInfo
+import ru.krindra.vknorthtypes.types.wall.WallWallpostDonut
+import ru.krindra.vknorthtypes.types.base.BaseLikesInfo
+import ru.krindra.vknorthtypes.types.wall.WallGeo
+import ru.krindra.vknorthtypes.types.base.BaseCommentsInfo
+import ru.krindra.vknorthtypes.types.wall.WallPostCopyright
 
 /**
  *

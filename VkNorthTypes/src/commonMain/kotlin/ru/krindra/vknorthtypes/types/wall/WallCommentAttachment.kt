@@ -2,15 +2,15 @@ package ru.krindra.vknorthtypes.types.wall
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.types.base.BaseSticker
+import ru.krindra.vknorthtypes.types.market.MarketMarketItem
 import ru.krindra.vknorthtypes.types.docs.DocsDoc
+import ru.krindra.vknorthtypes.types.audio.AudioAudio
 import ru.krindra.vknorthtypes.types.base.BaseLink
+import ru.krindra.vknorthtypes.types.pages.PagesWikipageFull
 import ru.krindra.vknorthtypes.types.market.MarketMarketAlbum
+import ru.krindra.vknorthtypes.types.base.BaseSticker
 import ru.krindra.vknorthtypes.types.photos.PhotosPhoto
 import ru.krindra.vknorthtypes.types.video.VideoVideo
-import ru.krindra.vknorthtypes.types.market.MarketMarketItem
-import ru.krindra.vknorthtypes.types.audio.AudioAudio
-import ru.krindra.vknorthtypes.types.pages.PagesWikipageFull
 
 /**
  *

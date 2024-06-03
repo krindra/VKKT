@@ -2,9 +2,9 @@ package ru.krindra.vknorthtypes.types.board
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.types.polls.PollsPoll
-import ru.krindra.vknorthtypes.types.groups.GroupsGroupFull
 import ru.krindra.vknorthtypes.types.users.UsersUserFull
+import ru.krindra.vknorthtypes.types.groups.GroupsGroupFull
+import ru.krindra.vknorthtypes.types.polls.PollsPoll
 
 /**
  * @param count Total number

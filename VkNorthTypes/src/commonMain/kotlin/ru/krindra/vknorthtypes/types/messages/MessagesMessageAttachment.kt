@@ -2,17 +2,17 @@ package ru.krindra.vknorthtypes.types.messages
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.types.base.BaseSticker
-import ru.krindra.vknorthtypes.types.docs.DocsDoc
-import ru.krindra.vknorthtypes.types.polls.PollsPoll
-import ru.krindra.vknorthtypes.types.market.MarketMarketAlbum
-import ru.krindra.vknorthtypes.types.stories.StoriesStory
-import ru.krindra.vknorthtypes.types.photos.PhotosPhoto
-import ru.krindra.vknorthtypes.types.wall.WallWallComment
-import ru.krindra.vknorthtypes.types.market.MarketMarketItem
-import ru.krindra.vknorthtypes.types.gifts.GiftsLayout
-import ru.krindra.vknorthtypes.types.audio.AudioAudio
 import ru.krindra.vknorthtypes.types.calls.CallsCall
+import ru.krindra.vknorthtypes.types.market.MarketMarketItem
+import ru.krindra.vknorthtypes.types.docs.DocsDoc
+import ru.krindra.vknorthtypes.types.audio.AudioAudio
+import ru.krindra.vknorthtypes.types.wall.WallWallComment
+import ru.krindra.vknorthtypes.types.polls.PollsPoll
+import ru.krindra.vknorthtypes.types.stories.StoriesStory
+import ru.krindra.vknorthtypes.types.market.MarketMarketAlbum
+import ru.krindra.vknorthtypes.types.gifts.GiftsLayout
+import ru.krindra.vknorthtypes.types.photos.PhotosPhoto
+import ru.krindra.vknorthtypes.types.base.BaseSticker
 
 /**
  *

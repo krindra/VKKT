@@ -2,8 +2,8 @@ package ru.krindra.vknorthtypes.types.messages
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.types.base.BaseGeo
 import ru.krindra.vknorthtypes.types.base.BaseBoolInt
+import ru.krindra.vknorthtypes.types.base.BaseGeo
 
 /**
  *

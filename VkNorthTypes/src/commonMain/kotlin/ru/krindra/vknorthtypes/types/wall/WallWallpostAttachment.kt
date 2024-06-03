@@ -2,20 +2,20 @@ package ru.krindra.vknorthtypes.types.wall
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import ru.krindra.vknorthtypes.types.market.MarketMarketItem
+import ru.krindra.vknorthtypes.types.groups.GroupsGroupAttach
 import ru.krindra.vknorthtypes.types.video.VideoVideoFull
 import ru.krindra.vknorthtypes.types.docs.DocsDoc
-import ru.krindra.vknorthtypes.types.polls.PollsPoll
-import ru.krindra.vknorthtypes.types.photos.PhotosPhotoAlbum
-import ru.krindra.vknorthtypes.types.base.BaseLink
-import ru.krindra.vknorthtypes.types.market.MarketMarketAlbum
-import ru.krindra.vknorthtypes.types.market.MarketMarketItem
-import ru.krindra.vknorthtypes.types.photos.PhotosPhoto
-import ru.krindra.vknorthtypes.types.notes.NotesNote
-import ru.krindra.vknorthtypes.types.video.VideoVideoAlbumFull
 import ru.krindra.vknorthtypes.types.events.EventsEventAttach
 import ru.krindra.vknorthtypes.types.audio.AudioAudio
+import ru.krindra.vknorthtypes.types.notes.NotesNote
+import ru.krindra.vknorthtypes.types.polls.PollsPoll
+import ru.krindra.vknorthtypes.types.base.BaseLink
+import ru.krindra.vknorthtypes.types.photos.PhotosPhotoAlbum
 import ru.krindra.vknorthtypes.types.pages.PagesWikipageFull
-import ru.krindra.vknorthtypes.types.groups.GroupsGroupAttach
+import ru.krindra.vknorthtypes.types.market.MarketMarketAlbum
+import ru.krindra.vknorthtypes.types.video.VideoVideoAlbumFull
+import ru.krindra.vknorthtypes.types.photos.PhotosPhoto
 
 /**
  *

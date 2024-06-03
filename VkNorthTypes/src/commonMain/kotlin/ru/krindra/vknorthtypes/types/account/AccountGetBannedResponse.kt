@@ -2,8 +2,8 @@ package ru.krindra.vknorthtypes.types.account
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.types.groups.GroupsGroup
 import ru.krindra.vknorthtypes.types.users.UsersUserFull
+import ru.krindra.vknorthtypes.types.groups.GroupsGroup
 
 /**
  * @param count Total number

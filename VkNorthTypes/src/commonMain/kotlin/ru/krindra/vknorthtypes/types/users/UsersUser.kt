@@ -2,10 +2,10 @@ package ru.krindra.vknorthtypes.types.users
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.types.base.BaseSex
-import ru.krindra.vknorthtypes.types.friends.FriendsFriendStatusStatus
-import ru.krindra.vknorthtypes.types.friends.FriendsRequestsMutual
 import ru.krindra.vknorthtypes.types.base.BaseBoolInt
+import ru.krindra.vknorthtypes.types.friends.FriendsFriendStatusStatus
+import ru.krindra.vknorthtypes.types.base.BaseSex
+import ru.krindra.vknorthtypes.types.friends.FriendsRequestsMutual
 
 /**
  *

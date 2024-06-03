@@ -2,11 +2,11 @@ package ru.krindra.vknorthtypes.types.stories
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vknorthtypes.types.polls.PollsPoll
-import ru.krindra.vknorthtypes.types.base.BaseLink
 import ru.krindra.vknorthtypes.types.apps.AppsAppMin
 import ru.krindra.vknorthtypes.types.market.MarketMarketItem
 import ru.krindra.vknorthtypes.types.audio.AudioAudio
+import ru.krindra.vknorthtypes.types.polls.PollsPoll
+import ru.krindra.vknorthtypes.types.base.BaseLink
 
 /**
  *
