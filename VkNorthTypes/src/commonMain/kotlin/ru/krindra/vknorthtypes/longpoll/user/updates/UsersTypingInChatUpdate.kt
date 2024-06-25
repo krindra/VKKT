@@ -5,8 +5,8 @@ import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.int
 
 data class UsersTypingInChatUpdate(
-    val userIds: Int,
     val peerId: Int,
+    val userIds: List<Int>,
     val totalCount: Int,
     val ts: Int,
 ): UserLPUpdate() {
@@ -14,8 +14,8 @@ data class UsersTypingInChatUpdate(
         val code = 63
         fun fromJsonArray(jsonArray: JsonArray): UsersTypingInChatUpdate {
             return UsersTypingInChatUpdate(
-                userIds = jsonArray[0].jsonPrimitive.int,
-                peerId = jsonArray[1].jsonPrimitive.int,
+                peerId = jsonArray[0].jsonPrimitive.int,
+                userIds = jsonArray[1].jsonArray.map { it.jsonPrimitive.int },
                 totalCount = jsonArray[2].jsonPrimitive.int,
                 ts = jsonArray[3].jsonPrimitive.int,
             )

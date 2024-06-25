@@ -6,7 +6,7 @@ import kotlinx.serialization.json.int
 
 data class FriendOnlineUpdate(
     val userId: Int,
-    val extra: Int,
+    val isTimeout: Int,
     val timestamp: Int,
 ): UserLPUpdate() {
     companion object {
@@ -14,7 +14,7 @@ data class FriendOnlineUpdate(
         fun fromJsonArray(jsonArray: JsonArray): FriendOnlineUpdate {
             return FriendOnlineUpdate(
                 userId = jsonArray[0].jsonPrimitive.int,
-                extra = jsonArray[1].jsonPrimitive.int,
+                isTimeout = jsonArray[1].jsonPrimitive.int,
                 timestamp = jsonArray[2].jsonPrimitive.int,
             )
         }

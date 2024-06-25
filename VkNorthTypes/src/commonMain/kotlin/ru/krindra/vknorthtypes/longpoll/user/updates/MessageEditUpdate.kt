@@ -10,7 +10,7 @@ data class MessageEditUpdate(
     val peerId: Int,
     val timestamp: Int,
     val newText: String,
-    //val attachments: UserLPAttachments,
+    val attachments: UserLPAttachments,
 ): UserLPUpdate() {
     companion object {
         val code = 5
@@ -21,7 +21,7 @@ data class MessageEditUpdate(
                 peerId = jsonArray[2].jsonPrimitive.int,
                 timestamp = jsonArray[3].jsonPrimitive.int,
                 newText = jsonArray[4].jsonPrimitive.content,
-                //attachments = jsonArray[5].jsonPrimitive.TODO(),
+                attachments = jsonArray[5].jsonPrimitive.TODO(),
             )
         }
     }
