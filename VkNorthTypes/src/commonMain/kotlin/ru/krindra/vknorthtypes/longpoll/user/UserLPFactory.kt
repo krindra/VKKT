@@ -21,7 +21,6 @@ object UserLPFactory {
     fun fromJsonArray(jsonArray: JsonArray): UserLPUpdate {
         val id = jsonArray[0].jsonPrimitive.int
         val list = JsonArray(jsonArray.drop(1))
-        println(list)
         return when (id) {
             1 -> ReplaceMessageFlagsUpdate.fromJsonArray(list)
             2 -> SetMessageFlagsUpdate.fromJsonArray(list)
