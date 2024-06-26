@@ -2,20 +2,26 @@ package ru.krindra.vknorthtypes.longpoll.user
 
 import kotlinx.serialization.json.*
 import ru.krindra.vknorthtypes.JsonSingleton
+import ru.krindra.vknorthtypes.longpoll.bot.BotLPEvent
 import ru.krindra.vknorthtypes.longpoll.user.updates.*
 
 object UserLPFactory {
-    fun fromEvent(rawEvent: String): List<UserLPUpdate> {
-        val updates = mutableListOf<UserLPUpdate>()
-        val rawUpdates = JsonSingleton.json
+    fun fromEvent(rawEvent: String): UserLPEvent {
+        val jsonEvent = JsonSingleton.json
             .parseToJsonElement(rawEvent)
+
+        val ts = jsonEvent
+            .jsonObject["ts"]!!
+            .jsonPrimitive.int
+
+        val rawUpdates = jsonEvent
             .jsonObject["updates"]!!
             .jsonArray
-
+        val updates = mutableListOf<UserLPUpdate>()
         for (rawUpdate in rawUpdates)
             updates.add(fromJsonArray(rawUpdate.jsonArray))
 
-        return updates
+        return UserLPEvent(ts, updates)
     }
 
     fun fromJsonArray(jsonArray: JsonArray): UserLPUpdate {
