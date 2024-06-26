@@ -2,28 +2,47 @@ package ru.krindra.vknorthtypes.longpoll.user.updates
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.*
+import ru.krindra.vknorthtypes.JsonSingleton
+import ru.krindra.vknorthtypes.longpoll.user.enums.AttachmentType
 
-// TODO! temporally
-@Serializable
+
 data class UserLPAttachments(
-    @SerialName("attach1_type") val attach1Type: String? = null,
-    @SerialName("attach2_type") val attach2Type: String? = null,
-    @SerialName("attach3_type") val attach3Type: String? = null,
-    @SerialName("attach4_type") val attach4Type: String? = null,
-    @SerialName("attach5_type") val attach5Type: String? = null,
-    @SerialName("attach6_type") val attach6Type: String? = null,
-    @SerialName("attach7_type") val attach7Type: String? = null,
-    @SerialName("attach8_type") val attach8Type: String? = null,
-    @SerialName("attach9_type") val attach9Type: String? = null,
-    @SerialName("attach10_type") val attach10Type: String? = null,
-    @SerialName("attach1") val attach1: String? = null,
-    @SerialName("attach2") val attach2: String? = null,
-    @SerialName("attach3") val attach3: String? = null,
-    @SerialName("attach4") val attach4: String? = null,
-    @SerialName("attach5") val attach5: String? = null,
-    @SerialName("attach6") val attach6: String? = null,
-    @SerialName("attach7") val attach7: String? = null,
-    @SerialName("attach8") val attach8: String? = null,
-    @SerialName("attach9") val attach9: String? = null,
-    @SerialName("attach10") val attach10: String? = null,
-)
+    val fwd: String? = null,
+    val reply: Reply? = null,
+    val attachments: List<Attachment> = emptyList()
+) {
+    data class Attachment(
+        val type: AttachmentType,
+        val attach: String,
+    ) {
+        constructor(type: String, attach: String)
+                : this(AttachmentType.fromString(type), attach)
+    }
+
+    @Serializable
+    data class Reply(
+        @SerialName("conversation_message_id") val conversationMessageId: Int? = null,
+    )
+
+    companion object {
+        fun fromJsonObject(rawAttachment: JsonObject?): UserLPAttachments {
+            if (rawAttachment == null)
+                return UserLPAttachments()
+            val fwd = rawAttachment["fwd"]
+                ?.jsonPrimitive?.contentOrNull
+            val rawReply = rawAttachment["reply"]
+            val reply: Reply? = rawReply?.let { JsonSingleton.json.decodeFromJsonElement(it) }
+            val attachments = mutableListOf<Attachment>()
+            for (i in 1..10) {
+                val key = "attach$i"
+                val rawType = rawAttachment[key + "_type"]?.jsonPrimitive?.content
+                if (rawType != null) {
+                    val attach: String = rawAttachment[key]!!.jsonPrimitive.content
+                    attachments.add(Attachment(rawType, attach))
+                }
+            }
+            return UserLPAttachments(fwd, reply, attachments)
+        }
+    }
+}
