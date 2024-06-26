@@ -2,7 +2,6 @@ package ru.krindra.vknorthtypes.longpoll.user
 
 import kotlinx.serialization.json.*
 import ru.krindra.vknorthtypes.JsonSingleton
-import ru.krindra.vknorthtypes.longpoll.bot.BotLPEvent
 import ru.krindra.vknorthtypes.longpoll.user.updates.*
 
 object UserLPFactory {
