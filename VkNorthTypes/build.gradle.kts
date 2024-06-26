@@ -25,7 +25,6 @@ kotlin {
 
     jvm()
 
-    /*
     js {
         browser {
             webpackTask {
@@ -68,7 +67,6 @@ kotlin {
         }
     }
 
-     */
     sourceSets {
         commonMain.dependencies {
             api(libs.kotlinx.serialization.json)
