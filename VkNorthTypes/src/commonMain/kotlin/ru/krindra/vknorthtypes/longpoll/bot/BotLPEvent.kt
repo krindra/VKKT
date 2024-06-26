@@ -10,7 +10,7 @@ data class BotLPEvent(
     val updates: List<BotLPUpdate>
 ) {
     companion object {
-        fun fromString(string: String): BotLPUpdate =
+        fun fromString(string: String): BotLPEvent =
             JsonSingleton.json.decodeFromString(string)
     }
 }
