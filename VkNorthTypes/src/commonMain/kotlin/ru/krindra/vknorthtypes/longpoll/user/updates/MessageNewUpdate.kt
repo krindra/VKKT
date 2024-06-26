@@ -25,10 +25,10 @@ data class MessageNewUpdate(
                 timestamp = jsonArray[3].jsonPrimitive.int,
                 
                 text = jsonArray.getOrNull(4)?.jsonPrimitive?.content,
+                info = jsonArray.getOrNull(5)
+                    ?.let { JsonSingleton.json.decodeFromJsonElement(it) },
                 attachments = jsonArray.getOrNull(6)
                     .let { UserLPAttachments.fromJsonObject(it?.jsonObject) }, 
-                info = jsonArray.getOrNull(6)
-                    ?.let { JsonSingleton.json.decodeFromJsonElement(it) },
                 randomId = jsonArray.getOrNull(7)?.jsonPrimitive?.int,
             )
         }
