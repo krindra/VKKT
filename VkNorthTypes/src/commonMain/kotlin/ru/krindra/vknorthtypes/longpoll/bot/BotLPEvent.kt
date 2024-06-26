@@ -6,7 +6,7 @@ import ru.krindra.vknorthtypes.longpoll.bot.updates.BotLPUpdate
 
 @Serializable
 data class BotLPEvent(
-    val ts: String,
+    val ts: Int,
     val updates: List<BotLPUpdate>
 ) {
     companion object {
