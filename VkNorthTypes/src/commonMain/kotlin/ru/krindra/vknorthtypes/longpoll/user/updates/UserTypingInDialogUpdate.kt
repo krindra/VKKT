@@ -1,8 +1,7 @@
 package ru.krindra.vknorthtypes.longpoll.user.updates
 
-import kotlinx.serialization.json.jsonPrimitive
-import kotlinx.serialization.json.JsonArray
-import kotlinx.serialization.json.int
+import kotlinx.serialization.json.*
+import ru.krindra.vknorthtypes.longpoll.user.*
 
 data class UserTypingInDialogUpdate(
     val userId: Int,

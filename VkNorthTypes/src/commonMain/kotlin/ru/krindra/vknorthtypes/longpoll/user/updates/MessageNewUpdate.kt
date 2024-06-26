@@ -1,8 +1,8 @@
 package ru.krindra.vknorthtypes.longpoll.user.updates
 
-import kotlinx.serialization.json.jsonPrimitive
-import kotlinx.serialization.json.JsonArray
-import kotlinx.serialization.json.int
+import ru.krindra.vknorthtypes.JsonSingleton
+import kotlinx.serialization.json.*
+import ru.krindra.vknorthtypes.longpoll.user.*
 
 data class MessageNewUpdate(
     val messageId: Int,
@@ -11,7 +11,7 @@ data class MessageNewUpdate(
     val timestamp: Int,
     // extra fields
     val text: String? = null,
-    //val info: MessageInfo? = null
+    val info: MessageInfo? = null,
     val attachments: UserLPAttachments? = null,
     val randomId:Int? = null,
 ): UserLPUpdate() {
@@ -25,8 +25,10 @@ data class MessageNewUpdate(
                 timestamp = jsonArray[3].jsonPrimitive.int,
                 
                 text = jsonArray.getOrNull(4)?.jsonPrimitive?.content,
-                //attachments = jsonArray.getOrNull(5)?.TODO(),
-                //info = jsonArray.getOrNull(6)?.TODO(),
+                attachments = jsonArray.getOrNull(6)
+                    .let { UserLPAttachments.fromJsonObject(it?.jsonObject) }, 
+                info = jsonArray.getOrNull(6)
+                    ?.let { JsonSingleton.json.decodeFromJsonElement(it) },
                 randomId = jsonArray.getOrNull(7)?.jsonPrimitive?.int,
             )
         }

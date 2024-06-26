@@ -1,8 +1,7 @@
 package ru.krindra.vknorthtypes.longpoll.user.updates
 
-import kotlinx.serialization.json.jsonPrimitive
-import kotlinx.serialization.json.JsonArray
-import kotlinx.serialization.json.int
+import kotlinx.serialization.json.*
+import ru.krindra.vknorthtypes.longpoll.user.*
 
 data class MessageEditUpdate(
     val messageId: Int,
@@ -21,7 +20,7 @@ data class MessageEditUpdate(
                 peerId = jsonArray[2].jsonPrimitive.int,
                 timestamp = jsonArray[3].jsonPrimitive.int,
                 newText = jsonArray[4].jsonPrimitive.content,
-                attachments = jsonArray[5].jsonPrimitive.TODO(),
+                attachments = jsonArray[5].let { UserLPAttachments.fromJsonObject(it.jsonObject) },
             )
         }
     }
