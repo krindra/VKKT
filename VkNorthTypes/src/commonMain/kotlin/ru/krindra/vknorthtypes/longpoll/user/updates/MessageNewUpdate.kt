@@ -10,7 +10,7 @@ data class MessageNewUpdate(
     val peerId: Int,
     val timestamp: Int,
     // extra fields
-    val text: String? = null,
+    val text: String = "",
     val info: MessageInfo? = null,
     val attachments: UserLPAttachments? = null,
     val randomId:Int? = null,
@@ -24,7 +24,7 @@ data class MessageNewUpdate(
                 peerId = jsonArray[2].jsonPrimitive.int,
                 timestamp = jsonArray[3].jsonPrimitive.int,
                 
-                text = jsonArray.getOrNull(4)?.jsonPrimitive?.content,
+                text = jsonArray.getOrNull(4)?.jsonPrimitive?.content ?: "",
                 info = jsonArray.getOrNull(5)
                     ?.let { JsonSingleton.json.decodeFromJsonElement(it) },
                 attachments = jsonArray.getOrNull(6)
