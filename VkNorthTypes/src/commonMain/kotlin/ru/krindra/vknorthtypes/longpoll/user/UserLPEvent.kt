@@ -11,21 +11,23 @@ data class UserLPEvent(
     val ts: Int,
     val updates: List<UserLPUpdate>,
 ) {
-    fun fromEvent(rawEvent: String): UserLPEvent {
-        val jsonEvent = JsonSingleton.json
-            .parseToJsonElement(rawEvent)
+    companion object {
+        fun fromEvent(rawEvent: String): UserLPEvent {
+            val jsonEvent = JsonSingleton.json
+                .parseToJsonElement(rawEvent)
 
-        val ts = jsonEvent
-            .jsonObject["ts"]!!
-            .jsonPrimitive.int
+            val ts = jsonEvent
+                .jsonObject["ts"]!!
+                .jsonPrimitive.int
 
-        val rawUpdates = jsonEvent
-            .jsonObject["updates"]!!
-            .jsonArray
-        val updates = mutableListOf<UserLPUpdate>()
-        for (rawUpdate in rawUpdates)
-            updates.add(UserLPUpdate.fromJsonArray(rawUpdate.jsonArray))
+            val rawUpdates = jsonEvent
+                .jsonObject["updates"]!!
+                .jsonArray
+            val updates = mutableListOf<UserLPUpdate>()
+            for (rawUpdate in rawUpdates)
+                updates.add(UserLPUpdate.fromJsonArray(rawUpdate.jsonArray))
 
-        return UserLPEvent(ts, updates)
+            return UserLPEvent(ts, updates)
+        }
     }
 }
