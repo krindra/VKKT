@@ -10,7 +10,7 @@ plugins {
 
 group = "ru.krindra"
 
-version = "0.8.7"
+version = "0.9.2"
 
 
 kotlin {
