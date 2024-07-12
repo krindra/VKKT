@@ -1,0 +1,22 @@
+package ru.krindra.vkkt.responses.messages
+
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import ru.krindra.vkkt.objects.groups.GroupsGroupFull
+import ru.krindra.vkkt.objects.users.UsersUserFull
+import ru.krindra.vkkt.objects.messages.*
+
+/**
+ * @param count Total results number
+ * @param items 
+ * @param profiles 
+ * @param groups 
+ */
+@Serializable
+data class MessagesSearchConversationsExtendedResponse (
+    @SerialName("count") val count: Int,
+    @SerialName("items") val items: List<MessagesConversation>,
+    @SerialName("groups") val groups: List<GroupsGroupFull>? = null,
+    @SerialName("profiles") val profiles: List<UsersUserFull>? = null,
+)
+

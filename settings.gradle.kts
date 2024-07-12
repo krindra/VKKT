@@ -1,5 +1,9 @@
-rootProject.name = "VkNorthTypes"
-include(":VkNorthTypes")
+rootProject.name = "VKKT"
+include(":utils")
+include(":objects")
+include(":responses")
+include(":methods")
+include(":longpoll")
 includeBuild("convention-plugins")
 
 pluginManagement {
