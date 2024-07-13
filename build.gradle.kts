@@ -8,6 +8,7 @@ plugins {
 
 nmcp {
     publishAllProjectsProbablyBreakingProjectIsolation {
+        publicationType = "AUTOMATIC"
         username.set(
             try {
                 System.getenv("sonatypeUsername")

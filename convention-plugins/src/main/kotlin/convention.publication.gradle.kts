@@ -17,9 +17,9 @@ publishing {
     publications.withType<MavenPublication> {
         // Provide artifacts information requited by Maven Central
         pom {
-            name.set("VkNorthTypes")
+            name.set("VKKT")
             description.set("Types for VK API")
-            url.set("https://github.com/krindra/VkNorthTypes")
+            url.set("https://github.com/krindra/VKKT")
 
             licenses {
                 license {
@@ -35,7 +35,7 @@ publishing {
                 }
             }
             scm {
-                url.set("https://github.com/krindra/VkNorthTypes")
+                url.set("https://github.com/krindra/VKKT")
             }
         }
     }

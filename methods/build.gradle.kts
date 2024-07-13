@@ -8,7 +8,7 @@ plugins {
     id("convention.publication")
 }
 
-group = "ru.krindra.vknorth"
+group = "ru.krindra.vkkt"
 
 version = "0.9.6"
 
@@ -53,7 +53,7 @@ kotlin {
 }
 
 android {
-    namespace = "ru.krindra.vknorth"
+    namespace = "ru.krindra.vkkt"
     compileSdk = 34
 
     defaultConfig {
