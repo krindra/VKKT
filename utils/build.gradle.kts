@@ -60,35 +60,34 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 }
-//
-// tasks.withType<DokkaTask>().configureEach {
-//     dokkaSourceSets {
-//         configureEach {
-//             externalDocumentationLink("https://kotlinlang.org/api/kotlinx.coroutines/")
-//             suppressGeneratedFiles.set(false)
-//         }
-//         val commonMain by getting {
-//             platform.set(org.jetbrains.dokka.Platform.common)
-//         }
-//     }
-// }
-//
-// val javadocJar by tasks.registering(Jar::class) {
-//     archiveClassifier.set("javadoc")
-//     from(tasks.dokkaHtml)
-// }
-//
-// tasks.withType<AbstractPublishToMaven>().configureEach {
-//     val signingTasks = tasks.withType<Sign>()
-//     mustRunAfter(signingTasks)
-// }
-//
-// publishing {
-//     publications.forEach {
-//         if (it !is MavenPublication) {
-//             return@forEach
-//         }
-//         it.artifact(javadocJar)
-//     }
-// }
-//
+
+tasks.withType<DokkaTask>().configureEach {
+    dokkaSourceSets {
+        configureEach {
+            externalDocumentationLink("https://kotlinlang.org/api/kotlinx.coroutines/")
+            suppressGeneratedFiles.set(false)
+        }
+        val commonMain by getting {
+            platform.set(org.jetbrains.dokka.Platform.common)
+        }
+    }
+}
+
+val javadocJar by tasks.registering(Jar::class) {
+    archiveClassifier.set("javadoc")
+    from(tasks.dokkaHtml)
+}
+
+tasks.withType<AbstractPublishToMaven>().configureEach {
+    val signingTasks = tasks.withType<Sign>()
+    mustRunAfter(signingTasks)
+}
+
+publishing {
+    publications.forEach {
+        if (it !is MavenPublication) {
+            return@forEach
+        }
+        it.artifact(javadocJar)
+    }
+}
