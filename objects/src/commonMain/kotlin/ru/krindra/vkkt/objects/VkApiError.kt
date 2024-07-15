@@ -20,7 +20,12 @@ class VkApiError(
          *
          * @param string raw json string
          */
-        fun fromString(string: String): VkApiError =
-            JsonSingleton.json.decodeFromString(string)
+        fun fromString(string: String): VkApiError {
+            @Serializable
+            class Tmp(
+                val error: VkApiError
+            )
+            return JsonSingleton.json.decodeFromString<Tmp>(string).error
+        }
     }
 }
