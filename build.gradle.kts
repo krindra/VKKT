@@ -6,6 +6,11 @@ plugins {
     alias(libs.plugins.nmcp)
 }
 
+allprojects {
+    group = "ru.krindra.vkkt"
+    version = "0.9.7"
+}
+
 nmcp {
     publishAllProjectsProbablyBreakingProjectIsolation {
         publicationType = "AUTOMATIC"

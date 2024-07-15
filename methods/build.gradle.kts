@@ -8,11 +8,6 @@ plugins {
     id("convention.publication")
 }
 
-group = "ru.krindra.vkkt"
-
-version = "0.9.6"
-
-
 kotlin {
     androidTarget {
         publishLibraryVariants("release")
@@ -25,7 +20,11 @@ kotlin {
 
     jvm()
 
-    js()
+    js {
+        // KT-47038
+        browser()
+        nodejs()
+    }
 
     iosX64()
     iosArm64()
@@ -38,9 +37,9 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            api(project(":utils"))
-            api(project(":objects"))
-            api(project(":responses"))
+            api(project(":vkkt-utils"))
+            api(project(":vkkt-objects"))
+            api(project(":vkkt-responses"))
             api(libs.kotlinx.serialization.json)
         }
     }
