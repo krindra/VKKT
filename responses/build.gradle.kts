@@ -1,4 +1,3 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.dokka.gradle.DokkaTask
 
 plugins {
@@ -13,10 +12,8 @@ kotlin {
     androidTarget {
         publishLibraryVariants("release")
         compilations.all {
-            compileTaskProvider.configure {
-                compilerOptions {
-                    jvmTarget.set(JvmTarget.JVM_11)
-                }
+            kotlinOptions {
+                jvmTarget = "17"
             }
         }
     }
