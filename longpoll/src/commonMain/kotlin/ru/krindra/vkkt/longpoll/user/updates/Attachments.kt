@@ -32,7 +32,13 @@ data class Attachments(
             val fwd = rawAttachment["fwd"]
                 ?.jsonPrimitive?.contentOrNull
             val rawReply = rawAttachment["reply"]
-            val reply: Reply? = rawReply?.let { JsonSingleton.json.decodeFromJsonElement(it) }
+            val reply: Reply? = rawReply?.let {
+                val str = if (rawReply.jsonPrimitive.isString)
+                    // I don't know why, but sometimes vk sends string instead of json object
+                    rawReply.jsonPrimitive.content.substring(0..<rawReply.jsonPrimitive.content.length)
+                else rawReply.toString()
+                JsonSingleton.json.decodeFromString(str)
+            }
             val attachments = mutableListOf<Attachment>()
             for (i in 1..10) {
                 val key = "attach$i"
