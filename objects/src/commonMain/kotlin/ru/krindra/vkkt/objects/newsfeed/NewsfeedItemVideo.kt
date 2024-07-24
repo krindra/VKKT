@@ -16,8 +16,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class NewsfeedItemVideo (
-    @SerialName("source_id") val sourceId: Long,
-    @SerialName("post_id") val postId: Long? = null,
+    @SerialName("source_id") val sourceId: Int,
+    @SerialName("post_id") val postId: Int? = null,
     @SerialName("date") val date: Int/* WARN! Int? = null */,
     @SerialName("carousel_offset") val carouselOffset: Int? = null,
     @SerialName("video") val video: NewsfeedItemVideoVideo? = null,

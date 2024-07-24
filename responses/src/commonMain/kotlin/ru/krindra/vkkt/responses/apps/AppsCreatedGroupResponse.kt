@@ -9,6 +9,6 @@ import ru.krindra.vkkt.objects.apps.*
  */
 @Serializable
 data class AppsCreatedGroupResponse (
-    @SerialName("group_id") val groupId: Long,
+    @SerialName("group_id") val groupId: Int,
 )
 

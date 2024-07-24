@@ -41,7 +41,7 @@ class Newsfeed(
      *
      * @param listId 
      */
-    suspend fun deleteList(listId: Long): BaseOkResponse {
+    suspend fun deleteList(listId: Int): BaseOkResponse {
         val response = method("newsfeed.deleteList", mapOf("list_id" to listId))
         return decodeResponse(response, json)
     }
@@ -139,7 +139,7 @@ class Newsfeed(
      * @param offset Offset needed to return a specific subset of posts.
      * @param count Number of posts to return.
      */
-    suspend fun getMentions(ownerId: Long? = null, startTime: Int? = null, endTime: Int? = null, offset: Int? = null, count: Int? = 20): NewsfeedGetMentionsResponse {
+    suspend fun getMentions(ownerId: Int? = null, startTime: Int? = null, endTime: Int? = null, offset: Int? = null, count: Int? = 20): NewsfeedGetMentionsResponse {
         val response = method("newsfeed.getMentions", mapOf("owner_id" to ownerId, "start_time" to startTime, "end_time" to endTime, "offset" to offset, "count" to count))
         return decodeResponse(response, json)
     }
@@ -182,7 +182,7 @@ class Newsfeed(
      * @param ownerId Item owner's identifier (user or community), "Note that community id must be negative. 'owner_id=1' - user , 'owner_id=-1' - community ".
      * @param itemId Item identifier.
      */
-    suspend fun ignoreItem(type: String, ownerId: Long? = 0, itemId: Long? = 0): NewsfeedIgnoreItemResponse {
+    suspend fun ignoreItem(type: String, ownerId: Int? = 0, itemId: Int? = 0): NewsfeedIgnoreItemResponse {
         val response = method("newsfeed.ignoreItem", mapOf("type" to type, "owner_id" to ownerId, "item_id" to itemId))
         return decodeResponse(response, json)
     }
@@ -196,7 +196,7 @@ class Newsfeed(
      * @param sourceIds users and communities identifiers to be added to the list. Community identifiers must be negative numbers.
      * @param noReposts reposts display on and off ('1' is for off).
      */
-    suspend fun saveList(title: String, listId: Long? = null, sourceIds: List<Int>? = null, noReposts: Boolean? = false): NewsfeedSaveListResponse {
+    suspend fun saveList(title: String, listId: Int? = null, sourceIds: List<Int>? = null, noReposts: Boolean? = false): NewsfeedSaveListResponse {
         val response = method("newsfeed.saveList", mapOf("list_id" to listId, "title" to title, "source_ids" to sourceIds, "no_reposts" to noReposts))
         return decodeResponse(response, json)
     }
@@ -245,7 +245,7 @@ class Newsfeed(
      * @param itemId Item identifier.
      * @param trackCode Track code of unignored item.
      */
-    suspend fun unignoreItem(type: String, ownerId: Long, itemId: Long, trackCode: String? = null): BaseOkResponse {
+    suspend fun unignoreItem(type: String, ownerId: Int, itemId: Int, trackCode: String? = null): BaseOkResponse {
         val response = method("newsfeed.unignoreItem", mapOf("type" to type, "owner_id" to ownerId, "item_id" to itemId, "track_code" to trackCode))
         return decodeResponse(response, json)
     }
@@ -258,7 +258,7 @@ class Newsfeed(
      * @param ownerId Object owner ID.
      * @param itemId Object ID.
      */
-    suspend fun unsubscribe(type: String, itemId: Long, ownerId: Long? = null): BaseOkResponse {
+    suspend fun unsubscribe(type: String, itemId: Int, ownerId: Int? = null): BaseOkResponse {
         val response = method("newsfeed.unsubscribe", mapOf("type" to type, "owner_id" to ownerId, "item_id" to itemId))
         return decodeResponse(response, json)
     }

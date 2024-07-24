@@ -9,6 +9,6 @@ import ru.krindra.vkkt.objects.messages.*
  */
 @Serializable
 data class MessagesDeleteConversationResponse (
-    @SerialName("last_deleted_id") val lastDeletedId: Long,
+    @SerialName("last_deleted_id") val lastDeletedId: Int,
 )
 

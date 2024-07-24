@@ -30,11 +30,11 @@ import ru.krindra.vkkt.objects.base.BaseLink
  */
 @Serializable
 data class MarketOrder (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("date") val date: Int,
     @SerialName("status") val status: Int,
-    @SerialName("user_id") val userId: Long,
-    @SerialName("group_id") val groupId: Long,
+    @SerialName("user_id") val userId: Int,
+    @SerialName("group_id") val groupId: Int,
     @SerialName("weight") val weight: Int? = null,
     @SerialName("items_count") val itemsCount: Int,
     @SerialName("address") val address: String? = null,

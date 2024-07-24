@@ -26,7 +26,7 @@ data class UsersPersonal (
     @SerialName("langs") val langs: List<String>? = null,
     @SerialName("religion") val religion: String? = null,
     @SerialName("people_main") val peopleMain: Int? = null,
-    @SerialName("religion_id") val religionId: Long? = null,
+    @SerialName("religion_id") val religionId: Int? = null,
     @SerialName("inspired_by") val inspiredBy: String? = null,
     @SerialName("langs_full") val langsFull: List<DatabaseLanguageFull>? = null,
 )

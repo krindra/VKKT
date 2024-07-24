@@ -20,12 +20,12 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdswebGetStatisticsResponseItemsItem (
-    @SerialName("site_id") val siteId: Long? = null,
+    @SerialName("site_id") val siteId: Int? = null,
     @SerialName("day_max") val dayMax: String? = null,
     @SerialName("day_min") val dayMin: String? = null,
     @SerialName("hour_max") val hourMax: String? = null,
     @SerialName("hour_min") val hourMin: String? = null,
-    @SerialName("ad_unit_id") val adUnitId: Long? = null,
+    @SerialName("ad_unit_id") val adUnitId: Int? = null,
     @SerialName("days_count") val daysCount: Int? = null,
     @SerialName("month_max") val monthMax: String? = null,
     @SerialName("month_min") val monthMin: String? = null,

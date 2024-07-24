@@ -22,7 +22,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class UsersUniversity (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("city") val city: Int? = null,
     @SerialName("chair") val chair: Int? = null,
     @SerialName("name") val name: String? = null,
@@ -32,8 +32,8 @@ data class UsersUniversity (
     @SerialName("chair_name") val chairName: String? = null,
     @SerialName("faculty_name") val facultyName: String? = null,
     @SerialName("education_form") val educationForm: String? = null,
-    @SerialName("education_form_id") val educationFormId: Long? = null,
+    @SerialName("education_form_id") val educationFormId: Int? = null,
     @SerialName("education_status") val educationStatus: String? = null,
-    @SerialName("education_status_id") val educationStatusId: Long? = null,
-    @SerialName("university_group_id") val universityGroupId: Long? = null,
+    @SerialName("education_status_id") val educationStatusId: Int? = null,
+    @SerialName("university_group_id") val universityGroupId: Int? = null,
 )

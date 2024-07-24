@@ -12,7 +12,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MarketMarketCategoryNested (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("name") val name: String,
     @SerialName("is_v2") val isV2: Boolean? = null,
     @SerialName("parent") val parent: MarketMarketCategoryNested? = null,

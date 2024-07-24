@@ -5,12 +5,12 @@ import kotlinx.serialization.Serializable
 
 /**
  *
- * @param key Long Poll key
- * @param server Long Poll server address
+ * @param key Int Poll key
+ * @param server Int Poll server address
  * @param ts Number of the last event
  */
 @Serializable
-data class GroupsLongPollServer (
+data class GroupsIntPollServer (
     @SerialName("ts") val ts: String,
     @SerialName("key") val key: String,
     @SerialName("server") val server: String,

@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesConversationSortId (
-    @SerialName("major_id") val majorId: Long,
-    @SerialName("minor_id") val minorId: Long,
+    @SerialName("major_id") val majorId: Int,
+    @SerialName("minor_id") val minorId: Int,
 )

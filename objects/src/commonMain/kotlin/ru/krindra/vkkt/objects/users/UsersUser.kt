@@ -31,7 +31,7 @@ import ru.krindra.vkkt.objects.friends.FriendsFriendStatusStatus
  */
 @Serializable
 data class UsersUser (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("sex") val sex: BaseSex? = null,
     @SerialName("hidden") val hidden: Int? = null,
     @SerialName("photo_50") val photo50: String? = null,

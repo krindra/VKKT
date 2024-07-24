@@ -16,7 +16,7 @@ class Orders(
      * @param subscriptionId 
      * @param pendingCancel 
      */
-    suspend fun cancelSubscription(userId: Long, subscriptionId: Long, pendingCancel: Boolean? = false): BaseBoolResponse {
+    suspend fun cancelSubscription(userId: Int, subscriptionId: Int, pendingCancel: Boolean? = false): BaseBoolResponse {
         val response = method("orders.cancelSubscription", mapOf("user_id" to userId, "subscription_id" to subscriptionId, "pending_cancel" to pendingCancel))
         return decodeResponse(response, json)
     }
@@ -30,7 +30,7 @@ class Orders(
      * @param appOrderId internal ID of the order in the application.
      * @param testMode if this parameter is set to 1, this method returns a list of test mode orders. By default - 0.
      */
-    suspend fun changeState(orderId: Long, action: String, appOrderId: Long? = null, testMode: Boolean? = false): OrdersChangeStateResponse {
+    suspend fun changeState(orderId: Int, action: String, appOrderId: Int? = null, testMode: Boolean? = false): OrdersChangeStateResponse {
         val response = method("orders.changeState", mapOf("order_id" to orderId, "action" to action, "app_order_id" to appOrderId, "test_mode" to testMode))
         return decodeResponse(response, json)
     }
@@ -53,7 +53,7 @@ class Orders(
      * @param userId 
      * @param votes 
      */
-    suspend fun getAmount(userId: Long, votes: List<String>): OrdersGetAmountResponse {
+    suspend fun getAmount(userId: Int, votes: List<String>): OrdersGetAmountResponse {
         val response = method("orders.getAmount", mapOf("user_id" to userId, "votes" to votes))
         return decodeResponse(response, json)
     }
@@ -66,7 +66,7 @@ class Orders(
      * @param orderIds order IDs (when information about several orders is requested).
      * @param testMode if this parameter is set to 1, this method returns a list of test mode orders. By default - 0.
      */
-    suspend fun getById(orderId: Long? = null, orderIds: List<Int>? = null, testMode: Boolean? = false): OrdersGetByIdResponse {
+    suspend fun getById(orderId: Int? = null, orderIds: List<Int>? = null, testMode: Boolean? = false): OrdersGetByIdResponse {
         val response = method("orders.getById", mapOf("order_id" to orderId, "order_ids" to orderIds, "test_mode" to testMode))
         return decodeResponse(response, json)
     }
@@ -76,7 +76,7 @@ class Orders(
      * @param userId 
      * @param subscriptionId 
      */
-    suspend fun getUserSubscriptionById(userId: Long, subscriptionId: Long): OrdersGetUserSubscriptionByIdResponse {
+    suspend fun getUserSubscriptionById(userId: Int, subscriptionId: Int): OrdersGetUserSubscriptionByIdResponse {
         val response = method("orders.getUserSubscriptionById", mapOf("user_id" to userId, "subscription_id" to subscriptionId))
         return decodeResponse(response, json)
     }
@@ -85,7 +85,7 @@ class Orders(
      *
      * @param userId 
      */
-    suspend fun getUserSubscriptions(userId: Long): OrdersGetUserSubscriptionsResponse {
+    suspend fun getUserSubscriptions(userId: Int): OrdersGetUserSubscriptionsResponse {
         val response = method("orders.getUserSubscriptions", mapOf("user_id" to userId))
         return decodeResponse(response, json)
     }
@@ -96,7 +96,7 @@ class Orders(
      * @param subscriptionId 
      * @param price 
      */
-    suspend fun updateSubscription(userId: Long, subscriptionId: Long, price: Int): BaseBoolResponse {
+    suspend fun updateSubscription(userId: Int, subscriptionId: Int, price: Int): BaseBoolResponse {
         val response = method("orders.updateSubscription", mapOf("user_id" to userId, "subscription_id" to subscriptionId, "price" to price))
         return decodeResponse(response, json)
     }

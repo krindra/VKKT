@@ -11,5 +11,5 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class UtilsStatsCity (
     @SerialName("views") val views: Int? = null,
-    @SerialName("city_id") val cityId: Long? = null,
+    @SerialName("city_id") val cityId: Int? = null,
 )

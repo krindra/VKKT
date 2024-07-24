@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class StoreStickersKeywordSticker (
-    @SerialName("pack_id") val packId: Long,
-    @SerialName("sticker_id") val stickerId: Long,
+    @SerialName("pack_id") val packId: Int,
+    @SerialName("sticker_id") val stickerId: Int,
 )

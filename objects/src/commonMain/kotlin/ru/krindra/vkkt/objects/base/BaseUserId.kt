@@ -9,5 +9,5 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BaseUserId (
-    @SerialName("user_id") val userId: Long? = null,
+    @SerialName("user_id") val userId: Int? = null,
 )

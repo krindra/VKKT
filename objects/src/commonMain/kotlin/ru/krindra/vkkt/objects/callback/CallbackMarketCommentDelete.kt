@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class CallbackMarketCommentDelete (
-    @SerialName("id") val id: Long,
-    @SerialName("item_id") val itemId: Long,
-    @SerialName("user_id") val userId: Long,
-    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("id") val id: Int,
+    @SerialName("item_id") val itemId: Int,
+    @SerialName("user_id") val userId: Int,
+    @SerialName("owner_id") val ownerId: Int,
 )

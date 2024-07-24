@@ -64,7 +64,7 @@ import ru.krindra.vkkt.objects.base.BaseRepostsInfo
  */
 @Serializable
 data class VideoVideoFull (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("date") val date: Int? = null,
     @SerialName("views") val views: Int? = null,
     @SerialName("width") val width: Int? = null,
@@ -72,12 +72,12 @@ data class VideoVideoFull (
     @SerialName("height") val height: Int? = null,
     @SerialName("title") val title: String? = null,
     @SerialName("balance") val balance: Int? = null,
-    @SerialName("user_id") val userId: Long? = null,
+    @SerialName("user_id") val userId: Int? = null,
     @SerialName("player") val player: String? = null,
     @SerialName("comments") val comments: Int? = null,
     @SerialName("duration") val duration: Int? = null,
     @SerialName("likes") val likes: BaseLikes? = null,
-    @SerialName("owner_id") val ownerId: Long? = null,
+    @SerialName("owner_id") val ownerId: Int? = null,
     @SerialName("added") val added: BaseBoolInt? = null,
     @SerialName("can_repost") val canRepost: Int? = null,
     @SerialName("platform") val platform: String? = null,

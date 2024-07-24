@@ -9,7 +9,7 @@ import kotlinx.serialization.Serializable
  * @param items 
  */
 @Serializable
-data class MessagesLongpollMessages (
+data class MessagesIntpollMessages (
     @SerialName("count") val count: Int? = null,
     @SerialName("items") val items: List<MessagesMessage>? = null,
 )

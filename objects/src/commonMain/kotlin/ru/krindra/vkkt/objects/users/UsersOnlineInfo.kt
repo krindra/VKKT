@@ -15,7 +15,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class UsersOnlineInfo (
     @SerialName("visible") val visible: Boolean,
-    @SerialName("app_id") val appId: Long? = null,
+    @SerialName("app_id") val appId: Int? = null,
     @SerialName("status") val status: String? = null,
     @SerialName("last_seen") val lastSeen: Int? = null,
     @SerialName("is_mobile") val isMobile: Boolean? = null,

@@ -23,7 +23,7 @@ data class StoriesFeedItem (
     @SerialName("id") val id: String? = null,
     @SerialName("name") val name: String? = null,
     @SerialName("app") val app: AppsAppMin? = null,
-    @SerialName("owner_id") val ownerId: Long? = null,
+    @SerialName("owner_id") val ownerId: Int? = null,
     @SerialName("track_code") val trackCode: String? = null,
     @SerialName("has_unseen") val hasUnseen: Boolean? = null,
     @SerialName("stories") val stories: List<StoriesStory>? = null,

@@ -14,10 +14,10 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class CallbackMarketComment (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("date") val date: Int,
-    @SerialName("from_id") val fromId: Long,
+    @SerialName("from_id") val fromId: Int,
     @SerialName("text") val text: String? = null,
-    @SerialName("photo_id") val photoId: Long? = null,
-    @SerialName("market_owner_id") val marketOwnerId: Long? = null,
+    @SerialName("photo_id") val photoId: Int? = null,
+    @SerialName("market_owner_id") val marketOwnerId: Int? = null,
 )

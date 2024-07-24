@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BaseObjectWithName (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("name") val name: String,
 )

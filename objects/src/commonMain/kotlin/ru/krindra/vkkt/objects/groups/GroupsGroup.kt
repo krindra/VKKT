@@ -36,7 +36,7 @@ import ru.krindra.vkkt.objects.base.BaseBoolInt
  */
 @Serializable
 data class GroupsGroup (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("name") val name: String? = null,
     @SerialName("est_date") val estDate: String? = null,
     @SerialName("photo_50") val photo50: String? = null,

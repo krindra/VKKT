@@ -12,7 +12,7 @@ import ru.krindra.vkkt.objects.prettyCards.*
 @Serializable
 data class PrettyCardsDeleteResponse (
     @SerialName("card_id") val cardId: String,
-    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("owner_id") val ownerId: Int,
     @SerialName("error") val error: String? = null,
 )
 

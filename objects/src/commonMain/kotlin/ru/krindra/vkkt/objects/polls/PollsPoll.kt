@@ -31,12 +31,12 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class PollsPoll (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("votes") val votes: Int,
     @SerialName("created") val created: Int,
     @SerialName("end_date") val endDate: Int,
     @SerialName("closed") val closed: Boolean,
-    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("owner_id") val ownerId: Int,
     @SerialName("can_edit") val canEdit: Boolean,
     @SerialName("can_vote") val canVote: Boolean,
     @SerialName("is_board") val isBoard: Boolean,
@@ -44,8 +44,8 @@ data class PollsPoll (
     @SerialName("multiple") val multiple: Boolean,
     @SerialName("can_share") val canShare: Boolean,
     @SerialName("can_report") val canReport: Boolean,
-    @SerialName("answer_id") val answerId: Long? = null,
-    @SerialName("author_id") val authorId: Long? = null,
+    @SerialName("answer_id") val answerId: Int? = null,
+    @SerialName("author_id") val authorId: Int? = null,
     @SerialName("answers") val answers: List<PollsAnswer>,
     @SerialName("embed_hash") val embedHash: String? = null,
     @SerialName("photo") val photo: PollsBackground? = null,

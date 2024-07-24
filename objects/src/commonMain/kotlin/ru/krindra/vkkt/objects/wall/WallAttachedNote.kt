@@ -20,11 +20,11 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class WallAttachedNote (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("date") val date: Int,
     @SerialName("title") val title: String,
     @SerialName("comments") val comments: Int,
-    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("owner_id") val ownerId: Int,
     @SerialName("view_url") val viewUrl: String,
     @SerialName("text") val text: String? = null,
     @SerialName("read_comments") val readComments: Int,

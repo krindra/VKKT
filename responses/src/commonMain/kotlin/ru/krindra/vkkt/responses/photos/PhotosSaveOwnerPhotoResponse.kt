@@ -17,7 +17,7 @@ data class PhotosSaveOwnerPhotoResponse (
     @SerialName("saved") val saved: Int? = null,
     @SerialName("photo_src") val photoSrc: String,
     @SerialName("photo_hash") val photoHash: String,
-    @SerialName("post_id") val postId: Long? = null,
+    @SerialName("post_id") val postId: Int? = null,
     @SerialName("photo_src_big") val photoSrcBig: String? = null,
     @SerialName("photo_src_small") val photoSrcSmall: String? = null,
 )

@@ -25,7 +25,7 @@ data class StatsWallpostStat (
     @SerialName("hide") val hide: Int? = null,
     @SerialName("links") val links: Int? = null,
     @SerialName("report") val report: Int? = null,
-    @SerialName("post_id") val postId: Long? = null,
+    @SerialName("post_id") val postId: Int? = null,
     @SerialName("to_group") val toGroup: Int? = null,
     @SerialName("reach_ads") val reachAds: Int? = null,
     @SerialName("join_group") val joinGroup: Int? = null,

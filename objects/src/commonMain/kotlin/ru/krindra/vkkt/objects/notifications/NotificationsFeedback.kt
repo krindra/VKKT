@@ -18,11 +18,11 @@ import ru.krindra.vkkt.objects.base.BaseLikesInfo
  */
 @Serializable
 data class NotificationsFeedback (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("geo") val geo: BaseGeo? = null,
-    @SerialName("to_id") val toId: Long? = null,
+    @SerialName("to_id") val toId: Int? = null,
     @SerialName("text") val text: String? = null,
-    @SerialName("from_id") val fromId: Long? = null,
+    @SerialName("from_id") val fromId: Int? = null,
     @SerialName("likes") val likes: BaseLikesInfo? = null,
     @SerialName("attachments") val attachments: List<WallWallpostAttachment>? = null,
 )

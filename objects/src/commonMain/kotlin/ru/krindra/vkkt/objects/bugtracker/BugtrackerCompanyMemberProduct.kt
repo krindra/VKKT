@@ -14,7 +14,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BugtrackerCompanyMemberProduct (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("access") val access: Int,
     @SerialName("status") val status: Int,
     @SerialName("title") val title: String? = null,

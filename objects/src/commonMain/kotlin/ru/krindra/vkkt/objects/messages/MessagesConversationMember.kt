@@ -16,7 +16,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesConversationMember (
-    @SerialName("member_id") val memberId: Long,
+    @SerialName("member_id") val memberId: Int,
     @SerialName("join_date") val joinDate: Int? = null,
     @SerialName("can_kick") val canKick: Boolean? = null,
     @SerialName("invited_by") val invitedBy: Int? = null,

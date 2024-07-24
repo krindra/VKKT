@@ -9,6 +9,6 @@ import ru.krindra.vkkt.objects.groups.*
  */
 @Serializable
 data class GroupsAddCallbackServerResponse (
-    @SerialName("server_id") val serverId: Long,
+    @SerialName("server_id") val serverId: Int,
 )
 

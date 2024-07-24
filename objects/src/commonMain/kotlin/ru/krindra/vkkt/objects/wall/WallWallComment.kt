@@ -30,15 +30,15 @@ import ru.krindra.vkkt.objects.base.BaseLikesInfo
  */
 @Serializable
 data class WallWallComment (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("date") val date: Int,
     @SerialName("text") val text: String,
-    @SerialName("from_id") val fromId: Long,
-    @SerialName("pid") val pid: Long? = null,
-    @SerialName("post_id") val postId: Long? = null,
-    @SerialName("owner_id") val ownerId: Long? = null,
-    @SerialName("photo_id") val photoId: Long? = null,
-    @SerialName("video_id") val videoId: Long? = null,
+    @SerialName("from_id") val fromId: Int,
+    @SerialName("pid") val pid: Int? = null,
+    @SerialName("post_id") val postId: Int? = null,
+    @SerialName("owner_id") val ownerId: Int? = null,
+    @SerialName("photo_id") val photoId: Int? = null,
+    @SerialName("video_id") val videoId: Int? = null,
     @SerialName("deleted") val deleted: Boolean? = null,
     @SerialName("likes") val likes: BaseLikesInfo? = null,
     @SerialName("real_offset") val realOffset: Int? = null,

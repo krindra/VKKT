@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class SecureGiveEventStickerItem (
-    @SerialName("user_id") val userId: Long? = null,
+    @SerialName("user_id") val userId: Int? = null,
     @SerialName("status") val status: String? = null,
 )

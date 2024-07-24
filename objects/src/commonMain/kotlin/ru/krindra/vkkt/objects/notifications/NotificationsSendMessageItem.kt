@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class NotificationsSendMessageItem (
-    @SerialName("user_id") val userId: Long? = null,
+    @SerialName("user_id") val userId: Int? = null,
     @SerialName("status") val status: Boolean? = null,
     @SerialName("error") val error: NotificationsSendMessageError? = null,
 )

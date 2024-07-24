@@ -27,12 +27,12 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class OrdersSubscription (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("price") val price: Int,
     @SerialName("period") val period: Int,
     @SerialName("status") val status: String,
     @SerialName("item_id") val itemId: String,
-    @SerialName("app_id") val appId: Long? = null,
+    @SerialName("app_id") val appId: Int? = null,
     @SerialName("create_time") val createTime: Int,
     @SerialName("title") val title: String? = null,
     @SerialName("update_time") val updateTime: Int,

@@ -11,6 +11,6 @@ import ru.krindra.vkkt.objects.base.BaseBoolInt
  */
 @Serializable
 data class CallbackGroupLeave (
-    @SerialName("user_id") val userId: Long? = null,
+    @SerialName("user_id") val userId: Int? = null,
     @SerialName("self") val self: BaseBoolInt? = null,
 )

@@ -15,7 +15,7 @@ import ru.krindra.vkkt.objects.base.BaseBoolInt
  */
 @Serializable
 data class AdsAccount (
-    @SerialName("account_id") val accountId: Long,
+    @SerialName("account_id") val accountId: Int,
     @SerialName("account_name") val accountName: String,
     @SerialName("access_role") val accessRole: AdsAccessRole,
     @SerialName("can_view_budget") val canViewBudget: Boolean,

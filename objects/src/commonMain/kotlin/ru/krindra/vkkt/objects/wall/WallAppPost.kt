@@ -12,7 +12,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class WallAppPost (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("name") val name: String? = null,
     @SerialName("photo_130") val photo130: String? = null,
     @SerialName("photo_604") val photo604: String? = null,

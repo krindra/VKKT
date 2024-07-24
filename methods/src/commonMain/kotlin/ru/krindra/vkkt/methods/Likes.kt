@@ -18,7 +18,7 @@ class Likes(
      * @param itemId Object ID.
      * @param accessKey Access key required for an object owned by a private entity.
      */
-    suspend fun add(type: String, itemId: Long, ownerId: Long? = null, accessKey: String? = null): LikesAddResponse {
+    suspend fun add(type: String, itemId: Int, ownerId: Int? = null, accessKey: String? = null): LikesAddResponse {
         val response = method("likes.add", mapOf("type" to type, "owner_id" to ownerId, "item_id" to itemId, "access_key" to accessKey))
         return decodeResponse(response, json)
     }
@@ -32,7 +32,7 @@ class Likes(
      * @param itemId Object ID.
      * @param accessKey Access key required for an object owned by a private entity.
      */
-    suspend fun delete(type: String, itemId: Long, ownerId: Long? = null, accessKey: String? = null): LikesDeleteResponse {
+    suspend fun delete(type: String, itemId: Int, ownerId: Int? = null, accessKey: String? = null): LikesDeleteResponse {
         val response = method("likes.delete", mapOf("type" to type, "owner_id" to ownerId, "item_id" to itemId, "access_key" to accessKey))
         return decodeResponse(response, json)
     }
@@ -53,7 +53,7 @@ class Likes(
      * @param skipOwn 
      * @param fields 
      */
-    suspend fun getList(type: String, ownerId: Long? = null, itemId: Long? = null, pageUrl: String? = null, filter: String? = null, friendsOnly: Int? = 0, extended: Boolean? = false, offset: Int? = null, count: Int? = null, skipOwn: Boolean? = false, fields: List<String>? = null): GetListResponse {
+    suspend fun getList(type: String, ownerId: Int? = null, itemId: Int? = null, pageUrl: String? = null, filter: String? = null, friendsOnly: Int? = 0, extended: Boolean? = false, offset: Int? = null, count: Int? = null, skipOwn: Boolean? = false, fields: List<String>? = null): GetListResponse {
         val response = method("likes.getList", mapOf("type" to type, "owner_id" to ownerId, "item_id" to itemId, "page_url" to pageUrl, "filter" to filter, "friends_only" to friendsOnly, "extended" to extended, "offset" to offset, "count" to count, "skip_own" to skipOwn, "fields" to fields))
         return GetListResponse(response, json)
     }
@@ -77,7 +77,7 @@ class Likes(
      * @param ownerId ID of the user or community that owns the object.
      * @param itemId Object ID.
      */
-    suspend fun isLiked(type: String, itemId: Long, userId: Long? = null, ownerId: Long? = null): LikesIsLikedResponse {
+    suspend fun isLiked(type: String, itemId: Int, userId: Int? = null, ownerId: Int? = null): LikesIsLikedResponse {
         val response = method("likes.isLiked", mapOf("user_id" to userId, "type" to type, "owner_id" to ownerId, "item_id" to itemId))
         return decodeResponse(response, json)
     }

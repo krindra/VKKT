@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsEventsRetargetingGroup (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("value") val value: List<Int>? = null,
 )

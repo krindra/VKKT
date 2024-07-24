@@ -15,8 +15,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BaseStickerNew (
-    @SerialName("product_id") val productId: Long? = null,
-    @SerialName("sticker_id") val stickerId: Long? = null,
+    @SerialName("product_id") val productId: Int? = null,
+    @SerialName("sticker_id") val stickerId: Int? = null,
     @SerialName("is_allowed") val isAllowed: Boolean? = null,
     @SerialName("images") val images: List<BaseImage>? = null,
     @SerialName("animation_url") val animationUrl: String? = null,

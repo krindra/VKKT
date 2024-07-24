@@ -12,6 +12,6 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class LinkTargetObject (
     @SerialName("type") val type: String? = null,
-    @SerialName("item_id") val itemId: Long? = null,
-    @SerialName("owner_id") val ownerId: Long? = null,
+    @SerialName("item_id") val itemId: Int? = null,
+    @SerialName("owner_id") val ownerId: Int? = null,
 )

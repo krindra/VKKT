@@ -19,7 +19,7 @@ import ru.krindra.vkkt.objects.base.BaseGradientPoint
  */
 @Serializable
 data class PollsBackground (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("angle") val angle: Int? = null,
     @SerialName("width") val width: Int? = null,
     @SerialName("name") val name: String? = null,

@@ -18,8 +18,8 @@ import ru.krindra.vkkt.objects.photos.PhotosPhoto
  */
 @Serializable
 data class MarketOrderItem (
-    @SerialName("item_id") val itemId: Long,
-    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("item_id") val itemId: Int,
+    @SerialName("owner_id") val ownerId: Int,
     @SerialName("quantity") val quantity: Int,
     @SerialName("price") val price: MarketPrice,
     @SerialName("item") val item: MarketMarketItem,

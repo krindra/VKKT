@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsUsers (
-    @SerialName("user_id") val userId: Long,
+    @SerialName("user_id") val userId: Int,
     @SerialName("accesses") val accesses: List<AdsAccesses>,
 )

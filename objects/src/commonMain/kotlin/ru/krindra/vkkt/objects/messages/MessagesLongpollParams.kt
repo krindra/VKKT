@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  * @param pts Persistent timestamp
  */
 @Serializable
-data class MessagesLongpollParams (
+data class MessagesIntpollParams (
     @SerialName("ts") val ts: Int,
     @SerialName("key") val key: String,
     @SerialName("pts") val pts: Int? = null,

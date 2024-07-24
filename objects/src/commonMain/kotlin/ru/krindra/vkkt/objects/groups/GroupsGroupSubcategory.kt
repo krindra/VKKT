@@ -12,7 +12,7 @@ import ru.krindra.vkkt.objects.base.BaseObjectWithName
  */
 @Serializable
 data class GroupsGroupSubcategory (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("name") val name: String,
     @SerialName("genders") val genders: List<BaseObjectWithName>? = null,
 )

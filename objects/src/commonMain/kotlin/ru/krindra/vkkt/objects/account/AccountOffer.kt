@@ -20,12 +20,12 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AccountOffer (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("img") val img: String? = null,
     @SerialName("tag") val tag: String? = null,
     @SerialName("price") val price: Int? = null,
     @SerialName("title") val title: String? = null,
-    @SerialName("link_id") val linkId: Long? = null,
+    @SerialName("link_id") val linkId: Int? = null,
     @SerialName("link_type") val linkType: String? = null,
     @SerialName("description") val description: String? = null,
     @SerialName("instruction") val instruction: String? = null,

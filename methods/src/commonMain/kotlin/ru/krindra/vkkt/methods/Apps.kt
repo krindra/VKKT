@@ -17,7 +17,7 @@ class Apps(
      * @param userIds 
      * @param groupId 
      */
-    suspend fun addUsersToTestingGroup(userIds: List<Int>, groupId: Long): BaseBoolResponse {
+    suspend fun addUsersToTestingGroup(userIds: List<Int>, groupId: Int): BaseBoolResponse {
         val response = method("apps.addUsersToTestingGroup", mapOf("user_ids" to userIds, "group_id" to groupId))
         return decodeResponse(response, json)
     }
@@ -45,7 +45,7 @@ class Apps(
      * @param nameCase Case for declension of user name and surname: 'nom' - nominative (default),, 'gen' - genitive,, 'dat' - dative,, 'acc' - accusative,, 'ins' - instrumental,, 'abl' - prepositional. (only if 'return_friends' = '1').
      * @param appFields List of app fields to return. Fields 'id', 'type' and 'title' will always be in response. Leave this field empty to get all fields.
      */
-    suspend fun get(appId: Long? = null, appIds: List<Int>? = null, platform: String? = "web", extended: Boolean? = false, returnFriends: Boolean? = false, fields: List<UsersFields>? = null, nameCase: String? = null, appFields: List<AppsAppFields>? = null): AppsGetResponse {
+    suspend fun get(appId: Int? = null, appIds: List<Int>? = null, platform: String? = "web", extended: Boolean? = false, returnFriends: Boolean? = false, fields: List<UsersFields>? = null, nameCase: String? = null, appFields: List<AppsAppFields>? = null): AppsGetResponse {
         val response = method("apps.get", mapOf("app_id" to appId, "app_ids" to appIds, "platform" to platform, "extended" to extended, "return_friends" to returnFriends, "fields" to fields, "name_case" to nameCase, "app_fields" to appFields))
         return decodeResponse(response, json)
     }
@@ -66,7 +66,7 @@ class Apps(
      * @param genreId 
      * @param filter 'installed' - to return list of installed apps (only for mobile platform).
      */
-    suspend fun getCatalog(sort: String? = null, offset: Int? = null, count: Int? = 100, platform: String? = null, extended: Boolean? = false, returnFriends: Boolean? = false, fields: List<UsersFields>? = null, nameCase: String? = null, q: String? = null, genreId: Long? = null, filter: String? = null): AppsGetCatalogResponse {
+    suspend fun getCatalog(sort: String? = null, offset: Int? = null, count: Int? = 100, platform: String? = null, extended: Boolean? = false, returnFriends: Boolean? = false, fields: List<UsersFields>? = null, nameCase: String? = null, q: String? = null, genreId: Int? = null, filter: String? = null): AppsGetCatalogResponse {
         val response = method("apps.getCatalog", mapOf("sort" to sort, "offset" to offset, "count" to count, "platform" to platform, "extended" to extended, "return_friends" to returnFriends, "fields" to fields, "name_case" to nameCase, "q" to q, "genre_id" to genreId, "filter" to filter))
         return decodeResponse(response, json)
     }
@@ -134,7 +134,7 @@ class Apps(
      * 
      * @param appId Mini App ID.
      */
-    suspend fun getMiniAppPolicies(appId: Long): AppsGetMiniAppPoliciesResponse {
+    suspend fun getMiniAppPolicies(appId: Int): AppsGetMiniAppPoliciesResponse {
         val response = method("apps.getMiniAppPolicies", mapOf("app_id" to appId))
         return decodeResponse(response, json)
     }
@@ -156,7 +156,7 @@ class Apps(
      * 
      * @param userId 
      */
-    suspend fun getScore(userId: Long? = null): AppsGetScoreResponse {
+    suspend fun getScore(userId: Int? = null): AppsGetScoreResponse {
         val response = method("apps.getScore", mapOf("user_id" to userId))
         return decodeResponse(response, json)
     }
@@ -165,7 +165,7 @@ class Apps(
      *
      * @param groupId 
      */
-    suspend fun getTestingGroups(groupId: Long? = null): AppsGetTestingGroupsResponse {
+    suspend fun getTestingGroups(groupId: Int? = null): AppsGetTestingGroupsResponse {
         val response = method("apps.getTestingGroups", mapOf("group_id" to groupId))
         return decodeResponse(response, json)
     }
@@ -174,7 +174,7 @@ class Apps(
      *
      * @param userId 
      */
-    suspend fun isNotificationsAllowed(userId: Long? = null): AppsIsNotificationsAllowedResponse {
+    suspend fun isNotificationsAllowed(userId: Int? = null): AppsIsNotificationsAllowedResponse {
         val response = method("apps.isNotificationsAllowed", mapOf("user_id" to userId))
         return decodeResponse(response, json)
     }
@@ -184,7 +184,7 @@ class Apps(
      * @param promoId Id of game promo action.
      * @param userId 
      */
-    suspend fun promoHasActiveGift(promoId: Long, userId: Long? = null): BaseBoolResponse {
+    suspend fun promoHasActiveGift(promoId: Int, userId: Int? = null): BaseBoolResponse {
         val response = method("apps.promoHasActiveGift", mapOf("promo_id" to promoId, "user_id" to userId))
         return decodeResponse(response, json)
     }
@@ -194,7 +194,7 @@ class Apps(
      * @param promoId Id of game promo action.
      * @param userId 
      */
-    suspend fun promoUseGift(promoId: Long, userId: Long? = null): BaseBoolResponse {
+    suspend fun promoUseGift(promoId: Int, userId: Int? = null): BaseBoolResponse {
         val response = method("apps.promoUseGift", mapOf("promo_id" to promoId, "user_id" to userId))
         return decodeResponse(response, json)
     }
@@ -203,7 +203,7 @@ class Apps(
      *
      * @param groupId 
      */
-    suspend fun removeTestingGroup(groupId: Long): BaseBoolResponse {
+    suspend fun removeTestingGroup(groupId: Int): BaseBoolResponse {
         val response = method("apps.removeTestingGroup", mapOf("group_id" to groupId))
         return decodeResponse(response, json)
     }
@@ -228,7 +228,7 @@ class Apps(
      * @param key special string key to be sent with the request.
      * @param separate 
      */
-    suspend fun sendRequest(userId: Long, text: String? = null, type: String? = "request", name: String? = null, key: String? = null, separate: Boolean? = false): AppsSendRequestResponse {
+    suspend fun sendRequest(userId: Int, text: String? = null, type: String? = "request", name: String? = null, key: String? = null, separate: Boolean? = false): AppsSendRequestResponse {
         val response = method("apps.sendRequest", mapOf("user_id" to userId, "text" to text, "type" to type, "name" to name, "key" to key, "separate" to separate))
         return decodeResponse(response, json)
     }
@@ -241,7 +241,7 @@ class Apps(
      * @param platforms 
      * @param userIds 
      */
-    suspend fun updateMetaForTestingGroup(webview: String, name: String, platforms: List<String>, groupId: Long? = null, userIds: List<Int>? = null): AppsCreatedGroupResponse {
+    suspend fun updateMetaForTestingGroup(webview: String, name: String, platforms: List<String>, groupId: Int? = null, userIds: List<Int>? = null): AppsCreatedGroupResponse {
         val response = method("apps.updateMetaForTestingGroup", mapOf("group_id" to groupId, "webview" to webview, "name" to name, "platforms" to platforms, "user_ids" to userIds))
         return decodeResponse(response, json)
     }

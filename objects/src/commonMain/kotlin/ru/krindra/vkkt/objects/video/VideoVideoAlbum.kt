@@ -13,9 +13,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class VideoVideoAlbum (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("title") val title: String,
-    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("owner_id") val ownerId: Int,
     @SerialName("track_code") val trackCode: String? = null,
     @SerialName("response_type") val responseType: String? = null,
 )

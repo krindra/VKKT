@@ -17,7 +17,7 @@ data class AdsTargetPixelInfo (
     @SerialName("name") val name: String,
     @SerialName("pixel") val pixel: String,
     @SerialName("domain") val domain: String,
-    @SerialName("category_id") val categoryId: Long,
+    @SerialName("category_id") val categoryId: Int,
     @SerialName("last_updated") val lastUpdated: Int,
-    @SerialName("target_pixel_id") val targetPixelId: Long,
+    @SerialName("target_pixel_id") val targetPixelId: Int,
 )

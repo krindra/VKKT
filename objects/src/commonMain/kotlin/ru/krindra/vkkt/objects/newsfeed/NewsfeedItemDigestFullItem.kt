@@ -21,7 +21,7 @@ import ru.krindra.vkkt.objects.wall.WallWallpostAttachment
  */
 @Serializable
 data class NewsfeedItemDigestFullItem (
-    @SerialName("source_id") val sourceId: Long,
+    @SerialName("source_id") val sourceId: Int,
     @SerialName("text") val text: String? = null,
     @SerialName("style") val style: String? = null,
     @SerialName("post") val post: NewsfeedItemWallpost,

@@ -20,7 +20,7 @@ import ru.krindra.vkkt.objects.base.BaseBoolInt
  */
 @Serializable
 data class BoardTopic (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("title") val title: String? = null,
     @SerialName("created") val created: Int? = null,
     @SerialName("updated") val updated: Int? = null,

@@ -19,10 +19,10 @@ import ru.krindra.vkkt.objects.base.BaseLikesInfo
  */
 @Serializable
 data class BoardTopicComment (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("date") val date: Int,
     @SerialName("text") val text: String,
-    @SerialName("from_id") val fromId: Long,
+    @SerialName("from_id") val fromId: Int,
     @SerialName("likes") val likes: BaseLikesInfo? = null,
     @SerialName("real_offset") val realOffset: Int? = null,
     @SerialName("can_edit") val canEdit: BaseBoolInt? = null,

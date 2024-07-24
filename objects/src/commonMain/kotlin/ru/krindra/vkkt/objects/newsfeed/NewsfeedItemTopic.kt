@@ -20,8 +20,8 @@ import ru.krindra.vkkt.objects.base.BaseLikesInfo
 @Serializable
 data class NewsfeedItemTopic (
     @SerialName("text") val text: String,
-    @SerialName("post_id") val postId: Long,
-    @SerialName("source_id") val sourceId: Long,
+    @SerialName("post_id") val postId: Int,
+    @SerialName("source_id") val sourceId: Int,
     @SerialName("likes") val likes: BaseLikesInfo? = null,
     @SerialName("date") val date: Int/* WARN! Int? = null */,
     @SerialName("comments") val comments: BaseCommentsInfo? = null,

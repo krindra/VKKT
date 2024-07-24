@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class DocsDocTypes (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("count") val count: Int,
     @SerialName("name") val name: String,
 )

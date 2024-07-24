@@ -25,7 +25,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsPromotedPostReach (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("hide") val hide: Int,
     @SerialName("links") val links: Int,
     @SerialName("report") val report: Int,

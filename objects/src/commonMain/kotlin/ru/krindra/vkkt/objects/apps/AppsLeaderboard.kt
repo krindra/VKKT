@@ -12,7 +12,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AppsLeaderboard (
-    @SerialName("user_id") val userId: Long,
+    @SerialName("user_id") val userId: Int,
     @SerialName("level") val level: Int? = null,
     @SerialName("score") val score: Int? = null,
     @SerialName("points") val points: Int? = null,

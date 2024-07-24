@@ -12,7 +12,7 @@ import ru.krindra.vkkt.objects.users.UsersUserFull
  */
 @Serializable
 data class StoriesViewersItem (
-    @SerialName("user_id") val userId: Long,
+    @SerialName("user_id") val userId: Int,
     @SerialName("is_liked") val isLiked: Boolean,
     @SerialName("user") val user: UsersUserFull? = null,
 )

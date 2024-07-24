@@ -12,7 +12,7 @@ import ru.krindra.vkkt.objects.photos.*
  */
 @Serializable
 data class PhotosMarketAlbumUploadResponse (
-    @SerialName("gid") val gid: Long? = null,
+    @SerialName("gid") val gid: Int? = null,
     @SerialName("hash") val hash: String? = null,
     @SerialName("server") val server: Int? = null,
     @SerialName("photo") val photo: String? = null,

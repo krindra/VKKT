@@ -15,5 +15,5 @@ data class WallPostCopyright (
     @SerialName("link") val link: String,
     @SerialName("name") val name: String,
     @SerialName("type") val type: String,
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
 )

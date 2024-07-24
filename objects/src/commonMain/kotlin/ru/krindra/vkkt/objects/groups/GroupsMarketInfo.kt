@@ -22,11 +22,11 @@ import ru.krindra.vkkt.objects.base.BaseBoolInt
 @Serializable
 data class GroupsMarketInfo (
     @SerialName("type") val type: String? = null,
-    @SerialName("contact_id") val contactId: Long? = null,
+    @SerialName("contact_id") val contactId: Int? = null,
     @SerialName("price_max") val priceMax: String? = null,
     @SerialName("price_min") val priceMin: String? = null,
     @SerialName("enabled") val enabled: BaseBoolInt? = null,
-    @SerialName("main_album_id") val mainAlbumId: Long? = null,
+    @SerialName("main_album_id") val mainAlbumId: Int? = null,
     @SerialName("currency") val currency: MarketCurrency? = null,
     @SerialName("currency_text") val currencyText: String? = null,
     @SerialName("min_order_price") val minOrderPrice: MarketPrice? = null,

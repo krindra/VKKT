@@ -23,9 +23,9 @@ import kotlinx.serialization.Serializable
 data class BugtrackerComment (
     @SerialName("text") val text: String,
     @SerialName("created") val created: Int,
-    @SerialName("comment_id") val commentId: Long,
-    @SerialName("from_id") val fromId: Long? = null,
-    @SerialName("bugreport_id") val bugreportId: Long,
+    @SerialName("comment_id") val commentId: Int,
+    @SerialName("from_id") val fromId: Int? = null,
+    @SerialName("bugreport_id") val bugreportId: Int,
     @SerialName("edit_hash") val editHash: String? = null,
     @SerialName("meta_text") val metaText: String? = null,
     @SerialName("is_hidden") val isHidden: Boolean? = null,

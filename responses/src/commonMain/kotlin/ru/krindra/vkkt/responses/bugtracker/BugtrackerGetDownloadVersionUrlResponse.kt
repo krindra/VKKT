@@ -14,7 +14,7 @@ import ru.krindra.vkkt.objects.bugtracker.*
 @Serializable
 data class BugtrackerGetDownloadVersionUrlResponse (
     @SerialName("url") val url: String,
-    @SerialName("build_id") val buildId: Long? = null,
+    @SerialName("build_id") val buildId: Int? = null,
     @SerialName("app_title") val appTitle: String? = null,
     @SerialName("build_title") val buildTitle: String? = null,
     @SerialName("bundle_name") val bundleName: String? = null,

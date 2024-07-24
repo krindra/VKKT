@@ -12,7 +12,7 @@ class Downloadedgames(
      *
      * @param userId 
      */
-    suspend fun getPaidStatus(userId: Long? = null): DownloadedGamesPaidStatusResponse {
+    suspend fun getPaidStatus(userId: Int? = null): DownloadedGamesPaidStatusResponse {
         val response = method("downloadedGames.getPaidStatus", mapOf("user_id" to userId))
         return decodeResponse(response, json)
     }

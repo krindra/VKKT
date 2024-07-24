@@ -11,5 +11,5 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class AdswebGetFraudHistoryResponseEntriesEntry (
     @SerialName("day") val day: String,
-    @SerialName("site_id") val siteId: Long,
+    @SerialName("site_id") val siteId: Int,
 )

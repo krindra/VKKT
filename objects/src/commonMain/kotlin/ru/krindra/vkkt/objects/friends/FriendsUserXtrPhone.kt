@@ -178,7 +178,7 @@ import ru.krindra.vkkt.objects.photos.PhotosPhoto
  */
 @Serializable
 data class FriendsUserXtrPhone (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("tv") val tv: String? = null,
     @SerialName("sex") val sex: BaseSex? = null,
     @SerialName("hash") val hash: String? = null,
@@ -213,7 +213,7 @@ data class FriendsUserXtrPhone (
     @SerialName("nickname") val nickname: String? = null,
     @SerialName("online_app") val onlineApp: Int? = null,
     @SerialName("timezone") val timezone: Double? = null,
-    @SerialName("contact_id") val contactId: Long? = null,
+    @SerialName("contact_id") val contactId: Int? = null,
     @SerialName("graduation") val graduation: Int? = null,
     @SerialName("home_town") val homeTown: String? = null,
     @SerialName("last_name") val lastName: String? = null,
@@ -302,7 +302,7 @@ data class FriendsUserXtrPhone (
     @SerialName("photo_rec") val photoRec: PhotosPhotoFalseable? = null,
     @SerialName("relatives") val relatives: List<UsersRelative>? = null,
     @SerialName("can_access_closed") val canAccessClosed: Boolean? = null,
-    @SerialName("university_group_id") val universityGroupId: Long? = null,
+    @SerialName("university_group_id") val universityGroupId: Int? = null,
     @SerialName("has_unseen_stories") val hasUnseenStories: Boolean? = null,
     @SerialName("is_message_request") val isMessageRequest: Boolean? = null,
     @SerialName("can_call_from_group") val canCallFromGroup: Boolean? = null,

@@ -12,7 +12,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class GroupsGroupTag (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("name") val name: String,
     @SerialName("color") val color: String,
     @SerialName("uses") val uses: Int? = null,

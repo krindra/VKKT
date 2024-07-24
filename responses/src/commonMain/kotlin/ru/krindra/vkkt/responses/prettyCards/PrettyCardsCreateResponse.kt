@@ -11,6 +11,6 @@ import ru.krindra.vkkt.objects.prettyCards.*
 @Serializable
 data class PrettyCardsCreateResponse (
     @SerialName("card_id") val cardId: String,
-    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("owner_id") val ownerId: Int,
 )
 

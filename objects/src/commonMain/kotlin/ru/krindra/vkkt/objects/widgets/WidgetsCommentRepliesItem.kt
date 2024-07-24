@@ -15,8 +15,8 @@ import ru.krindra.vkkt.objects.users.UsersUserFull
  */
 @Serializable
 data class WidgetsCommentRepliesItem (
-    @SerialName("cid") val cid: Long? = null,
-    @SerialName("uid") val uid: Long? = null,
+    @SerialName("cid") val cid: Int? = null,
+    @SerialName("uid") val uid: Int? = null,
     @SerialName("date") val date: Int? = null,
     @SerialName("text") val text: String? = null,
     @SerialName("user") val user: UsersUserFull? = null,

@@ -28,7 +28,7 @@ import kotlinx.serialization.Serializable
 data class MessagesConversation (
     @SerialName("in_read") val inRead: Int,
     @SerialName("out_read") val outRead: Int,
-    @SerialName("last_message_id") val lastMessageId: Long,
+    @SerialName("last_message_id") val lastMessageId: Int,
     @SerialName("peer") val peer: MessagesConversationPeer,
     @SerialName("important") val important: Boolean? = null,
     @SerialName("mentions") val mentions: List<Int>? = null,
@@ -42,6 +42,6 @@ data class MessagesConversation (
     @SerialName("chat_settings") val chatSettings: MessagesChatSettings? = null,
     @SerialName("push_settings") val pushSettings: MessagesPushSettings? = null,
     @SerialName("current_keyboard") val currentKeyboard: MessagesKeyboard? = null,
-    @SerialName("last_conversation_message_id") val lastConversationMessageId: Long? = null,
+    @SerialName("last_conversation_message_id") val lastConversationMessageId: Int? = null,
     @SerialName("message_request_data") val messageRequestData: MessagesMessageRequestData? = null,
 )

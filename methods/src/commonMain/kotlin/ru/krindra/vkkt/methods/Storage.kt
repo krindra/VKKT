@@ -18,7 +18,7 @@ class Storage(
      * @param keys 
      * @param userId 
      */
-    suspend fun get(key: String? = null, keys: List<String>? = null, userId: Long? = null): StorageGetResponse {
+    suspend fun get(key: String? = null, keys: List<String>? = null, userId: Int? = null): StorageGetResponse {
         val response = method("storage.get", mapOf("key" to key, "keys" to keys, "user_id" to userId))
         return decodeResponse(response, json)
     }
@@ -31,7 +31,7 @@ class Storage(
      * @param offset 
      * @param count amount of variable names the info needs to be collected from.
      */
-    suspend fun getKeys(userId: Long? = null, offset: Int? = 0, count: Int? = 100): StorageGetKeysResponse {
+    suspend fun getKeys(userId: Int? = null, offset: Int? = 0, count: Int? = 100): StorageGetKeysResponse {
         val response = method("storage.getKeys", mapOf("user_id" to userId, "offset" to offset, "count" to count))
         return decodeResponse(response, json)
     }
@@ -44,7 +44,7 @@ class Storage(
      * @param value 
      * @param userId 
      */
-    suspend fun set(key: String, value: String? = null, userId: Long? = null): BaseOkResponse {
+    suspend fun set(key: String, value: String? = null, userId: Int? = null): BaseOkResponse {
         val response = method("storage.set", mapOf("key" to key, "value" to value, "user_id" to userId))
         return decodeResponse(response, json)
     }

@@ -41,11 +41,11 @@ import ru.krindra.vkkt.objects.base.BaseBoolInt
  */
 @Serializable
 data class AppsApp (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("title") val title: String,
     @SerialName("type") val type: AppsAppType,
     @SerialName("genre") val genre: String? = null,
-    @SerialName("genre_id") val genreId: Long? = null,
+    @SerialName("genre_id") val genreId: Int? = null,
     @SerialName("icon_16") val icon16: String? = null,
     @SerialName("icon_75") val icon75: String? = null,
     @SerialName("section") val section: String? = null,
@@ -66,7 +66,7 @@ data class AppsApp (
     @SerialName("members_count") val membersCount: Int? = null,
     @SerialName("is_installed") val isInstalled: Boolean? = null,
     @SerialName("published_date") val publishedDate: Int? = null,
-    @SerialName("author_owner_id") val authorOwnerId: Long? = null,
+    @SerialName("author_owner_id") val authorOwnerId: Int? = null,
     @SerialName("international") val international: Boolean? = null,
     @SerialName("catalog_position") val catalogPosition: Int? = null,
     @SerialName("push_enabled") val pushEnabled: BaseBoolInt? = null,

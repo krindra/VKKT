@@ -12,7 +12,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdswebGetSitesResponseSitesSite (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("domains") val domains: String? = null,
     @SerialName("status_user") val statusUser: String? = null,
     @SerialName("status_moder") val statusModer: String? = null,

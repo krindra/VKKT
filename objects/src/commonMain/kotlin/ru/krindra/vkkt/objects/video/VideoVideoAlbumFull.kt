@@ -23,10 +23,10 @@ import ru.krindra.vkkt.objects.base.BaseBoolInt
  */
 @Serializable
 data class VideoVideoAlbumFull (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("count") val count: Int,
     @SerialName("title") val title: String,
-    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("owner_id") val ownerId: Int,
     @SerialName("updated_time") val updatedTime: Int,
     @SerialName("track_code") val trackCode: String? = null,
     @SerialName("can_edit") val canEdit: BaseBoolInt? = null,

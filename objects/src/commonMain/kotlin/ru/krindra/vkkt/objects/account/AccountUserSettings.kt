@@ -46,7 +46,7 @@ import ru.krindra.vkkt.objects.users.UsersUserRelation
  */
 @Serializable
 data class AccountUserSettings (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("status") val status: String,
     @SerialName("sex") val sex: BaseSex? = null,
     @SerialName("hidden") val hidden: Int? = null,

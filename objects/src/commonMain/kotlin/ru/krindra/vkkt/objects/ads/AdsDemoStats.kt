@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsDemoStats (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("type") val type: AdsObjectType? = null,
     @SerialName("stats") val stats: List<AdsDemostatsFormat>? = null,
 )

@@ -19,7 +19,7 @@ class Donut(
      * @param count 
      * @param fields 
      */
-    suspend fun getFriends(ownerId: Long, offset: Int? = 0, count: Int? = 10, fields: List<String>? = null): GroupsGetMembersFieldsResponse {
+    suspend fun getFriends(ownerId: Int, offset: Int? = 0, count: Int? = 10, fields: List<String>? = null): GroupsGetMembersFieldsResponse {
         val response = method("donut.getFriends", mapOf("owner_id" to ownerId, "offset" to offset, "count" to count, "fields" to fields))
         return decodeResponse(response, json)
     }
@@ -28,7 +28,7 @@ class Donut(
      *
      * @param ownerId 
      */
-    suspend fun getSubscription(ownerId: Long): DonutGetSubscriptionResponse {
+    suspend fun getSubscription(ownerId: Int): DonutGetSubscriptionResponse {
         val response = method("donut.getSubscription", mapOf("owner_id" to ownerId))
         return decodeResponse(response, json)
     }
@@ -50,7 +50,7 @@ class Donut(
      *
      * @param ownerId 
      */
-    suspend fun isDon(ownerId: Long): BaseBoolResponse {
+    suspend fun isDon(ownerId: Int): BaseBoolResponse {
         val response = method("donut.isDon", mapOf("owner_id" to ownerId))
         return decodeResponse(response, json)
     }

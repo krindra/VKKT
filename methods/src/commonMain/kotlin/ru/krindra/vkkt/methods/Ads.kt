@@ -19,7 +19,7 @@ class Ads(
      * @param accountId Advertising account ID.
      * @param data Serialized JSON array of objects that describe added managers. Description of 'user_specification' objects see below.
      */
-    suspend fun addOfficeUsers(accountId: Long, data: String): AdsAddOfficeUsersResponse {
+    suspend fun addOfficeUsers(accountId: Int, data: String): AdsAddOfficeUsersResponse {
         val response = method("ads.addOfficeUsers", mapOf("account_id" to accountId, "data" to data))
         return decodeResponse(response, json)
     }
@@ -33,7 +33,7 @@ class Ads(
      * @param linkUrl Object URL.
      * @param campaignId Campaign ID.
      */
-    suspend fun checkLink(accountId: Long, linkType: String, linkUrl: String, campaignId: Long? = null): AdsCheckLinkResponse {
+    suspend fun checkLink(accountId: Int, linkType: String, linkUrl: String, campaignId: Int? = null): AdsCheckLinkResponse {
         val response = method("ads.checkLink", mapOf("account_id" to accountId, "link_type" to linkType, "link_url" to linkUrl, "campaign_id" to campaignId))
         return decodeResponse(response, json)
     }
@@ -45,7 +45,7 @@ class Ads(
      * @param accountId Advertising account ID.
      * @param data Serialized JSON array of objects that describe created ads. Description of 'ad_specification' objects see below.
      */
-    suspend fun createAds(accountId: Long, data: String): AdsCreateAdsResponse {
+    suspend fun createAds(accountId: Int, data: String): AdsCreateAdsResponse {
         val response = method("ads.createAds", mapOf("account_id" to accountId, "data" to data))
         return decodeResponse(response, json)
     }
@@ -57,7 +57,7 @@ class Ads(
      * @param accountId Advertising account ID.
      * @param data Serialized JSON array of objects that describe created campaigns. Description of 'campaign_specification' objects see below.
      */
-    suspend fun createCampaigns(accountId: Long, data: String): AdsCreateCampaignsResponse {
+    suspend fun createCampaigns(accountId: Int, data: String): AdsCreateCampaignsResponse {
         val response = method("ads.createCampaigns", mapOf("account_id" to accountId, "data" to data))
         return decodeResponse(response, json)
     }
@@ -69,7 +69,7 @@ class Ads(
      * @param accountId Advertising account ID.
      * @param data Serialized JSON array of objects that describe created campaigns. Description of 'client_specification' objects see below.
      */
-    suspend fun createClients(accountId: Long, data: String): AdsCreateClientsResponse {
+    suspend fun createClients(accountId: Int, data: String): AdsCreateClientsResponse {
         val response = method("ads.createClients", mapOf("account_id" to accountId, "data" to data))
         return decodeResponse(response, json)
     }
@@ -81,7 +81,7 @@ class Ads(
      * @param sourceType 
      * @param retargetingGroupId 
      */
-    suspend fun createLookalikeRequest(accountId: Long, sourceType: String, clientId: Long? = null, retargetingGroupId: Long? = null): AdsCreateLookalikeRequestResponse {
+    suspend fun createLookalikeRequest(accountId: Int, sourceType: String, clientId: Int? = null, retargetingGroupId: Int? = null): AdsCreateLookalikeRequestResponse {
         val response = method("ads.createLookalikeRequest", mapOf("account_id" to accountId, "client_id" to clientId, "source_type" to sourceType, "retargeting_group_id" to retargetingGroupId))
         return decodeResponse(response, json)
     }
@@ -97,7 +97,7 @@ class Ads(
      * @param targetPixelId 
      * @param targetPixelRules 
      */
-    suspend fun createTargetGroup(accountId: Long, name: String, lifetime: Int, clientId: Long? = null, targetPixelId: Long? = null, targetPixelRules: String? = null): AdsCreateTargetGroupResponse {
+    suspend fun createTargetGroup(accountId: Int, name: String, lifetime: Int, clientId: Int? = null, targetPixelId: Int? = null, targetPixelRules: String? = null): AdsCreateTargetGroupResponse {
         val response = method("ads.createTargetGroup", mapOf("account_id" to accountId, "client_id" to clientId, "name" to name, "lifetime" to lifetime, "target_pixel_id" to targetPixelId, "target_pixel_rules" to targetPixelRules))
         return decodeResponse(response, json)
     }
@@ -110,7 +110,7 @@ class Ads(
      * @param domain 
      * @param categoryId 
      */
-    suspend fun createTargetPixel(accountId: Long, name: String, categoryId: Long, clientId: Long? = null, domain: String? = null): AdsCreateTargetPixelResponse {
+    suspend fun createTargetPixel(accountId: Int, name: String, categoryId: Int, clientId: Int? = null, domain: String? = null): AdsCreateTargetPixelResponse {
         val response = method("ads.createTargetPixel", mapOf("account_id" to accountId, "client_id" to clientId, "name" to name, "domain" to domain, "category_id" to categoryId))
         return decodeResponse(response, json)
     }
@@ -122,7 +122,7 @@ class Ads(
      * @param accountId Advertising account ID.
      * @param ids Serialized JSON array with ad IDs.
      */
-    suspend fun deleteAds(accountId: Long, ids: String): AdsDeleteAdsResponse {
+    suspend fun deleteAds(accountId: Int, ids: String): AdsDeleteAdsResponse {
         val response = method("ads.deleteAds", mapOf("account_id" to accountId, "ids" to ids))
         return decodeResponse(response, json)
     }
@@ -134,7 +134,7 @@ class Ads(
      * @param accountId Advertising account ID.
      * @param ids Serialized JSON array with IDs of deleted campaigns.
      */
-    suspend fun deleteCampaigns(accountId: Long, ids: String): AdsDeleteCampaignsResponse {
+    suspend fun deleteCampaigns(accountId: Int, ids: String): AdsDeleteCampaignsResponse {
         val response = method("ads.deleteCampaigns", mapOf("account_id" to accountId, "ids" to ids))
         return decodeResponse(response, json)
     }
@@ -146,7 +146,7 @@ class Ads(
      * @param accountId Advertising account ID.
      * @param ids Serialized JSON array with IDs of deleted clients.
      */
-    suspend fun deleteClients(accountId: Long, ids: String): AdsDeleteClientsResponse {
+    suspend fun deleteClients(accountId: Int, ids: String): AdsDeleteClientsResponse {
         val response = method("ads.deleteClients", mapOf("account_id" to accountId, "ids" to ids))
         return decodeResponse(response, json)
     }
@@ -159,7 +159,7 @@ class Ads(
      * @param clientId 'Only for advertising agencies.' , ID of the client with the advertising account where the group will be created.
      * @param targetGroupId Group ID.
      */
-    suspend fun deleteTargetGroup(accountId: Long, targetGroupId: Long, clientId: Long? = null): BaseOkResponse {
+    suspend fun deleteTargetGroup(accountId: Int, targetGroupId: Int, clientId: Int? = null): BaseOkResponse {
         val response = method("ads.deleteTargetGroup", mapOf("account_id" to accountId, "client_id" to clientId, "target_group_id" to targetGroupId))
         return decodeResponse(response, json)
     }
@@ -170,7 +170,7 @@ class Ads(
      * @param clientId 
      * @param targetPixelId 
      */
-    suspend fun deleteTargetPixel(accountId: Long, targetPixelId: Long, clientId: Long? = null): BaseUndefinedResponse {
+    suspend fun deleteTargetPixel(accountId: Int, targetPixelId: Int, clientId: Int? = null): BaseUndefinedResponse {
         val response = method("ads.deleteTargetPixel", mapOf("account_id" to accountId, "client_id" to clientId, "target_pixel_id" to targetPixelId))
         return decodeResponse(response, json)
     }
@@ -198,7 +198,7 @@ class Ads(
      * @param limit Limit of number of returned ads. Used only if ad_ids parameter is null, and 'campaign_ids' parameter contains ID of only one campaign.
      * @param offset Offset. Used in the same cases as 'limit' parameter.
      */
-    suspend fun getAds(accountId: Long, adIds: String? = null, campaignIds: String? = null, clientId: Long? = null, includeDeleted: Boolean? = false, onlyDeleted: Boolean? = false, limit: Int? = null, offset: Int? = null): AdsGetAdsResponse {
+    suspend fun getAds(accountId: Int, adIds: String? = null, campaignIds: String? = null, clientId: Int? = null, includeDeleted: Boolean? = false, onlyDeleted: Boolean? = false, limit: Int? = null, offset: Int? = null): AdsGetAdsResponse {
         val response = method("ads.getAds", mapOf("account_id" to accountId, "ad_ids" to adIds, "campaign_ids" to campaignIds, "client_id" to clientId, "include_deleted" to includeDeleted, "only_deleted" to onlyDeleted, "limit" to limit, "offset" to offset))
         return decodeResponse(response, json)
     }
@@ -216,7 +216,7 @@ class Ads(
      * @param limit Limit of number of returned ads. Used only if 'ad_ids' parameter is null, and 'campaign_ids' parameter contains ID of only one campaign.
      * @param offset Offset. Used in the same cases as 'limit' parameter.
      */
-    suspend fun getAdsLayout(accountId: Long, clientId: Long? = null, includeDeleted: Boolean? = false, onlyDeleted: Boolean? = false, campaignIds: String? = null, adIds: String? = null, limit: Int? = null, offset: Int? = null): AdsGetAdsLayoutResponse {
+    suspend fun getAdsLayout(accountId: Int, clientId: Int? = null, includeDeleted: Boolean? = false, onlyDeleted: Boolean? = false, campaignIds: String? = null, adIds: String? = null, limit: Int? = null, offset: Int? = null): AdsGetAdsLayoutResponse {
         val response = method("ads.getAdsLayout", mapOf("account_id" to accountId, "client_id" to clientId, "include_deleted" to includeDeleted, "only_deleted" to onlyDeleted, "campaign_ids" to campaignIds, "ad_ids" to adIds, "limit" to limit, "offset" to offset))
         return decodeResponse(response, json)
     }
@@ -233,7 +233,7 @@ class Ads(
      * @param limit Limit of number of returned ads. Used only if 'ad_ids' parameter is null, and 'campaign_ids' parameter contains ID of only one campaign.
      * @param offset Offset needed to return a specific subset of results.
      */
-    suspend fun getAdsTargeting(accountId: Long, adIds: String? = null, campaignIds: String? = null, clientId: Long? = null, includeDeleted: Boolean? = false, limit: Int? = null, offset: Int? = null): AdsGetAdsTargetingResponse {
+    suspend fun getAdsTargeting(accountId: Int, adIds: String? = null, campaignIds: String? = null, clientId: Int? = null, includeDeleted: Boolean? = false, limit: Int? = null, offset: Int? = null): AdsGetAdsTargetingResponse {
         val response = method("ads.getAdsTargeting", mapOf("account_id" to accountId, "ad_ids" to adIds, "campaign_ids" to campaignIds, "client_id" to clientId, "include_deleted" to includeDeleted, "limit" to limit, "offset" to offset))
         return decodeResponse(response, json)
     }
@@ -244,7 +244,7 @@ class Ads(
      * 
      * @param accountId Advertising account ID.
      */
-    suspend fun getBudget(accountId: Long): AdsGetBudgetResponse {
+    suspend fun getBudget(accountId: Int): AdsGetBudgetResponse {
         val response = method("ads.getBudget", mapOf("account_id" to accountId))
         return decodeResponse(response, json)
     }
@@ -259,7 +259,7 @@ class Ads(
      * @param campaignIds Filter of advertising campaigns to show. Serialized JSON array with campaign IDs. Only campaigns that exist in 'campaign_ids' and belong to the specified advertising account will be shown. If the parameter is null, all campaigns will be shown.
      * @param fields 
      */
-    suspend fun getCampaigns(accountId: Long, clientId: Long? = null, includeDeleted: Boolean? = false, campaignIds: String? = null, fields: List<String>? = null): AdsGetCampaignsResponse {
+    suspend fun getCampaigns(accountId: Int, clientId: Int? = null, includeDeleted: Boolean? = false, campaignIds: String? = null, fields: List<String>? = null): AdsGetCampaignsResponse {
         val response = method("ads.getCampaigns", mapOf("account_id" to accountId, "client_id" to clientId, "include_deleted" to includeDeleted, "campaign_ids" to campaignIds, "fields" to fields))
         return decodeResponse(response, json)
     }
@@ -281,7 +281,7 @@ class Ads(
      * 
      * @param accountId Advertising account ID.
      */
-    suspend fun getClients(accountId: Long): AdsGetClientsResponse {
+    suspend fun getClients(accountId: Int): AdsGetClientsResponse {
         val response = method("ads.getClients", mapOf("account_id" to accountId))
         return decodeResponse(response, json)
     }
@@ -297,7 +297,7 @@ class Ads(
      * @param dateFrom Date to show statistics from. For different value of 'period' different date format is used: *day: YYYY-MM-DD, example: 2011-09-27 - September 27, 2011, **0 - day it was created on,, *month: YYYY-MM, example: 2011-09 - September 2011, **0 - month it was created in,, *overall: 0.
      * @param dateTo Date to show statistics to. For different value of 'period' different date format is used: *day: YYYY-MM-DD, example: 2011-09-27 - September 27, 2011, **0 - current day,, *month: YYYY-MM, example: 2011-09 - September 2011, **0 - current month,, *overall: 0.
      */
-    suspend fun getDemographics(accountId: Long, idsType: String, ids: String, period: String, dateFrom: String, dateTo: String): AdsGetDemographicsResponse {
+    suspend fun getDemographics(accountId: Int, idsType: String, ids: String, period: String, dateFrom: String, dateTo: String): AdsGetDemographicsResponse {
         val response = method("ads.getDemographics", mapOf("account_id" to accountId, "ids_type" to idsType, "ids" to ids, "period" to period, "date_from" to dateFrom, "date_to" to dateTo))
         return decodeResponse(response, json)
     }
@@ -308,7 +308,7 @@ class Ads(
      * 
      * @param accountId Advertising account ID.
      */
-    suspend fun getFloodStats(accountId: Long): AdsGetFloodStatsResponse {
+    suspend fun getFloodStats(accountId: Int): AdsGetFloodStatsResponse {
         val response = method("ads.getFloodStats", mapOf("account_id" to accountId))
         return decodeResponse(response, json)
     }
@@ -322,7 +322,7 @@ class Ads(
      * @param limit 
      * @param sortBy 
      */
-    suspend fun getLookalikeRequests(accountId: Long, clientId: Long? = null, requestsIds: String? = null, offset: Int? = 0, limit: Int? = 10, sortBy: String? = "id"): AdsGetLookalikeRequestsResponse {
+    suspend fun getLookalikeRequests(accountId: Int, clientId: Int? = null, requestsIds: String? = null, offset: Int? = 0, limit: Int? = 10, sortBy: String? = "id"): AdsGetLookalikeRequestsResponse {
         val response = method("ads.getLookalikeRequests", mapOf("account_id" to accountId, "client_id" to clientId, "requests_ids" to requestsIds, "offset" to offset, "limit" to limit, "sort_by" to sortBy))
         return decodeResponse(response, json)
     }
@@ -351,7 +351,7 @@ class Ads(
      * 
      * @param accountId Advertising account ID.
      */
-    suspend fun getOfficeUsers(accountId: Long): AdsGetOfficeUsersResponse {
+    suspend fun getOfficeUsers(accountId: Int): AdsGetOfficeUsersResponse {
         val response = method("ads.getOfficeUsers", mapOf("account_id" to accountId))
         return decodeResponse(response, json)
     }
@@ -364,7 +364,7 @@ class Ads(
      * @param idsType Type of requested objects listed in 'ids' parameter: *ad - ads,, *campaign - campaigns.
      * @param ids IDs requested ads or campaigns, separated with a comma, depending on the value set in 'ids_type'. Maximum 100 objects.
      */
-    suspend fun getPostsReach(accountId: Long, idsType: String, ids: String): AdsGetPostsReachResponse {
+    suspend fun getPostsReach(accountId: Int, idsType: String, ids: String): AdsGetPostsReachResponse {
         val response = method("ads.getPostsReach", mapOf("account_id" to accountId, "ids_type" to idsType, "ids" to ids))
         return decodeResponse(response, json)
     }
@@ -376,7 +376,7 @@ class Ads(
      * @param accountId Advertising account ID.
      * @param adId Ad ID.
      */
-    suspend fun getRejectionReason(accountId: Long, adId: Long): AdsGetRejectionReasonResponse {
+    suspend fun getRejectionReason(accountId: Int, adId: Int): AdsGetRejectionReasonResponse {
         val response = method("ads.getRejectionReason", mapOf("account_id" to accountId, "ad_id" to adId))
         return decodeResponse(response, json)
     }
@@ -393,7 +393,7 @@ class Ads(
      * @param dateTo Date to show statistics to. For different value of 'period' different date format is used: *day: YYYY-MM-DD, example: 2011-09-27 - September 27, 2011, **0 - current day,, *month: YYYY-MM, example: 2011-09 - September 2011, **0 - current month,, *overall: 0.
      * @param statsFields Additional fields to add to statistics.
      */
-    suspend fun getStatistics(accountId: Long, idsType: String, ids: String, period: String, dateFrom: String, dateTo: String, statsFields: List<String>? = null): AdsGetStatisticsResponse {
+    suspend fun getStatistics(accountId: Int, idsType: String, ids: String, period: String, dateFrom: String, dateTo: String, statsFields: List<String>? = null): AdsGetStatisticsResponse {
         val response = method("ads.getStatistics", mapOf("account_id" to accountId, "ids_type" to idsType, "ids" to ids, "period" to period, "date_from" to dateFrom, "date_to" to dateTo, "stats_fields" to statsFields))
         return decodeResponse(response, json)
     }
@@ -438,7 +438,7 @@ class Ads(
      * @param clientId 'Only for advertising agencies.', ID of the client with the advertising account where the group will be created.
      * @param extended '1' - to return pixel code.
      */
-    suspend fun getTargetGroups(accountId: Long, clientId: Long? = null, extended: Boolean? = false): AdsGetTargetGroupsResponse {
+    suspend fun getTargetGroups(accountId: Int, clientId: Int? = null, extended: Boolean? = false): AdsGetTargetGroupsResponse {
         val response = method("ads.getTargetGroups", mapOf("account_id" to accountId, "client_id" to clientId, "extended" to extended))
         return decodeResponse(response, json)
     }
@@ -448,7 +448,7 @@ class Ads(
      * @param accountId 
      * @param clientId 
      */
-    suspend fun getTargetPixels(accountId: Long, clientId: Long? = null): AdsGetTargetPixelsResponse {
+    suspend fun getTargetPixels(accountId: Int, clientId: Int? = null): AdsGetTargetPixelsResponse {
         val response = method("ads.getTargetPixels", mapOf("account_id" to accountId, "client_id" to clientId))
         return decodeResponse(response, json)
     }
@@ -471,7 +471,7 @@ class Ads(
      * @param needPrecise Additionally return recommended cpc and cpm to reach 5,10..95 percents of audience.
      * @param impressionsLimitPeriod Impressions limit period in seconds, must be a multiple of 86400(day).
      */
-    suspend fun getTargetingStats(accountId: Long, linkUrl: String, clientId: Long? = null, criteria: String? = null, adId: Long? = null, adFormat: Int? = null, adPlatform: String? = null, adPlatformNoWall: String? = null, adPlatformNoAdNetwork: String? = null, publisherPlatforms: String? = null, linkDomain: String? = null, needPrecise: Boolean? = false, impressionsLimitPeriod: Int? = null): AdsGetTargetingStatsResponse {
+    suspend fun getTargetingStats(accountId: Int, linkUrl: String, clientId: Int? = null, criteria: String? = null, adId: Int? = null, adFormat: Int? = null, adPlatform: String? = null, adPlatformNoWall: String? = null, adPlatformNoAdNetwork: String? = null, publisherPlatforms: String? = null, linkDomain: String? = null, needPrecise: Boolean? = false, impressionsLimitPeriod: Int? = null): AdsGetTargetingStatsResponse {
         val response = method("ads.getTargetingStats", mapOf("account_id" to accountId, "client_id" to clientId, "criteria" to criteria, "ad_id" to adId, "ad_format" to adFormat, "ad_platform" to adPlatform, "ad_platform_no_wall" to adPlatformNoWall, "ad_platform_no_ad_network" to adPlatformNoAdNetwork, "publisher_platforms" to publisherPlatforms, "link_url" to linkUrl, "link_domain" to linkDomain, "need_precise" to needPrecise, "impressions_limit_period" to impressionsLimitPeriod))
         return decodeResponse(response, json)
     }
@@ -507,7 +507,7 @@ class Ads(
      * @param targetGroupId Target group ID.
      * @param contacts List of phone numbers, emails or user IDs separated with a comma.
      */
-    suspend fun importTargetContacts(accountId: Long, targetGroupId: Long, contacts: String, clientId: Long? = null): AdsImportTargetContactsResponse {
+    suspend fun importTargetContacts(accountId: Int, targetGroupId: Int, contacts: String, clientId: Int? = null): AdsImportTargetContactsResponse {
         val response = method("ads.importTargetContacts", mapOf("account_id" to accountId, "client_id" to clientId, "target_group_id" to targetGroupId, "contacts" to contacts))
         return decodeResponse(response, json)
     }
@@ -519,7 +519,7 @@ class Ads(
      * @param accountId Advertising account ID.
      * @param ids Serialized JSON array with IDs of deleted managers.
      */
-    suspend fun removeOfficeUsers(accountId: Long, ids: String): AdsRemoveOfficeUsersResponse {
+    suspend fun removeOfficeUsers(accountId: Int, ids: String): AdsRemoveOfficeUsersResponse {
         val response = method("ads.removeOfficeUsers", mapOf("account_id" to accountId, "ids" to ids))
         return decodeResponse(response, json)
     }
@@ -531,7 +531,7 @@ class Ads(
      * @param targetGroupId 
      * @param contacts 
      */
-    suspend fun removeTargetContacts(accountId: Long, targetGroupId: Long, contacts: String, clientId: Long? = null): AdsRemoveTargetContactsResponse {
+    suspend fun removeTargetContacts(accountId: Int, targetGroupId: Int, contacts: String, clientId: Int? = null): AdsRemoveTargetContactsResponse {
         val response = method("ads.removeTargetContacts", mapOf("account_id" to accountId, "client_id" to clientId, "target_group_id" to targetGroupId, "contacts" to contacts))
         return decodeResponse(response, json)
     }
@@ -543,7 +543,7 @@ class Ads(
      * @param requestId 
      * @param level 
      */
-    suspend fun saveLookalikeRequestResult(accountId: Long, requestId: Long, level: Int, clientId: Long? = null): AdsSaveLookalikeRequestResultResponse {
+    suspend fun saveLookalikeRequestResult(accountId: Int, requestId: Int, level: Int, clientId: Int? = null): AdsSaveLookalikeRequestResultResponse {
         val response = method("ads.saveLookalikeRequestResult", mapOf("account_id" to accountId, "client_id" to clientId, "request_id" to requestId, "level" to level))
         return decodeResponse(response, json)
     }
@@ -555,7 +555,7 @@ class Ads(
      * @param targetGroupId 
      * @param shareWithClientId 
      */
-    suspend fun shareTargetGroup(accountId: Long, targetGroupId: Long, clientId: Long? = null, shareWithClientId: Long? = null): AdsShareTargetGroupResponse {
+    suspend fun shareTargetGroup(accountId: Int, targetGroupId: Int, clientId: Int? = null, shareWithClientId: Int? = null): AdsShareTargetGroupResponse {
         val response = method("ads.shareTargetGroup", mapOf("account_id" to accountId, "client_id" to clientId, "target_group_id" to targetGroupId, "share_with_client_id" to shareWithClientId))
         return decodeResponse(response, json)
     }
@@ -567,7 +567,7 @@ class Ads(
      * @param accountId Advertising account ID.
      * @param data Serialized JSON array of objects that describe changes in ads. Description of 'ad_edit_specification' objects see below.
      */
-    suspend fun updateAds(accountId: Long, data: String): AdsUpdateAdsResponse {
+    suspend fun updateAds(accountId: Int, data: String): AdsUpdateAdsResponse {
         val response = method("ads.updateAds", mapOf("account_id" to accountId, "data" to data))
         return decodeResponse(response, json)
     }
@@ -579,7 +579,7 @@ class Ads(
      * @param accountId Advertising account ID.
      * @param data Serialized JSON array of objects that describe changes in campaigns. Description of 'campaign_mod' objects see below.
      */
-    suspend fun updateCampaigns(accountId: Long, data: String): AdsUpdateCampaignsResponse {
+    suspend fun updateCampaigns(accountId: Int, data: String): AdsUpdateCampaignsResponse {
         val response = method("ads.updateCampaigns", mapOf("account_id" to accountId, "data" to data))
         return decodeResponse(response, json)
     }
@@ -591,7 +591,7 @@ class Ads(
      * @param accountId Advertising account ID.
      * @param data Serialized JSON array of objects that describe changes in clients. Description of 'client_mod' objects see below.
      */
-    suspend fun updateClients(accountId: Long, data: String): AdsUpdateClientsResponse {
+    suspend fun updateClients(accountId: Int, data: String): AdsUpdateClientsResponse {
         val response = method("ads.updateClients", mapOf("account_id" to accountId, "data" to data))
         return decodeResponse(response, json)
     }
@@ -603,7 +603,7 @@ class Ads(
      * @param accountId Advertising account ID.
      * @param data Serialized JSON array of objects that describe added managers. Description of 'user_specification' objects see below.
      */
-    suspend fun updateOfficeUsers(accountId: Long, data: String): AdsUpdateOfficeUsersResponse {
+    suspend fun updateOfficeUsers(accountId: Int, data: String): AdsUpdateOfficeUsersResponse {
         val response = method("ads.updateOfficeUsers", mapOf("account_id" to accountId, "data" to data))
         return decodeResponse(response, json)
     }
@@ -621,7 +621,7 @@ class Ads(
      * @param targetPixelId 
      * @param targetPixelRules 
      */
-    suspend fun updateTargetGroup(accountId: Long, targetGroupId: Long, name: String, lifetime: Int, clientId: Long? = null, domain: String? = null, targetPixelId: Long? = null, targetPixelRules: String? = null): BaseOkResponse {
+    suspend fun updateTargetGroup(accountId: Int, targetGroupId: Int, name: String, lifetime: Int, clientId: Int? = null, domain: String? = null, targetPixelId: Int? = null, targetPixelRules: String? = null): BaseOkResponse {
         val response = method("ads.updateTargetGroup", mapOf("account_id" to accountId, "client_id" to clientId, "target_group_id" to targetGroupId, "name" to name, "domain" to domain, "lifetime" to lifetime, "target_pixel_id" to targetPixelId, "target_pixel_rules" to targetPixelRules))
         return decodeResponse(response, json)
     }
@@ -635,7 +635,7 @@ class Ads(
      * @param domain 
      * @param categoryId 
      */
-    suspend fun updateTargetPixel(accountId: Long, targetPixelId: Long, name: String, categoryId: Long, clientId: Long? = null, domain: String? = null): BaseUndefinedResponse {
+    suspend fun updateTargetPixel(accountId: Int, targetPixelId: Int, name: String, categoryId: Int, clientId: Int? = null, domain: String? = null): BaseUndefinedResponse {
         val response = method("ads.updateTargetPixel", mapOf("account_id" to accountId, "client_id" to clientId, "target_pixel_id" to targetPixelId, "name" to name, "domain" to domain, "category_id" to categoryId))
         return decodeResponse(response, json)
     }

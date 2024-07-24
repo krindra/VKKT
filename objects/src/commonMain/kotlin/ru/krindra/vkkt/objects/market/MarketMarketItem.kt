@@ -31,14 +31,14 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MarketMarketItem (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("title") val title: String,
     @SerialName("date") val date: Int? = null,
-    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("owner_id") val ownerId: Int,
     @SerialName("sku") val sku: String? = null,
     @SerialName("url") val url: String? = null,
     @SerialName("price") val price: MarketPrice,
-    @SerialName("post_id") val postId: Long? = null,
+    @SerialName("post_id") val postId: Int? = null,
     @SerialName("description") val description: String,
     @SerialName("is_adult") val isAdult: Boolean? = null,
     @SerialName("is_owner") val isOwner: Boolean? = null,
@@ -48,10 +48,10 @@ data class MarketMarketItem (
     @SerialName("thumb_photo") val thumbPhoto: String? = null,
     @SerialName("category") val category: MarketMarketCategory,
     @SerialName("is_favorite") val isFavorite: Boolean? = null,
-    @SerialName("post_owner_id") val postOwnerId: Long? = null,
+    @SerialName("post_owner_id") val postOwnerId: Int? = null,
     @SerialName("button_title") val buttonTitle: String? = null,
     @SerialName("is_main_variant") val isMainVariant: Boolean? = null,
     @SerialName("category_v2") val categoryV2: MarketMarketCategory? = null,
-    @SerialName("variants_grouping_id") val variantsGroupingId: Long? = null,
+    @SerialName("variants_grouping_id") val variantsGroupingId: Int? = null,
     @SerialName("availability") val availability: MarketMarketItemAvailability,
 )

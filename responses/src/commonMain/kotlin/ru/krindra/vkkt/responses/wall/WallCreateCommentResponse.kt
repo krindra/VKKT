@@ -10,7 +10,7 @@ import ru.krindra.vkkt.objects.wall.*
  */
 @Serializable
 data class WallCreateCommentResponse (
-    @SerialName("comment_id") val commentId: Long,
+    @SerialName("comment_id") val commentId: Int,
     @SerialName("parents_stack") val parentsStack: List<Int>? = null,
 )
 

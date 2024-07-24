@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class PollsVoters (
-    @SerialName("answer_id") val answerId: Long? = null,
+    @SerialName("answer_id") val answerId: Int? = null,
     @SerialName("users") val users: PollsVotersUsers? = null,
     @SerialName("answer_offset") val answerOffset: String? = null,
 )

@@ -15,7 +15,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class UsersUserMin (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("hidden") val hidden: Int? = null,
     @SerialName("last_name") val lastName: String? = null,
     @SerialName("is_closed") val isClosed: Boolean? = null,

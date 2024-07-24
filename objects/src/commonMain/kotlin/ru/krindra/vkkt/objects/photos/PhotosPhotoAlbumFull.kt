@@ -25,13 +25,13 @@ import ru.krindra.vkkt.objects.base.BaseBoolInt
  */
 @Serializable
 data class PhotosPhotoAlbumFull (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("size") val size: Int,
     @SerialName("title") val title: String,
-    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("owner_id") val ownerId: Int,
     @SerialName("created") val created: Int? = null,
     @SerialName("updated") val updated: Int? = null,
-    @SerialName("thumb_id") val thumbId: Long? = null,
+    @SerialName("thumb_id") val thumbId: Int? = null,
     @SerialName("thumb_src") val thumbSrc: String? = null,
     @SerialName("can_delete") val canDelete: Boolean? = null,
     @SerialName("description") val description: String? = null,

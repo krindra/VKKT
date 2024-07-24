@@ -22,7 +22,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsTargetGroup (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("name") val name: String? = null,
     @SerialName("pixel") val pixel: String? = null,
     @SerialName("domain") val domain: String? = null,
@@ -33,7 +33,7 @@ data class AdsTargetGroup (
     @SerialName("file_source") val fileSource: Boolean? = null,
     @SerialName("is_audience") val isAudience: Boolean? = null,
     @SerialName("audience_count") val audienceCount: Int? = null,
-    @SerialName("target_pixel_id") val targetPixelId: Long? = null,
+    @SerialName("target_pixel_id") val targetPixelId: Int? = null,
     @SerialName("lookalike_source") val lookalikeSource: Boolean? = null,
     @SerialName("target_pixel_rules") val targetPixelRules: List<AdsTargetGroupTargetPixelRule>? = null,
 )

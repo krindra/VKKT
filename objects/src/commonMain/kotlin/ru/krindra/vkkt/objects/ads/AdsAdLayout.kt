@@ -42,7 +42,7 @@ import ru.krindra.vkkt.objects.base.BaseBoolInt
  */
 @Serializable
 data class AdsAdLayout (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("title") val title: String,
     @SerialName("ad_format") val adFormat: Int,
     @SerialName("link_type") val linkType: Int,
@@ -50,7 +50,7 @@ data class AdsAdLayout (
     @SerialName("image_src") val imageSrc: String,
     @SerialName("post") val post: AdsPost? = null,
     @SerialName("okved") val okved: String? = null,
-    @SerialName("campaign_id") val campaignId: Long,
+    @SerialName("campaign_id") val campaignId: Int,
     @SerialName("social") val social: Boolean? = null,
     @SerialName("description") val description: String,
     @SerialName("goal_type") val goalType: Int? = null,

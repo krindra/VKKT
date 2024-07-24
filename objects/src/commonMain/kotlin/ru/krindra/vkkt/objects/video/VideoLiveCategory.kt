@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class VideoLiveCategory (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("label") val label: String,
     @SerialName("sublist") val sublist: List<VideoLiveCategory>? = null,
 )

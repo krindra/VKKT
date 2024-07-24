@@ -11,6 +11,6 @@ import ru.krindra.vkkt.objects.ads.*
 @Serializable
 data class AdsSaveLookalikeRequestResultResponse (
     @SerialName("audience_count") val audienceCount: Int,
-    @SerialName("retargeting_group_id") val retargetingGroupId: Long,
+    @SerialName("retargeting_group_id") val retargetingGroupId: Int,
 )
 

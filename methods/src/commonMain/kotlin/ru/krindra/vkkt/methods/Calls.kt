@@ -23,7 +23,7 @@ class Calls(
      *
      * @param groupId 
      */
-    suspend fun start(groupId: Long? = 0): CallsStartResponse {
+    suspend fun start(groupId: Int? = 0): CallsStartResponse {
         val response = method("calls.start", mapOf("group_id" to groupId))
         return decodeResponse(response, json)
     }

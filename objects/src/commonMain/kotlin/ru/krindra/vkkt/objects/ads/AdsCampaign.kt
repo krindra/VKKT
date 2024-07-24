@@ -23,7 +23,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsCampaign (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("name") val name: String,
     @SerialName("stop_time") val stopTime: Int,
     @SerialName("start_time") val startTime: Int,

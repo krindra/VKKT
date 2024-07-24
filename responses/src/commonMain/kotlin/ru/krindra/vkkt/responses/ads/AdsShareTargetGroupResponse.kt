@@ -9,6 +9,6 @@ import ru.krindra.vkkt.objects.ads.*
  */
 @Serializable
 data class AdsShareTargetGroupResponse (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
 )
 

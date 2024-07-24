@@ -27,7 +27,7 @@ data class UsersSchool (
     @SerialName("year_to") val yearTo: Int? = null,
     @SerialName("country") val country: Int? = null,
     @SerialName("class_") val class_: String? = null,
-    @SerialName("class_id") val classId: Long? = null,
+    @SerialName("class_id") val classId: Int? = null,
     @SerialName("year_from") val yearFrom: Int? = null,
     @SerialName("type_str") val typeStr: String? = null,
     @SerialName("speciality") val speciality: String? = null,

@@ -11,6 +11,6 @@ import ru.krindra.vkkt.objects.video.*
 @Serializable
 data class VideoUploadResponse (
     @SerialName("size") val size: Int? = null,
-    @SerialName("video_id") val videoId: Long? = null,
+    @SerialName("video_id") val videoId: Int? = null,
 )
 

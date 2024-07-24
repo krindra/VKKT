@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class UtilsDomainResolved (
-    @SerialName("group_id") val groupId: Long? = null,
-    @SerialName("object_id") val objectId: Long? = null,
+    @SerialName("group_id") val groupId: Int? = null,
+    @SerialName("object_id") val objectId: Int? = null,
     @SerialName("type") val type: UtilsDomainResolvedType? = null,
 )

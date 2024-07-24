@@ -33,7 +33,7 @@ class Users(
      * @param fields Profile fields to return. Sample values: 'nickname', 'screen_name', 'sex', 'bdate' (birthdate), 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'has_mobile', 'rate', 'contacts', 'education', 'online'.
      * @param nameCase Case for declension of user name and surname: 'nom' - nominative (default), 'gen' - genitive , 'dat' - dative, 'acc' - accusative , 'ins' - instrumental , 'abl' - prepositional.
      */
-    suspend fun getFollowers(userId: Long? = null, offset: Int? = null, count: Int? = 100, fields: List<UsersFields>? = null, nameCase: String? = null): GetFollowersResponse {
+    suspend fun getFollowers(userId: Int? = null, offset: Int? = null, count: Int? = 100, fields: List<UsersFields>? = null, nameCase: String? = null): GetFollowersResponse {
         val response = method("users.getFollowers", mapOf("user_id" to userId, "offset" to offset, "count" to count, "fields" to fields, "name_case" to nameCase))
         return GetFollowersResponse(response, json)
     }
@@ -58,7 +58,7 @@ class Users(
      * @param count Number of users and communities to return.
      * @param fields 
      */
-    suspend fun getSubscriptions(userId: Long? = null, extended: Boolean? = false, offset: Int? = null, count: Int? = 20, fields: List<UsersFields>? = null): GetSubscriptionsResponse {
+    suspend fun getSubscriptions(userId: Int? = null, extended: Boolean? = false, offset: Int? = null, count: Int? = 20, fields: List<UsersFields>? = null): GetSubscriptionsResponse {
         val response = method("users.getSubscriptions", mapOf("user_id" to userId, "extended" to extended, "offset" to offset, "count" to count, "fields" to fields))
         return GetSubscriptionsResponse(response, json)
     }
@@ -81,7 +81,7 @@ class Users(
      * @param type Type of complaint: 'porn' - pornography, 'spam' - spamming, 'insult' - abusive behavior, 'advertisement' - disruptive advertisements.
      * @param comment Comment describing the complaint.
      */
-    suspend fun report(userId: Long, type: String, comment: String? = null): BaseOkResponse {
+    suspend fun report(userId: Int, type: String, comment: String? = null): BaseOkResponse {
         val response = method("users.report", mapOf("user_id" to userId, "type" to type, "comment" to comment))
         return decodeResponse(response, json)
     }
@@ -126,7 +126,7 @@ class Users(
      * @param fromList 
      * @param screenRef 
      */
-    suspend fun search(q: String? = null, sort: Int? = null, offset: Int? = null, count: Int? = 20, fields: List<UsersFields>? = null, city: Int? = null, cityId: Long? = null, country: Int? = null, countryId: Long? = null, hometown: String? = null, universityCountry: Int? = null, university: Int? = null, universityYear: Int? = null, universityFaculty: Int? = null, universityChair: Int? = null, sex: Int? = null, status: Int? = null, ageFrom: Int? = null, ageTo: Int? = null, birthDay: Int? = null, birthMonth: Int? = null, birthYear: Int? = null, online: Boolean? = false, hasPhoto: Boolean? = false, schoolCountry: Int? = null, schoolCity: Int? = null, schoolClass: Int? = null, school: Int? = null, schoolYear: Int? = null, religion: String? = null, company: String? = null, position: String? = null, groupId: Long? = null, fromList: List<String>? = null, screenRef: String? = null): UsersSearchResponse {
+    suspend fun search(q: String? = null, sort: Int? = null, offset: Int? = null, count: Int? = 20, fields: List<UsersFields>? = null, city: Int? = null, cityId: Int? = null, country: Int? = null, countryId: Int? = null, hometown: String? = null, universityCountry: Int? = null, university: Int? = null, universityYear: Int? = null, universityFaculty: Int? = null, universityChair: Int? = null, sex: Int? = null, status: Int? = null, ageFrom: Int? = null, ageTo: Int? = null, birthDay: Int? = null, birthMonth: Int? = null, birthYear: Int? = null, online: Boolean? = false, hasPhoto: Boolean? = false, schoolCountry: Int? = null, schoolCity: Int? = null, schoolClass: Int? = null, school: Int? = null, schoolYear: Int? = null, religion: String? = null, company: String? = null, position: String? = null, groupId: Int? = null, fromList: List<String>? = null, screenRef: String? = null): UsersSearchResponse {
         val response = method("users.search", mapOf("q" to q, "sort" to sort, "offset" to offset, "count" to count, "fields" to fields, "city" to city, "city_id" to cityId, "country" to country, "country_id" to countryId, "hometown" to hometown, "university_country" to universityCountry, "university" to university, "university_year" to universityYear, "university_faculty" to universityFaculty, "university_chair" to universityChair, "sex" to sex, "status" to status, "age_from" to ageFrom, "age_to" to ageTo, "birth_day" to birthDay, "birth_month" to birthMonth, "birth_year" to birthYear, "online" to online, "has_photo" to hasPhoto, "school_country" to schoolCountry, "school_city" to schoolCity, "school_class" to schoolClass, "school" to school, "school_year" to schoolYear, "religion" to religion, "company" to company, "position" to position, "group_id" to groupId, "from_list" to fromList, "screen_ref" to screenRef))
         return decodeResponse(response, json)
     }

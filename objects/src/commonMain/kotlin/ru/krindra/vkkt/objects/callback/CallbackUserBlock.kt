@@ -14,8 +14,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class CallbackUserBlock (
     @SerialName("reason") val reason: Int,
-    @SerialName("user_id") val userId: Long,
-    @SerialName("admin_id") val adminId: Long,
+    @SerialName("user_id") val userId: Int,
+    @SerialName("admin_id") val adminId: Int,
     @SerialName("unblock_date") val unblockDate: Int,
     @SerialName("comment") val comment: String? = null,
 )

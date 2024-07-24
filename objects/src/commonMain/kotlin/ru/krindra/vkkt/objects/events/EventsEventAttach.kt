@@ -17,7 +17,7 @@ import ru.krindra.vkkt.objects.groups.GroupsGroupFullMemberStatus
  */
 @Serializable
 data class EventsEventAttach (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("text") val text: String,
     @SerialName("time") val time: Int? = null,
     @SerialName("friends") val friends: List<Int>,

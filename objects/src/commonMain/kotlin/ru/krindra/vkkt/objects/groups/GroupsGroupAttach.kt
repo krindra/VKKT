@@ -13,7 +13,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class GroupsGroupAttach (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("size") val size: Int,
     @SerialName("text") val text: String,
     @SerialName("status") val status: String,

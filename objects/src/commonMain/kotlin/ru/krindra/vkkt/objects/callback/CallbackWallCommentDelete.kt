@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class CallbackWallCommentDelete (
-    @SerialName("id") val id: Long,
-    @SerialName("post_id") val postId: Long,
-    @SerialName("user_id") val userId: Long,
-    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("id") val id: Int,
+    @SerialName("post_id") val postId: Int,
+    @SerialName("user_id") val userId: Int,
+    @SerialName("owner_id") val ownerId: Int,
 )

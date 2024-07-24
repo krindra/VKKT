@@ -9,5 +9,5 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class CallbackMessageDeny (
-    @SerialName("user_id") val userId: Long,
+    @SerialName("user_id") val userId: Int,
 )

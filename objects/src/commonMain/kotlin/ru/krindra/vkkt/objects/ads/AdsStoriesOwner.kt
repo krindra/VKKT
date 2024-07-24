@@ -19,7 +19,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsStoriesOwner (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("href") val href: String? = null,
     @SerialName("name") val name: String? = null,
     @SerialName("photo") val photo: String? = null,

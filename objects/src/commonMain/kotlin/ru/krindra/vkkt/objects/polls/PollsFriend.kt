@@ -9,5 +9,5 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class PollsFriend (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
 )

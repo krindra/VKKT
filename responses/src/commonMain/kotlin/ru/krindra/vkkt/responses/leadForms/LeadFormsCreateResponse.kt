@@ -11,6 +11,6 @@ import ru.krindra.vkkt.objects.leadForms.*
 @Serializable
 data class LeadFormsCreateResponse (
     @SerialName("url") val url: String,
-    @SerialName("form_id") val formId: Long,
+    @SerialName("form_id") val formId: Int,
 )
 

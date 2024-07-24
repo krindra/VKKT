@@ -17,7 +17,7 @@ import ru.krindra.vkkt.objects.base.BaseBoolInt
  */
 @Serializable
 data class GroupsLinksItem (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("url") val url: String? = null,
     @SerialName("desc") val desc: String? = null,
     @SerialName("name") val name: String? = null,

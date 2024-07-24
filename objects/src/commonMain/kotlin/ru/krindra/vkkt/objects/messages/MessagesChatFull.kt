@@ -23,9 +23,9 @@ import ru.krindra.vkkt.objects.base.BaseBoolInt
  */
 @Serializable
 data class MessagesChatFull (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("type") val type: String,
-    @SerialName("admin_id") val adminId: Long,
+    @SerialName("admin_id") val adminId: Int,
     @SerialName("title") val title: String? = null,
     @SerialName("left") val left: BaseBoolInt? = null,
     @SerialName("members_count") val membersCount: Int,

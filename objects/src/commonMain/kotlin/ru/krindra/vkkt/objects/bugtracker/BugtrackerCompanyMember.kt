@@ -20,8 +20,8 @@ import kotlinx.serialization.Serializable
 data class BugtrackerCompanyMember (
     @SerialName("ts") val ts: Int,
     @SerialName("role") val role: Int,
-    @SerialName("user_id") val userId: Long,
-    @SerialName("company_id") val companyId: Long,
+    @SerialName("user_id") val userId: Int,
+    @SerialName("company_id") val companyId: Int,
     @SerialName("role_name") val roleName: String,
     @SerialName("groups_count") val groupsCount: Int,
     @SerialName("groups") val groups: List<Int>? = null,

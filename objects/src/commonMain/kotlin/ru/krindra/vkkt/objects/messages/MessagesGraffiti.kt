@@ -14,10 +14,10 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesGraffiti (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("url") val url: String,
     @SerialName("width") val width: Int,
     @SerialName("height") val height: Int,
-    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("owner_id") val ownerId: Int,
     @SerialName("access_key") val accessKey: String? = null,
 )

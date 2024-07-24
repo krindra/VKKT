@@ -19,7 +19,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class NewsfeedItemDigest (
-    @SerialName("source_id") val sourceId: Long,
+    @SerialName("source_id") val sourceId: Int,
     @SerialName("feed_id") val feedId: String? = null,
     @SerialName("template") val template: String? = null,
     @SerialName("date") val date: Int/* WARN! Int? = null */,

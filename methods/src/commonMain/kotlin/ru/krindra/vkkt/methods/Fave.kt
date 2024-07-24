@@ -37,7 +37,7 @@ class Fave(
      * @param userId 
      * @param groupId 
      */
-    suspend fun addPage(userId: Long? = null, groupId: Long? = null): BaseOkResponse {
+    suspend fun addPage(userId: Int? = null, groupId: Int? = null): BaseOkResponse {
         val response = method("fave.addPage", mapOf("user_id" to userId, "group_id" to groupId))
         return decodeResponse(response, json)
     }
@@ -48,7 +48,7 @@ class Fave(
      * @param id 
      * @param accessKey 
      */
-    suspend fun addPost(ownerId: Long, id: Long, accessKey: String? = null): BaseOkResponse {
+    suspend fun addPost(ownerId: Int, id: Int, accessKey: String? = null): BaseOkResponse {
         val response = method("fave.addPost", mapOf("owner_id" to ownerId, "id" to id, "access_key" to accessKey))
         return decodeResponse(response, json)
     }
@@ -59,7 +59,7 @@ class Fave(
      * @param id 
      * @param accessKey 
      */
-    suspend fun addProduct(ownerId: Long, id: Long, accessKey: String? = null): BaseOkResponse {
+    suspend fun addProduct(ownerId: Int, id: Int, accessKey: String? = null): BaseOkResponse {
         val response = method("fave.addProduct", mapOf("owner_id" to ownerId, "id" to id, "access_key" to accessKey))
         return decodeResponse(response, json)
     }
@@ -80,7 +80,7 @@ class Fave(
      * @param id 
      * @param accessKey 
      */
-    suspend fun addVideo(ownerId: Long, id: Long, accessKey: String? = null): BaseOkResponse {
+    suspend fun addVideo(ownerId: Int, id: Int, accessKey: String? = null): BaseOkResponse {
         val response = method("fave.addVideo", mapOf("owner_id" to ownerId, "id" to id, "access_key" to accessKey))
         return decodeResponse(response, json)
     }
@@ -90,7 +90,7 @@ class Fave(
      * @param id 
      * @param name 
      */
-    suspend fun editTag(id: Long, name: String): BaseOkResponse {
+    suspend fun editTag(id: Int, name: String): BaseOkResponse {
         val response = method("fave.editTag", mapOf("id" to id, "name" to name))
         return decodeResponse(response, json)
     }
@@ -105,7 +105,7 @@ class Fave(
      * @param fields 
      * @param isFromSnackbar 
      */
-    suspend fun get(extended: Boolean? = false, itemType: String? = null, tagId: Long? = null, offset: Int? = null, count: Int? = 50, fields: String? = null, isFromSnackbar: Boolean? = false): GetResponse {
+    suspend fun get(extended: Boolean? = false, itemType: String? = null, tagId: Int? = null, offset: Int? = null, count: Int? = 50, fields: String? = null, isFromSnackbar: Boolean? = false): GetResponse {
         val response = method("fave.get", mapOf("extended" to extended, "item_type" to itemType, "tag_id" to tagId, "offset" to offset, "count" to count, "fields" to fields, "is_from_snackbar" to isFromSnackbar))
         return GetResponse(response, json)
     }
@@ -128,7 +128,7 @@ class Fave(
      * @param fields 
      * @param tagId 
      */
-    suspend fun getPages(offset: Int? = null, count: Int? = 50, type: String? = null, fields: List<BaseUserGroupFields>? = null, tagId: Long? = null): FaveGetPagesResponse {
+    suspend fun getPages(offset: Int? = null, count: Int? = 50, type: String? = null, fields: List<BaseUserGroupFields>? = null, tagId: Int? = null): FaveGetPagesResponse {
         val response = method("fave.getPages", mapOf("offset" to offset, "count" to count, "type" to type, "fields" to fields, "tag_id" to tagId))
         return decodeResponse(response, json)
     }
@@ -154,7 +154,7 @@ class Fave(
      * @param ownerId 
      * @param articleId 
      */
-    suspend fun removeArticle(ownerId: Long, articleId: Long): BaseBoolResponse {
+    suspend fun removeArticle(ownerId: Int, articleId: Int): BaseBoolResponse {
         val response = method("fave.removeArticle", mapOf("owner_id" to ownerId, "article_id" to articleId))
         return decodeResponse(response, json)
     }
@@ -176,7 +176,7 @@ class Fave(
      * @param userId 
      * @param groupId 
      */
-    suspend fun removePage(userId: Long? = null, groupId: Long? = null): BaseOkResponse {
+    suspend fun removePage(userId: Int? = null, groupId: Int? = null): BaseOkResponse {
         val response = method("fave.removePage", mapOf("user_id" to userId, "group_id" to groupId))
         return decodeResponse(response, json)
     }
@@ -186,7 +186,7 @@ class Fave(
      * @param ownerId 
      * @param id 
      */
-    suspend fun removePost(ownerId: Long, id: Long): BaseOkResponse {
+    suspend fun removePost(ownerId: Int, id: Int): BaseOkResponse {
         val response = method("fave.removePost", mapOf("owner_id" to ownerId, "id" to id))
         return decodeResponse(response, json)
     }
@@ -196,7 +196,7 @@ class Fave(
      * @param ownerId 
      * @param id 
      */
-    suspend fun removeProduct(ownerId: Long, id: Long): BaseOkResponse {
+    suspend fun removeProduct(ownerId: Int, id: Int): BaseOkResponse {
         val response = method("fave.removeProduct", mapOf("owner_id" to ownerId, "id" to id))
         return decodeResponse(response, json)
     }
@@ -205,7 +205,7 @@ class Fave(
      *
      * @param id 
      */
-    suspend fun removeTag(id: Long): BaseOkResponse {
+    suspend fun removeTag(id: Int): BaseOkResponse {
         val response = method("fave.removeTag", mapOf("id" to id))
         return decodeResponse(response, json)
     }
@@ -215,7 +215,7 @@ class Fave(
      * @param ownerId 
      * @param id 
      */
-    suspend fun removeVideo(ownerId: Long, id: Long): BaseOkResponse {
+    suspend fun removeVideo(ownerId: Int, id: Int): BaseOkResponse {
         val response = method("fave.removeVideo", mapOf("owner_id" to ownerId, "id" to id))
         return decodeResponse(response, json)
     }
@@ -235,7 +235,7 @@ class Fave(
      * @param groupId 
      * @param tagIds 
      */
-    suspend fun setPageTags(userId: Long? = null, groupId: Long? = null, tagIds: List<Int>? = null): BaseOkResponse {
+    suspend fun setPageTags(userId: Int? = null, groupId: Int? = null, tagIds: List<Int>? = null): BaseOkResponse {
         val response = method("fave.setPageTags", mapOf("user_id" to userId, "group_id" to groupId, "tag_ids" to tagIds))
         return decodeResponse(response, json)
     }
@@ -249,7 +249,7 @@ class Fave(
      * @param linkId 
      * @param linkUrl 
      */
-    suspend fun setTags(itemType: String? = null, itemOwnerId: Long? = null, itemId: Long? = null, tagIds: List<Int>? = null, linkId: String? = null, linkUrl: String? = null): BaseOkResponse {
+    suspend fun setTags(itemType: String? = null, itemOwnerId: Int? = null, itemId: Int? = null, tagIds: List<Int>? = null, linkId: String? = null, linkUrl: String? = null): BaseOkResponse {
         val response = method("fave.setTags", mapOf("item_type" to itemType, "item_owner_id" to itemOwnerId, "item_id" to itemId, "tag_ids" to tagIds, "link_id" to linkId, "link_url" to linkUrl))
         return decodeResponse(response, json)
     }
@@ -259,7 +259,7 @@ class Fave(
      * @param userId 
      * @param groupId 
      */
-    suspend fun trackPageInteraction(userId: Long? = null, groupId: Long? = null): BaseOkResponse {
+    suspend fun trackPageInteraction(userId: Int? = null, groupId: Int? = null): BaseOkResponse {
         val response = method("fave.trackPageInteraction", mapOf("user_id" to userId, "group_id" to groupId))
         return decodeResponse(response, json)
     }

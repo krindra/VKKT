@@ -17,7 +17,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class GiftsLayout (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("build_id") val buildId: String? = null,
     @SerialName("thumb_48") val thumb48: String? = null,
     @SerialName("thumb_96") val thumb96: String? = null,
@@ -25,5 +25,5 @@ data class GiftsLayout (
     @SerialName("thumb_256") val thumb256: String? = null,
     @SerialName("thumb_512") val thumb512: String? = null,
     @SerialName("is_stickers_style") val isStickersStyle: Boolean? = null,
-    @SerialName("stickers_product_id") val stickersProductId: Long? = null,
+    @SerialName("stickers_product_id") val stickersProductId: Int? = null,
 )

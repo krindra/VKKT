@@ -13,7 +13,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class SecureTransaction (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("date") val date: Int? = null,
     @SerialName("votes") val votes: Int? = null,
     @SerialName("uid_to") val uidTo: Int? = null,

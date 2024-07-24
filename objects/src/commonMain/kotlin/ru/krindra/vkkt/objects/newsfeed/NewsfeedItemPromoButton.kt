@@ -17,7 +17,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class NewsfeedItemPromoButton (
-    @SerialName("source_id") val sourceId: Long,
+    @SerialName("source_id") val sourceId: Int,
     @SerialName("text") val text: String? = null,
     @SerialName("title") val title: String? = null,
     @SerialName("date") val date: Int/* WARN! Int? = null */,

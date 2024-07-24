@@ -14,10 +14,10 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class UsersOccupation (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("name") val name: String? = null,
     @SerialName("type") val type: String? = null,
-    @SerialName("city_id") val cityId: Long? = null,
-    @SerialName("country_id") val countryId: Long? = null,
+    @SerialName("city_id") val cityId: Int? = null,
+    @SerialName("country_id") val countryId: Int? = null,
     @SerialName("graduate_year") val graduateYear: Int? = null,
 )

@@ -13,7 +13,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsUserSpecification (
-    @SerialName("user_id") val userId: Long,
+    @SerialName("user_id") val userId: Int,
     @SerialName("role") val role: AdsAccessRolePublic,
     @SerialName("client_ids") val clientIds: List<Int>? = null,
     @SerialName("view_budget") val viewBudget: Boolean? = null,

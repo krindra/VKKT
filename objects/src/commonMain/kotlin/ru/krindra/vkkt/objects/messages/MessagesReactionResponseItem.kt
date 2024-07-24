@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesReactionResponseItem (
-    @SerialName("user_id") val userId: Long,
-    @SerialName("reaction_id") val reactionId: Long,
+    @SerialName("user_id") val userId: Int,
+    @SerialName("reaction_id") val reactionId: Int,
 )

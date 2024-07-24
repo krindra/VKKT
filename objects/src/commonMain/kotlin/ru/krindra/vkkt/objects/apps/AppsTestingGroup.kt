@@ -13,7 +13,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AppsTestingGroup (
-    @SerialName("group_id") val groupId: Long,
+    @SerialName("group_id") val groupId: Int,
     @SerialName("name") val name: String? = null,
     @SerialName("user_ids") val userIds: List<Int>,
     @SerialName("webview") val webview: String? = null,

@@ -21,11 +21,11 @@ import ru.krindra.vkkt.objects.base.BaseBoolInt
  */
 @Serializable
 data class NotesNote (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("date") val date: Int,
     @SerialName("title") val title: String,
     @SerialName("comments") val comments: Int,
-    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("owner_id") val ownerId: Int,
     @SerialName("view_url") val viewUrl: String,
     @SerialName("text") val text: String? = null,
     @SerialName("text_wiki") val textWiki: String? = null,

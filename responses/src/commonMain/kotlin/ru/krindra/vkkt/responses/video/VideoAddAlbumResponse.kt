@@ -9,6 +9,6 @@ import ru.krindra.vkkt.objects.video.*
  */
 @Serializable
 data class VideoAddAlbumResponse (
-    @SerialName("album_id") val albumId: Long,
+    @SerialName("album_id") val albumId: Int,
 )
 

@@ -18,7 +18,7 @@ import ru.krindra.vkkt.objects.base.BaseObjectCount
  */
 @Serializable
 data class WidgetsWidgetPage (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("date") val date: Int? = null,
     @SerialName("url") val url: String? = null,
     @SerialName("photo") val photo: String? = null,

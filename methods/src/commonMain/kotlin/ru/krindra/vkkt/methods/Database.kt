@@ -17,7 +17,7 @@ class Database(
      * @param offset offset required to get a certain subset of chairs.
      * @param count amount of chairs to get.
      */
-    suspend fun getChairs(facultyId: Long, offset: Int? = null, count: Int? = 100): DatabaseGetChairsResponse {
+    suspend fun getChairs(facultyId: Int, offset: Int? = null, count: Int? = 100): DatabaseGetChairsResponse {
         val response = method("database.getChairs", mapOf("faculty_id" to facultyId, "offset" to offset, "count" to count))
         return decodeResponse(response, json)
     }
@@ -33,7 +33,7 @@ class Database(
      * @param offset Offset needed to return a specific subset of cities.
      * @param count Number of cities to return.
      */
-    suspend fun getCities(countryId: Long? = null, regionId: Long? = null, q: String? = null, needAll: Boolean? = false, offset: Int? = null, count: Int? = 100): DatabaseGetCitiesResponse {
+    suspend fun getCities(countryId: Int? = null, regionId: Int? = null, q: String? = null, needAll: Boolean? = false, offset: Int? = null, count: Int? = 100): DatabaseGetCitiesResponse {
         val response = method("database.getCities", mapOf("country_id" to countryId, "region_id" to regionId, "q" to q, "need_all" to needAll, "offset" to offset, "count" to count))
         return decodeResponse(response, json)
     }
@@ -82,7 +82,7 @@ class Database(
      * @param offset Offset needed to return a specific subset of faculties.
      * @param count Number of faculties to return.
      */
-    suspend fun getFaculties(universityId: Long, offset: Int? = null, count: Int? = 100): DatabaseGetFacultiesResponse {
+    suspend fun getFaculties(universityId: Int, offset: Int? = null, count: Int? = 100): DatabaseGetFacultiesResponse {
         val response = method("database.getFaculties", mapOf("university_id" to universityId, "offset" to offset, "count" to count))
         return decodeResponse(response, json)
     }
@@ -96,7 +96,7 @@ class Database(
      * @param count 
      * @param extended 
      */
-    suspend fun getMetroStations(cityId: Long, offset: Int? = null, count: Int? = 100, extended: Boolean? = false): DatabaseGetMetroStationsResponse {
+    suspend fun getMetroStations(cityId: Int, offset: Int? = null, count: Int? = 100, extended: Boolean? = false): DatabaseGetMetroStationsResponse {
         val response = method("database.getMetroStations", mapOf("city_id" to cityId, "offset" to offset, "count" to count, "extended" to extended))
         return decodeResponse(response, json)
     }
@@ -121,7 +121,7 @@ class Database(
      * @param offset Offset needed to return specific subset of regions.
      * @param count Number of regions to return.
      */
-    suspend fun getRegions(countryId: Long, q: String? = null, offset: Int? = null, count: Int? = 100): DatabaseGetRegionsResponse {
+    suspend fun getRegions(countryId: Int, q: String? = null, offset: Int? = null, count: Int? = 100): DatabaseGetRegionsResponse {
         val response = method("database.getRegions", mapOf("country_id" to countryId, "q" to q, "offset" to offset, "count" to count))
         return decodeResponse(response, json)
     }
@@ -132,7 +132,7 @@ class Database(
      * 
      * @param countryId Country ID.
      */
-    suspend fun getSchoolClasses(countryId: Long? = null): DatabaseGetSchoolClassesNewResponse {
+    suspend fun getSchoolClasses(countryId: Int? = null): DatabaseGetSchoolClassesNewResponse {
         val response = method("database.getSchoolClasses", mapOf("country_id" to countryId))
         return decodeResponse(response, json)
     }
@@ -146,7 +146,7 @@ class Database(
      * @param offset Offset needed to return a specific subset of schools.
      * @param count Number of schools to return.
      */
-    suspend fun getSchools(cityId: Long, q: String? = null, offset: Int? = null, count: Int? = 100): DatabaseGetSchoolsResponse {
+    suspend fun getSchools(cityId: Int, q: String? = null, offset: Int? = null, count: Int? = 100): DatabaseGetSchoolsResponse {
         val response = method("database.getSchools", mapOf("q" to q, "city_id" to cityId, "offset" to offset, "count" to count))
         return decodeResponse(response, json)
     }
@@ -161,7 +161,7 @@ class Database(
      * @param offset Offset needed to return a specific subset of universities.
      * @param count Number of universities to return.
      */
-    suspend fun getUniversities(q: String? = null, countryId: Long? = null, cityId: Long? = null, offset: Int? = null, count: Int? = 100): DatabaseGetUniversitiesResponse {
+    suspend fun getUniversities(q: String? = null, countryId: Int? = null, cityId: Int? = null, offset: Int? = null, count: Int? = 100): DatabaseGetUniversitiesResponse {
         val response = method("database.getUniversities", mapOf("q" to q, "country_id" to countryId, "city_id" to cityId, "offset" to offset, "count" to count))
         return decodeResponse(response, json)
     }

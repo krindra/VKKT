@@ -9,6 +9,6 @@ import ru.krindra.vkkt.objects.market.*
  */
 @Serializable
 data class MarketAddResponse (
-    @SerialName("market_item_id") val marketItemId: Long,
+    @SerialName("market_item_id") val marketItemId: Int,
 )
 

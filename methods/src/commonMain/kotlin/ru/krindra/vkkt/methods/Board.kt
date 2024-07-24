@@ -20,7 +20,7 @@ class Board(
      * @param fromGroup For a community: '1' - to post the topic as by the community, '0' - to post the topic as by the user (default).
      * @param attachments List of media objects attached to the topic, in the following format: "<owner_id>_<media_id>,<owner_id>_<media_id>", '' - Type of media object: 'photo' - photo, 'video' - video, 'audio' - audio, 'doc' - document, '<owner_id>' - ID of the media owner. '<media_id>' - Media ID. Example: "photo100172_166443618,photo66748_265827614", , "NOTE: If you try to attach more than one reference, an error will be thrown.",.
      */
-    suspend fun addTopic(groupId: Long, title: String, text: String? = null, fromGroup: Boolean? = false, attachments: List<String>? = null): BoardAddTopicResponse {
+    suspend fun addTopic(groupId: Int, title: String, text: String? = null, fromGroup: Boolean? = false, attachments: List<String>? = null): BoardAddTopicResponse {
         val response = method("board.addTopic", mapOf("group_id" to groupId, "title" to title, "text" to text, "from_group" to fromGroup, "attachments" to attachments))
         return decodeResponse(response, json)
     }
@@ -32,7 +32,7 @@ class Board(
      * @param groupId ID of the community that owns the discussion board.
      * @param topicId Topic ID.
      */
-    suspend fun closeTopic(groupId: Long, topicId: Long): BaseOkResponse {
+    suspend fun closeTopic(groupId: Int, topicId: Int): BaseOkResponse {
         val response = method("board.closeTopic", mapOf("group_id" to groupId, "topic_id" to topicId))
         return decodeResponse(response, json)
     }
@@ -49,7 +49,7 @@ class Board(
      * @param stickerId Sticker ID.
      * @param guid Unique identifier to avoid repeated comments.
      */
-    suspend fun createComment(groupId: Long, topicId: Long, message: String? = null, attachments: List<String>? = null, fromGroup: Boolean? = false, stickerId: Long? = null, guid: String? = null): BoardCreateCommentResponse {
+    suspend fun createComment(groupId: Int, topicId: Int, message: String? = null, attachments: List<String>? = null, fromGroup: Boolean? = false, stickerId: Int? = null, guid: String? = null): BoardCreateCommentResponse {
         val response = method("board.createComment", mapOf("group_id" to groupId, "topic_id" to topicId, "message" to message, "attachments" to attachments, "from_group" to fromGroup, "sticker_id" to stickerId, "guid" to guid))
         return decodeResponse(response, json)
     }
@@ -62,7 +62,7 @@ class Board(
      * @param topicId Topic ID.
      * @param commentId Comment ID.
      */
-    suspend fun deleteComment(groupId: Long, topicId: Long, commentId: Long): BaseOkResponse {
+    suspend fun deleteComment(groupId: Int, topicId: Int, commentId: Int): BaseOkResponse {
         val response = method("board.deleteComment", mapOf("group_id" to groupId, "topic_id" to topicId, "comment_id" to commentId))
         return decodeResponse(response, json)
     }
@@ -74,7 +74,7 @@ class Board(
      * @param groupId ID of the community that owns the discussion board.
      * @param topicId Topic ID.
      */
-    suspend fun deleteTopic(groupId: Long, topicId: Long): BaseOkResponse {
+    suspend fun deleteTopic(groupId: Int, topicId: Int): BaseOkResponse {
         val response = method("board.deleteTopic", mapOf("group_id" to groupId, "topic_id" to topicId))
         return decodeResponse(response, json)
     }
@@ -89,7 +89,7 @@ class Board(
      * @param message (Required if 'attachments' is not set). New comment text.
      * @param attachments (Required if 'message' is not set.) List of media objects attached to the comment, in the following format: "<owner_id>_<media_id>,<owner_id>_<media_id>", '' - Type of media object: 'photo' - photo, 'video' - video, 'audio' - audio, 'doc' - document, '<owner_id>' - ID of the media owner. '<media_id>' - Media ID. Example: "photo100172_166443618,photo66748_265827614".
      */
-    suspend fun editComment(groupId: Long, topicId: Long, commentId: Long, message: String? = null, attachments: List<String>? = null): BaseOkResponse {
+    suspend fun editComment(groupId: Int, topicId: Int, commentId: Int, message: String? = null, attachments: List<String>? = null): BaseOkResponse {
         val response = method("board.editComment", mapOf("group_id" to groupId, "topic_id" to topicId, "comment_id" to commentId, "message" to message, "attachments" to attachments))
         return decodeResponse(response, json)
     }
@@ -102,7 +102,7 @@ class Board(
      * @param topicId Topic ID.
      * @param title New title of the topic.
      */
-    suspend fun editTopic(groupId: Long, topicId: Long, title: String): BaseOkResponse {
+    suspend fun editTopic(groupId: Int, topicId: Int, title: String): BaseOkResponse {
         val response = method("board.editTopic", mapOf("group_id" to groupId, "topic_id" to topicId, "title" to title))
         return decodeResponse(response, json)
     }
@@ -114,7 +114,7 @@ class Board(
      * @param groupId ID of the community that owns the discussion board.
      * @param topicId Topic ID.
      */
-    suspend fun fixTopic(groupId: Long, topicId: Long): BaseOkResponse {
+    suspend fun fixTopic(groupId: Int, topicId: Int): BaseOkResponse {
         val response = method("board.fixTopic", mapOf("group_id" to groupId, "topic_id" to topicId))
         return decodeResponse(response, json)
     }
@@ -132,7 +132,7 @@ class Board(
      * @param extended '1' - to return information about users who posted comments, '0' - to return no additional fields (default).
      * @param sort Sort order: 'asc' - by creation date in chronological order, 'desc' - by creation date in reverse chronological order,.
      */
-    suspend fun getComments(groupId: Long, topicId: Long, needLikes: Boolean? = false, startCommentId: Long? = null, offset: Int? = null, count: Int? = 20, extended: Boolean? = false, sort: String? = null): GetCommentsResponse {
+    suspend fun getComments(groupId: Int, topicId: Int, needLikes: Boolean? = false, startCommentId: Int? = null, offset: Int? = null, count: Int? = 20, extended: Boolean? = false, sort: String? = null): GetCommentsResponse {
         val response = method("board.getComments", mapOf("group_id" to groupId, "topic_id" to topicId, "need_likes" to needLikes, "start_comment_id" to startCommentId, "offset" to offset, "count" to count, "extended" to extended, "sort" to sort))
         return GetCommentsResponse(response, json)
     }
@@ -160,7 +160,7 @@ class Board(
      * @param preview '1' - to return the first comment in each topic,, '2' - to return the last comment in each topic,, '0' - to return no comments. By default: '0'.
      * @param previewLength Number of characters after which to truncate the previewed comment. To preview the full comment, specify '0'.
      */
-    suspend fun getTopics(groupId: Long, topicIds: List<Int>? = null, order: Int? = null, offset: Int? = null, count: Int? = 40, extended: Boolean? = false, preview: Int? = null, previewLength: Int? = 90): GetTopicsResponse {
+    suspend fun getTopics(groupId: Int, topicIds: List<Int>? = null, order: Int? = null, offset: Int? = null, count: Int? = 40, extended: Boolean? = false, preview: Int? = null, previewLength: Int? = 90): GetTopicsResponse {
         val response = method("board.getTopics", mapOf("group_id" to groupId, "topic_ids" to topicIds, "order" to order, "offset" to offset, "count" to count, "extended" to extended, "preview" to preview, "preview_length" to previewLength))
         return GetTopicsResponse(response, json)
     }
@@ -182,7 +182,7 @@ class Board(
      * @param groupId ID of the community that owns the discussion board.
      * @param topicId Topic ID.
      */
-    suspend fun openTopic(groupId: Long, topicId: Long): BaseOkResponse {
+    suspend fun openTopic(groupId: Int, topicId: Int): BaseOkResponse {
         val response = method("board.openTopic", mapOf("group_id" to groupId, "topic_id" to topicId))
         return decodeResponse(response, json)
     }
@@ -195,7 +195,7 @@ class Board(
      * @param topicId Topic ID.
      * @param commentId Comment ID.
      */
-    suspend fun restoreComment(groupId: Long, topicId: Long, commentId: Long): BaseOkResponse {
+    suspend fun restoreComment(groupId: Int, topicId: Int, commentId: Int): BaseOkResponse {
         val response = method("board.restoreComment", mapOf("group_id" to groupId, "topic_id" to topicId, "comment_id" to commentId))
         return decodeResponse(response, json)
     }
@@ -207,7 +207,7 @@ class Board(
      * @param groupId ID of the community that owns the discussion board.
      * @param topicId Topic ID.
      */
-    suspend fun unfixTopic(groupId: Long, topicId: Long): BaseOkResponse {
+    suspend fun unfixTopic(groupId: Int, topicId: Int): BaseOkResponse {
         val response = method("board.unfixTopic", mapOf("group_id" to groupId, "topic_id" to topicId))
         return decodeResponse(response, json)
     }

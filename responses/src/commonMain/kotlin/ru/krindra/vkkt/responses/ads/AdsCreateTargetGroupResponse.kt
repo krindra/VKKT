@@ -10,7 +10,7 @@ import ru.krindra.vkkt.objects.ads.*
  */
 @Serializable
 data class AdsCreateTargetGroupResponse (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("pixel") val pixel: String? = null,
 )
 

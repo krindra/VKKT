@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesConversationPeer (
-    @SerialName("id") val id: Long,
-    @SerialName("local_id") val localId: Long? = null,
+    @SerialName("id") val id: Int,
+    @SerialName("local_id") val localId: Int? = null,
     @SerialName("type") val type: MessagesConversationPeerType,
 )

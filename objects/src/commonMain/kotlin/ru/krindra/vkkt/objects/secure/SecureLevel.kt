@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class SecureLevel (
-    @SerialName("uid") val uid: Long? = null,
+    @SerialName("uid") val uid: Int? = null,
     @SerialName("level") val level: Int? = null,
 )

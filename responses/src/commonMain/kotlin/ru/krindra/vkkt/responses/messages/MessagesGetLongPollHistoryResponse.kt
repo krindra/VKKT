@@ -20,7 +20,7 @@ import ru.krindra.vkkt.objects.messages.*
  * @param conversations 
  */
 @Serializable
-data class MessagesGetLongPollHistoryResponse (
+data class MessagesGetIntPollHistoryResponse (
     @SerialName("more") val more: Boolean? = null,
     @SerialName("new_pts") val newPts: Int? = null,
     @SerialName("from_pts") val fromPts: Int? = null,
@@ -28,8 +28,8 @@ data class MessagesGetLongPollHistoryResponse (
     @SerialName("groups") val groups: List<GroupsGroupFull>? = null,
     @SerialName("profiles") val profiles: List<UsersUserFull>? = null,
     @SerialName("history") val history: List<List<JsonElement>>? = null,
-    @SerialName("messages") val messages: MessagesLongpollMessages? = null,
-    @SerialName("credentials") val credentials: MessagesLongpollParams? = null,
+    @SerialName("messages") val messages: MessagesIntpollMessages? = null,
+    @SerialName("credentials") val credentials: MessagesIntpollParams? = null,
     @SerialName("conversations") val conversations: List<MessagesConversation>? = null,
 )
 

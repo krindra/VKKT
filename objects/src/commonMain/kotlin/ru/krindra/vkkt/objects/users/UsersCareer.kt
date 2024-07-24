@@ -17,13 +17,13 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class UsersCareer (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("from_") val from_: Int? = null,
     @SerialName("until") val until: Int? = null,
-    @SerialName("city_id") val cityId: Long? = null,
-    @SerialName("group_id") val groupId: Long? = null,
+    @SerialName("city_id") val cityId: Int? = null,
+    @SerialName("group_id") val groupId: Int? = null,
     @SerialName("company") val company: String? = null,
     @SerialName("position") val position: String? = null,
     @SerialName("city_name") val cityName: String? = null,
-    @SerialName("country_id") val countryId: Long? = null,
+    @SerialName("country_id") val countryId: Int? = null,
 )

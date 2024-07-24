@@ -33,16 +33,16 @@ import ru.krindra.vkkt.objects.base.BaseLikesInfo
  */
 @Serializable
 data class WallWallpost (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("date") val date: Int? = null,
     @SerialName("geo") val geo: WallGeo? = null,
     @SerialName("text") val text: String? = null,
     @SerialName("edited") val edited: Int? = null,
-    @SerialName("from_id") val fromId: Long? = null,
-    @SerialName("post_id") val postId: Long? = null,
-    @SerialName("owner_id") val ownerId: Long? = null,
+    @SerialName("from_id") val fromId: Int? = null,
+    @SerialName("post_id") val postId: Int? = null,
+    @SerialName("owner_id") val ownerId: Int? = null,
     @SerialName("views") val views: WallViews? = null,
-    @SerialName("signer_id") val signerId: Long? = null,
+    @SerialName("signer_id") val signerId: Int? = null,
     @SerialName("likes") val likes: BaseLikesInfo? = null,
     @SerialName("access_key") val accessKey: String? = null,
     @SerialName("is_deleted") val isDeleted: Boolean? = null,

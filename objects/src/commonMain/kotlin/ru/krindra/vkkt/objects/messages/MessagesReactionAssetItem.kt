@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesReactionAssetItem (
-    @SerialName("reaction_id") val reactionId: Long,
+    @SerialName("reaction_id") val reactionId: Int,
     @SerialName("links") val links: MessagesReactionAssetItemLinks,
 )

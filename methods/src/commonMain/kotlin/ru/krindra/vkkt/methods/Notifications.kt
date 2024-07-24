@@ -44,7 +44,7 @@ class Notifications(
      * @param randomId 
      * @param sendingMode Type of sending (delivering) notifications: 'immediately' - push and bell notifications will be delivered as soon as possible, 'delayed' - push and bell notifications will be delivered in the most comfortable time for the user, 'delayed_push' - only push notifications will be delivered in the most comfortable time, while the bell notifications will be delivered as soon as possible.
      */
-    suspend fun sendMessage(userIds: List<Int>, message: String, fragment: String? = null, groupId: Long? = null, randomId: Long? = null, sendingMode: String? = "immediately"): NotificationsSendMessageResponse {
+    suspend fun sendMessage(userIds: List<Int>, message: String, fragment: String? = null, groupId: Int? = null, randomId: Int? = null, sendingMode: String? = "immediately"): NotificationsSendMessageResponse {
         val response = method("notifications.sendMessage", mapOf("user_ids" to userIds, "message" to message, "fragment" to fragment, "group_id" to groupId, "random_id" to randomId, "sending_mode" to sendingMode))
         return decodeResponse(response, json)
     }

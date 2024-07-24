@@ -33,11 +33,11 @@ import ru.krindra.vkkt.objects.base.BaseImage
  */
 @Serializable
 data class StoreProduct (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("type") val type: String,
     @SerialName("url") val url: String? = null,
     @SerialName("title") val title: String? = null,
-    @SerialName("base_id") val baseId: Long? = null,
+    @SerialName("base_id") val baseId: Int? = null,
     @SerialName("is_new") val isNew: Boolean? = null,
     @SerialName("is_vmoji") val isVmoji: Boolean? = null,
     @SerialName("subtitle") val subtitle: String? = null,

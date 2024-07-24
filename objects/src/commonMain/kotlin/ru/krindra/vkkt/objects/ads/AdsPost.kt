@@ -36,16 +36,16 @@ import ru.krindra.vkkt.objects.wall.WallWallpostAttachment
  */
 @Serializable
 data class AdsPost (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("date") val date: Int? = null,
     @SerialName("hash") val hash: String? = null,
     @SerialName("text") val text: String? = null,
     @SerialName("type") val type: String? = null,
     @SerialName("edited") val edited: Int? = null,
     @SerialName("can_pin") val canPin: Int? = null,
-    @SerialName("from_id") val fromId: Long? = null,
+    @SerialName("from_id") val fromId: Int? = null,
     @SerialName("can_edit") val canEdit: Int? = null,
-    @SerialName("owner_id") val ownerId: Long? = null,
+    @SerialName("owner_id") val ownerId: Int? = null,
     @SerialName("is_pinned") val isPinned: Int? = null,
     @SerialName("can_delete") val canDelete: Int? = null,
     @SerialName("created_by") val createdBy: Int? = null,

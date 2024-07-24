@@ -7,11 +7,11 @@ import kotlinx.serialization.Serializable
  *
  * @param apiVersion API version used for the events
  * @param events 
- * @param isEnabled Shows whether Long Poll is enabled
+ * @param isEnabled Shows whether Int Poll is enabled
  */
 @Serializable
-data class GroupsLongPollSettings (
+data class GroupsIntPollSettings (
     @SerialName("is_enabled") val isEnabled: Boolean,
-    @SerialName("events") val events: GroupsLongPollEvents,
+    @SerialName("events") val events: GroupsIntPollEvents,
     @SerialName("api_version") val apiVersion: String? = null,
 )

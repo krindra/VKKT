@@ -9,6 +9,6 @@ import ru.krindra.vkkt.objects.ads.*
  */
 @Serializable
 data class AdsCreateLookalikeRequestResponse (
-    @SerialName("request_id") val requestId: Long? = null,
+    @SerialName("request_id") val requestId: Int? = null,
 )
 

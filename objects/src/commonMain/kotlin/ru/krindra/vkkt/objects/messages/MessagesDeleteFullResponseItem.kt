@@ -15,9 +15,9 @@ import ru.krindra.vkkt.objects.base.BaseMessageError
  */
 @Serializable
 data class MessagesDeleteFullResponseItem (
-    @SerialName("peer_id") val peerId: Long? = null,
-    @SerialName("message_id") val messageId: Long? = null,
+    @SerialName("peer_id") val peerId: Int? = null,
+    @SerialName("message_id") val messageId: Int? = null,
     @SerialName("error") val error: BaseMessageError? = null,
     @SerialName("response") val response: BaseBoolInt? = null,
-    @SerialName("conversation_message_id") val conversationMessageId: Long? = null,
+    @SerialName("conversation_message_id") val conversationMessageId: Int? = null,
 )

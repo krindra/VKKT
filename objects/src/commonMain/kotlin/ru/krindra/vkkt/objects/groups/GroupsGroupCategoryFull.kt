@@ -13,7 +13,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class GroupsGroupCategoryFull (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("name") val name: String,
     @SerialName("page_count") val pageCount: Int,
     @SerialName("page_previews") val pagePreviews: List<GroupsGroup>,

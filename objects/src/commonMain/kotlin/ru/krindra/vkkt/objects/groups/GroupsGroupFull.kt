@@ -100,7 +100,7 @@ import ru.krindra.vkkt.objects.base.BaseCropPhoto
  */
 @Serializable
 data class GroupsGroupFull (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("wall") val wall: Int? = null,
     @SerialName("name") val name: String? = null,
     @SerialName("site") val site: String? = null,
@@ -132,7 +132,7 @@ data class GroupsGroupFull (
     @SerialName("description") val description: String? = null,
     @SerialName("has_photo") val hasPhoto: BaseBoolInt? = null,
     @SerialName("is_member") val isMember: BaseBoolInt? = null,
-    @SerialName("main_album_id") val mainAlbumId: Long? = null,
+    @SerialName("main_album_id") val mainAlbumId: Int? = null,
     @SerialName("market") val market: GroupsMarketInfo? = null,
     @SerialName("members_count") val membersCount: Int? = null,
     @SerialName("requests_count") val requestsCount: Int? = null,

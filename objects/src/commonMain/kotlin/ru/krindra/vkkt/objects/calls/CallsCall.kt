@@ -17,9 +17,9 @@ import kotlinx.serialization.Serializable
 data class CallsCall (
     @SerialName("time") val time: Int,
     @SerialName("state") val state: CallsEndState,
-    @SerialName("receiver_id") val receiverId: Long,
+    @SerialName("receiver_id") val receiverId: Int,
     @SerialName("video") val video: Boolean? = null,
     @SerialName("duration") val duration: Int? = null,
-    @SerialName("initiator_id") val initiatorId: Long,
+    @SerialName("initiator_id") val initiatorId: Int,
     @SerialName("participants") val participants: CallsParticipants? = null,
 )

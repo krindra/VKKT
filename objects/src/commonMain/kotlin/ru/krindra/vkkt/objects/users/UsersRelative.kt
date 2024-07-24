@@ -13,7 +13,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class UsersRelative (
     @SerialName("type") val type: String,
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("name") val name: String? = null,
     @SerialName("birth_date") val birthDate: String? = null,
 )

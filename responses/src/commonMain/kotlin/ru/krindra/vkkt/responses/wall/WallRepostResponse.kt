@@ -14,7 +14,7 @@ import ru.krindra.vkkt.objects.wall.*
  */
 @Serializable
 data class WallRepostResponse (
-    @SerialName("post_id") val postId: Long,
+    @SerialName("post_id") val postId: Int,
     @SerialName("success") val success: Int,
     @SerialName("likes_count") val likesCount: Int,
     @SerialName("reposts_count") val repostsCount: Int,

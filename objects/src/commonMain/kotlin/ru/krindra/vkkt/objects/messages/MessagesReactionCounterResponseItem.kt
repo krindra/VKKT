@@ -13,5 +13,5 @@ import kotlinx.serialization.Serializable
 data class MessagesReactionCounterResponseItem (
     @SerialName("count") val count: Int,
     @SerialName("user_ids") val userIds: List<Int>,
-    @SerialName("reaction_id") val reactionId: Long,
+    @SerialName("reaction_id") val reactionId: Int,
 )

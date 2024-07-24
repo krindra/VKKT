@@ -14,6 +14,6 @@ import kotlinx.serialization.Serializable
 data class GroupsAddressesInfo (
     @SerialName("count") val count: Int? = null,
     @SerialName("is_enabled") val isEnabled: Boolean,
-    @SerialName("main_address_id") val mainAddressId: Long? = null,
+    @SerialName("main_address_id") val mainAddressId: Int? = null,
     @SerialName("main_address") val mainAddress: GroupsAddress? = null,
 )

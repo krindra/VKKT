@@ -18,9 +18,9 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class MessagesHistoryAttachment (
     @SerialName("date") val date: Int,
-    @SerialName("from_id") val fromId: Long,
-    @SerialName("cmid") val cmid: Long? = null,
-    @SerialName("message_id") val messageId: Long,
+    @SerialName("from_id") val fromId: Int,
+    @SerialName("cmid") val cmid: Int? = null,
+    @SerialName("message_id") val messageId: Int,
     @SerialName("position") val position: Int? = null,
     @SerialName("forward_level") val forwardLevel: Int? = null,
     @SerialName("was_listened") val wasListened: Boolean? = null,

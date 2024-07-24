@@ -21,7 +21,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AppsAppMin (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("title") val title: String,
     @SerialName("type") val type: AppsAppType,
     @SerialName("icon_75") val icon75: String? = null,
@@ -31,7 +31,7 @@ data class AppsAppMin (
     @SerialName("icon_576") val icon576: String? = null,
     @SerialName("loader_icon") val loaderIcon: String? = null,
     @SerialName("is_installed") val isInstalled: Boolean? = null,
-    @SerialName("author_owner_id") val authorOwnerId: Long? = null,
+    @SerialName("author_owner_id") val authorOwnerId: Int? = null,
     @SerialName("screen_orientation") val screenOrientation: Int? = null,
     @SerialName("background_loader_color") val backgroundLoaderColor: String? = null,
 )

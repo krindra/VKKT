@@ -19,9 +19,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MarketMarketItemBasicWithGroup (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("title") val title: String,
-    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("owner_id") val ownerId: Int,
     @SerialName("price") val price: MarketPrice,
     @SerialName("is_adult") val isAdult: Boolean? = null,
     @SerialName("is_owner") val isOwner: Boolean? = null,

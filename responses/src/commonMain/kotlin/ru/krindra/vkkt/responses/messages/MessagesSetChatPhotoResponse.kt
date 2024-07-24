@@ -11,6 +11,6 @@ import ru.krindra.vkkt.objects.messages.*
 @Serializable
 data class MessagesSetChatPhotoResponse (
     @SerialName("chat") val chat: MessagesChat? = null,
-    @SerialName("message_id") val messageId: Long? = null,
+    @SerialName("message_id") val messageId: Int? = null,
 )
 

@@ -23,7 +23,7 @@ class Polls(
      * @param answerIds 
      * @param isBoard 
      */
-    suspend fun addVote(pollId: Long, answerIds: List<Int>, ownerId: Long? = null, isBoard: Boolean? = false): BaseBoolResponse {
+    suspend fun addVote(pollId: Int, answerIds: List<Int>, ownerId: Int? = null, isBoard: Boolean? = false): BaseBoolResponse {
         val response = method("polls.addVote", mapOf("owner_id" to ownerId, "poll_id" to pollId, "answer_ids" to answerIds, "is_board" to isBoard))
         return decodeResponse(response, json)
     }
@@ -43,7 +43,7 @@ class Polls(
      * @param backgroundId 
      * @param disableUnvote 
      */
-    suspend fun create(question: String? = null, isAnonymous: Boolean? = false, isMultiple: Boolean? = false, endDate: Int? = null, ownerId: Long? = null, appId: Long? = null, addAnswers: String? = null, photoId: Long? = null, backgroundId: String? = null, disableUnvote: Boolean? = false): PollsCreateResponse {
+    suspend fun create(question: String? = null, isAnonymous: Boolean? = false, isMultiple: Boolean? = false, endDate: Int? = null, ownerId: Int? = null, appId: Int? = null, addAnswers: String? = null, photoId: Int? = null, backgroundId: String? = null, disableUnvote: Boolean? = false): PollsCreateResponse {
         val response = method("polls.create", mapOf("question" to question, "is_anonymous" to isAnonymous, "is_multiple" to isMultiple, "end_date" to endDate, "owner_id" to ownerId, "app_id" to appId, "add_answers" to addAnswers, "photo_id" to photoId, "background_id" to backgroundId, "disable_unvote" to disableUnvote))
         return decodeResponse(response, json)
     }
@@ -56,7 +56,7 @@ class Polls(
      * @param pollId Poll ID.
      * @param isBoard 
      */
-    suspend fun deleteVote(pollId: Long, ownerId: Long? = null, isBoard: Boolean? = false): BaseBoolResponse {
+    suspend fun deleteVote(pollId: Int, ownerId: Int? = null, isBoard: Boolean? = false): BaseBoolResponse {
         val response = method("polls.deleteVote", mapOf("owner_id" to ownerId, "poll_id" to pollId, "is_board" to isBoard))
         return decodeResponse(response, json)
     }
@@ -75,7 +75,7 @@ class Polls(
      * @param photoId 
      * @param backgroundId 
      */
-    suspend fun edit(pollId: Long, ownerId: Long? = null, question: String? = null, addAnswers: String? = null, editAnswers: String? = null, deleteAnswers: String? = null, endDate: Int? = null, photoId: Long? = null, backgroundId: String? = null): BaseOkResponse {
+    suspend fun edit(pollId: Int, ownerId: Int? = null, question: String? = null, addAnswers: String? = null, editAnswers: String? = null, deleteAnswers: String? = null, endDate: Int? = null, photoId: Int? = null, backgroundId: String? = null): BaseOkResponse {
         val response = method("polls.edit", mapOf("owner_id" to ownerId, "poll_id" to pollId, "question" to question, "add_answers" to addAnswers, "edit_answers" to editAnswers, "delete_answers" to deleteAnswers, "end_date" to endDate, "photo_id" to photoId, "background_id" to backgroundId))
         return decodeResponse(response, json)
     }
@@ -100,7 +100,7 @@ class Polls(
      * @param fields 
      * @param nameCase 
      */
-    suspend fun getById(pollId: Long, ownerId: Long? = null, isBoard: Boolean? = false, extended: Boolean? = false, friendsCount: Int? = 3, fields: List<String>? = null, nameCase: String? = "nom"): PollsGetByIdResponse {
+    suspend fun getById(pollId: Int, ownerId: Int? = null, isBoard: Boolean? = false, extended: Boolean? = false, friendsCount: Int? = 3, fields: List<String>? = null, nameCase: String? = "nom"): PollsGetByIdResponse {
         val response = method("polls.getById", mapOf("owner_id" to ownerId, "is_board" to isBoard, "poll_id" to pollId, "extended" to extended, "friends_count" to friendsCount, "fields" to fields, "name_case" to nameCase))
         return decodeResponse(response, json)
     }
@@ -109,7 +109,7 @@ class Polls(
      *
      * @param ownerId 
      */
-    suspend fun getPhotoUploadServer(ownerId: Long? = null): BaseGetUploadServerResponse {
+    suspend fun getPhotoUploadServer(ownerId: Int? = null): BaseGetUploadServerResponse {
         val response = method("polls.getPhotoUploadServer", mapOf("owner_id" to ownerId))
         return decodeResponse(response, json)
     }
@@ -128,7 +128,7 @@ class Polls(
      * @param fields Profile fields to return. Sample values: 'nickname', 'screen_name', 'sex', 'bdate (birthdate)', 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'has_mobile', 'rate', 'contacts', 'education', 'online', 'counters'.
      * @param nameCase Case for declension of user name and surname: , 'nom' - nominative (default) , 'gen' - genitive , 'dat' - dative , 'acc' - accusative , 'ins' - instrumental , 'abl' - prepositional.
      */
-    suspend fun getVoters(pollId: Long, answerIds: List<Int>, ownerId: Long? = null, isBoard: Boolean? = false, friendsOnly: Boolean? = false, offset: Int? = null, count: Int? = null, fields: List<UsersFields>? = null, nameCase: String? = null): GetVotersResponse {
+    suspend fun getVoters(pollId: Int, answerIds: List<Int>, ownerId: Int? = null, isBoard: Boolean? = false, friendsOnly: Boolean? = false, offset: Int? = null, count: Int? = null, fields: List<UsersFields>? = null, nameCase: String? = null): GetVotersResponse {
         val response = method("polls.getVoters", mapOf("owner_id" to ownerId, "poll_id" to pollId, "answer_ids" to answerIds, "is_board" to isBoard, "friends_only" to friendsOnly, "offset" to offset, "count" to count, "fields" to fields, "name_case" to nameCase))
         return GetVotersResponse(response, json)
     }

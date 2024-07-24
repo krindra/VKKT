@@ -31,13 +31,13 @@ import ru.krindra.vkkt.objects.wall.WallCommentAttachment
  */
 @Serializable
 data class WidgetsWidgetComment (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("date") val date: Int,
-    @SerialName("to_id") val toId: Long,
+    @SerialName("to_id") val toId: Int,
     @SerialName("text") val text: String,
-    @SerialName("from_id") val fromId: Long,
+    @SerialName("from_id") val fromId: Int,
     @SerialName("post_type") val postType: String,
-    @SerialName("owner_id") val ownerId: Long? = null,
+    @SerialName("owner_id") val ownerId: Int? = null,
     @SerialName("user") val user: UsersUserFull? = null,
     @SerialName("likes") val likes: BaseLikesInfo? = null,
     @SerialName("media") val media: WidgetsCommentMedia? = null,

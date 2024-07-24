@@ -26,7 +26,7 @@ class Wall(
      * @param ownerId 
      * @param postId 
      */
-    suspend fun closeComments(ownerId: Long, postId: Long): BaseBoolResponse {
+    suspend fun closeComments(ownerId: Int, postId: Int): BaseBoolResponse {
         val response = method("wall.closeComments", mapOf("owner_id" to ownerId, "post_id" to postId))
         return decodeResponse(response, json)
     }
@@ -44,7 +44,7 @@ class Wall(
      * @param stickerId Sticker ID.
      * @param guid Unique identifier to avoid repeated comments.
      */
-    suspend fun createComment(postId: Long, ownerId: Long? = null, fromGroup: Int? = null, message: String? = null, replyToComment: Int? = null, attachments: List<String>? = null, stickerId: Long? = null, guid: String? = null): WallCreateCommentResponse {
+    suspend fun createComment(postId: Int, ownerId: Int? = null, fromGroup: Int? = null, message: String? = null, replyToComment: Int? = null, attachments: List<String>? = null, stickerId: Int? = null, guid: String? = null): WallCreateCommentResponse {
         val response = method("wall.createComment", mapOf("owner_id" to ownerId, "post_id" to postId, "from_group" to fromGroup, "message" to message, "reply_to_comment" to replyToComment, "attachments" to attachments, "sticker_id" to stickerId, "guid" to guid))
         return decodeResponse(response, json)
     }
@@ -56,7 +56,7 @@ class Wall(
      * @param ownerId User ID or community ID. Use a negative value to designate a community ID.
      * @param postId ID of the post to be deleted.
      */
-    suspend fun delete(ownerId: Long? = null, postId: Long? = null): BaseOkResponse {
+    suspend fun delete(ownerId: Int? = null, postId: Int? = null): BaseOkResponse {
         val response = method("wall.delete", mapOf("owner_id" to ownerId, "post_id" to postId))
         return decodeResponse(response, json)
     }
@@ -68,7 +68,7 @@ class Wall(
      * @param ownerId User ID or community ID. Use a negative value to designate a community ID.
      * @param commentId Comment ID.
      */
-    suspend fun deleteComment(commentId: Long, ownerId: Long? = null): BaseOkResponse {
+    suspend fun deleteComment(commentId: Int, ownerId: Int? = null): BaseOkResponse {
         val response = method("wall.deleteComment", mapOf("owner_id" to ownerId, "comment_id" to commentId))
         return decodeResponse(response, json)
     }
@@ -98,7 +98,7 @@ class Wall(
      * @param copyright 
      * @param topicId Topic ID. Allowed values can be obtained from newsfeed.getPostTopics method.
      */
-    suspend fun edit(postId: Long, ownerId: Long? = null, friendsOnly: Boolean? = false, message: String? = null, attachments: List<String>? = null, primaryAttachments: List<String>? = null, services: String? = null, signed: Boolean? = false, publishDate: Int? = null, lat: Double? = null, long: Double? = null, placeId: Long? = null, markAsAds: Boolean? = false, closeComments: Boolean? = false, donutPaidDuration: Int? = null, posterBkgId: Long? = null, posterBkgOwnerId: Long? = null, posterBkgAccessHash: String? = null, copyright: String? = null, topicId: Long? = null): WallEditResponse {
+    suspend fun edit(postId: Int, ownerId: Int? = null, friendsOnly: Boolean? = false, message: String? = null, attachments: List<String>? = null, primaryAttachments: List<String>? = null, services: String? = null, signed: Boolean? = false, publishDate: Int? = null, lat: Double? = null, long: Double? = null, placeId: Int? = null, markAsAds: Boolean? = false, closeComments: Boolean? = false, donutPaidDuration: Int? = null, posterBkgId: Int? = null, posterBkgOwnerId: Int? = null, posterBkgAccessHash: String? = null, copyright: String? = null, topicId: Int? = null): WallEditResponse {
         val response = method("wall.edit", mapOf("owner_id" to ownerId, "post_id" to postId, "friends_only" to friendsOnly, "message" to message, "attachments" to attachments, "primary_attachments" to primaryAttachments, "services" to services, "signed" to signed, "publish_date" to publishDate, "lat" to lat, "long" to long, "place_id" to placeId, "mark_as_ads" to markAsAds, "close_comments" to closeComments, "donut_paid_duration" to donutPaidDuration, "poster_bkg_id" to posterBkgId, "poster_bkg_owner_id" to posterBkgOwnerId, "poster_bkg_access_hash" to posterBkgAccessHash, "copyright" to copyright, "topic_id" to topicId))
         return decodeResponse(response, json)
     }
@@ -120,7 +120,7 @@ class Wall(
      * @param linkImage Link image url.
      * @param linkVideo Link video ID in format "<owner_id>_<media_id>".
      */
-    suspend fun editAdsStealth(postId: Long, ownerId: Long? = null, message: String? = null, attachments: List<String>? = null, signed: Boolean? = false, lat: Double? = null, long: Double? = null, placeId: Long? = null, linkButton: String? = null, linkTitle: String? = null, linkImage: String? = null, linkVideo: String? = null): BaseOkResponse {
+    suspend fun editAdsStealth(postId: Int, ownerId: Int? = null, message: String? = null, attachments: List<String>? = null, signed: Boolean? = false, lat: Double? = null, long: Double? = null, placeId: Int? = null, linkButton: String? = null, linkTitle: String? = null, linkImage: String? = null, linkVideo: String? = null): BaseOkResponse {
         val response = method("wall.editAdsStealth", mapOf("owner_id" to ownerId, "post_id" to postId, "message" to message, "attachments" to attachments, "signed" to signed, "lat" to lat, "long" to long, "place_id" to placeId, "link_button" to linkButton, "link_title" to linkTitle, "link_image" to linkImage, "link_video" to linkVideo))
         return decodeResponse(response, json)
     }
@@ -134,7 +134,7 @@ class Wall(
      * @param message New comment text.
      * @param attachments List of objects attached to the comment, in the following format: , "<owner_id>_<media_id>,<owner_id>_<media_id>", '' - Type of media attachment: 'photo' - photo, 'video' - video, 'audio' - audio, 'doc' - document, '<owner_id>' - ID of the media attachment owner. '<media_id>' - Media attachment ID. For example: "photo100172_166443618,photo66748_265827614".
      */
-    suspend fun editComment(commentId: Long, ownerId: Long? = null, message: String? = null, attachments: List<String>? = null): BaseOkResponse {
+    suspend fun editComment(commentId: Int, ownerId: Int? = null, message: String? = null, attachments: List<String>? = null): BaseOkResponse {
         val response = method("wall.editComment", mapOf("owner_id" to ownerId, "comment_id" to commentId, "message" to message, "attachments" to attachments))
         return decodeResponse(response, json)
     }
@@ -151,7 +151,7 @@ class Wall(
      * @param extended '1' - to return 'wall', 'profiles', and 'groups' fields, '0' - to return no additional fields (default).
      * @param fields 
      */
-    suspend fun get(ownerId: Long? = null, domain: String? = null, offset: Int? = null, count: Int? = null, filter: String? = null, extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null): GetResponse {
+    suspend fun get(ownerId: Int? = null, domain: String? = null, offset: Int? = null, count: Int? = null, filter: String? = null, extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null): GetResponse {
         val response = method("wall.get", mapOf("owner_id" to ownerId, "domain" to domain, "offset" to offset, "count" to count, "filter" to filter, "extended" to extended, "fields" to fields))
         return GetResponse(response, json)
     }
@@ -199,7 +199,7 @@ class Wall(
      * @param extended 
      * @param fields 
      */
-    suspend fun getComment(commentId: Long, ownerId: Long? = null, extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null): GetCommentResponse {
+    suspend fun getComment(commentId: Int, ownerId: Int? = null, extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null): GetCommentResponse {
         val response = method("wall.getComment", mapOf("owner_id" to ownerId, "comment_id" to commentId, "extended" to extended, "fields" to fields))
         return GetCommentResponse(response, json)
     }
@@ -231,7 +231,7 @@ class Wall(
      * @param commentId Comment ID.
      * @param threadItemsCount Count items in threads.
      */
-    suspend fun getComments(ownerId: Long? = null, postId: Long? = null, needLikes: Boolean? = false, startCommentId: Long? = null, offset: Int? = null, count: Int? = null, sort: String? = null, previewLength: Int? = null, extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null, commentId: Long? = null, threadItemsCount: Int? = 0): GetCommentsResponse {
+    suspend fun getComments(ownerId: Int? = null, postId: Int? = null, needLikes: Boolean? = false, startCommentId: Int? = null, offset: Int? = null, count: Int? = null, sort: String? = null, previewLength: Int? = null, extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null, commentId: Int? = null, threadItemsCount: Int? = 0): GetCommentsResponse {
         val response = method("wall.getComments", mapOf("owner_id" to ownerId, "post_id" to postId, "need_likes" to needLikes, "start_comment_id" to startCommentId, "offset" to offset, "count" to count, "sort" to sort, "preview_length" to previewLength, "extended" to extended, "fields" to fields, "comment_id" to commentId, "thread_items_count" to threadItemsCount))
         return GetCommentsResponse(response, json)
     }
@@ -255,7 +255,7 @@ class Wall(
      * @param offset Offset needed to return a specific subset of reposts.
      * @param count Number of reposts to return.
      */
-    suspend fun getReposts(ownerId: Long? = null, postId: Long? = null, offset: Int? = null, count: Int? = 20): WallGetRepostsResponse {
+    suspend fun getReposts(ownerId: Int? = null, postId: Int? = null, offset: Int? = null, count: Int? = 20): WallGetRepostsResponse {
         val response = method("wall.getReposts", mapOf("owner_id" to ownerId, "post_id" to postId, "offset" to offset, "count" to count))
         return decodeResponse(response, json)
     }
@@ -265,7 +265,7 @@ class Wall(
      * @param ownerId 
      * @param postId 
      */
-    suspend fun openComments(ownerId: Long, postId: Long): BaseBoolResponse {
+    suspend fun openComments(ownerId: Int, postId: Int): BaseBoolResponse {
         val response = method("wall.openComments", mapOf("owner_id" to ownerId, "post_id" to postId))
         return decodeResponse(response, json)
     }
@@ -277,7 +277,7 @@ class Wall(
      * @param ownerId ID of the user or community that owns the wall. By default, current user ID. Use a negative value to designate a community ID.
      * @param postId Post ID.
      */
-    suspend fun pin(postId: Long, ownerId: Long? = null): BaseOkResponse {
+    suspend fun pin(postId: Int, ownerId: Int? = null): BaseOkResponse {
         val response = method("wall.pin", mapOf("owner_id" to ownerId, "post_id" to postId))
         return decodeResponse(response, json)
     }
@@ -307,7 +307,7 @@ class Wall(
      * @param copyright 
      * @param topicId Topic ID. Allowed values can be obtained from newsfeed.getPostTopics method.
      */
-    suspend fun post(ownerId: Long? = null, friendsOnly: Boolean? = false, fromGroup: Boolean? = false, message: String? = null, attachments: List<String>? = null, primaryAttachments: List<String>? = null, services: String? = null, signed: Boolean? = false, publishDate: Int? = null, lat: Double? = null, long: Double? = null, placeId: Long? = null, postId: Long? = null, guid: String? = null, markAsAds: Boolean? = false, closeComments: Boolean? = false, donutPaidDuration: Int? = null, muteNotifications: Boolean? = false, copyright: String? = null, topicId: Long? = null): WallPostResponse {
+    suspend fun post(ownerId: Int? = null, friendsOnly: Boolean? = false, fromGroup: Boolean? = false, message: String? = null, attachments: List<String>? = null, primaryAttachments: List<String>? = null, services: String? = null, signed: Boolean? = false, publishDate: Int? = null, lat: Double? = null, long: Double? = null, placeId: Int? = null, postId: Int? = null, guid: String? = null, markAsAds: Boolean? = false, closeComments: Boolean? = false, donutPaidDuration: Int? = null, muteNotifications: Boolean? = false, copyright: String? = null, topicId: Int? = null): WallPostResponse {
         val response = method("wall.post", mapOf("owner_id" to ownerId, "friends_only" to friendsOnly, "from_group" to fromGroup, "message" to message, "attachments" to attachments, "primary_attachments" to primaryAttachments, "services" to services, "signed" to signed, "publish_date" to publishDate, "lat" to lat, "long" to long, "place_id" to placeId, "post_id" to postId, "guid" to guid, "mark_as_ads" to markAsAds, "close_comments" to closeComments, "donut_paid_duration" to donutPaidDuration, "mute_notifications" to muteNotifications, "copyright" to copyright, "topic_id" to topicId))
         return decodeResponse(response, json)
     }
@@ -329,7 +329,7 @@ class Wall(
      * @param linkImage Link image url.
      * @param linkVideo Link video ID in format "<owner_id>_<media_id>".
      */
-    suspend fun postAdsStealth(ownerId: Long, message: String? = null, attachments: List<String>? = null, signed: Boolean? = false, lat: Double? = null, long: Double? = null, placeId: Long? = null, guid: String? = null, linkButton: String? = null, linkTitle: String? = null, linkImage: String? = null, linkVideo: String? = null): WallPostAdsStealthResponse {
+    suspend fun postAdsStealth(ownerId: Int, message: String? = null, attachments: List<String>? = null, signed: Boolean? = false, lat: Double? = null, long: Double? = null, placeId: Int? = null, guid: String? = null, linkButton: String? = null, linkTitle: String? = null, linkImage: String? = null, linkVideo: String? = null): WallPostAdsStealthResponse {
         val response = method("wall.postAdsStealth", mapOf("owner_id" to ownerId, "message" to message, "attachments" to attachments, "signed" to signed, "lat" to lat, "long" to long, "place_id" to placeId, "guid" to guid, "link_button" to linkButton, "link_title" to linkTitle, "link_image" to linkImage, "link_video" to linkVideo))
         return decodeResponse(response, json)
     }
@@ -342,7 +342,7 @@ class Wall(
      * @param commentId Comment ID.
      * @param reason Reason for the complaint: '0' - spam, '1' - child pornography, '2' - extremism, '3' - violence, '4' - drug propaganda, '5' - adult material, '6' - insult, abuse.
      */
-    suspend fun reportComment(ownerId: Long, commentId: Long, reason: Int? = null): BaseOkResponse {
+    suspend fun reportComment(ownerId: Int, commentId: Int, reason: Int? = null): BaseOkResponse {
         val response = method("wall.reportComment", mapOf("owner_id" to ownerId, "comment_id" to commentId, "reason" to reason))
         return decodeResponse(response, json)
     }
@@ -355,7 +355,7 @@ class Wall(
      * @param postId Post ID.
      * @param reason Reason for the complaint: '0' - spam, '1' - child pornography, '2' - extremism, '3' - violence, '4' - drug propaganda, '5' - adult material, '6' - insult, abuse.
      */
-    suspend fun reportPost(ownerId: Long, postId: Long, reason: Int? = null): BaseOkResponse {
+    suspend fun reportPost(ownerId: Int, postId: Int, reason: Int? = null): BaseOkResponse {
         val response = method("wall.reportPost", mapOf("owner_id" to ownerId, "post_id" to postId, "reason" to reason))
         return decodeResponse(response, json)
     }
@@ -370,7 +370,7 @@ class Wall(
      * @param markAsAds 
      * @param muteNotifications 
      */
-    suspend fun repost(object_: String, message: String? = null, groupId: Long? = null, markAsAds: Boolean? = false, muteNotifications: Boolean? = false): WallRepostResponse {
+    suspend fun repost(object_: String, message: String? = null, groupId: Int? = null, markAsAds: Boolean? = false, muteNotifications: Boolean? = false): WallRepostResponse {
         val response = method("wall.repost", mapOf("object_" to object_, "message" to message, "group_id" to groupId, "mark_as_ads" to markAsAds, "mute_notifications" to muteNotifications))
         return decodeResponse(response, json)
     }
@@ -382,7 +382,7 @@ class Wall(
      * @param ownerId User ID or community ID from whose wall the post was deleted. Use a negative value to designate a community ID.
      * @param postId ID of the post to be restored.
      */
-    suspend fun restore(ownerId: Long? = null, postId: Long? = null): BaseOkResponse {
+    suspend fun restore(ownerId: Int? = null, postId: Int? = null): BaseOkResponse {
         val response = method("wall.restore", mapOf("owner_id" to ownerId, "post_id" to postId))
         return decodeResponse(response, json)
     }
@@ -394,7 +394,7 @@ class Wall(
      * @param ownerId User ID or community ID. Use a negative value to designate a community ID.
      * @param commentId Comment ID.
      */
-    suspend fun restoreComment(commentId: Long, ownerId: Long? = null): BaseOkResponse {
+    suspend fun restoreComment(commentId: Int, ownerId: Int? = null): BaseOkResponse {
         val response = method("wall.restoreComment", mapOf("owner_id" to ownerId, "comment_id" to commentId))
         return decodeResponse(response, json)
     }
@@ -412,7 +412,7 @@ class Wall(
      * @param extended show extended post info.
      * @param fields 
      */
-    suspend fun search(ownerId: Long? = null, domain: String? = null, query: String? = null, ownersOnly: Boolean? = false, count: Int? = 20, offset: Int? = 0, extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null): SearchResponse {
+    suspend fun search(ownerId: Int? = null, domain: String? = null, query: String? = null, ownersOnly: Boolean? = false, count: Int? = 20, offset: Int? = 0, extended: Boolean? = false, fields: List<BaseUserGroupFields>? = null): SearchResponse {
         val response = method("wall.search", mapOf("owner_id" to ownerId, "domain" to domain, "query" to query, "owners_only" to ownersOnly, "count" to count, "offset" to offset, "extended" to extended, "fields" to fields))
         return SearchResponse(response, json)
     }
@@ -434,7 +434,7 @@ class Wall(
      * @param ownerId ID of the user or community that owns the wall. By default, current user ID. Use a negative value to designate a community ID.
      * @param postId Post ID.
      */
-    suspend fun unpin(postId: Long, ownerId: Long? = null): BaseOkResponse {
+    suspend fun unpin(postId: Int, ownerId: Int? = null): BaseOkResponse {
         val response = method("wall.unpin", mapOf("owner_id" to ownerId, "post_id" to postId))
         return decodeResponse(response, json)
     }

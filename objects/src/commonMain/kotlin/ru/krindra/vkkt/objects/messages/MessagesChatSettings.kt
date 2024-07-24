@@ -25,7 +25,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class MessagesChatSettings (
     @SerialName("title") val title: String,
-    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("owner_id") val ownerId: Int,
     @SerialName("theme") val theme: String? = null,
     @SerialName("acl") val acl: MessagesChatSettingsAcl,
     @SerialName("admin_ids") val adminIds: List<Int>? = null,

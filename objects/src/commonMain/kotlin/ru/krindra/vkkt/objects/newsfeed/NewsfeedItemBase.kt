@@ -13,7 +13,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class NewsfeedItemBase (
-    @SerialName("source_id") val sourceId: Long,
+    @SerialName("source_id") val sourceId: Int,
     @SerialName("date") val date: Int/* WARN! Int? = null */,
     @SerialName("short_text_rate") val shortTextRate: Double? = null,
     @SerialName("feedback") val feedback: NewsfeedItemWallpostFeedback? = null,

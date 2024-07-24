@@ -21,7 +21,7 @@ import ru.krindra.vkkt.objects.base.BaseRepostsInfo
  * @param id Photo ID
  * @param images 
  * @param lat Latitude
- * @param long Longitude
+ * @param long Intitude
  * @param ownerId Photo owner's ID
  * @param photo256 URL of image with 2560 px width
  * @param canComment Information whether current user can comment the photo
@@ -43,9 +43,9 @@ import ru.krindra.vkkt.objects.base.BaseRepostsInfo
  */
 @Serializable
 data class NewsfeedCommentsItemTypePhoto (
-    @SerialName("id") val id: Long,
-    @SerialName("album_id") val albumId: Long,
-    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("id") val id: Int,
+    @SerialName("album_id") val albumId: Int,
+    @SerialName("owner_id") val ownerId: Int,
     @SerialName("lat") val lat: Double? = null,
     @SerialName("width") val width: Int? = null,
     @SerialName("has_tags") val hasTags: Boolean,
@@ -53,10 +53,10 @@ data class NewsfeedCommentsItemTypePhoto (
     @SerialName("text") val text: String? = null,
     @SerialName("height") val height: Int? = null,
     @SerialName("place") val place: String? = null,
-    @SerialName("post_id") val postId: Long? = null,
-    @SerialName("user_id") val userId: Long? = null,
+    @SerialName("post_id") val postId: Int? = null,
+    @SerialName("user_id") val userId: Int? = null,
     @SerialName("likes") val likes: BaseLikes? = null,
-    @SerialName("source_id") val sourceId: Long? = null,
+    @SerialName("source_id") val sourceId: Int? = null,
     @SerialName("photo_256") val photo256: String? = null,
     @SerialName("tags") val tags: BaseObjectCount? = null,
     @SerialName("real_offset") val realOffset: Int? = null,

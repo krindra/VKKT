@@ -19,10 +19,10 @@ import ru.krindra.vkkt.objects.photos.PhotosPhoto
  */
 @Serializable
 data class MarketMarketAlbum (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("count") val count: Int,
     @SerialName("title") val title: String,
-    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("owner_id") val ownerId: Int,
     @SerialName("type") val type: Int? = null,
     @SerialName("updated_time") val updatedTime: Int,
     @SerialName("is_main") val isMain: Boolean? = null,

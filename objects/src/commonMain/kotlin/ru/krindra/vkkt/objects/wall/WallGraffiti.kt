@@ -16,11 +16,11 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class WallGraffiti (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("url") val url: String? = null,
     @SerialName("width") val width: Int? = null,
     @SerialName("height") val height: Int? = null,
-    @SerialName("owner_id") val ownerId: Long? = null,
+    @SerialName("owner_id") val ownerId: Int? = null,
     @SerialName("photo_200") val photo200: String? = null,
     @SerialName("photo_586") val photo586: String? = null,
     @SerialName("access_key") val accessKey: String? = null,

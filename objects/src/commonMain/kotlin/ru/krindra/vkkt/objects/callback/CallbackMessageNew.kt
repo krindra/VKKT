@@ -15,7 +15,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class CallbackMessageNew (
     @SerialName("v") val v: String,
-    @SerialName("group_id") val groupId: Long,
+    @SerialName("group_id") val groupId: Int,
     @SerialName("event_id") val eventId: String,
     @SerialName("secret") val secret: String? = null,
     @SerialName("type") val type: CallbackType? = null,

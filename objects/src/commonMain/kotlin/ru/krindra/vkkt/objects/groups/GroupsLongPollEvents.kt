@@ -59,7 +59,7 @@ import ru.krindra.vkkt.objects.base.BaseBoolInt
  * @param donutMoneyWithdrawError 
  */
 @Serializable
-data class GroupsLongPollEvents (
+data class GroupsIntPollEvents (
     @SerialName("audio_new") val audioNew: BaseBoolInt,
     @SerialName("photo_new") val photoNew: BaseBoolInt,
     @SerialName("video_new") val videoNew: BaseBoolInt,

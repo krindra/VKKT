@@ -9,6 +9,6 @@ import ru.krindra.vkkt.objects.leadForms.*
  */
 @Serializable
 data class LeadFormsDeleteResponse (
-    @SerialName("form_id") val formId: Long,
+    @SerialName("form_id") val formId: Int,
 )
 

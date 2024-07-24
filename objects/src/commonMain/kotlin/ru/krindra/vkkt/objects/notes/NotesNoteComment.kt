@@ -15,10 +15,10 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class NotesNoteComment (
-    @SerialName("id") val id: Long,
-    @SerialName("nid") val nid: Long,
-    @SerialName("oid") val oid: Long,
-    @SerialName("uid") val uid: Long,
+    @SerialName("id") val id: Int,
+    @SerialName("nid") val nid: Int,
+    @SerialName("oid") val oid: Int,
+    @SerialName("uid") val uid: Int,
     @SerialName("date") val date: Int,
     @SerialName("message") val message: String,
     @SerialName("reply_to") val replyTo: Int? = null,

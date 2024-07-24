@@ -15,6 +15,6 @@ import kotlinx.serialization.Serializable
 data class MessagesKeyboard (
     @SerialName("one_time") val oneTime: Boolean,
     @SerialName("inline") val inline: Boolean? = null,
-    @SerialName("author_id") val authorId: Long? = null,
+    @SerialName("author_id") val authorId: Int? = null,
     @SerialName("buttons") val buttons: List<List<JsonElement>>,
 )

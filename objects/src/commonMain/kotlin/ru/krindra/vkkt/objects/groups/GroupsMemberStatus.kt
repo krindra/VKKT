@@ -11,6 +11,6 @@ import ru.krindra.vkkt.objects.base.BaseBoolInt
  */
 @Serializable
 data class GroupsMemberStatus (
-    @SerialName("user_id") val userId: Long,
+    @SerialName("user_id") val userId: Int,
     @SerialName("member") val member: BaseBoolInt,
 )

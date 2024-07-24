@@ -9,6 +9,6 @@ import ru.krindra.vkkt.objects.friends.*
  */
 @Serializable
 data class FriendsAddListResponse (
-    @SerialName("list_id") val listId: Long,
+    @SerialName("list_id") val listId: Int,
 )
 

@@ -24,7 +24,7 @@ class Stats(
      * @param statsGroups 
      * @param extended 
      */
-    suspend fun get(groupId: Long? = null, appId: Long? = null, timestampFrom: Int? = null, timestampTo: Int? = null, interval: String? = "day", intervalsCount: Int? = null, filters: List<String>? = null, statsGroups: List<String>? = null, extended: Boolean? = true): StatsGetResponse {
+    suspend fun get(groupId: Int? = null, appId: Int? = null, timestampFrom: Int? = null, timestampTo: Int? = null, interval: String? = "day", intervalsCount: Int? = null, filters: List<String>? = null, statsGroups: List<String>? = null, extended: Boolean? = true): StatsGetResponse {
         val response = method("stats.get", mapOf("group_id" to groupId, "app_id" to appId, "timestamp_from" to timestampFrom, "timestamp_to" to timestampTo, "interval" to interval, "intervals_count" to intervalsCount, "filters" to filters, "stats_groups" to statsGroups, "extended" to extended))
         return decodeResponse(response, json)
     }
@@ -36,7 +36,7 @@ class Stats(
      * @param ownerId post owner community id. Specify with "-" sign.
      * @param postIds wall posts id.
      */
-    suspend fun getPostReach(ownerId: Long, postIds: List<Int>): StatsGetPostReachResponse {
+    suspend fun getPostReach(ownerId: Int, postIds: List<Int>): StatsGetPostReachResponse {
         val response = method("stats.getPostReach", mapOf("owner_id" to ownerId, "post_ids" to postIds))
         return decodeResponse(response, json)
     }

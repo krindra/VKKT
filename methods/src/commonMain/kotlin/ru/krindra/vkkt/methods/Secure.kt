@@ -21,7 +21,7 @@ class Secure(
      * @param activityId there are 2 default activities: , * 1 - level. Works similar to ,, * 2 - points, saves points amount, Any other value is for saving completed missions.
      * @param value depends on activity_id: * 1 - number, current level number,, * 2 - number, current user's points amount, , Any other value is ignored.
      */
-    suspend fun addAppEvent(activityId: Long, userId: Long? = null, value: Int? = null): BaseOkResponse {
+    suspend fun addAppEvent(activityId: Int, userId: Int? = null, value: Int? = null): BaseOkResponse {
         val response = method("secure.addAppEvent", mapOf("user_id" to userId, "activity_id" to activityId, "value" to value))
         return decodeResponse(response, json)
     }
@@ -57,7 +57,7 @@ class Secure(
      * @param dateTo filter by end date. It is set as UNIX-time.
      * @param limit number of returned posts. By default - 1000.
      */
-    suspend fun getSMSHistory(userId: Long? = null, dateFrom: Int? = null, dateTo: Int? = null, limit: Int? = 1000): SecureGetSMSHistoryResponse {
+    suspend fun getSMSHistory(userId: Int? = null, dateFrom: Int? = null, dateTo: Int? = null, limit: Int? = 1000): SecureGetSMSHistoryResponse {
         val response = method("secure.getSMSHistory", mapOf("user_id" to userId, "date_from" to dateFrom, "date_to" to dateTo, "limit" to limit))
         return decodeResponse(response, json)
     }
@@ -96,7 +96,7 @@ class Secure(
      * @param userIds 
      * @param achievementId 
      */
-    suspend fun giveEventSticker(userIds: List<Int>, achievementId: Long): SecureGiveEventStickerResponse {
+    suspend fun giveEventSticker(userIds: List<Int>, achievementId: Int): SecureGiveEventStickerResponse {
         val response = method("secure.giveEventSticker", mapOf("user_ids" to userIds, "achievement_id" to achievementId))
         return decodeResponse(response, json)
     }
@@ -111,7 +111,7 @@ class Secure(
      * @param notificationId 
      * @param promoId 
      */
-    suspend fun sendNotification(message: String, userIds: List<Int>? = null, userId: Long? = null, notificationId: Long? = 0, promoId: Long? = 0): SecureSendNotificationResponse {
+    suspend fun sendNotification(message: String, userIds: List<Int>? = null, userId: Int? = null, notificationId: Int? = 0, promoId: Int? = 0): SecureSendNotificationResponse {
         val response = method("secure.sendNotification", mapOf("user_ids" to userIds, "user_id" to userId, "message" to message, "notification_id" to notificationId, "promo_id" to promoId))
         return decodeResponse(response, json)
     }
@@ -123,7 +123,7 @@ class Secure(
      * @param userId ID of the user to whom SMS notification is sent. The user shall allow the application to send him/her notifications (, +1).
      * @param message 'SMS' text to be sent in 'UTF-8' encoding. Only Latin letters and numbers are allowed. Maximum size is '160' characters.
      */
-    suspend fun sendSMSNotification(userId: Long, message: String): BaseOkResponse {
+    suspend fun sendSMSNotification(userId: Int, message: String): BaseOkResponse {
         val response = method("secure.sendSMSNotification", mapOf("user_id" to userId, "message" to message))
         return decodeResponse(response, json)
     }
@@ -137,7 +137,7 @@ class Secure(
      * @param counter counter value.
      * @param increment 
      */
-    suspend fun setCounter(counters: List<String>? = null, userId: Long? = null, counter: Int? = null, increment: Boolean? = false): SetCounterResponse {
+    suspend fun setCounter(counters: List<String>? = null, userId: Int? = null, counter: Int? = null, increment: Boolean? = false): SetCounterResponse {
         val response = method("secure.setCounter", mapOf("counters" to counters, "user_id" to userId, "counter" to counter, "increment" to increment))
         return SetCounterResponse(response, json)
     }

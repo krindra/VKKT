@@ -20,15 +20,15 @@ import ru.krindra.vkkt.objects.base.BaseGeo
  */
 @Serializable
 data class MessagesPinnedMessage (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("date") val date: Int,
     @SerialName("text") val text: String,
-    @SerialName("from_id") val fromId: Long,
-    @SerialName("peer_id") val peerId: Long,
+    @SerialName("from_id") val fromId: Int,
+    @SerialName("peer_id") val peerId: Int,
     @SerialName("geo") val geo: BaseGeo? = null,
     @SerialName("keyboard") val keyboard: MessagesKeyboard? = null,
     @SerialName("reply_message") val replyMessage: MessagesForeignMessage? = null,
-    @SerialName("conversation_message_id") val conversationMessageId: Long? = null,
+    @SerialName("conversation_message_id") val conversationMessageId: Int? = null,
     @SerialName("fwd_messages") val fwdMessages: List<MessagesForeignMessage>? = null,
     @SerialName("attachments") val attachments: List<MessagesMessageAttachment>? = null,
 )

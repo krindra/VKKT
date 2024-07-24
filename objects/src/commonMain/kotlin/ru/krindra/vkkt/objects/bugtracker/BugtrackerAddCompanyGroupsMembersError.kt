@@ -10,6 +10,6 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BugtrackerAddCompanyGroupsMembersError (
-    @SerialName("user_id") val userId: Long,
-    @SerialName("group_id") val groupId: Long,
+    @SerialName("user_id") val userId: Int,
+    @SerialName("group_id") val groupId: Int,
 )

@@ -9,6 +9,6 @@ import ru.krindra.vkkt.objects.wall.*
  */
 @Serializable
 data class WallPostResponse (
-    @SerialName("post_id") val postId: Long,
+    @SerialName("post_id") val postId: Int,
 )
 

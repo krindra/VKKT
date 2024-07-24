@@ -11,6 +11,6 @@ import ru.krindra.vkkt.objects.market.*
 @Serializable
 data class MarketAddAlbumResponse (
     @SerialName("albums_count") val albumsCount: Int? = null,
-    @SerialName("market_album_id") val marketAlbumId: Long? = null,
+    @SerialName("market_album_id") val marketAlbumId: Int? = null,
 )
 

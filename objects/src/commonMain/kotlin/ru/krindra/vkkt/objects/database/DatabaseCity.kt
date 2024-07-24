@@ -15,7 +15,7 @@ import ru.krindra.vkkt.objects.base.BaseBoolInt
  */
 @Serializable
 data class DatabaseCity (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("title") val title: String,
     @SerialName("area") val area: String? = null,
     @SerialName("region") val region: String? = null,

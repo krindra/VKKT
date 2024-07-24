@@ -15,8 +15,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class NewsfeedItemAudio (
-    @SerialName("source_id") val sourceId: Long,
-    @SerialName("post_id") val postId: Long? = null,
+    @SerialName("source_id") val sourceId: Int,
+    @SerialName("post_id") val postId: Int? = null,
     @SerialName("date") val date: Int/* WARN! Int? = null */,
     @SerialName("audio") val audio: NewsfeedItemAudioAudio? = null,
     @SerialName("short_text_rate") val shortTextRate: Double? = null,

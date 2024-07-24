@@ -27,8 +27,8 @@ import ru.krindra.vkkt.objects.base.BaseBoolInt
 @Serializable
 data class LeadFormsForm (
     @SerialName("url") val url: String,
-    @SerialName("form_id") val formId: Long,
-    @SerialName("group_id") val groupId: Long,
+    @SerialName("form_id") val formId: Int,
+    @SerialName("group_id") val groupId: Int,
     @SerialName("name") val name: String? = null,
     @SerialName("leads_count") val leadsCount: Int,
     @SerialName("photo") val photo: String? = null,

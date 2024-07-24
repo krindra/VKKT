@@ -34,13 +34,13 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class AdsStoryItem (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("time") val time: Int? = null,
     @SerialName("date") val date: String? = null,
     @SerialName("type") val type: String? = null,
     @SerialName("isAds") val isAds: Boolean? = null,
     @SerialName("raw_id") val rawId: String? = null,
-    @SerialName("owner_id") val ownerId: Long? = null,
+    @SerialName("owner_id") val ownerId: Int? = null,
     @SerialName("unread") val unread: Boolean? = null,
     @SerialName("can_ask") val canAsk: Boolean? = null,
     @SerialName("canLike") val canLike: Boolean? = null,

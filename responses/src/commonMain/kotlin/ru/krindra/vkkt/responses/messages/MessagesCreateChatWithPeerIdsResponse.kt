@@ -9,6 +9,6 @@ import ru.krindra.vkkt.objects.messages.*
  */
 @Serializable
 data class MessagesCreateChatWithPeerIdsResponse (
-    @SerialName("chat_id") val chatId: Long? = null,
+    @SerialName("chat_id") val chatId: Int? = null,
 )
 

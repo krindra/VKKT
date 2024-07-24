@@ -14,10 +14,10 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class GroupsCallbackServer (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("url") val url: String,
     @SerialName("title") val title: String,
     @SerialName("status") val status: String,
-    @SerialName("creator_id") val creatorId: Long,
+    @SerialName("creator_id") val creatorId: Int,
     @SerialName("secret_key") val secretKey: String,
 )

@@ -21,13 +21,13 @@ import ru.krindra.vkkt.objects.base.BaseBoolInt
  */
 @Serializable
 data class DocsDoc (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("date") val date: Int,
     @SerialName("size") val size: Int,
     @SerialName("type") val type: Int,
     @SerialName("ext") val ext: String,
     @SerialName("title") val title: String,
-    @SerialName("owner_id") val ownerId: Long,
+    @SerialName("owner_id") val ownerId: Int,
     @SerialName("url") val url: String? = null,
     @SerialName("tags") val tags: List<String>? = null,
     @SerialName("access_key") val accessKey: String? = null,

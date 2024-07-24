@@ -14,7 +14,7 @@ class Account(
      *
      * @param ownerId 
      */
-    suspend fun ban(ownerId: Long? = null): BaseOkResponse {
+    suspend fun ban(ownerId: Int? = null): BaseOkResponse {
         val response = method("account.ban", mapOf("owner_id" to ownerId))
         return decodeResponse(response, json)
     }
@@ -51,7 +51,7 @@ class Account(
      * 
      * @param userId User ID whose settings information shall be got. By default: current user.
      */
-    suspend fun getAppPermissions(userId: Long? = null): AccountGetAppPermissionsResponse {
+    suspend fun getAppPermissions(userId: Int? = null): AccountGetAppPermissionsResponse {
         val response = method("account.getAppPermissions", mapOf("user_id" to userId))
         return decodeResponse(response, json)
     }
@@ -147,7 +147,7 @@ class Account(
      * @param cityId User city.
      * @param status Status text.
      */
-    suspend fun saveProfileInfo(firstName: String? = null, lastName: String? = null, maidenName: String? = null, screenName: String? = null, cancelRequestId: Long? = null, sex: Int? = null, relation: Int? = null, relationPartnerId: Long? = null, bdate: String? = null, bdateVisibility: Int? = null, homeTown: String? = null, countryId: Long? = null, cityId: Long? = null, status: String? = null): AccountSaveProfileInfoResponse {
+    suspend fun saveProfileInfo(firstName: String? = null, lastName: String? = null, maidenName: String? = null, screenName: String? = null, cancelRequestId: Int? = null, sex: Int? = null, relation: Int? = null, relationPartnerId: Int? = null, bdate: String? = null, bdateVisibility: Int? = null, homeTown: String? = null, countryId: Int? = null, cityId: Int? = null, status: String? = null): AccountSaveProfileInfoResponse {
         val response = method("account.saveProfileInfo", mapOf("first_name" to firstName, "last_name" to lastName, "maiden_name" to maidenName, "screen_name" to screenName, "cancel_request_id" to cancelRequestId, "sex" to sex, "relation" to relation, "relation_partner_id" to relationPartnerId, "bdate" to bdate, "bdate_visibility" to bdateVisibility, "home_town" to homeTown, "country_id" to countryId, "city_id" to cityId, "status" to status))
         return decodeResponse(response, json)
     }
@@ -208,7 +208,7 @@ class Account(
      * @param peerId Destination ID. "For user: 'User ID', e.g. '12345'. For chat: '2000000000' + 'Chat ID', e.g. '2000000001'. For community: '- Community ID', e.g. '-12345'. ".
      * @param sound '1' - to enable sound in this dialog, '0' - to disable sound. Only if 'peer_id' contains user or community ID.
      */
-    suspend fun setSilenceMode(deviceId: String? = null, time: Int? = null, peerId: Long? = null, sound: Int? = null): BaseOkResponse {
+    suspend fun setSilenceMode(deviceId: String? = null, time: Int? = null, peerId: Int? = null, sound: Int? = null): BaseOkResponse {
         val response = method("account.setSilenceMode", mapOf("device_id" to deviceId, "time" to time, "peer_id" to peerId, "sound" to sound))
         return decodeResponse(response, json)
     }
@@ -217,7 +217,7 @@ class Account(
      *
      * @param ownerId 
      */
-    suspend fun unban(ownerId: Long? = null): BaseOkResponse {
+    suspend fun unban(ownerId: Int? = null): BaseOkResponse {
         val response = method("account.unban", mapOf("owner_id" to ownerId))
         return decodeResponse(response, json)
     }

@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class FriendsMutualFriend (
-    @SerialName("id") val id: Long? = null,
+    @SerialName("id") val id: Int? = null,
     @SerialName("common_count") val commonCount: Int? = null,
     @SerialName("common_friends") val commonFriends: List<Int>? = null,
 )

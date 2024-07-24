@@ -18,12 +18,12 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class PagesWikipage (
-    @SerialName("id") val id: Long,
+    @SerialName("id") val id: Int,
     @SerialName("views") val views: Int,
     @SerialName("title") val title: String,
-    @SerialName("group_id") val groupId: Long,
-    @SerialName("editor_id") val editorId: Long? = null,
-    @SerialName("creator_id") val creatorId: Long? = null,
+    @SerialName("group_id") val groupId: Int,
+    @SerialName("editor_id") val editorId: Int? = null,
+    @SerialName("creator_id") val creatorId: Int? = null,
     @SerialName("editor_name") val editorName: String? = null,
     @SerialName("creator_name") val creatorName: String? = null,
     @SerialName("who_can_edit") val whoCanEdit: PagesPrivacySettings,

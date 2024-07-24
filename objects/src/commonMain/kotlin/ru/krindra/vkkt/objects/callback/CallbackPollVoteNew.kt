@@ -12,8 +12,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class CallbackPollVoteNew (
-    @SerialName("poll_id") val pollId: Long,
-    @SerialName("user_id") val userId: Long,
-    @SerialName("owner_id") val ownerId: Long,
-    @SerialName("option_id") val optionId: Long,
+    @SerialName("poll_id") val pollId: Int,
+    @SerialName("user_id") val userId: Int,
+    @SerialName("owner_id") val ownerId: Int,
+    @SerialName("option_id") val optionId: Int,
 )

@@ -21,7 +21,7 @@ class Friends(
      * @param text Text of the message (up to 500 characters) for the friend request, if any.
      * @param follow '1' to pass an incoming request to followers list.
      */
-    suspend fun add(userId: Long? = null, text: String? = null, follow: Boolean? = false): FriendsAddResponse {
+    suspend fun add(userId: Int? = null, text: String? = null, follow: Boolean? = false): FriendsAddResponse {
         val response = method("friends.add", mapOf("user_id" to userId, "text" to text, "follow" to follow))
         return decodeResponse(response, json)
     }
@@ -67,7 +67,7 @@ class Friends(
      * 
      * @param userId ID of the user whose friend request is to be declined or who is to be deleted from the current user's friend list.
      */
-    suspend fun delete(userId: Long? = null): FriendsDeleteResponse {
+    suspend fun delete(userId: Int? = null): FriendsDeleteResponse {
         val response = method("friends.delete", mapOf("user_id" to userId))
         return decodeResponse(response, json)
     }
@@ -88,7 +88,7 @@ class Friends(
      * 
      * @param listId ID of the friend list to delete.
      */
-    suspend fun deleteList(listId: Long): BaseOkResponse {
+    suspend fun deleteList(listId: Int): BaseOkResponse {
         val response = method("friends.deleteList", mapOf("list_id" to listId))
         return decodeResponse(response, json)
     }
@@ -100,7 +100,7 @@ class Friends(
      * @param userId ID of the user whose friend list is to be edited.
      * @param listIds IDs of the friend lists to which to add the user.
      */
-    suspend fun edit(userId: Long, listIds: List<Int>? = null): BaseOkResponse {
+    suspend fun edit(userId: Int, listIds: List<Int>? = null): BaseOkResponse {
         val response = method("friends.edit", mapOf("user_id" to userId, "list_ids" to listIds))
         return decodeResponse(response, json)
     }
@@ -115,7 +115,7 @@ class Friends(
      * @param addUserIds (Applies if 'user_ids' parameter is not set.), User IDs to add to the friend list.
      * @param deleteUserIds (Applies if 'user_ids' parameter is not set.), User IDs to delete from the friend list.
      */
-    suspend fun editList(listId: Long, name: String? = null, userIds: List<Int>? = null, addUserIds: List<Int>? = null, deleteUserIds: List<Int>? = null): BaseOkResponse {
+    suspend fun editList(listId: Int, name: String? = null, userIds: List<Int>? = null, addUserIds: List<Int>? = null, deleteUserIds: List<Int>? = null): BaseOkResponse {
         val response = method("friends.editList", mapOf("name" to name, "list_id" to listId, "user_ids" to userIds, "add_user_ids" to addUserIds, "delete_user_ids" to deleteUserIds))
         return decodeResponse(response, json)
     }
@@ -132,7 +132,7 @@ class Friends(
      * @param fields Profile fields to return. Sample values: 'uid', 'first_name', 'last_name', 'nickname', 'sex', 'bdate' (birthdate), 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'domain', 'has_mobile', 'rate', 'contacts', 'education'.
      * @param ref 
      */
-    suspend fun get(userId: Long? = null, order: String? = null, listId: Long? = null, count: Int? = 5000, offset: Int? = null, fields: List<UsersFields>? = null, ref: String? = null): GetResponse {
+    suspend fun get(userId: Int? = null, order: String? = null, listId: Int? = null, count: Int? = 5000, offset: Int? = null, fields: List<UsersFields>? = null, ref: String? = null): GetResponse {
         val response = method("friends.get", mapOf("user_id" to userId, "order" to order, "list_id" to listId, "count" to count, "offset" to offset, "fields" to fields, "ref" to ref))
         return GetResponse(response, json)
     }
@@ -176,7 +176,7 @@ class Friends(
      * @param userId User ID.
      * @param returnSystem '1' - to return system friend lists. By default: '0'.
      */
-    suspend fun getLists(userId: Long? = null, returnSystem: Boolean? = false): FriendsGetListsResponse {
+    suspend fun getLists(userId: Int? = null, returnSystem: Boolean? = false): FriendsGetListsResponse {
         val response = method("friends.getLists", mapOf("user_id" to userId, "return_system" to returnSystem))
         return decodeResponse(response, json)
     }
@@ -192,7 +192,7 @@ class Friends(
      * @param count Number of mutual friends to return.
      * @param offset Offset needed to return a specific subset of mutual friends.
      */
-    suspend fun getMutual(sourceUid: Long? = null, targetUid: Long? = null, targetUids: List<Int>? = null, order: String? = null, count: Int? = null, offset: Int? = null): GetMutualResponse {
+    suspend fun getMutual(sourceUid: Int? = null, targetUid: Int? = null, targetUids: List<Int>? = null, order: String? = null, count: Int? = null, offset: Int? = null): GetMutualResponse {
         val response = method("friends.getMutual", mapOf("source_uid" to sourceUid, "target_uid" to targetUid, "target_uids" to targetUids, "order" to order, "count" to count, "offset" to offset))
         return GetMutualResponse(response, json)
     }
@@ -218,7 +218,7 @@ class Friends(
      * @param count Number of friends to return.
      * @param offset Offset needed to return a specific subset of friends.
      */
-    suspend fun getOnline(userId: Long? = null, listId: Long? = null, onlineMobile: Boolean? = false, order: String? = null, count: Int? = null, offset: Int? = null): GetOnlineResponse {
+    suspend fun getOnline(userId: Int? = null, listId: Int? = null, onlineMobile: Boolean? = false, order: String? = null, count: Int? = null, offset: Int? = null): GetOnlineResponse {
         val response = method("friends.getOnline", mapOf("user_id" to userId, "list_id" to listId, "online_mobile" to onlineMobile, "order" to order, "count" to count, "offset" to offset))
         return GetOnlineResponse(response, json)
     }
@@ -303,7 +303,7 @@ class Friends(
      * @param offset Offset needed to return a specific subset of friends.
      * @param count Number of friends to return.
      */
-    suspend fun search(userId: Long? = null, q: String? = null, fields: List<UsersFields>? = null, nameCase: String? = null, offset: Int? = null, count: Int? = 20): FriendsSearchResponse {
+    suspend fun search(userId: Int? = null, q: String? = null, fields: List<UsersFields>? = null, nameCase: String? = null, offset: Int? = null, count: Int? = 20): FriendsSearchResponse {
         val response = method("friends.search", mapOf("user_id" to userId, "q" to q, "fields" to fields, "name_case" to nameCase, "offset" to offset, "count" to count))
         return decodeResponse(response, json)
     }

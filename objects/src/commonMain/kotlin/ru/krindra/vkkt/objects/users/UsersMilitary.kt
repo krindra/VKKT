@@ -15,9 +15,9 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class UsersMilitary (
     @SerialName("unit") val unit: String,
-    @SerialName("id") val id: Long? = null,
-    @SerialName("unit_id") val unitId: Long,
+    @SerialName("id") val id: Int? = null,
+    @SerialName("unit_id") val unitId: Int,
     @SerialName("from_") val from_: Int? = null,
     @SerialName("until") val until: Int? = null,
-    @SerialName("country_id") val countryId: Long,
+    @SerialName("country_id") val countryId: Int,
 )
