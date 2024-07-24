@@ -8,7 +8,7 @@ plugins {
 
 allprojects {
     group = "ru.krindra.vkkt"
-    version = "0.9.8.1"
+    version = "0.9.9"
 }
 
 nmcp {
