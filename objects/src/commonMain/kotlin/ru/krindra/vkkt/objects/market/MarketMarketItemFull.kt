@@ -2,11 +2,11 @@ package ru.krindra.vkkt.objects.market
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.objects.base.BaseLink
-import ru.krindra.vkkt.objects.base.BaseRepostsInfo
-import ru.krindra.vkkt.objects.base.BaseLikes
-import ru.krindra.vkkt.objects.base.BaseBoolInt
 import ru.krindra.vkkt.objects.photos.PhotosPhoto
+import ru.krindra.vkkt.objects.base.BaseRepostsInfo
+import ru.krindra.vkkt.objects.base.BaseLink
+import ru.krindra.vkkt.objects.base.BaseBoolInt
+import ru.krindra.vkkt.objects.base.BaseLikes
 
 /**
  *
@@ -57,11 +57,11 @@ import ru.krindra.vkkt.objects.photos.PhotosPhoto
 data class MarketMarketItemFull (
     @SerialName("id") val id: Int,
     @SerialName("title") val title: String,
-    @SerialName("date") val date: Int? = null,
     @SerialName("owner_id") val ownerId: Int,
+    @SerialName("date") val date: Int? = null,
+    @SerialName("ad_id") val adId: Int? = null,
     @SerialName("sku") val sku: String? = null,
     @SerialName("url") val url: String? = null,
-    @SerialName("ad_id") val adId: Int? = null,
     @SerialName("price") val price: MarketPrice,
     @SerialName("post_id") val postId: Int? = null,
     @SerialName("rating") val rating: Double? = null,
@@ -76,11 +76,11 @@ data class MarketMarketItemFull (
     @SerialName("orders_count") val ordersCount: Int? = null,
     @SerialName("stock_amount") val stockAmount: Int? = null,
     @SerialName("external_id") val externalId: String? = null,
+    @SerialName("post_owner_id") val postOwnerId: Int? = null,
     @SerialName("thumb_photo") val thumbPhoto: String? = null,
     @SerialName("albums_ids") val albumsIds: List<Int>? = null,
     @SerialName("category") val category: MarketMarketCategory,
     @SerialName("is_favorite") val isFavorite: Boolean? = null,
-    @SerialName("post_owner_id") val postOwnerId: Int? = null,
     @SerialName("button_title") val buttonTitle: String? = null,
     @SerialName("cancel_info") val cancelInfo: BaseLink? = null,
     @SerialName("photos") val photos: List<PhotosPhoto>? = null,
@@ -93,8 +93,8 @@ data class MarketMarketItemFull (
     @SerialName("owner_info") val ownerInfo: MarketItemOwnerInfo? = null,
     @SerialName("category_v2") val categoryV2: MarketMarketCategory? = null,
     @SerialName("promotion") val promotion: MarketItemPromotionInfo? = null,
-    @SerialName("user_agreement_info") val userAgreementInfo: String? = null,
     @SerialName("variants_grouping_id") val variantsGroupingId: Int? = null,
+    @SerialName("user_agreement_info") val userAgreementInfo: String? = null,
     @SerialName("availability") val availability: MarketMarketItemAvailability,
     @SerialName("can_show_convert_to_service") val canShowConvertToService: Boolean? = null,
 )

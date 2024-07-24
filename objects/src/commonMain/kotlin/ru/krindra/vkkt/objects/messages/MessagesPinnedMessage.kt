@@ -27,8 +27,8 @@ data class MessagesPinnedMessage (
     @SerialName("peer_id") val peerId: Int,
     @SerialName("geo") val geo: BaseGeo? = null,
     @SerialName("keyboard") val keyboard: MessagesKeyboard? = null,
-    @SerialName("reply_message") val replyMessage: MessagesForeignMessage? = null,
     @SerialName("conversation_message_id") val conversationMessageId: Int? = null,
+    @SerialName("reply_message") val replyMessage: MessagesForeignMessage? = null,
     @SerialName("fwd_messages") val fwdMessages: List<MessagesForeignMessage>? = null,
     @SerialName("attachments") val attachments: List<MessagesMessageAttachment>? = null,
 )

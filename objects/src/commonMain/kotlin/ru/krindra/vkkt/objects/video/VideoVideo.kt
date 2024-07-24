@@ -2,10 +2,10 @@ package ru.krindra.vkkt.objects.video
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.objects.base.BasePropertyExists
 import ru.krindra.vkkt.objects.base.BaseBoolInt
 import ru.krindra.vkkt.objects.base.BaseLikes
 import ru.krindra.vkkt.objects.base.BaseRepostsInfo
+import ru.krindra.vkkt.objects.base.BasePropertyExists
 
 /**
  *
@@ -67,13 +67,13 @@ data class VideoVideo (
     @SerialName("type") val type: String? = null,
     @SerialName("height") val height: Int? = null,
     @SerialName("title") val title: String? = null,
-    @SerialName("balance") val balance: Int? = null,
     @SerialName("user_id") val userId: Int? = null,
+    @SerialName("balance") val balance: Int? = null,
+    @SerialName("owner_id") val ownerId: Int? = null,
     @SerialName("player") val player: String? = null,
     @SerialName("comments") val comments: Int? = null,
     @SerialName("duration") val duration: Int? = null,
     @SerialName("likes") val likes: BaseLikes? = null,
-    @SerialName("owner_id") val ownerId: Int? = null,
     @SerialName("added") val added: BaseBoolInt? = null,
     @SerialName("can_repost") val canRepost: Int? = null,
     @SerialName("platform") val platform: String? = null,

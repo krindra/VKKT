@@ -2,10 +2,10 @@ package ru.krindra.vkkt.objects.newsfeed
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.objects.market.MarketMarketCategory
 import ru.krindra.vkkt.objects.market.MarketPrice
 import ru.krindra.vkkt.objects.base.BaseLikes
 import ru.krindra.vkkt.objects.market.MarketMarketItemAvailability
+import ru.krindra.vkkt.objects.market.MarketMarketCategory
 
 /**
  *
@@ -41,8 +41,8 @@ import ru.krindra.vkkt.objects.market.MarketMarketItemAvailability
 data class NewsfeedCommentsItemTypeMarket (
     @SerialName("id") val id: Int,
     @SerialName("title") val title: String,
-    @SerialName("date") val date: Int? = null,
     @SerialName("owner_id") val ownerId: Int,
+    @SerialName("date") val date: Int? = null,
     @SerialName("sku") val sku: String? = null,
     @SerialName("url") val url: String? = null,
     @SerialName("price") val price: MarketPrice,
@@ -55,10 +55,10 @@ data class NewsfeedCommentsItemTypeMarket (
     @SerialName("access_key") val accessKey: String? = null,
     @SerialName("stock_amount") val stockAmount: Int? = null,
     @SerialName("external_id") val externalId: String? = null,
+    @SerialName("post_owner_id") val postOwnerId: Int? = null,
     @SerialName("thumb_photo") val thumbPhoto: String? = null,
     @SerialName("category") val category: MarketMarketCategory,
     @SerialName("is_favorite") val isFavorite: Boolean? = null,
-    @SerialName("post_owner_id") val postOwnerId: Int? = null,
     @SerialName("button_title") val buttonTitle: String? = null,
     @SerialName("is_main_variant") val isMainVariant: Boolean? = null,
     @SerialName("comments") val comments: NewsfeedCommentsBase? = null,

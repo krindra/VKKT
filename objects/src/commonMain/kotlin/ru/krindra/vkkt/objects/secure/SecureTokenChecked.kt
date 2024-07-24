@@ -14,6 +14,6 @@ import kotlinx.serialization.Serializable
 data class SecureTokenChecked (
     @SerialName("date") val date: Int? = null,
     @SerialName("expire") val expire: Int? = null,
-    @SerialName("success") val success: Int? = null,
     @SerialName("user_id") val userId: Int? = null,
+    @SerialName("success") val success: Int? = null,
 )

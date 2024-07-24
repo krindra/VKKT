@@ -2,10 +2,10 @@ package ru.krindra.vkkt.objects.messages
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.objects.market.MarketMarketItem
-import ru.krindra.vkkt.objects.docs.DocsDoc
-import ru.krindra.vkkt.objects.audio.AudioAudio
 import ru.krindra.vkkt.objects.photos.PhotosPhoto
+import ru.krindra.vkkt.objects.audio.AudioAudio
+import ru.krindra.vkkt.objects.docs.DocsDoc
+import ru.krindra.vkkt.objects.market.MarketMarketItem
 
 /**
  *

@@ -2,11 +2,11 @@ package ru.krindra.vkkt.responses.notifications
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.objects.apps.AppsApp
-import ru.krindra.vkkt.objects.users.UsersUser
+import ru.krindra.vkkt.objects.photos.PhotosPhoto
 import ru.krindra.vkkt.objects.video.VideoVideo
 import ru.krindra.vkkt.objects.groups.GroupsGroup
-import ru.krindra.vkkt.objects.photos.PhotosPhoto
+import ru.krindra.vkkt.objects.apps.AppsApp
+import ru.krindra.vkkt.objects.users.UsersUser
 import ru.krindra.vkkt.objects.notifications.*
 
 /**

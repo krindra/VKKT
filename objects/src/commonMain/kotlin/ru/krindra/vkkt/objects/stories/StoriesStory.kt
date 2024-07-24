@@ -2,9 +2,9 @@ package ru.krindra.vkkt.objects.stories
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.objects.video.VideoVideoFull
 import ru.krindra.vkkt.objects.base.BaseBoolInt
 import ru.krindra.vkkt.objects.photos.PhotosPhoto
+import ru.krindra.vkkt.objects.video.VideoVideoFull
 
 /**
  *
@@ -42,8 +42,8 @@ import ru.krindra.vkkt.objects.photos.PhotosPhoto
 @Serializable
 data class StoriesStory (
     @SerialName("id") val id: Int,
-    @SerialName("date") val date: Int? = null,
     @SerialName("owner_id") val ownerId: Int,
+    @SerialName("date") val date: Int? = null,
     @SerialName("views") val views: Int? = null,
     @SerialName("seen") val seen: BaseBoolInt? = null,
     @SerialName("photo") val photo: PhotosPhoto? = null,
@@ -61,12 +61,12 @@ data class StoriesStory (
     @SerialName("can_reply") val canReply: BaseBoolInt? = null,
     @SerialName("can_share") val canShare: BaseBoolInt? = null,
     @SerialName("replies") val replies: StoriesReplies? = null,
-    @SerialName("can_comment") val canComment: BaseBoolInt? = null,
     @SerialName("parent_story_id") val parentStoryId: Int? = null,
+    @SerialName("can_comment") val canComment: BaseBoolInt? = null,
     @SerialName("narratives_count") val narrativesCount: Int? = null,
     @SerialName("parent_story") val parentStory: StoriesStory? = null,
-    @SerialName("can_ask_anonymous") val canAskAnonymous: BaseBoolInt? = null,
     @SerialName("parent_story_owner_id") val parentStoryOwnerId: Int? = null,
+    @SerialName("can_ask_anonymous") val canAskAnonymous: BaseBoolInt? = null,
     @SerialName("can_use_in_narrative") val canUseInNarrative: Boolean? = null,
     @SerialName("first_narrative_title") val firstNarrativeTitle: String? = null,
     @SerialName("parent_story_access_key") val parentStoryAccessKey: String? = null,

@@ -17,8 +17,8 @@ import kotlinx.serialization.Serializable
 data class MessagesMessageAction (
     @SerialName("text") val text: String? = null,
     @SerialName("email") val email: String? = null,
-    @SerialName("message") val message: String? = null,
     @SerialName("member_id") val memberId: Int? = null,
+    @SerialName("message") val message: String? = null,
     @SerialName("type") val type: MessagesMessageActionStatus,
     @SerialName("photo") val photo: MessagesMessageActionPhoto? = null,
     @SerialName("conversation_message_id") val conversationMessageId: Int? = null,

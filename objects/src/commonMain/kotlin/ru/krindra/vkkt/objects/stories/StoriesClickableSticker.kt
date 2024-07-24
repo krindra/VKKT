@@ -3,10 +3,10 @@ package ru.krindra.vkkt.objects.stories
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import ru.krindra.vkkt.objects.base.BaseLink
-import ru.krindra.vkkt.objects.audio.AudioAudio
-import ru.krindra.vkkt.objects.polls.PollsPoll
 import ru.krindra.vkkt.objects.market.MarketMarketItem
 import ru.krindra.vkkt.objects.apps.AppsAppMin
+import ru.krindra.vkkt.objects.polls.PollsPoll
+import ru.krindra.vkkt.objects.audio.AudioAudio
 
 /**
  *
@@ -46,11 +46,11 @@ data class StoriesClickableSticker (
     @SerialName("id") val id: Int,
     @SerialName("type") val type: String,
     @SerialName("app") val app: AppsAppMin? = null,
-    @SerialName("color") val color: String? = null,
-    @SerialName("style") val style: String? = null,
     @SerialName("clip_id") val clipId: Int? = null,
-    @SerialName("poll") val poll: PollsPoll? = null,
+    @SerialName("color") val color: String? = null,
     @SerialName("post_id") val postId: Int? = null,
+    @SerialName("style") val style: String? = null,
+    @SerialName("poll") val poll: PollsPoll? = null,
     @SerialName("owner_id") val ownerId: Int? = null,
     @SerialName("place_id") val placeId: Int? = null,
     @SerialName("story_id") val storyId: Int? = null,
@@ -68,8 +68,8 @@ data class StoriesClickableSticker (
     @SerialName("audio_start_time") val audioStartTime: Int? = null,
     @SerialName("question_button") val questionButton: String? = null,
     @SerialName("market_item") val marketItem: MarketMarketItem? = null,
-    @SerialName("situational_app_url") val situationalAppUrl: String? = null,
     @SerialName("situational_theme_id") val situationalThemeId: Int? = null,
+    @SerialName("situational_app_url") val situationalAppUrl: String? = null,
     @SerialName("clickable_area") val clickableArea: List<StoriesClickableArea>,
     @SerialName("has_new_interactions") val hasNewInteractions: Boolean? = null,
     @SerialName("is_broadcast_notify_allowed") val isBroadcastNotifyAllowed: Boolean? = null,

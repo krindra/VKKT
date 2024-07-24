@@ -2,12 +2,12 @@ package ru.krindra.vkkt.objects.callback
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.objects.groups.GroupsGroupVideo
-import ru.krindra.vkkt.objects.groups.GroupsGroupIsClosed
-import ru.krindra.vkkt.objects.groups.GroupsGroupWall
 import ru.krindra.vkkt.objects.groups.GroupsGroupPhotos
+import ru.krindra.vkkt.objects.groups.GroupsGroupIsClosed
 import ru.krindra.vkkt.objects.groups.GroupsGroupAudio
+import ru.krindra.vkkt.objects.groups.GroupsGroupVideo
 import ru.krindra.vkkt.objects.groups.GroupsGroupFullAgeLimits
+import ru.krindra.vkkt.objects.groups.GroupsGroupWall
 
 /**
  *

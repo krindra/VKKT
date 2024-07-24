@@ -2,11 +2,11 @@ package ru.krindra.vkkt.objects.wall
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.objects.base.BaseCommentsInfo
-import ru.krindra.vkkt.objects.base.BaseLikesInfo
 import ru.krindra.vkkt.objects.newsfeed.NewsfeedItemWallpostFeedback
 import ru.krindra.vkkt.objects.base.BaseRepostsInfo
+import ru.krindra.vkkt.objects.base.BaseLikesInfo
 import ru.krindra.vkkt.objects.base.BaseBoolInt
+import ru.krindra.vkkt.objects.base.BaseCommentsInfo
 
 /**
  *
@@ -54,8 +54,8 @@ import ru.krindra.vkkt.objects.base.BaseBoolInt
 data class WallWallpostFull (
     @SerialName("id") val id: Int? = null,
     @SerialName("date") val date: Int? = null,
-    @SerialName("geo") val geo: WallGeo? = null,
     @SerialName("to_id") val toId: Int? = null,
+    @SerialName("geo") val geo: WallGeo? = null,
     @SerialName("hash") val hash: String? = null,
     @SerialName("text") val text: String? = null,
     @SerialName("edited") val edited: Int? = null,
@@ -64,8 +64,8 @@ data class WallWallpostFull (
     @SerialName("owner_id") val ownerId: Int? = null,
     @SerialName("topic_id") val topicId: Int? = null,
     @SerialName("views") val views: WallViews? = null,
-    @SerialName("type") val type: WallPostType? = null,
     @SerialName("signer_id") val signerId: Int? = null,
+    @SerialName("type") val type: WallPostType? = null,
     @SerialName("created_by") val createdBy: Int? = null,
     @SerialName("likes") val likes: BaseLikesInfo? = null,
     @SerialName("can_pin") val canPin: BaseBoolInt? = null,

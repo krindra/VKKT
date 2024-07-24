@@ -14,6 +14,6 @@ import kotlinx.serialization.Serializable
 data class DatabaseStation (
     @SerialName("id") val id: Int,
     @SerialName("name") val name: String,
-    @SerialName("color") val color: String? = null,
     @SerialName("city_id") val cityId: Int? = null,
+    @SerialName("color") val color: String? = null,
 )

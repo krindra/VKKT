@@ -2,9 +2,9 @@ package ru.krindra.vkkt.objects.users
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.objects.friends.FriendsRequestsMutual
-import ru.krindra.vkkt.objects.base.BaseSex
 import ru.krindra.vkkt.objects.base.BaseBoolInt
+import ru.krindra.vkkt.objects.base.BaseSex
+import ru.krindra.vkkt.objects.friends.FriendsRequestsMutual
 import ru.krindra.vkkt.objects.friends.FriendsFriendStatusStatus
 
 /**

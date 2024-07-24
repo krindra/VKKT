@@ -22,11 +22,11 @@ import ru.krindra.vkkt.objects.base.BaseLinkButton
 @Serializable
 data class MessagesChatPreview (
     @SerialName("title") val title: String? = null,
+    @SerialName("admin_id") val adminId: Int? = null,
     @SerialName("is_don") val isDon: Boolean? = null,
     @SerialName("is_nft") val isNft: Boolean? = null,
-    @SerialName("admin_id") val adminId: Int? = null,
-    @SerialName("joined") val joined: Boolean? = null,
     @SerialName("local_id") val localId: Int? = null,
+    @SerialName("joined") val joined: Boolean? = null,
     @SerialName("members") val members: List<Int>? = null,
     @SerialName("is_member") val isMember: Boolean? = null,
     @SerialName("button") val button: BaseLinkButton? = null,

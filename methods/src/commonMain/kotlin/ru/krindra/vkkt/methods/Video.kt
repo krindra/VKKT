@@ -275,8 +275,8 @@ class Video(
      * @param ownerId 
      * @param videoId 
      */
-    suspend fun getIntPollServer(videoId: Int, ownerId: Int? = null): VideoGetIntPollServerResponse {
-        val response = method("video.getIntPollServer", mapOf("owner_id" to ownerId, "video_id" to videoId))
+    suspend fun getLongPollServer(videoId: Int, ownerId: Int? = null): VideoGetLongPollServerResponse {
+        val response = method("video.getLongPollServer", mapOf("owner_id" to ownerId, "video_id" to videoId))
         return decodeResponse(response, json)
     }
 

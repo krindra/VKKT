@@ -2,18 +2,18 @@ package ru.krindra.vkkt.objects.users
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import ru.krindra.vkkt.objects.photos.PhotosPhoto
 import ru.krindra.vkkt.objects.friends.FriendsRequestsMutual
-import ru.krindra.vkkt.objects.base.BaseBoolInt
-import ru.krindra.vkkt.objects.photos.PhotosPhotoFalseable
-import ru.krindra.vkkt.objects.audio.AudioAudio
-import ru.krindra.vkkt.objects.base.BaseSex
-import ru.krindra.vkkt.objects.owner.OwnerState
-import ru.krindra.vkkt.objects.video.VideoLiveInfo
-import ru.krindra.vkkt.objects.base.BaseCity
 import ru.krindra.vkkt.objects.base.BaseCountry
 import ru.krindra.vkkt.objects.apps.AppsAppMin
+import ru.krindra.vkkt.objects.base.BaseBoolInt
+import ru.krindra.vkkt.objects.base.BaseCity
+import ru.krindra.vkkt.objects.base.BaseSex
+import ru.krindra.vkkt.objects.photos.PhotosPhotoFalseable
+import ru.krindra.vkkt.objects.video.VideoLiveInfo
 import ru.krindra.vkkt.objects.base.BaseCropPhoto
-import ru.krindra.vkkt.objects.photos.PhotosPhoto
+import ru.krindra.vkkt.objects.owner.OwnerState
+import ru.krindra.vkkt.objects.audio.AudioAudio
 import ru.krindra.vkkt.objects.friends.FriendsFriendStatusStatus
 
 /**
@@ -194,12 +194,12 @@ data class UsersUserFull (
     @SerialName("type") val type: UsersUserType? = null,
     @SerialName("activity") val activity: String? = null,
     @SerialName("can_call") val canCall: Boolean? = null,
+    @SerialName("contact_id") val contactId: Int? = null,
     @SerialName("facebook") val facebook: String? = null,
     @SerialName("language") val language: String? = null,
     @SerialName("nickname") val nickname: String? = null,
     @SerialName("online_app") val onlineApp: Int? = null,
     @SerialName("timezone") val timezone: Double? = null,
-    @SerialName("contact_id") val contactId: Int? = null,
     @SerialName("graduation") val graduation: Int? = null,
     @SerialName("home_town") val homeTown: String? = null,
     @SerialName("last_name") val lastName: String? = null,

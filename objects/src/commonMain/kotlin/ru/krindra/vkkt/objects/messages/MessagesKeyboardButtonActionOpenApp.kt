@@ -16,8 +16,8 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class MessagesKeyboardButtonActionOpenApp (
-    @SerialName("type") val type: String,
     @SerialName("app_id") val appId: Int,
+    @SerialName("type") val type: String,
     @SerialName("label") val label: String,
     @SerialName("owner_id") val ownerId: Int,
     @SerialName("hash") val hash: String? = null,

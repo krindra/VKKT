@@ -11,7 +11,7 @@ import kotlinx.serialization.Serializable
  * @param height Original photo height
  * @param id Photo ID
  * @param lat Latitude
- * @param long Intitude
+ * @param long Longitude
  * @param ownerId Photo owner's ID
  * @param photo1280 URL of image with 1280 px width
  * @param photo130 URL of image with 130 px width
@@ -38,13 +38,13 @@ data class PhotosPhotoXtrTagInfo (
     @SerialName("lat") val lat: Double? = null,
     @SerialName("width") val width: Int? = null,
     @SerialName("long") val long: Double? = null,
+    @SerialName("tag_id") val tagId: Int? = null,
     @SerialName("text") val text: String? = null,
     @SerialName("height") val height: Int? = null,
-    @SerialName("tag_id") val tagId: Int? = null,
     @SerialName("post_id") val postId: Int? = null,
     @SerialName("user_id") val userId: Int? = null,
-    @SerialName("photo_75") val photo75: String? = null,
     @SerialName("placer_id") val placerId: Int? = null,
+    @SerialName("photo_75") val photo75: String? = null,
     @SerialName("has_tags") val hasTags: Boolean? = null,
     @SerialName("photo_130") val photo130: String? = null,
     @SerialName("photo_604") val photo604: String? = null,

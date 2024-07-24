@@ -18,8 +18,8 @@ data class VideoStartStreamingResponse (
     @SerialName("name") val name: String,
     @SerialName("owner_id") val ownerId: Int,
     @SerialName("video_id") val videoId: Int,
-    @SerialName("access_key") val accessKey: String,
     @SerialName("post_id") val postId: Int? = null,
+    @SerialName("access_key") val accessKey: String,
     @SerialName("description") val description: String,
     @SerialName("stream") val stream: VideoStreamInputParams,
 )

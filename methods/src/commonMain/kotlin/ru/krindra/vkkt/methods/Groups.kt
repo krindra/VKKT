@@ -308,7 +308,7 @@ class Groups(
      * @param groupId ID or screen name of the community.
      * @param addressIds 
      * @param latitude Latitude of  the user geo position.
-     * @param longitude Intitude of the user geo position.
+     * @param longitude Longitude of the user geo position.
      * @param offset Offset needed to return a specific subset of community addresses.
      * @param count Number of community addresses to return.
      * @param fields Address fields.
@@ -441,23 +441,23 @@ class Groups(
 
     /**
      *
-     * Returns the data needed to query a Int Poll server for events
+     * Returns the data needed to query a Long Poll server for events
      * 
      * @param groupId Community ID.
      */
-    suspend fun getIntPollServer(groupId: Int): GroupsGetIntPollServerResponse {
-        val response = method("groups.getIntPollServer", mapOf("group_id" to groupId))
+    suspend fun getLongPollServer(groupId: Int): GroupsGetLongPollServerResponse {
+        val response = method("groups.getLongPollServer", mapOf("group_id" to groupId))
         return decodeResponse(response, json)
     }
 
     /**
      *
-     * Returns Int Poll notification settings
+     * Returns Long Poll notification settings
      * 
      * @param groupId Community ID.
      */
-    suspend fun getIntPollSettings(groupId: Int): GroupsGetIntPollSettingsResponse {
-        val response = method("groups.getIntPollSettings", mapOf("group_id" to groupId))
+    suspend fun getLongPollSettings(groupId: Int): GroupsGetLongPollSettingsResponse {
+        val response = method("groups.getLongPollSettings", mapOf("group_id" to groupId))
         return decodeResponse(response, json)
     }
 
@@ -742,10 +742,10 @@ class Groups(
 
     /**
      *
-     * Sets Int Poll notification settings
+     * Sets Long Poll notification settings
      * 
      * @param groupId Community ID.
-     * @param enabled Sets whether Int Poll is enabled ('0' - disabled, '1' - enabled).
+     * @param enabled Sets whether Long Poll is enabled ('0' - disabled, '1' - enabled).
      * @param apiVersion 
      * @param messageNew A new incoming message has been received ('0' - disabled, '1' - enabled).
      * @param messageReply A new outcoming message has been received ('0' - disabled, '1' - enabled).
@@ -799,8 +799,8 @@ class Groups(
      * @param donutMoneyWithdraw 
      * @param donutMoneyWithdrawError 
      */
-    suspend fun setIntPollSettings(groupId: Int, enabled: Boolean? = false, apiVersion: String? = null, messageNew: Boolean? = false, messageReply: Boolean? = false, messageAllow: Boolean? = false, messageDeny: Boolean? = false, messageEdit: Boolean? = false, messageTypingState: Boolean? = false, messageRead: Boolean? = false, photoNew: Boolean? = false, audioNew: Boolean? = false, videoNew: Boolean? = false, wallReplyNew: Boolean? = false, wallReplyEdit: Boolean? = false, wallReplyDelete: Boolean? = false, wallReplyRestore: Boolean? = false, wallPostNew: Boolean? = false, wallRepost: Boolean? = false, boardPostNew: Boolean? = false, boardPostEdit: Boolean? = false, boardPostRestore: Boolean? = false, boardPostDelete: Boolean? = false, photoCommentNew: Boolean? = false, photoCommentEdit: Boolean? = false, photoCommentDelete: Boolean? = false, photoCommentRestore: Boolean? = false, videoCommentNew: Boolean? = false, videoCommentEdit: Boolean? = false, videoCommentDelete: Boolean? = false, videoCommentRestore: Boolean? = false, marketCommentNew: Boolean? = false, marketCommentEdit: Boolean? = false, marketCommentDelete: Boolean? = false, marketCommentRestore: Boolean? = false, pollVoteNew: Boolean? = false, groupJoin: Boolean? = false, groupLeave: Boolean? = false, groupChangeSettings: Boolean? = false, groupChangePhoto: Boolean? = false, groupOfficersEdit: Boolean? = false, userBlock: Boolean? = false, userUnblock: Boolean? = false, likeAdd: Boolean? = false, likeRemove: Boolean? = false, messageEvent: Boolean? = false, messageReactionEvent: Boolean? = false, donutSubscriptionCreate: Boolean? = false, donutSubscriptionProlonged: Boolean? = false, donutSubscriptionCancelled: Boolean? = false, donutSubscriptionPriceChanged: Boolean? = false, donutSubscriptionExpired: Boolean? = false, donutMoneyWithdraw: Boolean? = false, donutMoneyWithdrawError: Boolean? = false): BaseOkResponse {
-        val response = method("groups.setIntPollSettings", mapOf("group_id" to groupId, "enabled" to enabled, "api_version" to apiVersion, "message_new" to messageNew, "message_reply" to messageReply, "message_allow" to messageAllow, "message_deny" to messageDeny, "message_edit" to messageEdit, "message_typing_state" to messageTypingState, "message_read" to messageRead, "photo_new" to photoNew, "audio_new" to audioNew, "video_new" to videoNew, "wall_reply_new" to wallReplyNew, "wall_reply_edit" to wallReplyEdit, "wall_reply_delete" to wallReplyDelete, "wall_reply_restore" to wallReplyRestore, "wall_post_new" to wallPostNew, "wall_repost" to wallRepost, "board_post_new" to boardPostNew, "board_post_edit" to boardPostEdit, "board_post_restore" to boardPostRestore, "board_post_delete" to boardPostDelete, "photo_comment_new" to photoCommentNew, "photo_comment_edit" to photoCommentEdit, "photo_comment_delete" to photoCommentDelete, "photo_comment_restore" to photoCommentRestore, "video_comment_new" to videoCommentNew, "video_comment_edit" to videoCommentEdit, "video_comment_delete" to videoCommentDelete, "video_comment_restore" to videoCommentRestore, "market_comment_new" to marketCommentNew, "market_comment_edit" to marketCommentEdit, "market_comment_delete" to marketCommentDelete, "market_comment_restore" to marketCommentRestore, "poll_vote_new" to pollVoteNew, "group_join" to groupJoin, "group_leave" to groupLeave, "group_change_settings" to groupChangeSettings, "group_change_photo" to groupChangePhoto, "group_officers_edit" to groupOfficersEdit, "user_block" to userBlock, "user_unblock" to userUnblock, "like_add" to likeAdd, "like_remove" to likeRemove, "message_event" to messageEvent, "message_reaction_event" to messageReactionEvent, "donut_subscription_create" to donutSubscriptionCreate, "donut_subscription_prolonged" to donutSubscriptionProlonged, "donut_subscription_cancelled" to donutSubscriptionCancelled, "donut_subscription_price_changed" to donutSubscriptionPriceChanged, "donut_subscription_expired" to donutSubscriptionExpired, "donut_money_withdraw" to donutMoneyWithdraw, "donut_money_withdraw_error" to donutMoneyWithdrawError))
+    suspend fun setLongPollSettings(groupId: Int, enabled: Boolean? = false, apiVersion: String? = null, messageNew: Boolean? = false, messageReply: Boolean? = false, messageAllow: Boolean? = false, messageDeny: Boolean? = false, messageEdit: Boolean? = false, messageTypingState: Boolean? = false, messageRead: Boolean? = false, photoNew: Boolean? = false, audioNew: Boolean? = false, videoNew: Boolean? = false, wallReplyNew: Boolean? = false, wallReplyEdit: Boolean? = false, wallReplyDelete: Boolean? = false, wallReplyRestore: Boolean? = false, wallPostNew: Boolean? = false, wallRepost: Boolean? = false, boardPostNew: Boolean? = false, boardPostEdit: Boolean? = false, boardPostRestore: Boolean? = false, boardPostDelete: Boolean? = false, photoCommentNew: Boolean? = false, photoCommentEdit: Boolean? = false, photoCommentDelete: Boolean? = false, photoCommentRestore: Boolean? = false, videoCommentNew: Boolean? = false, videoCommentEdit: Boolean? = false, videoCommentDelete: Boolean? = false, videoCommentRestore: Boolean? = false, marketCommentNew: Boolean? = false, marketCommentEdit: Boolean? = false, marketCommentDelete: Boolean? = false, marketCommentRestore: Boolean? = false, pollVoteNew: Boolean? = false, groupJoin: Boolean? = false, groupLeave: Boolean? = false, groupChangeSettings: Boolean? = false, groupChangePhoto: Boolean? = false, groupOfficersEdit: Boolean? = false, userBlock: Boolean? = false, userUnblock: Boolean? = false, likeAdd: Boolean? = false, likeRemove: Boolean? = false, messageEvent: Boolean? = false, messageReactionEvent: Boolean? = false, donutSubscriptionCreate: Boolean? = false, donutSubscriptionProlonged: Boolean? = false, donutSubscriptionCancelled: Boolean? = false, donutSubscriptionPriceChanged: Boolean? = false, donutSubscriptionExpired: Boolean? = false, donutMoneyWithdraw: Boolean? = false, donutMoneyWithdrawError: Boolean? = false): BaseOkResponse {
+        val response = method("groups.setLongPollSettings", mapOf("group_id" to groupId, "enabled" to enabled, "api_version" to apiVersion, "message_new" to messageNew, "message_reply" to messageReply, "message_allow" to messageAllow, "message_deny" to messageDeny, "message_edit" to messageEdit, "message_typing_state" to messageTypingState, "message_read" to messageRead, "photo_new" to photoNew, "audio_new" to audioNew, "video_new" to videoNew, "wall_reply_new" to wallReplyNew, "wall_reply_edit" to wallReplyEdit, "wall_reply_delete" to wallReplyDelete, "wall_reply_restore" to wallReplyRestore, "wall_post_new" to wallPostNew, "wall_repost" to wallRepost, "board_post_new" to boardPostNew, "board_post_edit" to boardPostEdit, "board_post_restore" to boardPostRestore, "board_post_delete" to boardPostDelete, "photo_comment_new" to photoCommentNew, "photo_comment_edit" to photoCommentEdit, "photo_comment_delete" to photoCommentDelete, "photo_comment_restore" to photoCommentRestore, "video_comment_new" to videoCommentNew, "video_comment_edit" to videoCommentEdit, "video_comment_delete" to videoCommentDelete, "video_comment_restore" to videoCommentRestore, "market_comment_new" to marketCommentNew, "market_comment_edit" to marketCommentEdit, "market_comment_delete" to marketCommentDelete, "market_comment_restore" to marketCommentRestore, "poll_vote_new" to pollVoteNew, "group_join" to groupJoin, "group_leave" to groupLeave, "group_change_settings" to groupChangeSettings, "group_change_photo" to groupChangePhoto, "group_officers_edit" to groupOfficersEdit, "user_block" to userBlock, "user_unblock" to userUnblock, "like_add" to likeAdd, "like_remove" to likeRemove, "message_event" to messageEvent, "message_reaction_event" to messageReactionEvent, "donut_subscription_create" to donutSubscriptionCreate, "donut_subscription_prolonged" to donutSubscriptionProlonged, "donut_subscription_cancelled" to donutSubscriptionCancelled, "donut_subscription_price_changed" to donutSubscriptionPriceChanged, "donut_subscription_expired" to donutSubscriptionExpired, "donut_money_withdraw" to donutMoneyWithdraw, "donut_money_withdraw_error" to donutMoneyWithdrawError))
         return decodeResponse(response, json)
     }
 

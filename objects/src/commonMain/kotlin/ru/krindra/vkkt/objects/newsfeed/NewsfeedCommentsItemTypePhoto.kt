@@ -2,13 +2,13 @@ package ru.krindra.vkkt.objects.newsfeed
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.objects.base.BaseBoolInt
-import ru.krindra.vkkt.objects.base.BaseObjectCount
 import ru.krindra.vkkt.objects.photos.PhotosPhotoSizes
-import ru.krindra.vkkt.objects.base.BasePropertyExists
-import ru.krindra.vkkt.objects.photos.PhotosImage
-import ru.krindra.vkkt.objects.base.BaseLikes
 import ru.krindra.vkkt.objects.base.BaseRepostsInfo
+import ru.krindra.vkkt.objects.base.BaseBoolInt
+import ru.krindra.vkkt.objects.base.BasePropertyExists
+import ru.krindra.vkkt.objects.base.BaseLikes
+import ru.krindra.vkkt.objects.photos.PhotosImage
+import ru.krindra.vkkt.objects.base.BaseObjectCount
 
 /**
  *
@@ -21,7 +21,7 @@ import ru.krindra.vkkt.objects.base.BaseRepostsInfo
  * @param id Photo ID
  * @param images 
  * @param lat Latitude
- * @param long Intitude
+ * @param long Longitude
  * @param ownerId Photo owner's ID
  * @param photo256 URL of image with 2560 px width
  * @param canComment Information whether current user can comment the photo

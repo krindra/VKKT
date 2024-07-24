@@ -3,10 +3,10 @@ package ru.krindra.vkkt.objects.search
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import ru.krindra.vkkt.objects.base.BaseLink
-import ru.krindra.vkkt.objects.apps.AppsApp
 import ru.krindra.vkkt.objects.users.UsersUserMin
-import ru.krindra.vkkt.objects.groups.GroupsGroup
 import ru.krindra.vkkt.objects.base.BaseBoolInt
+import ru.krindra.vkkt.objects.groups.GroupsGroup
+import ru.krindra.vkkt.objects.apps.AppsApp
 
 /**
  *

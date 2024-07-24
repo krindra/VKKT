@@ -11,5 +11,5 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class GroupsCallbackSettings (
     @SerialName("api_version") val apiVersion: String? = null,
-    @SerialName("events") val events: GroupsIntPollEvents? = null,
+    @SerialName("events") val events: GroupsLongPollEvents? = null,
 )

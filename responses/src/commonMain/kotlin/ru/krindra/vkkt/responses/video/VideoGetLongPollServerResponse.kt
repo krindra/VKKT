@@ -8,7 +8,7 @@ import ru.krindra.vkkt.objects.video.*
  * @param url 
  */
 @Serializable
-data class VideoGetIntPollServerResponse (
+data class VideoGetLongPollServerResponse (
     @SerialName("url") val url: String,
 )
 

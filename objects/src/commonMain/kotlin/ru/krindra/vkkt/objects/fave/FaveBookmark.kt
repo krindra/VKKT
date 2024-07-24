@@ -2,10 +2,10 @@ package ru.krindra.vkkt.objects.fave
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.objects.market.MarketMarketItem
 import ru.krindra.vkkt.objects.wall.WallWallpostFull
-import ru.krindra.vkkt.objects.video.VideoVideoFull
 import ru.krindra.vkkt.objects.base.BaseLink
+import ru.krindra.vkkt.objects.video.VideoVideoFull
+import ru.krindra.vkkt.objects.market.MarketMarketItem
 
 /**
  *

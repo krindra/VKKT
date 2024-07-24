@@ -2,13 +2,13 @@ package ru.krindra.vkkt.objects.users
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.objects.account.AccountUserSettingsInterests
-import ru.krindra.vkkt.objects.audio.AudioAudio
-import ru.krindra.vkkt.objects.base.BaseSex
-import ru.krindra.vkkt.objects.account.AccountNameRequest
-import ru.krindra.vkkt.objects.base.BaseCity
 import ru.krindra.vkkt.objects.base.BaseCountry
 import ru.krindra.vkkt.objects.base.BaseBoolInt
+import ru.krindra.vkkt.objects.base.BaseCity
+import ru.krindra.vkkt.objects.base.BaseSex
+import ru.krindra.vkkt.objects.account.AccountNameRequest
+import ru.krindra.vkkt.objects.audio.AudioAudio
+import ru.krindra.vkkt.objects.account.AccountUserSettingsInterests
 
 /**
  *

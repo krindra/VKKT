@@ -19,7 +19,7 @@ data class CallsCall (
     @SerialName("state") val state: CallsEndState,
     @SerialName("receiver_id") val receiverId: Int,
     @SerialName("video") val video: Boolean? = null,
-    @SerialName("duration") val duration: Int? = null,
     @SerialName("initiator_id") val initiatorId: Int,
+    @SerialName("duration") val duration: Int? = null,
     @SerialName("participants") val participants: CallsParticipants? = null,
 )

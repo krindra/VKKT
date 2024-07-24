@@ -2,17 +2,17 @@ package ru.krindra.vkkt.objects.newsfeed
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.objects.wall.WallGeo
-import ru.krindra.vkkt.objects.wall.WallPostCopyright
-import ru.krindra.vkkt.objects.base.BaseBoolInt
-import ru.krindra.vkkt.objects.wall.WallWallpostDonut
-import ru.krindra.vkkt.objects.base.BaseLikesInfo
-import ru.krindra.vkkt.objects.wall.WallViews
-import ru.krindra.vkkt.objects.wall.WallWallpostFull
-import ru.krindra.vkkt.objects.wall.WallPostSource
-import ru.krindra.vkkt.objects.wall.WallPostType
-import ru.krindra.vkkt.objects.wall.WallWallpostAttachment
 import ru.krindra.vkkt.objects.base.BaseRepostsInfo
+import ru.krindra.vkkt.objects.wall.WallWallpostAttachment
+import ru.krindra.vkkt.objects.base.BaseLikesInfo
+import ru.krindra.vkkt.objects.base.BaseBoolInt
+import ru.krindra.vkkt.objects.wall.WallPostCopyright
+import ru.krindra.vkkt.objects.wall.WallWallpostFull
+import ru.krindra.vkkt.objects.wall.WallGeo
+import ru.krindra.vkkt.objects.wall.WallWallpostDonut
+import ru.krindra.vkkt.objects.wall.WallPostType
+import ru.krindra.vkkt.objects.wall.WallPostSource
+import ru.krindra.vkkt.objects.wall.WallViews
 
 /**
  *
@@ -61,8 +61,8 @@ import ru.krindra.vkkt.objects.base.BaseRepostsInfo
 data class NewsfeedCommentsItemTypePost (
     @SerialName("id") val id: Int? = null,
     @SerialName("date") val date: Int? = null,
-    @SerialName("geo") val geo: WallGeo? = null,
     @SerialName("to_id") val toId: Int? = null,
+    @SerialName("geo") val geo: WallGeo? = null,
     @SerialName("hash") val hash: String? = null,
     @SerialName("text") val text: String? = null,
     @SerialName("edited") val edited: Int? = null,

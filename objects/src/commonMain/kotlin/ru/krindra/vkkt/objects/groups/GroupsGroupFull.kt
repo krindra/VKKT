@@ -2,13 +2,13 @@ package ru.krindra.vkkt.objects.groups
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import ru.krindra.vkkt.objects.base.BaseCropPhoto
+import ru.krindra.vkkt.objects.base.BaseCountry
 import ru.krindra.vkkt.objects.base.BaseBoolInt
+import ru.krindra.vkkt.objects.video.VideoLiveInfo
 import ru.krindra.vkkt.objects.audio.AudioAudio
 import ru.krindra.vkkt.objects.base.BaseOwnerCover
-import ru.krindra.vkkt.objects.video.VideoLiveInfo
 import ru.krindra.vkkt.objects.base.BaseObject
-import ru.krindra.vkkt.objects.base.BaseCountry
-import ru.krindra.vkkt.objects.base.BaseCropPhoto
 
 /**
  *
@@ -125,6 +125,7 @@ data class GroupsGroupFull (
     @SerialName("can_post") val canPost: BaseBoolInt? = null,
     @SerialName("is_admin") val isAdmin: BaseBoolInt? = null,
     @SerialName("is_adult") val isAdult: BaseBoolInt? = null,
+    @SerialName("main_album_id") val mainAlbumId: Int? = null,
     @SerialName("screen_name") val screenName: String? = null,
     @SerialName("trending") val trending: BaseBoolInt? = null,
     @SerialName("verified") val verified: BaseBoolInt? = null,
@@ -132,7 +133,6 @@ data class GroupsGroupFull (
     @SerialName("description") val description: String? = null,
     @SerialName("has_photo") val hasPhoto: BaseBoolInt? = null,
     @SerialName("is_member") val isMember: BaseBoolInt? = null,
-    @SerialName("main_album_id") val mainAlbumId: Int? = null,
     @SerialName("market") val market: GroupsMarketInfo? = null,
     @SerialName("members_count") val membersCount: Int? = null,
     @SerialName("requests_count") val requestsCount: Int? = null,

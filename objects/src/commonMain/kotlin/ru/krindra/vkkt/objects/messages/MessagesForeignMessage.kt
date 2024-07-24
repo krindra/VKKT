@@ -31,8 +31,8 @@ data class MessagesForeignMessage (
     @SerialName("payload") val payload: String? = null,
     @SerialName("update_time") val updateTime: Int? = null,
     @SerialName("was_listened") val wasListened: Boolean? = null,
-    @SerialName("reply_message") val replyMessage: MessagesForeignMessage? = null,
     @SerialName("conversation_message_id") val conversationMessageId: Int? = null,
+    @SerialName("reply_message") val replyMessage: MessagesForeignMessage? = null,
     @SerialName("fwd_messages") val fwdMessages: List<MessagesForeignMessage>? = null,
     @SerialName("attachments") val attachments: List<MessagesMessageAttachment>? = null,
 )

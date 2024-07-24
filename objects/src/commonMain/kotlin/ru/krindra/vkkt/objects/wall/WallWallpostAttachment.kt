@@ -2,20 +2,20 @@ package ru.krindra.vkkt.objects.wall
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.objects.base.BaseLink
-import ru.krindra.vkkt.objects.market.MarketMarketAlbum
-import ru.krindra.vkkt.objects.video.VideoVideoFull
-import ru.krindra.vkkt.objects.audio.AudioAudio
-import ru.krindra.vkkt.objects.polls.PollsPoll
-import ru.krindra.vkkt.objects.market.MarketMarketItem
-import ru.krindra.vkkt.objects.photos.PhotosPhotoAlbum
-import ru.krindra.vkkt.objects.groups.GroupsGroupAttach
 import ru.krindra.vkkt.objects.video.VideoVideoAlbumFull
-import ru.krindra.vkkt.objects.notes.NotesNote
-import ru.krindra.vkkt.objects.events.EventsEventAttach
-import ru.krindra.vkkt.objects.docs.DocsDoc
-import ru.krindra.vkkt.objects.pages.PagesWikipageFull
 import ru.krindra.vkkt.objects.photos.PhotosPhoto
+import ru.krindra.vkkt.objects.events.EventsEventAttach
+import ru.krindra.vkkt.objects.base.BaseLink
+import ru.krindra.vkkt.objects.docs.DocsDoc
+import ru.krindra.vkkt.objects.market.MarketMarketItem
+import ru.krindra.vkkt.objects.video.VideoVideoFull
+import ru.krindra.vkkt.objects.pages.PagesWikipageFull
+import ru.krindra.vkkt.objects.groups.GroupsGroupAttach
+import ru.krindra.vkkt.objects.notes.NotesNote
+import ru.krindra.vkkt.objects.market.MarketMarketAlbum
+import ru.krindra.vkkt.objects.polls.PollsPoll
+import ru.krindra.vkkt.objects.audio.AudioAudio
+import ru.krindra.vkkt.objects.photos.PhotosPhotoAlbum
 
 /**
  *

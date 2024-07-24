@@ -23,7 +23,7 @@ data class UsersCareer (
     @SerialName("city_id") val cityId: Int? = null,
     @SerialName("group_id") val groupId: Int? = null,
     @SerialName("company") val company: String? = null,
+    @SerialName("country_id") val countryId: Int? = null,
     @SerialName("position") val position: String? = null,
     @SerialName("city_name") val cityName: String? = null,
-    @SerialName("country_id") val countryId: Int? = null,
 )

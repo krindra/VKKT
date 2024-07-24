@@ -2,9 +2,9 @@ package ru.krindra.vkkt.objects.groups
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.objects.database.DatabaseCityById
-import ru.krindra.vkkt.objects.base.BaseCountry
 import ru.krindra.vkkt.objects.database.DatabaseStation
+import ru.krindra.vkkt.objects.base.BaseCountry
+import ru.krindra.vkkt.objects.database.DatabaseCityById
 
 /**
  *
@@ -30,14 +30,14 @@ import ru.krindra.vkkt.objects.database.DatabaseStation
 @Serializable
 data class GroupsAddress (
     @SerialName("id") val id: Int,
+    @SerialName("city_id") val cityId: Int? = null,
     @SerialName("phone") val phone: String? = null,
     @SerialName("title") val title: String? = null,
-    @SerialName("city_id") val cityId: Int? = null,
-    @SerialName("distance") val distance: Int? = null,
     @SerialName("place_id") val placeId: Int? = null,
+    @SerialName("distance") val distance: Int? = null,
     @SerialName("address") val address: String? = null,
-    @SerialName("latitude") val latitude: Double? = null,
     @SerialName("country_id") val countryId: Int? = null,
+    @SerialName("latitude") val latitude: Double? = null,
     @SerialName("city") val city: DatabaseCityById? = null,
     @SerialName("longitude") val longitude: Double? = null,
     @SerialName("time_offset") val timeOffset: Int? = null,

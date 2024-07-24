@@ -436,35 +436,35 @@ class Messages(
      *
      * Returns updates in user's private messages.
      * 
-     * @param ts Last value of the 'ts' parameter returned from the Int Poll server or by using [vk.com/dev/messages.getIntPollHistory|messages.getIntPollHistory] method.
-     * @param pts Last value of 'pts' parameter returned from the Int Poll server or by using [vk.com/dev/messages.getIntPollHistory|messages.getIntPollHistory] method.
+     * @param ts Last value of the 'ts' parameter returned from the Long Poll server or by using [vk.com/dev/messages.getLongPollHistory|messages.getLongPollHistory] method.
+     * @param pts Last value of 'pts' parameter returned from the Long Poll server or by using [vk.com/dev/messages.getLongPollHistory|messages.getLongPollHistory] method.
      * @param previewLength Number of characters after which to truncate a previewed message. To preview the full message, specify '0'. "NOTE: Messages are not truncated by default. Messages are truncated by words.".
      * @param onlines '1' - to return history with online users only.
      * @param fields Additional profile [vk.com/dev/fields|fields] to return.
      * @param eventsLimit Maximum number of events to return.
      * @param msgsLimit Maximum number of messages to return.
-     * @param maxMsgId Maximum ID of the message among existing ones in the local copy. Both messages received with API methods (for example, , ), and data received from a Int Poll server (events with code 4) are taken into account.
+     * @param maxMsgId Maximum ID of the message among existing ones in the local copy. Both messages received with API methods (for example, , ), and data received from a Long Poll server (events with code 4) are taken into account.
      * @param groupId Group ID (for group messages with user access token).
      * @param lpVersion 
      * @param lastN 
      * @param credentials 
      * @param extended 
      */
-    suspend fun getIntPollHistory(ts: Int? = null, pts: Int? = null, previewLength: Int? = null, onlines: Boolean? = false, fields: List<UsersFields>? = null, eventsLimit: Int? = 1000, msgsLimit: Int? = 200, maxMsgId: Int? = null, groupId: Int? = null, lpVersion: Int? = null, lastN: Int? = 0, credentials: Boolean? = false, extended: Boolean? = false): MessagesGetIntPollHistoryResponse {
-        val response = method("messages.getIntPollHistory", mapOf("ts" to ts, "pts" to pts, "preview_length" to previewLength, "onlines" to onlines, "fields" to fields, "events_limit" to eventsLimit, "msgs_limit" to msgsLimit, "max_msg_id" to maxMsgId, "group_id" to groupId, "lp_version" to lpVersion, "last_n" to lastN, "credentials" to credentials, "extended" to extended))
+    suspend fun getLongPollHistory(ts: Int? = null, pts: Int? = null, previewLength: Int? = null, onlines: Boolean? = false, fields: List<UsersFields>? = null, eventsLimit: Int? = 1000, msgsLimit: Int? = 200, maxMsgId: Int? = null, groupId: Int? = null, lpVersion: Int? = null, lastN: Int? = 0, credentials: Boolean? = false, extended: Boolean? = false): MessagesGetLongPollHistoryResponse {
+        val response = method("messages.getLongPollHistory", mapOf("ts" to ts, "pts" to pts, "preview_length" to previewLength, "onlines" to onlines, "fields" to fields, "events_limit" to eventsLimit, "msgs_limit" to msgsLimit, "max_msg_id" to maxMsgId, "group_id" to groupId, "lp_version" to lpVersion, "last_n" to lastN, "credentials" to credentials, "extended" to extended))
         return decodeResponse(response, json)
     }
 
     /**
      *
-     * Returns data required for connection to a Int Poll server.
+     * Returns data required for connection to a Long Poll server.
      * 
-     * @param needPts '1' - to return the 'pts' field, needed for the [vk.com/dev/messages.getIntPollHistory|messages.getIntPollHistory] method.
+     * @param needPts '1' - to return the 'pts' field, needed for the [vk.com/dev/messages.getLongPollHistory|messages.getLongPollHistory] method.
      * @param groupId Group ID (for group messages with user access token).
-     * @param lpVersion Int poll version.
+     * @param lpVersion Long poll version.
      */
-    suspend fun getIntPollServer(needPts: Boolean? = false, groupId: Int? = null, lpVersion: Int? = 0): MessagesGetIntPollServerResponse {
-        val response = method("messages.getIntPollServer", mapOf("need_pts" to needPts, "group_id" to groupId, "lp_version" to lpVersion))
+    suspend fun getLongPollServer(needPts: Boolean? = false, groupId: Int? = null, lpVersion: Int? = 0): MessagesGetLongPollServerResponse {
+        val response = method("messages.getLongPollServer", mapOf("need_pts" to needPts, "group_id" to groupId, "lp_version" to lpVersion))
         return decodeResponse(response, json)
     }
 

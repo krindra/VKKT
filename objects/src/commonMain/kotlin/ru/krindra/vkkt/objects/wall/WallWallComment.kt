@@ -2,8 +2,8 @@ package ru.krindra.vkkt.objects.wall
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.objects.base.BaseBoolInt
 import ru.krindra.vkkt.objects.comment.CommentThread
+import ru.krindra.vkkt.objects.base.BaseBoolInt
 import ru.krindra.vkkt.objects.base.BaseLikesInfo
 
 /**

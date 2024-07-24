@@ -2,12 +2,12 @@ package ru.krindra.vkkt.objects.widgets
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.objects.base.BaseLikesInfo
-import ru.krindra.vkkt.objects.wall.WallPostSource
-import ru.krindra.vkkt.objects.users.UsersUserFull
 import ru.krindra.vkkt.objects.base.BaseRepostsInfo
+import ru.krindra.vkkt.objects.base.BaseLikesInfo
 import ru.krindra.vkkt.objects.base.BaseBoolInt
+import ru.krindra.vkkt.objects.users.UsersUserFull
 import ru.krindra.vkkt.objects.wall.WallCommentAttachment
+import ru.krindra.vkkt.objects.wall.WallPostSource
 
 /**
  *

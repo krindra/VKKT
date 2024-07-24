@@ -2,33 +2,33 @@ package ru.krindra.vkkt.objects.groups
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.objects.users.UsersPersonal
-import ru.krindra.vkkt.objects.owner.OwnerState
-import ru.krindra.vkkt.objects.users.UsersExports
+import ru.krindra.vkkt.objects.base.BaseCountry
+import ru.krindra.vkkt.objects.users.UsersUserMin
+import ru.krindra.vkkt.objects.photos.PhotosPhotoFalseable
 import ru.krindra.vkkt.objects.base.BaseCropPhoto
-import ru.krindra.vkkt.objects.users.UsersUserRelation
+import ru.krindra.vkkt.objects.friends.FriendsRequestsMutual
 import ru.krindra.vkkt.objects.users.UsersUserType
 import ru.krindra.vkkt.objects.users.UsersUserCounters
-import ru.krindra.vkkt.objects.users.UsersOccupation
-import ru.krindra.vkkt.objects.video.VideoLiveInfo
-import ru.krindra.vkkt.objects.users.UsersOnlineInfo
-import ru.krindra.vkkt.objects.users.UsersUserMin
-import ru.krindra.vkkt.objects.users.UsersMilitary
-import ru.krindra.vkkt.objects.photos.PhotosPhotoFalseable
-import ru.krindra.vkkt.objects.users.UsersCareer
-import ru.krindra.vkkt.objects.audio.AudioAudio
-import ru.krindra.vkkt.objects.users.UsersUniversity
-import ru.krindra.vkkt.objects.base.BaseSex
-import ru.krindra.vkkt.objects.base.BaseCity
-import ru.krindra.vkkt.objects.users.UsersSchool
-import ru.krindra.vkkt.objects.base.BaseCountry
-import ru.krindra.vkkt.objects.users.UsersLastSeen
 import ru.krindra.vkkt.objects.base.BaseBoolInt
-import ru.krindra.vkkt.objects.friends.FriendsRequestsMutual
-import ru.krindra.vkkt.objects.users.UsersRelative
-import ru.krindra.vkkt.objects.apps.AppsAppMin
-import ru.krindra.vkkt.objects.photos.PhotosPhoto
+import ru.krindra.vkkt.objects.users.UsersUserRelation
 import ru.krindra.vkkt.objects.friends.FriendsFriendStatusStatus
+import ru.krindra.vkkt.objects.users.UsersMilitary
+import ru.krindra.vkkt.objects.photos.PhotosPhoto
+import ru.krindra.vkkt.objects.users.UsersExports
+import ru.krindra.vkkt.objects.users.UsersCareer
+import ru.krindra.vkkt.objects.video.VideoLiveInfo
+import ru.krindra.vkkt.objects.users.UsersSchool
+import ru.krindra.vkkt.objects.apps.AppsAppMin
+import ru.krindra.vkkt.objects.audio.AudioAudio
+import ru.krindra.vkkt.objects.users.UsersRelative
+import ru.krindra.vkkt.objects.users.UsersUniversity
+import ru.krindra.vkkt.objects.users.UsersLastSeen
+import ru.krindra.vkkt.objects.users.UsersOccupation
+import ru.krindra.vkkt.objects.users.UsersPersonal
+import ru.krindra.vkkt.objects.base.BaseCity
+import ru.krindra.vkkt.objects.users.UsersOnlineInfo
+import ru.krindra.vkkt.objects.owner.OwnerState
+import ru.krindra.vkkt.objects.base.BaseSex
 
 /**
  *
@@ -210,12 +210,12 @@ data class GroupsUserXtrRole (
     @SerialName("type") val type: UsersUserType? = null,
     @SerialName("activity") val activity: String? = null,
     @SerialName("can_call") val canCall: Boolean? = null,
+    @SerialName("contact_id") val contactId: Int? = null,
     @SerialName("facebook") val facebook: String? = null,
     @SerialName("language") val language: String? = null,
     @SerialName("nickname") val nickname: String? = null,
     @SerialName("online_app") val onlineApp: Int? = null,
     @SerialName("timezone") val timezone: Double? = null,
-    @SerialName("contact_id") val contactId: Int? = null,
     @SerialName("graduation") val graduation: Int? = null,
     @SerialName("home_town") val homeTown: String? = null,
     @SerialName("last_name") val lastName: String? = null,

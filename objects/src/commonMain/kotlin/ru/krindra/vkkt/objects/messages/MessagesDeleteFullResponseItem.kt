@@ -2,8 +2,8 @@ package ru.krindra.vkkt.objects.messages
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.objects.base.BaseBoolInt
 import ru.krindra.vkkt.objects.base.BaseMessageError
+import ru.krindra.vkkt.objects.base.BaseBoolInt
 
 /**
  *

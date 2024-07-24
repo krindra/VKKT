@@ -2,8 +2,8 @@ package ru.krindra.vkkt.objects.bugtracker
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.objects.docs.DocsDoc
 import ru.krindra.vkkt.objects.photos.PhotosPhoto
+import ru.krindra.vkkt.objects.docs.DocsDoc
 
 /**
  *

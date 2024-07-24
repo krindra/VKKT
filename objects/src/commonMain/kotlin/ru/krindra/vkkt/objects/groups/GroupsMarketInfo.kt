@@ -3,8 +3,8 @@ package ru.krindra.vkkt.objects.groups
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import ru.krindra.vkkt.objects.market.MarketPrice
-import ru.krindra.vkkt.objects.market.MarketCurrency
 import ru.krindra.vkkt.objects.base.BaseBoolInt
+import ru.krindra.vkkt.objects.market.MarketCurrency
 
 /**
  *

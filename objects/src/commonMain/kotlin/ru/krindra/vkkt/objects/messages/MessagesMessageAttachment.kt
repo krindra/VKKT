@@ -2,17 +2,17 @@ package ru.krindra.vkkt.objects.messages
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.objects.market.MarketMarketAlbum
+import ru.krindra.vkkt.objects.photos.PhotosPhoto
+import ru.krindra.vkkt.objects.docs.DocsDoc
 import ru.krindra.vkkt.objects.wall.WallWallComment
-import ru.krindra.vkkt.objects.base.BaseSticker
+import ru.krindra.vkkt.objects.market.MarketMarketItem
+import ru.krindra.vkkt.objects.calls.CallsCall
+import ru.krindra.vkkt.objects.gifts.GiftsLayout
+import ru.krindra.vkkt.objects.market.MarketMarketAlbum
 import ru.krindra.vkkt.objects.polls.PollsPoll
 import ru.krindra.vkkt.objects.audio.AudioAudio
-import ru.krindra.vkkt.objects.gifts.GiftsLayout
-import ru.krindra.vkkt.objects.market.MarketMarketItem
+import ru.krindra.vkkt.objects.base.BaseSticker
 import ru.krindra.vkkt.objects.stories.StoriesStory
-import ru.krindra.vkkt.objects.docs.DocsDoc
-import ru.krindra.vkkt.objects.photos.PhotosPhoto
-import ru.krindra.vkkt.objects.calls.CallsCall
 
 /**
  *
