@@ -10,7 +10,7 @@ import ru.krindra.vkkt.longpoll.user.*
 import ru.krindra.vkkt.core.VkApi
 import ru.krindra.vkkt.core.longpoll.AbstractLongPoll
 import ru.krindra.vkkt.core.longpoll.LongPollParameters
-import ru.krindra.vkkt.longpoll.user.updates.UserLPUpdate
+import ru.krindra.vkkt.longpoll.user.UserLPUpdate
 
 class UserLongPoll(private val vkApi: VkApi, ): AbstractLongPoll<UserLPUpdate> {
     private val httpClient = vkApi.getHttpClient()

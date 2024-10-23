@@ -4,7 +4,6 @@ import kotlinx.serialization.json.int
 import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
-import ru.krindra.vkkt.longpoll.user.updates.UserLPUpdate
 import ru.krindra.vkkt.utils.JsonSingleton
 
 data class UserLPEvent(

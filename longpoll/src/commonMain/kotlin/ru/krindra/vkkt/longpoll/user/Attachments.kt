@@ -1,4 +1,4 @@
-package ru.krindra.vkkt.longpoll.user.updates
+package ru.krindra.vkkt.longpoll.user
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
