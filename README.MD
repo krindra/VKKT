@@ -10,7 +10,7 @@
 ![badge-platform-ios]
 ![badge-platform-mingw]
 
-VK Kotlin Types
+VK Kotlin API 
 
 <!-- TAG_VERSION -->
 [badge-latest-release]: https://img.shields.io/maven-central/v/ru.krindra.vkkt/vkkt-methods
