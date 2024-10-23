@@ -2,7 +2,7 @@ rootProject.name = "VKKT"
 
 includeBuild("convention-plugins")
 
-val projects = listOf("utils", "objects", "responses", "methods", "longpoll")
+val projects = listOf("utils", "objects", "responses", "methods", "longpoll", "core")
 
 for (p in projects) {
     val path = ":$p"

@@ -7,12 +7,13 @@ kotlinx-serialization = "1.6.3"
 kotlinx-coroutines = "1.8.1"
 dokka = "1.9.10"
 nmcp = "0.0.4"
+ktor = "3.0.0"
 
 
 [libraries]
+ktor-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
-kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
 
 [plugins]
 nmcp = { id = "com.gradleup.nmcp", version.ref = "nmcp" }

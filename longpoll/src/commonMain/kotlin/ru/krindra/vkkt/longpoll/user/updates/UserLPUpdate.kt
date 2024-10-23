@@ -4,7 +4,7 @@ import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.int
 import kotlinx.serialization.json.jsonPrimitive
 
-abstract class UserLPUpdate {
+sealed class UserLPUpdate {
     companion object {
         fun fromJsonArray(jsonArray: JsonArray): UserLPUpdate {
             val id = jsonArray[0].jsonPrimitive.int
