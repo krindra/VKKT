@@ -2,6 +2,6 @@ package ru.krindra.vkkt.longpoll
 
 import kotlinx.coroutines.flow.Flow
 
-interface AbstractLongPoll<T> {
+internal interface AbstractLongPoll<T> {
     suspend fun listen(): Flow<T>
 }
