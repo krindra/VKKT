@@ -44,7 +44,6 @@ class UserLongPoll(
             val error = UserLPError.fromString(rawEvent)
             errorHandle(error)
         }
-        println(rawEvent)
         val event = UserLPEvent.fromEvent(rawEvent)
         longPollParameters!!.ts = event.ts
         return event
