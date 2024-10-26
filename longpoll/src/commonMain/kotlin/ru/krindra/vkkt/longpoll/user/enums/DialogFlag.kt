@@ -4,7 +4,7 @@ import kotlinx.serialization.Serializable
 import ru.krindra.vkkt.utils.EnumAsIntSerializer
 
 private class DialogFlagSerializer: EnumAsIntSerializer<DialogFlag>(
-    "DialogFlag", { it.value }, { v -> DialogFlag.values().first { it.value == v } }
+    "DialogFlag", { it.value }, { v -> DialogFlag.entries.first { it.value == v } }
 )
 
 @Serializable(with = DialogFlagSerializer::class)

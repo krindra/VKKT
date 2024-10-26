@@ -65,7 +65,7 @@ sealed class UserLPUpdate {
         val count: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 80
+            const val code = 80
             fun fromJsonArray(jsonArray: JsonArray): ChangeCountOfUnreadDialogsUpdate {
                 return ChangeCountOfUnreadDialogsUpdate(
                     count = jsonArray[0].jsonPrimitive.int,
@@ -79,7 +79,7 @@ sealed class UserLPUpdate {
         val majorId: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 20
+            const val code = 20
             fun fromJsonArray(jsonArray: JsonArray): ChangeMajorIdUpdate {
                 return ChangeMajorIdUpdate(
                     peerId = jsonArray[0].jsonPrimitive.int,
@@ -94,7 +94,7 @@ sealed class UserLPUpdate {
         val minorId: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 21
+            const val code = 21
             fun fromJsonArray(jsonArray: JsonArray): ChangeMinorIdUpdate {
                 return ChangeMinorIdUpdate(
                     peerId = jsonArray[0].jsonPrimitive.int,
@@ -110,7 +110,7 @@ sealed class UserLPUpdate {
         val info: String,
     ): UserLPUpdate() {
         companion object {
-            val code = 52
+            const val code = 52
             fun fromJsonArray(jsonArray: JsonArray): ChatInfoChangedUpdate {
                 return ChatInfoChangedUpdate(
                     typeId = jsonArray[0].jsonPrimitive.int,
@@ -126,7 +126,7 @@ sealed class UserLPUpdate {
         val self: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 51
+            const val code = 51
             fun fromJsonArray(jsonArray: JsonArray): ChatSettingsChangeUpdate {
                 return ChatSettingsChangeUpdate(
                     chatId = jsonArray[0].jsonPrimitive.int,
@@ -141,7 +141,7 @@ sealed class UserLPUpdate {
         val messageId: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 13
+            const val code = 13
             fun fromJsonArray(jsonArray: JsonArray): DeleteDialogMessagesUpdate {
                 return DeleteDialogMessagesUpdate(
                     peerId = jsonArray[0].jsonPrimitive.int,
@@ -157,7 +157,7 @@ sealed class UserLPUpdate {
         val timestamp: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 9
+            const val code = 9
             fun fromJsonArray(jsonArray: JsonArray): FriendOfflineUpdate {
                 return FriendOfflineUpdate(
                     userId = jsonArray[0].jsonPrimitive.int,
@@ -174,7 +174,7 @@ sealed class UserLPUpdate {
         val timestamp: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 8
+            const val code = 8
             fun fromJsonArray(jsonArray: JsonArray): FriendOnlineUpdate {
                 return FriendOnlineUpdate(
                     userId = jsonArray[0].jsonPrimitive.int,
@@ -194,7 +194,7 @@ sealed class UserLPUpdate {
         val attachments: Attachments,
     ): UserLPUpdate() {
         companion object {
-            val code = 5
+            const val code = 5
             fun fromJsonArray(jsonArray: JsonArray): MessageEditUpdate {
                 return MessageEditUpdate(
                     messageId = jsonArray[0].jsonPrimitive.int,
@@ -220,7 +220,7 @@ sealed class UserLPUpdate {
         val randomId:Int? = null,
     ): UserLPUpdate() {
         companion object {
-            val code = 4
+            const val code = 4
             fun fromJsonArray(jsonArray: JsonArray): MessageNewUpdate {
                 return MessageNewUpdate(
                     messageId = jsonArray[0].jsonPrimitive.int,
@@ -245,7 +245,7 @@ sealed class UserLPUpdate {
         val disabledUntil: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 114
+            const val code = 114
             fun fromJsonArray(jsonArray: JsonArray): NotificationChangeUpdate {
                 return NotificationChangeUpdate(
                     peerId = jsonArray[0].jsonPrimitive.int,
@@ -262,7 +262,7 @@ sealed class UserLPUpdate {
         val count: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 6
+            const val code = 6
             fun fromJsonArray(jsonArray: JsonArray): ReadIncomingMessagesUpdate {
                 return ReadIncomingMessagesUpdate(
                     peerId = jsonArray[0].jsonPrimitive.int,
@@ -279,7 +279,7 @@ sealed class UserLPUpdate {
         val count: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 7
+            const val code = 7
             fun fromJsonArray(jsonArray: JsonArray): ReadOutgoingMessagesUpdate {
                 return ReadOutgoingMessagesUpdate(
                     peerId = jsonArray[0].jsonPrimitive.int,
@@ -295,7 +295,7 @@ sealed class UserLPUpdate {
         val flags: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 11
+            const val code = 11
             fun fromJsonArray(jsonArray: JsonArray): ReplaceDialogFlagsUpdate {
                 return ReplaceDialogFlagsUpdate(
                     peerId = jsonArray[0].jsonPrimitive.int,
@@ -311,7 +311,7 @@ sealed class UserLPUpdate {
         val peerId: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 1
+            const val code = 1
             fun fromJsonArray(jsonArray: JsonArray): ReplaceMessageFlagsUpdate {
                 return ReplaceMessageFlagsUpdate(
                     messageId = jsonArray[0].jsonPrimitive.int,
@@ -327,7 +327,7 @@ sealed class UserLPUpdate {
         val mask: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 10
+            const val code = 10
             fun fromJsonArray(jsonArray: JsonArray): ResetDialogFlagsUpdate {
                 return ResetDialogFlagsUpdate(
                     peerId = jsonArray[0].jsonPrimitive.int,
@@ -343,7 +343,7 @@ sealed class UserLPUpdate {
         val peerId: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 3
+            const val code = 3
             fun fromJsonArray(jsonArray: JsonArray): ResetMessageFlagsUpdate {
                 return ResetMessageFlagsUpdate(
                     messageId = jsonArray[0].jsonPrimitive.int,
@@ -359,7 +359,7 @@ sealed class UserLPUpdate {
         val messageId: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 14
+            const val code = 14
             fun fromJsonArray(jsonArray: JsonArray): RestoreDialogMessagesUpdate {
                 return RestoreDialogMessagesUpdate(
                     peerId = jsonArray[0].jsonPrimitive.int,
@@ -374,7 +374,7 @@ sealed class UserLPUpdate {
         val mask: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 12
+            const val code = 12
             fun fromJsonArray(jsonArray: JsonArray): SetDialogFlagsUpdate {
                 return SetDialogFlagsUpdate(
                     peerId = jsonArray[0].jsonPrimitive.int,
@@ -390,7 +390,7 @@ sealed class UserLPUpdate {
         val peerId: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 2
+            const val code = 2
             fun fromJsonArray(jsonArray: JsonArray): SetMessageFlagsUpdate {
                 return SetMessageFlagsUpdate(
                     messageId = jsonArray[0].jsonPrimitive.int,
@@ -406,7 +406,7 @@ sealed class UserLPUpdate {
         val callId: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 70
+            const val code = 70
             fun fromJsonArray(jsonArray: JsonArray): UserCallUpdate {
                 return UserCallUpdate(
                     userId = jsonArray[0].jsonPrimitive.int,
@@ -423,7 +423,7 @@ sealed class UserLPUpdate {
         val ts: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 67
+            const val code = 67
             fun fromJsonArray(jsonArray: JsonArray): UsersFileUploadingUpdate {
                 return UsersFileUploadingUpdate(
                     peerId = jsonArray[0].jsonPrimitive.int,
@@ -442,7 +442,7 @@ sealed class UserLPUpdate {
         val ts: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 65
+            const val code = 65
             fun fromJsonArray(jsonArray: JsonArray): UsersPhotoUploadingUpdate {
                 return UsersPhotoUploadingUpdate(
                     peerId = jsonArray[0].jsonPrimitive.int,
@@ -461,7 +461,7 @@ sealed class UserLPUpdate {
         val ts: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 63
+            const val code = 63
             fun fromJsonArray(jsonArray: JsonArray): UsersTypingInChatUpdate {
                 return UsersTypingInChatUpdate(
                     peerId = jsonArray[0].jsonPrimitive.int,
@@ -480,7 +480,7 @@ sealed class UserLPUpdate {
         val ts: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 66
+            const val code = 66
             fun fromJsonArray(jsonArray: JsonArray): UsersVideoUploadingUpdate {
                 return UsersVideoUploadingUpdate(
                     peerId = jsonArray[0].jsonPrimitive.int,
@@ -499,7 +499,7 @@ sealed class UserLPUpdate {
         val ts: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 64
+            const val code = 64
             fun fromJsonArray(jsonArray: JsonArray): UsersVoiceRecordingUpdate {
                 return UsersVoiceRecordingUpdate(
                     peerId = jsonArray[0].jsonPrimitive.int,
@@ -516,7 +516,7 @@ sealed class UserLPUpdate {
         val chatId: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 62
+            const val code = 62
             fun fromJsonArray(jsonArray: JsonArray): UserTypingInChatUpdate {
                 return UserTypingInChatUpdate(
                     userId = jsonArray[0].jsonPrimitive.int,
@@ -531,7 +531,7 @@ sealed class UserLPUpdate {
         val flags: Int,
     ): UserLPUpdate() {
         companion object {
-            val code = 61
+            const val code = 61
             fun fromJsonArray(jsonArray: JsonArray): UserTypingInDialogUpdate {
                 return UserTypingInDialogUpdate(
                     userId = jsonArray[0].jsonPrimitive.int,

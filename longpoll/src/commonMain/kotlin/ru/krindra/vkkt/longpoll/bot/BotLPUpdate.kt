@@ -17,7 +17,19 @@ sealed class BotLPUpdate {
     abstract val v: String
     abstract val groupId: Int
 
-    data class MarketCommentNewUpdate(
+    @Serializable data class MessageNewUpdate(
+        @SerialName("type") override val type: String,
+        @SerialName("event_id") override val eventId: String,
+        @SerialName("v") override val v: String,
+        @SerialName("group_id") override val groupId: Int,
+        @SerialName("object") val `object`: MessageNewObject,
+    ) : BotLPUpdate() {
+        companion object {
+            const val type = "message_new"
+        }
+    }
+
+    @Serializable data class MarketCommentNewUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -29,7 +41,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class GroupChangeSettingsUpdate(
+    @Serializable data class GroupChangeSettingsUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -41,7 +53,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class PhotoCommentRestoreUpdate(
+    @Serializable data class PhotoCommentRestoreUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -53,7 +65,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class MarketCommentEditUpdate(
+    @Serializable data class MarketCommentEditUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -65,7 +77,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class VideoCommentEditUpdate(
+    @Serializable data class VideoCommentEditUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -77,7 +89,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class DonutSubscriptionPriceChangedUpdate(
+    @Serializable data class DonutSubscriptionPriceChangedUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -89,7 +101,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class MarketCommentRestoreUpdate(
+    @Serializable data class MarketCommentRestoreUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -101,7 +113,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class VkPayTransactionUpdate(
+    @Serializable data class VkPayTransactionUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -113,7 +125,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class BoardPostEditUpdate(
+    @Serializable data class BoardPostEditUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -125,7 +137,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class MessageDenyUpdate(
+    @Serializable data class MessageDenyUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -137,7 +149,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class UserBlockUpdate(
+    @Serializable data class UserBlockUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -149,7 +161,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class MarketCommentDeleteUpdate(
+    @Serializable data class MarketCommentDeleteUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -161,7 +173,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class VideoNewUpdate(
+    @Serializable data class VideoNewUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -173,7 +185,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class DonutMoneyWithdrawErrorUpdate(
+    @Serializable data class DonutMoneyWithdrawErrorUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -185,7 +197,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class WallReplyDeleteUpdate(
+    @Serializable data class WallReplyDeleteUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -197,7 +209,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class MessageEditUpdate(
+    @Serializable data class MessageEditUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -209,7 +221,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class VideoCommentNewUpdate(
+    @Serializable data class VideoCommentNewUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -221,7 +233,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class MessageTypingStateUpdate(
+    @Serializable data class MessageTypingStateUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -233,7 +245,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class LikeRemoveUpdate(
+    @Serializable data class LikeRemoveUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -245,7 +257,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class DonutSubscriptionExpiredUpdate(
+    @Serializable data class DonutSubscriptionExpiredUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -257,7 +269,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class BoardPostDeleteUpdate(
+    @Serializable data class BoardPostDeleteUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -269,7 +281,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class MessageReplyUpdate(
+    @Serializable data class MessageReplyUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -281,7 +293,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class BoardPostNewUpdate(
+    @Serializable data class BoardPostNewUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -293,7 +305,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class UserUnblockUpdate(
+    @Serializable data class UserUnblockUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -305,7 +317,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class PhotoNewUpdate(
+    @Serializable data class PhotoNewUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -317,7 +329,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class MessageAllowUpdate(
+    @Serializable data class MessageAllowUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -329,7 +341,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class GroupJoinUpdate(
+    @Serializable data class GroupJoinUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -341,7 +353,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class VideoCommentDeleteUpdate(
+    @Serializable data class VideoCommentDeleteUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -353,7 +365,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class GroupOfficersEditUpdate(
+    @Serializable data class GroupOfficersEditUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -365,7 +377,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class LikeAddUpdate(
+    @Serializable data class LikeAddUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -377,7 +389,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class WallReplyRestoreUpdate(
+    @Serializable data class WallReplyRestoreUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -389,7 +401,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class WallReplyNewUpdate(
+    @Serializable data class WallReplyNewUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -401,7 +413,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class DonutSubscriptionCreateUpdate(
+    @Serializable data class DonutSubscriptionCreateUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -413,7 +425,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class MarketOrderEditUpdate(
+    @Serializable data class MarketOrderEditUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -425,7 +437,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class PhotoCommentNewUpdate(
+    @Serializable data class PhotoCommentNewUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -437,7 +449,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class WallReplyEditUpdate(
+    @Serializable data class WallReplyEditUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -449,7 +461,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class VideoCommentRestoreUpdate(
+    @Serializable data class VideoCommentRestoreUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -461,7 +473,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class WallPostNewUpdate(
+    @Serializable data class WallPostNewUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -473,7 +485,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class WallRepostUpdate(
+    @Serializable data class WallRepostUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -485,7 +497,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class PhotoCommentEditUpdate(
+    @Serializable data class PhotoCommentEditUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -497,7 +509,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class AppPayloadUpdate(
+    @Serializable data class AppPayloadUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -509,7 +521,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class AudioNewUpdate(
+    @Serializable data class AudioNewUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -521,7 +533,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class DonutSubscriptionCancelledUpdate(
+    @Serializable data class DonutSubscriptionCancelledUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -533,7 +545,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class BoardPostRestoreUpdate(
+    @Serializable data class BoardPostRestoreUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -545,7 +557,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class MarketOrderNewUpdate(
+    @Serializable data class MarketOrderNewUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -557,7 +569,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class DonutSubscriptionProlongedUpdate(
+    @Serializable data class DonutSubscriptionProlongedUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -569,7 +581,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class GroupChangePhotoUpdate(
+    @Serializable data class GroupChangePhotoUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -581,7 +593,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class GroupLeaveUpdate(
+    @Serializable data class GroupLeaveUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -593,7 +605,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class PollVoteNewUpdate(
+    @Serializable data class PollVoteNewUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -605,7 +617,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class DonutMoneyWithdrawUpdate(
+    @Serializable data class DonutMoneyWithdrawUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -617,7 +629,7 @@ sealed class BotLPUpdate {
         }
     }
 
-    data class MessageEventUpdate(
+    @Serializable data class MessageEventUpdate(
         @SerialName("type") override val type: String,
         @SerialName("event_id") override val eventId: String,
         @SerialName("v") override val v: String,
@@ -630,70 +642,66 @@ sealed class BotLPUpdate {
     }
 
     internal object UpdatesSerializer : JsonContentPolymorphicSerializer<BotLPUpdate>(BotLPUpdate::class) {
-        private data class SerializerAndType<T: BotLPUpdate>(
-            val serializer: KSerializer<T>,
-            val type: String
-        )
-
-        private val eventsList = listOf(
-            SerializerAndType(MessageReplyUpdate.serializer(), MessageReplyUpdate.type),
-            SerializerAndType(MessageEditUpdate.serializer(), MessageEditUpdate.type),
-            SerializerAndType(MessageAllowUpdate.serializer(), MessageAllowUpdate.type),
-            SerializerAndType(MessageDenyUpdate.serializer(), MessageDenyUpdate.type),
-            SerializerAndType(MessageTypingStateUpdate.serializer(), MessageTypingStateUpdate.type),
-            SerializerAndType(MessageEventUpdate.serializer(), MessageEventUpdate.type),
-            SerializerAndType(PhotoNewUpdate.serializer(), PhotoNewUpdate.type),
-            SerializerAndType(PhotoCommentNewUpdate.serializer(), PhotoCommentNewUpdate.type),
-            SerializerAndType(PhotoCommentEditUpdate.serializer(), PhotoCommentEditUpdate.type),
-            SerializerAndType(PhotoCommentRestoreUpdate.serializer(), PhotoCommentRestoreUpdate.type),
-            SerializerAndType(AudioNewUpdate.serializer(), AudioNewUpdate.type),
-            SerializerAndType(VideoNewUpdate.serializer(), VideoNewUpdate.type),
-            SerializerAndType(VideoCommentNewUpdate.serializer(), VideoCommentNewUpdate.type),
-            SerializerAndType(VideoCommentEditUpdate.serializer(), VideoCommentEditUpdate.type),
-            SerializerAndType(VideoCommentRestoreUpdate.serializer(), VideoCommentRestoreUpdate.type),
-            SerializerAndType(VideoCommentDeleteUpdate.serializer(), VideoCommentDeleteUpdate.type),
-            SerializerAndType(WallPostNewUpdate.serializer(), WallPostNewUpdate.type),
-            SerializerAndType(WallRepostUpdate.serializer(), WallRepostUpdate.type),
-            SerializerAndType(WallReplyNewUpdate.serializer(), WallReplyNewUpdate.type),
-            SerializerAndType(WallReplyEditUpdate.serializer(), WallReplyEditUpdate.type),
-            SerializerAndType(WallReplyRestoreUpdate.serializer(), WallReplyRestoreUpdate.type),
-            SerializerAndType(WallReplyDeleteUpdate.serializer(), WallReplyDeleteUpdate.type),
-            SerializerAndType(LikeAddUpdate.serializer(), LikeAddUpdate.type),
-            SerializerAndType(LikeRemoveUpdate.serializer(), LikeRemoveUpdate.type),
-            SerializerAndType(BoardPostNewUpdate.serializer(), BoardPostNewUpdate.type),
-            SerializerAndType(BoardPostEditUpdate.serializer(), BoardPostEditUpdate.type),
-            SerializerAndType(BoardPostRestoreUpdate.serializer(), BoardPostRestoreUpdate.type),
-            SerializerAndType(BoardPostDeleteUpdate.serializer(), BoardPostDeleteUpdate.type),
-            SerializerAndType(MarketCommentNewUpdate.serializer(), MarketCommentNewUpdate.type),
-            SerializerAndType(MarketCommentEditUpdate.serializer(), MarketCommentEditUpdate.type),
-            SerializerAndType(MarketCommentRestoreUpdate.serializer(), MarketCommentRestoreUpdate.type),
-            SerializerAndType(MarketCommentDeleteUpdate.serializer(), MarketCommentDeleteUpdate.type),
-            SerializerAndType(MarketOrderNewUpdate.serializer(), MarketOrderNewUpdate.type),
-            SerializerAndType(MarketOrderEditUpdate.serializer(), MarketOrderEditUpdate.type),
-            SerializerAndType(GroupJoinUpdate.serializer(), GroupJoinUpdate.type),
-            SerializerAndType(GroupLeaveUpdate.serializer(), GroupLeaveUpdate.type),
-            SerializerAndType(UserBlockUpdate.serializer(), UserBlockUpdate.type),
-            SerializerAndType(UserUnblockUpdate.serializer(), UserUnblockUpdate.type),
-            SerializerAndType(PollVoteNewUpdate.serializer(), PollVoteNewUpdate.type),
-            SerializerAndType(GroupOfficersEditUpdate.serializer(), GroupOfficersEditUpdate.type),
-            SerializerAndType(GroupChangeSettingsUpdate.serializer(), GroupChangeSettingsUpdate.type),
-            SerializerAndType(GroupChangePhotoUpdate.serializer(), GroupChangePhotoUpdate.type),
-            SerializerAndType(VkPayTransactionUpdate.serializer(), VkPayTransactionUpdate.type),
-            SerializerAndType(AppPayloadUpdate.serializer(), AppPayloadUpdate.type),
-            SerializerAndType(DonutSubscriptionCreateUpdate.serializer(), DonutSubscriptionCreateUpdate.type),
-            SerializerAndType(DonutSubscriptionProlongedUpdate.serializer(), DonutSubscriptionProlongedUpdate.type),
-            SerializerAndType(DonutSubscriptionExpiredUpdate.serializer(), DonutSubscriptionExpiredUpdate.type),
-            SerializerAndType(DonutSubscriptionCancelledUpdate.serializer(), DonutSubscriptionCancelledUpdate.type),
-            SerializerAndType(DonutSubscriptionPriceChangedUpdate.serializer(), DonutSubscriptionPriceChangedUpdate.type),
-            SerializerAndType(DonutMoneyWithdrawUpdate.serializer(), DonutMoneyWithdrawUpdate.type),
-            SerializerAndType(DonutMoneyWithdrawErrorUpdate.serializer(), DonutMoneyWithdrawErrorUpdate.type),
+        private val events: Map<KSerializer<out BotLPUpdate>, String> = mapOf(
+            MessageNewUpdate.serializer() to MessageNewUpdate.type,
+            MessageReplyUpdate.serializer() to MessageReplyUpdate.type,
+            MessageEditUpdate.serializer() to MessageEditUpdate.type,
+            MessageAllowUpdate.serializer() to MessageAllowUpdate.type,
+            MessageDenyUpdate.serializer() to MessageDenyUpdate.type,
+            MessageTypingStateUpdate.serializer() to MessageTypingStateUpdate.type,
+            MessageEventUpdate.serializer() to MessageEventUpdate.type,
+            PhotoNewUpdate.serializer() to PhotoNewUpdate.type,
+            PhotoCommentNewUpdate.serializer() to PhotoCommentNewUpdate.type,
+            PhotoCommentEditUpdate.serializer() to PhotoCommentEditUpdate.type,
+            PhotoCommentRestoreUpdate.serializer() to PhotoCommentRestoreUpdate.type,
+            AudioNewUpdate.serializer() to AudioNewUpdate.type,
+            VideoNewUpdate.serializer() to VideoNewUpdate.type,
+            VideoCommentNewUpdate.serializer() to VideoCommentNewUpdate.type,
+            VideoCommentEditUpdate.serializer() to VideoCommentEditUpdate.type,
+            VideoCommentRestoreUpdate.serializer() to VideoCommentRestoreUpdate.type,
+            VideoCommentDeleteUpdate.serializer() to VideoCommentDeleteUpdate.type,
+            WallPostNewUpdate.serializer() to WallPostNewUpdate.type,
+            WallRepostUpdate.serializer() to WallRepostUpdate.type,
+            WallReplyNewUpdate.serializer() to WallReplyNewUpdate.type,
+            WallReplyEditUpdate.serializer() to WallReplyEditUpdate.type,
+            WallReplyRestoreUpdate.serializer() to WallReplyRestoreUpdate.type,
+            WallReplyDeleteUpdate.serializer() to WallReplyDeleteUpdate.type,
+            LikeAddUpdate.serializer() to LikeAddUpdate.type,
+            LikeRemoveUpdate.serializer() to LikeRemoveUpdate.type,
+            BoardPostNewUpdate.serializer() to BoardPostNewUpdate.type,
+            BoardPostEditUpdate.serializer() to BoardPostEditUpdate.type,
+            BoardPostRestoreUpdate.serializer() to BoardPostRestoreUpdate.type,
+            BoardPostDeleteUpdate.serializer() to BoardPostDeleteUpdate.type,
+            MarketCommentNewUpdate.serializer() to MarketCommentNewUpdate.type,
+            MarketCommentEditUpdate.serializer() to MarketCommentEditUpdate.type,
+            MarketCommentRestoreUpdate.serializer() to MarketCommentRestoreUpdate.type,
+            MarketCommentDeleteUpdate.serializer() to MarketCommentDeleteUpdate.type,
+            MarketOrderNewUpdate.serializer() to MarketOrderNewUpdate.type,
+            MarketOrderEditUpdate.serializer() to MarketOrderEditUpdate.type,
+            GroupJoinUpdate.serializer() to GroupJoinUpdate.type,
+            GroupLeaveUpdate.serializer() to GroupLeaveUpdate.type,
+            UserBlockUpdate.serializer() to UserBlockUpdate.type,
+            UserUnblockUpdate.serializer() to UserUnblockUpdate.type,
+            PollVoteNewUpdate.serializer() to PollVoteNewUpdate.type,
+            GroupOfficersEditUpdate.serializer() to GroupOfficersEditUpdate.type,
+            GroupChangeSettingsUpdate.serializer() to GroupChangeSettingsUpdate.type,
+            GroupChangePhotoUpdate.serializer() to GroupChangePhotoUpdate.type,
+            VkPayTransactionUpdate.serializer() to VkPayTransactionUpdate.type,
+            AppPayloadUpdate.serializer() to AppPayloadUpdate.type,
+            DonutSubscriptionCreateUpdate.serializer() to DonutSubscriptionCreateUpdate.type,
+            DonutSubscriptionProlongedUpdate.serializer() to DonutSubscriptionProlongedUpdate.type,
+            DonutSubscriptionExpiredUpdate.serializer() to DonutSubscriptionExpiredUpdate.type,
+            DonutSubscriptionCancelledUpdate.serializer() to DonutSubscriptionCancelledUpdate.type,
+            DonutSubscriptionPriceChangedUpdate.serializer() to DonutSubscriptionPriceChangedUpdate.type,
+            DonutMoneyWithdrawUpdate.serializer() to DonutMoneyWithdrawUpdate.type,
+            DonutMoneyWithdrawErrorUpdate.serializer() to DonutMoneyWithdrawErrorUpdate.type,
         )
 
         override fun selectDeserializer(element: JsonElement): DeserializationStrategy<BotLPUpdate> {
             val type = element.jsonObject["type"]!!.jsonPrimitive.content
 
-            for (e in eventsList) {
-                if (type == e.type) return e.serializer
+            for (e in events) {
+                if (type == e.value) return e.key
             }
             throw IllegalArgumentException("Unsupported type.\nelement = $element\ntype = $type\n")
         }

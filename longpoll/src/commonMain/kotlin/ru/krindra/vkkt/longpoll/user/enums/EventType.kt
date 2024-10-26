@@ -4,7 +4,7 @@ import kotlinx.serialization.Serializable
 import ru.krindra.vkkt.utils.EnumAsIntSerializer
 
 private class EventTypeSerializer: EnumAsIntSerializer<EventType>(
-    "EventType", { it.value }, { v -> EventType.values().first { it.value == v } }
+    "EventType", { it.value }, { v -> EventType.entries.first { it.value == v } }
 )
 
 @Serializable(with = EventTypeSerializer::class)

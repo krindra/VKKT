@@ -7,5 +7,5 @@ import ru.krindra.vkkt.objects.messages.MessagesMessage
 @Serializable
 data class MessageNewObject(
     @SerialName("message") val message: MessagesMessage,
-    @SerialName("client_info") val clientInfo: ru.krindra.vkkt.longpoll.bot.objects.ClientInfoObject,
+    @SerialName("client_info") val clientInfo: ClientInfoObject,
 )
