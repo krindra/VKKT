@@ -11,7 +11,7 @@ class VkApi(
     token: String,
     language: VkLanguageEnum? = null,
     version: String = "5.199",
-    private val httpClient: HttpClient = HttpClient(),
+    val httpClient: HttpClient = HttpClient(),
 ) {
     private val args = buildMap<String, Any> {
         put("access_token", token)
@@ -82,8 +82,6 @@ class VkApi(
         return response
 
     }
-
-    internal fun getHttpClient() = httpClient
 
     companion object {
         const val URL = "https://api.vk.com/method/"

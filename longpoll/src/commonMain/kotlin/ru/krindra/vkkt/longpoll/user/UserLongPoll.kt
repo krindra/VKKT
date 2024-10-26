@@ -1,23 +1,25 @@
-package ru.krindra.vkkt.core.longpoll.user
+package ru.krindra.vkkt.longpoll.user
 
-
+import ru.krindra.vkkt.longpoll.LongPollParameters
 import io.ktor.client.network.sockets.*
 import io.ktor.client.plugins.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import kotlinx.coroutines.flow.flow
-import ru.krindra.vkkt.longpoll.user.*
 import ru.krindra.vkkt.core.VkApi
-import ru.krindra.vkkt.core.longpoll.AbstractLongPoll
-import ru.krindra.vkkt.core.longpoll.LongPollParameters
-import ru.krindra.vkkt.longpoll.user.UserLPUpdate
+import ru.krindra.vkkt.longpoll.AbstractLongPoll
 
-class UserLongPoll(private val vkApi: VkApi, ): AbstractLongPoll<UserLPUpdate> {
-    private val httpClient = vkApi.getHttpClient()
+
+class UserLongPoll(
+    private val vkApi: VkApi,
+    private val mode: Int = 255,
+    private val version: Int = 3
+): AbstractLongPoll<UserLPUpdate> {
+    private val httpClient = vkApi.httpClient
     private var longPollParameters: LongPollParameters? = null
 
     /*
-     * Get user longpoll updates
+     * Get user long poll updates
      */
     override suspend fun listen() = flow {
         var timeout = 0
@@ -37,7 +39,7 @@ class UserLongPoll(private val vkApi: VkApi, ): AbstractLongPoll<UserLPUpdate> {
     }
 
     private suspend fun getEvent(): UserLPEvent {
-        val rawEvent = httpClient.get(longPollParameters!!.toUserURL()).bodyAsText()
+        val rawEvent = httpClient.get(longPollParameters!!.toUserURL(mode, version)).bodyAsText()
         if (rawEvent.contains("fail")) {
             val error = UserLPError.fromString(rawEvent)
             errorHandle(error)
@@ -49,7 +51,7 @@ class UserLongPoll(private val vkApi: VkApi, ): AbstractLongPoll<UserLPUpdate> {
     }
 
     private suspend fun getParameters(): LongPollParameters {
-        val resp = vkApi.messages.getLongPollServer(lpVersion = 3)
+        val resp = vkApi.messages.getLongPollServer(lpVersion = version)
         return LongPollParameters(resp.server, resp.key, resp.ts)
     }
 

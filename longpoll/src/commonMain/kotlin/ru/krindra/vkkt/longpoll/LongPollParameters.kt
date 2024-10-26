@@ -1,4 +1,4 @@
-package ru.krindra.vkkt.core.longpoll
+package ru.krindra.vkkt.longpoll
 
 internal data class LongPollParameters(
     val server: String,

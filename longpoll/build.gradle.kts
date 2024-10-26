@@ -39,6 +39,7 @@ kotlin {
         commonMain.dependencies {
             api(project(":vkkt-objects"))
             api(project(":vkkt-utils"))
+            api(project(":vkkt-core"))
             api(libs.kotlinx.serialization.json)
         }
     }

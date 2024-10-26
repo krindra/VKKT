@@ -1,22 +1,20 @@
-package ru.krindra.vkkt.core.longpoll.bot
+package ru.krindra.vkkt.longpoll.bot
 
 
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
-import ru.krindra.vkkt.longpoll.bot.*
-import ru.krindra.vkkt.core.longpoll.LongPollParameters
-import ru.krindra.vkkt.longpoll.bot.updates.BotLPUpdate
 import ru.krindra.vkkt.core.VkApi
 import io.ktor.client.plugins.HttpRequestTimeoutException
 import kotlinx.coroutines.flow.flow
-import ru.krindra.vkkt.core.longpoll.AbstractLongPoll
+import ru.krindra.vkkt.longpoll.AbstractLongPoll
+import ru.krindra.vkkt.longpoll.LongPollParameters
 
 class BotLongPoll(private val vkApi: VkApi): AbstractLongPoll<BotLPUpdate> {
-    private val httpClient = vkApi.getHttpClient()
+    private val httpClient = vkApi.httpClient
     private var longPollParameters: LongPollParameters? = null
 
     /**
-     * Get bot longpoll updates
+     * Get bot long poll updates
      */
     override suspend fun listen() = flow {
         while (true) {

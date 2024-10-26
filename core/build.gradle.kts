@@ -38,7 +38,6 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             api(project(":vkkt-methods"))
-            api(project(":vkkt-longpoll"))
             api(libs.ktor.core)
             api(libs.kotlinx.coroutines.core)
         }
