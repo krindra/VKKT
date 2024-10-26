@@ -1,7 +1,6 @@
 package ru.krindra.vkkt.longpoll.bot
 
 import kotlinx.serialization.Serializable
-import ru.krindra.vkkt.longpoll.bot.updates.BotLPUpdate
 import ru.krindra.vkkt.utils.JsonSingleton
 
 @Serializable
