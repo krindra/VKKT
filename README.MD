@@ -10,7 +10,55 @@
 ![badge-platform-ios]
 ![badge-platform-mingw]
 
-VK Kotlin API 
+# VK Kotlin API 
+
+Just a simple library for VK 
+
+is supported:
+- [VK API](https://dev.vk.com/reference)
+- [Bot Long Poll](https://dev.vk.com/api/bots-long-poll/getting-started)
+- [User Long Poll](https://dev.vk.com/api/user-long-poll/getting-started)
+
+## Examples
+
+```kotlin
+import io.ktor.client.*
+import ru.krindra.vkkt.core.VkApi
+import ru.krindra.vkkt.longpoll.bot.*
+import ru.krindra.vkkt.longpoll.user.*
+
+val client = HttpClient()
+
+suspend fun bot() {
+    val vkApi = VkApi(botToken, httpClient = client)
+
+    val lp = BotLongPoll(vkApi)
+    lp.listen().collect{ e->
+        if (e is BotLPUpdate.MessageNewUpdate) {
+            if (e.`object`.message.text != "")
+                vkApi.messages.send(
+                    peerId = e.`object`.message.peerId,
+                    message = e.`object`.message.text,
+                    randomId = 0
+                )
+        }
+    }
+}
+
+suspend fun user() {
+    val vkApi = VkApi(userToken, httpClient = client)
+    println(vkApi.status.get().text)
+
+    val lp = UserLongPoll(vkApi)
+    lp.listen().collect {e ->
+        if (e is UserLPUpdate.MessageNewUpdate) {
+            print("${e.peerId} ${e.timestamp} - ${e.text}")
+        }
+    }
+}
+
+```
+
 
 <!-- TAG_VERSION -->
 [badge-latest-release]: https://img.shields.io/maven-central/v/ru.krindra.vkkt/vkkt-methods
