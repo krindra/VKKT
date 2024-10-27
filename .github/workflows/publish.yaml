@@ -3,7 +3,9 @@ name: "Publish (nmcp)"
 
 on:
   push:
-    branches: ["master", "dev"]
+    branches: ["master"]
+    paths: 
+      - "core/**"
 jobs:
   publish:
     runs-on: macos-latest
