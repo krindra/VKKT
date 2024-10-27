@@ -2,6 +2,7 @@
 
 ![Maven Central Version][badge-latest-release]
 
+[![badge-api-version]](https://vk.com/dev/versions)
 ![badge-platform-android]
 ![badge-platform-jvm]
 ![badge-platform-js]
@@ -60,10 +61,9 @@ suspend fun user() {
 ```
 
 
-<!-- TAG_VERSION -->
+<!-- TAGS -->
+[badge-api-version]: https://img.shields.io/badge/API%20version-5.119-blue?style=flat&logo=vk&logoColor=white
 [badge-latest-release]: https://img.shields.io/maven-central/v/ru.krindra.vkkt/vkkt-methods
-
-<!-- TAG_PLATFORMS -->
 [badge-platform-android]: http://img.shields.io/badge/-android-6EDB8D.svg?style=flat
 [badge-platform-jvm]: http://img.shields.io/badge/-jvm-DB413D.svg?style=flat
 [badge-platform-js]: http://img.shields.io/badge/-js-F8DB5D.svg?style=flat
